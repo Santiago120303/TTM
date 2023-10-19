@@ -86,7 +86,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         </thead>
                         <tbody>
                           <?php
-                                cargarClientes();
+                            cargarClientes();
                           ?>
                         </tbody>
                       </table>

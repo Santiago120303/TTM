@@ -22,11 +22,63 @@ function cargarEventos()
                     <td>' . $f['eveFecha'] . '</td>
                     <td>' . $f['eveDireccion'] . '</td>
                     <td>' . $f['eveEstado'] . '</td>
-                    <td><a href="#" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
+                    <td><a href="modificar_eventos.php?id=' . $f['eveId'] . '" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
                     <td><a href="../../Controllers/eliminarEveFun.php?id=' . $f['eveId'] . '" class="btn btn-danger"><i class="ti-trash"></i> Eliminar</a></td>
                 </tr>
                 ';
         }
+    }
+}
+
+function cargarEventosEditar()
+{
+    // Aterrizamos la PK enviada desde la tabla 
+    $eveId = $_GET['id'];
+
+    //Enviamos la PK a una función de la clase consultas
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarEveFunEd($eveId);
+
+    //Pintamos la información consultada en el artefacto (FORM)
+
+    foreach ($result as $f) {
+        echo  '
+        <a class="d-block w-100 text-right font-weight-bold" href="ver_eventos.php"><i class="fa-solid fa-arrow-left mr-2"></i>Volver</a>
+        <form action="../../Controllers/actualizarEveFun.php?id='. $f['eveId'] .'" method="POST" enctype="multipart/form-data">
+            <div class="row">
+
+                <div class="form-group col-lg-6">
+                    <label>Nombre del evento</label>
+                    <input type="text" value="' . $f['eveNombre'] . '" class="form-control" placeholder="Ej:Evento caritativo" required name="eveNombre">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>Fecha del evento</label>
+                    <input type="date" value="' . $f['eveFecha'] . '" class="form-control" required name="eveFecha">
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>Dirección del evento</label>
+                    <input type="text" value="' . $f['eveDireccion'] . '" class="form-control" placeholder="Ej:Carrera 1 #3-4 sur" required name="eveDireccion">
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>Estado del evento</label>
+                    <select required name="eveEstado"  class="form-control">
+                        <option value="' . $f['eveEstado'] . '">' . $f['eveEstado'] . '</option>
+                        <option value="Activo">Activo</option>
+                        <option value="Cancelado">Cancelado</option>
+                        <option value="En estado de confirmacion">En estado de confirmación</option>
+                    </select>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>Descripción del evento</label>
+                    <input type="text" value="' . $f['eveDescripcion'] . '" class="form-control" placeholder="Escriba la descripción del evento" required name="eveDescripcion">
+                </div>
+
+            </div>
+            <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30">Modificar evento</button>
+        </form>
+            ';
     }
 }
 

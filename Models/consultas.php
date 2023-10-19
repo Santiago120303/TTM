@@ -581,16 +581,61 @@ class Consultas
         return $f;
     }
 
+    public function mostrarEveFunEd($eveId)
+    {
+
+        $f = null;
+
+        //Creamos el objeto de la conexion
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $buscar = "SELECT * FROM tbl_eventos WHERE eveId=:eveId";
+
+        $result = $conexion->prepare($buscar);
+
+        $result->bindParam(':eveId', $eveId);
+
+        $result->execute();
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+
+        return $f;
+    }
+
+    public function actualizarEveFun($eveId, $eveNombre, $eveFecha,  $eveDireccion, $eveDescripcion,  $eveEstado)
+    {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE tbl_eventos SET eveNombre=:eveNombre, eveFecha=:eveFecha, eveDireccion=:eveDireccion, eveEstado=:eveEstado, eveDescripcion=:eveDescripcion WHERE eveId=:eveId ";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam(":eveId", $eveId);
+        $result->bindParam(":eveNombre", $eveNombre);
+        $result->bindParam(":eveFecha", $eveFecha);
+        $result->bindParam(":eveDireccion", $eveDireccion);
+        $result->bindParam(":eveEstado", $eveEstado);
+        $result->bindParam(":eveDescripcion", $eveDescripcion);
+        $result->execute();
+
+        echo '<script> alert("Información de evento actualizada exitosamente") </script>';
+        echo "<script> location.href='../Views/homefundacion/modificar_eventos.php?id=$eveId' </script>";
+
+    }
+
     public function eliminarEveFun($eveId)
     {
 
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $eliminar = "DELETE FROM tbl_eventos WHERE eveId=:id";
+        $eliminar = "DELETE FROM tbl_eventos WHERE eveId=:eveId";
         $result = $conexion->prepare($eliminar);
 
-        $result->bindParam(":id", $eveId);
+        $result->bindParam(":eveId", $eveId);
 
         $result->execute();
 
