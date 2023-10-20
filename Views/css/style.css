@@ -109,6 +109,7 @@ label {
 }
 .nav-pills.with-background .nav-link:hover {
   color: var(--Azul-medio);
+  cursor: pointer;
 }
 .nav-pills.with-background .nav-link.active {
   background: var(--Azul-medio);
@@ -715,6 +716,17 @@ ul.pagination .active a {
   text-align: center;
 }
 
+
+/* Arreglo de la ubicacion del footer en pantallas de clientsite, admin, fundacion, cliente */
+.login{
+  /* padding-top: 7%; */
+  min-height: 671px;
+}
+
+section.dashboard{
+  min-height: 671px;
+}
+
 .login-button {
   border: 2px solid #dedede;
   margin-right: 8px;
@@ -783,6 +795,7 @@ li.nav-item.dropdown.dropdown-slide:hover a.nav-link.dropdown-toggle{
   padding-right: 10px;
   background: var(--Azul-medio)!important;
   color: var(--Blanco)!important;
+  cursor: pointer;
 }
 .main-nav .nav-item .dropdown-toggle::after {
   border: none;
@@ -2582,7 +2595,6 @@ tbody tr td {
   background: #f5f5f5;
   box-sizing: border-box;
   border-bottom: 2px solid var(--Azul-medio);
-  display: none
 }
 
 
@@ -3941,7 +3953,7 @@ a.dt-button.active:not(.disabled) {
 
 .weather-one h2 {
   display: inline-block;
-  float: right;
+  /* float: right; */
   font-size: 48px;
   color: #ffffff;
 }
@@ -4060,7 +4072,6 @@ a.dt-button.active:not(.disabled) {
 
 .invoice-logo img {
   display: block;
-  vertical-align: top;
   width: 50px;
 }
 
@@ -7208,8 +7219,8 @@ h6.h1 {
 }
 
 .no-select-arrow {
-  -moz-appearance: none !important;
-  -webkit-appearance: none !important;
+  /* -moz-appearance: none !important;
+  -webkit-appearance: none !important; */
   border: 1px solid #e7e7e7;
 }
 
@@ -7853,6 +7864,13 @@ h6.h1 {
   .width-90 {
     width: 90%;
     margin: 0 auto;
+  }
+
+/* Arreglo de la ubicacion del footer en pantallas de clientsite, admin, fundacion, cliente */
+
+  .login{
+    /* padding-top: 7%; */
+    min-height: 855px;
   }
 }
 
