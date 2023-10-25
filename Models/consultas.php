@@ -5,8 +5,7 @@ class Consultas
 
     //Función registro de usuario externo
 
-    public function insertarUserEx($id, $nombre, $apellido, $email, $telefono, $claveMd, $rol, $estado, $tipo_doc)
-    {
+    public function insertarUserEx($id, $nombre, $apellido, $email, $telefono, $claveMd, $rol, $estado, $tipo_doc){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -62,8 +61,7 @@ class Consultas
         }
     }
 
-    public function insertarFundacionEx($id, $nombre, $email, $telefono, $claveMd, $rol, $estado, $tipo_doc)
-    {
+    public function insertarFundacionEx($id, $nombre, $email, $telefono, $claveMd, $rol, $estado, $tipo_doc){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -120,8 +118,7 @@ class Consultas
 
     //Dashboard Admin 
 
-    public function insertarUserAdmin($id_user, $tipo_doc, $nombre, $apellido, $email, $telefono, $claveMd, $rol, $estado, $foto)
-    {
+    public function insertarUserAdmin($id_user, $tipo_doc, $nombre, $apellido, $email, $telefono, $claveMd, $rol, $estado, $foto){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -176,8 +173,7 @@ class Consultas
         }
     }
 
-    public function mostrarUserAdmin($id_user)
-    {
+    public function mostrarUserAdmin($id_user){
 
         $f = null;
 
@@ -205,8 +201,7 @@ class Consultas
         return $f;
     }
 
-    public function mostrarAdministradoresAdmin()
-    {
+    public function mostrarAdministradoresAdmin(){
 
         $f = null;
 
@@ -232,8 +227,7 @@ class Consultas
         return $f;
     }
 
-    public function actualizarAdministradorAdmin($id, $tipo_doc, $nombre, $apellido, $email, $telefono, $rol, $estado)
-    {
+    public function actualizarAdministradorAdmin($id, $tipo_doc, $nombre, $apellido, $email, $telefono, $rol, $estado){
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
@@ -256,8 +250,7 @@ class Consultas
 
     }
 
-    public function eliminarAdministradorAdmin($id)
-    {
+    public function eliminarAdministradorAdmin($id){
 
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
@@ -273,8 +266,7 @@ class Consultas
         echo "<script> location.href='../Views/homeAdministrador/ver_administradores.php' </script>";
     }
 
-    public function mostrarClientesAdmin()
-    {
+    public function mostrarClientesAdmin(){
 
         $f = null;
 
@@ -300,8 +292,7 @@ class Consultas
         return $f;
     }
 
-    public function actualizarClienteAdmin($id, $tipo_doc, $nombre, $apellido, $email, $telefono, $rol, $estado)
-    {
+    public function actualizarClienteAdmin($id, $tipo_doc, $nombre, $apellido, $email, $telefono, $rol, $estado){
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
@@ -324,8 +315,7 @@ class Consultas
 
     }
 
-    public function eliminarClienteAdmin($id)
-    {
+    public function eliminarClienteAdmin($id){
 
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
@@ -341,8 +331,7 @@ class Consultas
         echo "<script> location.href='../Views/homeAdministrador/ver_clientes.php' </script>";
     }
 
-    public function insertarFundacionAdmin($id, $tipo_doc, $nombre, $email, $telefono, $estado, $rol, $claveMd, $foto)
-    {
+    public function insertarFundacionAdmin($id, $tipo_doc, $nombre, $email, $telefono, $estado, $rol, $claveMd, $foto){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -407,8 +396,7 @@ class Consultas
         }
     }
 
-    public function mostrarFundacionesAdmin()
-    {
+    public function mostrarFundacionesAdmin(){
 
         $f = null;
 
@@ -434,8 +422,7 @@ class Consultas
         return $f;
     }
 
-    public function mostrarFundacionAdmin($id_fundacion)
-    {
+    public function mostrarFundacionAdmin($id_fundacion){
 
         $f = null;
 
@@ -458,8 +445,7 @@ class Consultas
         return $f;
     }
 
-    public function actualizarFundacionAdmin($id, $tipo_doc, $nombre, $email, $telefono, $rol, $estado)
-    {
+    public function actualizarFundacionAdmin($id, $tipo_doc, $nombre, $email, $telefono, $rol, $estado){
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
@@ -481,8 +467,7 @@ class Consultas
 
     }
 
-    public function eliminarFundacionAdmin($id)
-    {
+    public function eliminarFundacionAdmin($id){
 
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
@@ -505,8 +490,7 @@ class Consultas
         echo "<script> location.href='../Views/homeAdministrador/ver_fundaciones.php' </script>";
     }
 
-    public function insertarEveFun($eveNombre, $eveFecha, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId)
-    {
+    public function insertarEveFun($eveNombre, $eveFecha, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -559,8 +543,7 @@ class Consultas
         }
     }
 
-    public function mostrarEveFun()
-    {
+    public function mostrarEveFun(){
 
         $f = null;
 
@@ -581,8 +564,7 @@ class Consultas
         return $f;
     }
 
-    public function mostrarEveFunEd($eveId)
-    {
+    public function editarEveFun($eveId){
 
         $f = null;
 
@@ -605,8 +587,7 @@ class Consultas
         return $f;
     }
 
-    public function actualizarEveFun($eveId, $eveNombre, $eveFecha,  $eveDireccion, $eveDescripcion,  $eveEstado)
-    {
+    public function actualizarEveFun($eveId, $eveNombre, $eveFecha,  $eveDireccion, $eveDescripcion,  $eveEstado){
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
@@ -626,8 +607,7 @@ class Consultas
 
     }
 
-    public function eliminarEveFun($eveId)
-    {
+    public function eliminarEveFun($eveId){
 
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
@@ -644,8 +624,7 @@ class Consultas
     }
 
 
-    public function insertarMasFun($nombre, $edad, $historia, $vacunas, $raza, $estSalud, $foto, $fecha, $funId)
-    {   
+    public function insertarMasFun($nombre, $edad, $historia, $vacunas, $raza, $estSalud, $foto, $fecha, $funId){   
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -673,8 +652,7 @@ class Consultas
         echo "<script> location.href='../Views/homeFundacion/registrar_mascotas.php' </script>";
     }
 
-    public function mostrarMasFun()
-    {
+    public function mostrarMasFun(){
 
         $f = null;
 
@@ -695,8 +673,50 @@ class Consultas
         return $f;
     }
 
-    public function eliminarMasFun($masId)
-    {
+    public function editarMasFun($masId){
+
+        $f = null;
+
+        //Creamos el objeto de la conexion
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $buscar = "SELECT * FROM tbl_mascotas WHERE masId=:masId";
+
+        $result = $conexion->prepare($buscar);
+
+        $result->bindParam(':masId', $masId);
+
+        $result->execute();
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+
+        return $f;
+    }
+
+    public function actualizarMasFun($masId, $masNombre, $masEdad, $masHistoria, $masVacunas, $masEstSalud){
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE tbl_mascotas SET masNombre=:masNombre, masEdad=:masEdad, masHistoria=:masHistoria, masVacunas=:masVacunas, masEstSalud=:masEstSalud WHERE masId=:masId ";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam(":masId", $masId);
+        $result->bindParam(":masNombre", $masNombre);
+        $result->bindParam(":masEdad", $masEdad);
+        $result->bindParam(":masHistoria", $masHistoria);
+        $result->bindParam(":masVacunas", $masVacunas);
+        $result->bindParam(":masEstSalud", $masEstSalud);
+        $result->execute();
+
+        echo '<script> alert("Información de mascota actualizada exitosamente") </script>';
+        echo "<script> location.href='../Views/homefundacion/modificar_mascotas.php?id=$masId' </script>";
+
+    }
+
+    public function eliminarMasFun($masId){
 
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
@@ -712,8 +732,7 @@ class Consultas
         echo "<script> location.href='../Views/homefundacion/ver_mascotas.php' </script>";
     }
 
-    public function VerPerfil($id)
-    {
+    public function VerPerfil($id){
 
         $f = null;
 
@@ -742,8 +761,7 @@ class Consultas
         return $f;
     }
 
-    public function modificarCuentaAdmin($id, $tipo_doc, $nombre, $apellido, $email, $telefono)
-    {
+    public function modificarCuentaAdmin($id, $tipo_doc, $nombre, $apellido, $email, $telefono){
 
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
@@ -765,8 +783,7 @@ class Consultas
 
     }
 
-    public function actualizarFotoAdmin($id, $foto)
-    {
+    public function actualizarFotoAdmin($id, $foto){
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
@@ -783,8 +800,7 @@ class Consultas
         echo "<script> location.href='../Views/homeAdministrador/perfil.php' </script>";
     }
 
-    public function actualizarClaveAdmin($id, $claveMd)
-    {
+    public function actualizarClaveAdmin($id, $claveMd){
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
@@ -803,8 +819,7 @@ class Consultas
 
     //Dashboard Fundacion
 
-    public function modificarCuentaFundacion($id, $tipo_doc, $nombre, $email, $telefono)
-    {
+    public function modificarCuentaFundacion($id, $tipo_doc, $nombre, $email, $telefono){
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
@@ -826,8 +841,7 @@ class Consultas
         
     }
 
-    public function actualizarLogoFundacion($id, $logo)
-    {
+    public function actualizarLogoFundacion($id, $logo){
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
@@ -851,8 +865,7 @@ class Consultas
 class ValidarSesion
 {
 
-    public function iniciarSesion($email, $clave)
-    {
+    public function iniciarSesion($email, $clave){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -893,7 +906,7 @@ class ValidarSesion
 
                         case '1':
                             echo '<script> alert("Bienvenid@ ' . $f['nombre'] . '") </script>';
-                            echo '<script> location.href="../Views/homeAdministrador/home.php" </script>';
+                            echo '<script> location.href="../index.php" </script>';
                             break;
 
                         case '2':
@@ -903,7 +916,7 @@ class ValidarSesion
 
                         case '3':
                             echo '<script> alert("Bienvenido") </script>';
-                            echo "<script> location.href='../Views/homeClient/home.php' </script>";
+                            echo "<script> location.href='../index.php' </script>";
                             break;
                     }
                 } else {
@@ -921,7 +934,7 @@ class ValidarSesion
     }
 
     public function cerrarSesion()
-    {
+{
 
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();

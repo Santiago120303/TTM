@@ -12,10 +12,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto main-nav">
           <li class="nav-item">
-                <a class="nav-link" href="../../index.php">Inicio</a>
+                <a class="nav-link" href="">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="home.php">Dashboard</a>
+                <a class="nav-link" href="mascotas.php">Fundaciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="events.php">Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="home.php">Eventos</a>
               </li>
               <!-- <li class="nav-item">
 									<a class="nav-link" href="Views/clientSite/donation.php">Donación</a>
@@ -27,7 +33,7 @@
                         <a class="nav-link login-button nav-button w-1" href="perfil.php">Editar Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <input type="button" id="open" class="nav-link login-button nav-button w-1" value="Cerrar Sesión">
+                        <input type="button" id="open" class="nav-link login-button nav-button w-1" value="Cerrar Sesion">
                     </li>
                 </ul>
           </div>
@@ -37,18 +43,18 @@
   </div>
 </header>
 <?php
-    confirmarCierreSesion();
+              confirmarCierreSesion();
 ?>
 
 <script src="https://unpkg.com/jquery@3.7.0/dist/jquery.js"></script>
 <script type="text/javascript">
   $(document).ready(function () {
     $("#open").on("click", function () {
-      $("#popup").fadeIn(10);
+      $("#popup").fadeIn(100);
     });
 
     $("#close").on("click", function () {
-      $("#popup").fadeOut(10);
+      $("#popup").fadeOut(100);
     });
   });
 </script>

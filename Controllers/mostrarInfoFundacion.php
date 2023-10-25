@@ -37,7 +37,7 @@ function cargarEventosEditar()
 
     //Enviamos la PK a una función de la clase consultas
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarEveFunEd($eveId);
+    $result = $objConsultas->editarEveFun($eveId);
 
     //Pintamos la información consultada en el artefacto (FORM)
 
@@ -101,11 +101,63 @@ function cargarMascotas()
                     <td>' . $f['masRaza'] . '</td>
                     <td>' . $f['masVacunas'] . '</td>
                     <td>' . $f['masEstSalud'] . '</td>
-                    <td><a href="#" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
+                    <td><a href="modificar_mascotas.php?id=' . $f['masId'] . '" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
                     <td><a href="../../Controllers/eliminarMasFun.php?id=' . $f['masId'] . '" class="btn btn-danger"><i class="ti-trash"></i> Eliminar</a></td>
                 </tr>
                 ';
         }
+    }
+}
+
+function cargarMascotasEditar()
+{
+    // Aterrizamos la PK enviada desde la tabla 
+    $masId = $_GET['id'];
+
+    //Enviamos la PK a una función de la clase consultas
+    $objConsultas = new Consultas();
+    $result = $objConsultas->editarMasFun($masId);
+
+    //Pintamos la información consultada en el artefacto (FORM)
+
+    foreach ($result as $f) {
+        echo  '
+        <a class="d-block w-100 text-right font-weight-bold" href="ver_mascotas.php"><i class="fa-solid fa-arrow-left mr-2"></i>Volver</a>
+            
+            <form action="../../Controllers/actualizarMasFun.php?id='. $f['masId'] .'" method="POST" enctype="multipart/form-data">
+                               
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label>Nombre</label>
+                        <input type="text" value="' . $f['masNombre'] . '" class="form-control" placeholder="Ej: Simba" required name="masNombre">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Edad (años)</label>
+                        <input type="text" value="' . $f['masEdad'] . '" class="form-control" placeholder="Ej: 5 " required name="masEdad">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Historia</label>
+                        <input type="text" value="' . $f['masHistoria'] . '" class="form-control" placeholder="Ingresa aquí la historia de la mascota." required name="masHistoria">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Vacunas</label>
+                        <input type="text" value="' . $f['masVacunas'] . '" class="form-control" placeholder="Ingresa información sobre las vacunas que tiene la mascota." required name="masVacunas">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Raza</label>
+                        <input type="text" value="' . $f['masRaza'] . '" class="form-control" placeholder="Ingresa la raza de la mascota." required name="masRaza">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Estado de salud</label>
+                        <input type="text" value="' . $f['masEstSalud'] . '" class="form-control" placeholder="Describe el estado de salud de la mascota." required name="masEstSalud">
+                    </div>
+                                
+                </div>  
+
+                <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30">Editar información de mascota</button>
+
+            </form>
+            ';
     }
 }
 

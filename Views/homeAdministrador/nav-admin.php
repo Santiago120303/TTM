@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <nav class="navbar navbar-expand-lg navbar-light navigation">
-          <a class="navbar-brand" href="home.php">
+          <a class="navbar-brand" href="../../index.php">
             <img src="../images/logo.png" alt="Logo TTM" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
