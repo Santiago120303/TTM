@@ -2535,13 +2535,13 @@ transform: translate3d(-2070px, 0px, 0px);
 transition: transform 3000ms ease 0s !important;
 }
 
-/* icons style  */
+/* icons style butones de editar y eliminar */
 .fa-pencil{
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .fa-trash{
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 /* background style */
@@ -2715,11 +2715,11 @@ tbody tr td {
 
 .card-header-right-icon {
   display: inline-block;
-  float: right;
+  /* float: right; */
 }
 
 .card-header-right-icon li {
-  float: right;
+  /* float: right; */
   padding-left: 14px;
   color: #868e96;
   cursor: pointer;
@@ -3053,7 +3053,7 @@ span.badge {
 
 .dataTables_length {
   display: inline-block;
-  float: left;
+  /* float: left; */
   margin-right: 30px;
 }
 
@@ -3455,7 +3455,7 @@ a.dt-button.active:not(.disabled) {
   transition: all 0.4s ease-in-out;
   display: inline-block;
   vertical-align: middle;
-  float: left;
+  /* float: left; */
 }
 
 .header-icon i,
@@ -3891,7 +3891,7 @@ a.dt-button.active:not(.disabled) {
   cursor: pointer;
   transition: all 0.2s linear;
   text-align: center;
-  float: right;
+  /* float: right; */
 }
 
 .chat-widget .bottom_wrapper .send_message .text {

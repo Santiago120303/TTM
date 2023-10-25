@@ -106,32 +106,6 @@ function cargarAdministradorEditar()
     }
 }
 
-function cargarAdministradoresReporte()
-{
-
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarAdministradoresAdmin();
-
-    if (!isset($result)) {
-        echo '<h2>NO HAY USUARIOS REGISTRADOS</h2>';
-    } else {
-
-        foreach ($result as $f) {
-            echo '
-                <tr>
-                    <td>' . $f['id_user'] . '</td>
-                    <td>' . $f['nombre'] . '</td>
-                    <td>' . $f['apellido'] . '</td>
-                    <td>' . $f['email'] . '</td>
-                    <td>' . $f['telefono'] . '</td>
-                    <td>' . $f['estado'] . '</td>
-                    <td>' . $f['rol'] . '</td>
-                </tr>
-                ';
-        }
-    }
-}
-
 function cargarClientes()
 {
 
@@ -341,7 +315,7 @@ function cargarFundacionEditar()
                         </select>
                 </div>
             </div>
-            <button type="submit" class="btn btn-main-sm btn-flat mb-30 mt-30 w-100" >Actualizar datos de usuario</button>
+            <button type="submit" class="btn btn-main-sm btn-flat mb-30 mt-30 w-100" >Actualizar datos de fundación</button>
             
         </form>
             ';

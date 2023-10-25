@@ -14,7 +14,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Administrador - Administradores Resgistrados</title>
+  <title>Administrador - Clientes Resgistrados</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,7 +66,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
           <div class="col-lg-9">
           <!-- Recently Favorited -->
           <div class="widget dashboard-container my-adslist">
-            <h3 class="widget-header">Administradores registrados</h3>
+            <h3 class="widget-header">Clientes registrados</h3>
             <div class="row">
               <div class="col-lg-12">
                 <div class="card">
@@ -78,7 +78,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <th>Foto</th>
                             <th>Identificación</th>
                             <th>Nombre</th>
-                            <th>Email</th>
+                            <th>email</th>
                             <th>Estado</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
@@ -86,7 +86,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         </thead>
                         <tbody>
                           <?php
-                                cargarAdministradores();
+                            cargarAdministradores();
                           ?>
                         </tbody>
                       </table>

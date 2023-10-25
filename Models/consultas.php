@@ -898,7 +898,7 @@ class ValidarSesion
 
                         case '2':
                             echo '<script> alert("Bienvenida fundación ' . $f['nombre'] . '  ") </script>';
-                            echo "<script> location.href='../Views/homeFundacion/home.php' </script>";
+                            echo "<script> location.href='../Views/homeFundacion/fundacion.php' </script>";
                             break;
 
                         case '3':

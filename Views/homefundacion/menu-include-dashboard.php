@@ -18,21 +18,20 @@
       <ul id="menu">
         <li class="nav-item dropdown dropdown-slide"> <a class="nav-link dropdown-toggle"><i class="fa fa-solid fa-plus"></i>Registrar</a>
             <ul class="drop-down-menu">
-                <li><a class="dropdown-item" href="registrar_usuario.php"><i class="fa fa-user"></i>Usuario</a></li>
-                <li><a class="dropdown-item" href="registrar_fundacion.php"><i class="fa fa-home"></i>Fundación</a></li>
+                <li><a class="dropdown-item" href="registrar_mascotas.php"><i class="fa fa-user"></i>Mascotas</a></li>
+                <li><a class="dropdown-item" href="registrar_eventos.php"><i class="fa fa-home"></i>Eventos</a></li>
             </ul>
         </li>
         <li class="nav-item dropdown dropdown-slide"> <a class="nav-link dropdown-toggle"><i class="fa fa-solid fa-eye"></i>Ver</a>
             <ul class="drop-down-menu">
-                <li><a class="dropdown-item" href="ver_administradores.php"><i class="fa fa-user"></i>Administradores</a></li>
-                <li><a class="dropdown-item" href="ver_clientes.php"><i class="fa fa-user"></i>Clientes</a></li>
-                <li><a class="dropdown-item" href="ver_fundaciones.php"><i class="fa fa-home"></i>Fundaciones</a></li>
+                <li><a class="dropdown-item" href="ver_mascotas.php"><i class="fa fa-user"></i>Mascotas</a></li>
+                <li><a class="dropdown-item" href="ver_eventos.php"><i class="fa fa-user"></i>Eventos</a></li>
             </ul>
         </li>
         <li class="nav-item dropdown dropdown-slide"> <a class="nav-link dropdown-toggle"><i class="fa-solid fa-file-arrow-down"></i>Reportes</a>
             <ul class="drop-down-menu">
-                <li><a class="dropdown-item" href="reporte_clientes.php"><i class="fa fa-user"></i>Clientes</a></li>
-                <li><a class="dropdown-item" href="reporte_fundaciones.php"><i class="fa fa-home"></i>Fundaciones</a></li>
+                <li><a class="dropdown-item" href="reporte_mascotas.php"><i class="fa fa-user"></i>Mascotas</a></li>
+                <li><a class="dropdown-item" href="reporte_eventos.php"><i class="fa fa-home"></i>Eventos</a></li>
             </ul>
         </li>
       </ul>
