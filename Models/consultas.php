@@ -906,7 +906,7 @@ class ValidarSesion
 
                         case '1':
                             echo '<script> alert("Bienvenid@ ' . $f['nombre'] . '") </script>';
-                            echo '<script> location.href="../index.php" </script>';
+                            echo '<script> location.href="../Views/homeAdministrador/home.php" </script>';
                             break;
 
                         case '2':
@@ -916,7 +916,7 @@ class ValidarSesion
 
                         case '3':
                             echo '<script> alert("Bienvenido") </script>';
-                            echo "<script> location.href='../index.php' </script>";
+                            echo "<script> location.href='../Views/homeClient/home.php' </script>";
                             break;
                     }
                 } else {

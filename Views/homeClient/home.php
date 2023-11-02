@@ -1,5 +1,11 @@
-<!DOCTYPE html>
+<?php
+  require_once("../../Models/conexion.php");
+  require_once("../../Models/consultas.php");
+  require_once("../../Models/seguridadClient.php");
+  require_once("../../Controllers/mostrarInfoClient.php");
+?>
 
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -20,26 +26,26 @@
 	<meta name="theme-name" content="classimax" />
 
 	<!-- favicon -->
-	<link href="Views/images/favicon.png" rel="shortcut icon">
+	<link href="../images/favicon.png" rel="shortcut icon">
 
 	<!-- 
   Essential stylesheets
   =====================================-->
-	<link href="Views/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<link href="Views/plugins/bootstrap/bootstrap-slider.css" rel="stylesheet">
-	<link href="Views/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="Views/plugins/slick/slick.css" rel="stylesheet">
-	<link href="Views/plugins/slick/slick-theme.css" rel="stylesheet">
-	<link href="Views/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-
-	<link href="Views/css/style.css" rel="stylesheet">
+	<link href="../plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="../plugins/bootstrap/bootstrap-slider.css" rel="stylesheet">
+	<link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="../plugins/slick/slick.css" rel="stylesheet">
+	<link href="../plugins/slick/slick-theme.css" rel="stylesheet">
+	<link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+..
+	<link href="../css/style.css" rel="stylesheet">
 
 </head>
 
 <body class="body-wrapper">
 
 	<?php
-		include("Views/homeAdministrador/nav-admin.php");
+		include("nav-cliente.php");
 	?>
 
 	<!--===============================
@@ -91,13 +97,13 @@
 							<div class="product-item bg-light">
 								<div class="card">
 									<div class="thumb-content">
-										<a href="Views/clientSite/fundaciones.php">
+										<a href="../clientSite/fundaciones.php">
 											<img class="card-img-top img-fluid"
-												src="Views/images/products/products-1.jpg" alt="Card image cap">
+												src="../images/products/products-1.jpg" alt="Card image cap">
 										</a>
 									</div>
 									<div class="card-body">
-										<h4 class="card-title"><a href="Views/clientSite/fundaciones.php">Fundaciones</a></h4>
+										<h4 class="card-title"><a href="../clientSite/fundaciones.php">Fundaciones</a></h4>
 										<p class="card-text">En nuestro sitio, tendrás acceso a una amplia gama de
 											fundaciones de animales ubicadas en Bogotá. En cada perfil, encontrarás
 											información esencial detallada sobre cada una de estas organizaciones.</p>
@@ -132,13 +138,13 @@
 							<div class="product-item bg-light">
 								<div class="card">
 									<div class="thumb-content">
-										<a href="Views/clientSite/mascotas.php">
+										<a href="../clientSite/mascotas.php">
 											<img class="card-img-top img-fluid"
-												src="Views/images/products/products-3.png" alt="Card image cap">
+												src="../images/products/products-3.png" alt="Card image cap">
 										</a>
 									</div>
 									<div class="card-body">
-										<h4 class="card-title"><a href="Views/clientSite/mascotas.php">Mascotas</a></h4>
+										<h4 class="card-title"><a href="../clientSite/mascotas.php">Mascotas</a></h4>
 										<p class="card-text">A través de nuestra plataforma, te brindamos la oportunidad
 											de descubrir una amplia diversidad de adorables animales que están en busca
 											de un hogar amoroso. ¡No pierdas tiempo, únete a nosotros y abre tus brazos
@@ -153,13 +159,13 @@
 							<div class="product-item bg-light">
 								<div class="card">
 									<div class="thumb-content">
-										<a href="Views/clientSite/events.php">
+										<a href="../clientSite/events.php">
 											<img class="card-img-top img-fluid"
-												src="Views/images/products/products-4.png" alt="Card image cap">
+												src="../images/products/products-4.png" alt="Card image cap">
 										</a>
 									</div>
 									<div class="card-body">
-										<h4 class="card-title"><a href="Views/clientSite/events.php">Eventos</a></h4>
+										<h4 class="card-title"><a href="../clientSite/events.php">Eventos</a></h4>
 										<p class="card-text">Explora nuestra plataforma y sumérgete en una amplia
 											variedad de eventos respaldados por diversas fundaciones. Regístrate de
 											manera sencilla y lleva un registro de tus participaciones. Tu compromiso
@@ -176,32 +182,6 @@
 		</div>
 	</section>
 
-	<!--====================================
-=            Call to Action            =
-=====================================-->
-
-	<section class="call-to-action overly bg-3 section-sm">
-		<!-- Container Start -->
-		<div class="container">
-			<div class="row justify-content-md-center text-center">
-				<div class="col-md-8">
-					<div class="content-holder">
-						<h2>¡Únete a la acción y sé parte del cambio! Desde donaciones que salvan vidas hasta adopciones
-							que llenan de amor, cada acción cuenta. Regístrate hoy y contribuye al impacto positivo.
-							¡Actúa ahora!</h2>
-						<ul class="list-inline mt-30">
-							<li class="list-inline-item"><a class="btn btn-main"
-									href="Views/clientSite/login.php">Ingresar</a></li>
-							<li class="list-inline-item"><a class="btn btn-light"
-									href="Views/clientSite/register.php">Registrarse</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Container End -->
-	</section>
-
 	<!--============================
 =            Footer            =
 =============================-->
@@ -213,7 +193,7 @@
 				<div class="col-lg-4 text-center text-lg-left mb-3 mb-lg-0">
 					<!-- logo -->
 					<a class="navbar-brand" href="index.php">
-						<img class="m0a" src="Views/images/logo-footer.png" alt="Logo TTM">
+						<img class="m0a" src="../images/logo-footer.png" alt="Logo TTM">
 					</a>
 				</div>
 				<div class="col-lg-4 text-center mb-3 mb-lg-0">
@@ -249,19 +229,19 @@
 	<!-- 
 Essential Scripts
 =====================================-->
-	<script src="Views/plugins/jquery/jquery.min.js"></script>
-	<script src="Views/plugins/bootstrap/popper.min.js"></script>
-	<script src="Views/plugins/bootstrap/bootstrap.min.js"></script>
-	<script src="Views/plugins/bootstrap/bootstrap-slider.js"></script>
-	<script src="Views/plugins/tether/js/tether.min.js"></script>
-	<script src="Views/plugins/raty/jquery.raty-fa.js"></script>
-	<script src="Views/plugins/slick/slick.min.js"></script>
-	<script src="Views/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="../plugins/jquery/jquery.min.js"></script>
+	<script src="../plugins/bootstrap/popper.min.js"></script>
+	<script src="../plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="../plugins/bootstrap/bootstrap-slider.js"></script>
+	<script src="../plugins/tether/js/tether.min.js"></script>
+	<script src="../plugins/raty/jquery.raty-fa.js"></script>
+	<script src="../plugins/slick/slick.min.js"></script>
+	<script src="../plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
 	<!-- google map -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
-	<script src="Views/plugins/google-map/map.js" defer></script>
+	<script src="../plugins/google-map/map.js" defer></script>
 
-	<script src="Views/js/script.js"></script>
+	<script src="../js/script.js"></script>
 
 </body>
 

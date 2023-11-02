@@ -57,7 +57,7 @@
 
 <body class="body-wrapper">
   <?php
-    include("../../Header/nav-include.php");
+    include("nav-admin.php");
   ?>
 <!--==================================
 =            User Profile            =
