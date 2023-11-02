@@ -106,7 +106,7 @@
 										<h4 class="card-title"><a href="../clientSite/fundaciones.php">Fundaciones</a></h4>
 										<p class="card-text">En nuestro sitio, tendrás acceso a una amplia gama de
 											fundaciones de animales ubicadas en Bogotá. En cada perfil, encontrarás
-											información esencial detallada sobre cada una de estas organizaciones.</p>
+											información esencial detallada sobre cada una de estas organizaciones. </p>
 									</div>
 								</div>
 							</div>
