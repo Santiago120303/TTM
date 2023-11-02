@@ -298,7 +298,7 @@ Essential Scripts
 	<script src="Views/plugins/raty/jquery.raty-fa.js"></script>
 	<script src="Views/plugins/slick/slick.min.js"></script>
 	<script src="Views/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-	<!-- g map -->
+	<!-- google map -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 	<script src="Views/plugins/google-map/map.js" defer></script>
 
