@@ -422,7 +422,49 @@ class Consultas
 
         return $f;
     }
-
+    public function mostrarFundacionesClientsite()
+    {
+        $fundaciones = null;
+    
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consultar = "SELECT tbl_users.id_user, tbl_users.nombre, tbl_users.telefono, tbl_users.email, tbl_localidad.localidad, tbl_fundaciones.foto_fundacion
+        FROM ((tbl_fundaciones
+        INNER JOIN tbl_localidad ON tbl_fundaciones.cod_localidad_fk = tbl_localidad.cod_localidad)
+        INNER JOIN tbl_users ON tbl_fundaciones.id_user_fundacion_fk = tbl_users.id_user)";
+    
+        $result = $conexion->prepare($consultar);
+        $result->execute(); 
+    
+        while ($resultado = $result->fetch()) {
+            $fundaciones[] = $resultado;
+        }
+    
+        return $fundaciones;
+    }
+    public function mostrarMascotasClientsite()
+    {
+        $mascotas = null;
+    
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consultar = "SELECT tbl_mascotas.masNombre, tbl_mascotas.masEdad, tbl_mascotas.masRaza, tbl_mascotas.foto
+        FROM ((tbl_mascotas
+        INNER JOIN tbl_mascotas ON tbl_fundaciones.id_fun_mas_fk = tbl_fundaciones.id_user_fundacion_fk)";
+    
+        $result = $conexion->prepare($consultar);
+        $result->execute(); 
+    
+        while ($resultado = $result->fetch()) {
+            $mascotas[] = $resultado;
+        }
+    
+        return $mascotas;
+    }
     public function mostrarFundacionAdmin($id_fundacion){
 
         $f = null;

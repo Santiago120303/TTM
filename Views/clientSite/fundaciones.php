@@ -1,4 +1,19 @@
+<?php
+
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Controllers/mostrarInfoClientSite.php");
+
+?>
+
 <!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
 
 <html lang="en">
 
@@ -38,7 +53,7 @@
 		include("nav-clientSite.php");
 	?>
 
-	<section class="section-sm">
+<section class="section-sm">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -90,212 +105,18 @@
 				</div>
 				<div class="col-lg-9 col-md-8">
 					<div class="product-grid-list">
-						<div class="row mt-30">
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/fundaciones/fun1.png"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">Doggy in Home</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-paw"></i>Mascotas</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i
-															class="fa fa-calendar"></i>Eventos</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet,
-												consectetur adipisicing elit. Explicabo,
-												aliquam!</p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/fundaciones/fun2.png"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">Kitty in Home</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-paw"></i>Mascotas</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i
-															class="fa fa-calendar"></i>Eventos</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet,
-												consectetur adipisicing elit. Explicabo,
-												aliquam!</p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/fundaciones/fun3.png"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">Our Family</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-paw"></i>Mascotas</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i
-															class="fa fa-calendar"></i>Eventos</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet,
-												consectetur adipisicing elit. Explicabo,
-												aliquam!</p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/fundaciones/fun1.png"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">Doggy in Home</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-paw"></i>Mascotas</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i
-															class="fa fa-calendar"></i>Eventos</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet,
-												consectetur adipisicing elit. Explicabo,
-												aliquam!</p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/fundaciones/fun2.png"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">Kitty in Home</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-paw"></i>Mascotas</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i
-															class="fa fa-calendar"></i>Eventos</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet,
-												consectetur adipisicing elit. Explicabo,
-												aliquam!</p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/fundaciones/fun3.png"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">Our Family</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-paw"></i>Mascotas</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i
-															class="fa fa-calendar"></i>Eventos</a>
-												</li>
-											</ul>
-											<p class="card-text">Lorem ipsum dolor sit amet,
-												consectetur adipisicing elit. Explicabo,
-												aliquam!</p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+						<div class="row mt-30">	
+							<?php
+								cargarFundaciones();
+							?>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--============================
+
+<!--============================
 =            Footer            =
 =============================-->
 
