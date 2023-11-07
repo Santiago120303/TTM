@@ -18,7 +18,7 @@
           </a>
           <!-- Dropdown list -->
           <ul class="drop-down-menu">
-            <li><a class="dropdown-item" href="registrar_mascotas.php"><i class="fa fa-user"></i>Mascota</a></li>
+            <li><a class="dropdown-item" href="registrar_mascotas.php"><i class="fa fa-paw"></i>Mascota</a></li>
             <li><a class="dropdown-item" href="registrar_eventos.php"><i class="fa fa-home"></i>Evento</a></li>
             </li>
           </ul>
@@ -30,8 +30,9 @@
           </a>
           <!-- Dropdown list -->
           <ul class="drop-down-menu">
-            <li><a class="dropdown-item" href="ver_mascotas.php"><i class="fa fa-user"></i>Mascotas</a></li>
-            <li><a class="dropdown-item" href="ver_eventos.php"><i class="fa fa-user"></i>Eventos</a></li>
+            <li><a class="dropdown-item" href="ver_mascotas.php"><i class="fa fa-paw"></i>Mascotas</a></li>
+            <li><a class="dropdown-item" href="ver_eventos.php"><i class="fa fa-home"></i>Eventos</a></li>
+            <li><a class="dropdown-item" href="ver_adopciones.php"><i class="fa fa-file-text"></i>Adopciones</a></li>
             </li>
           </ul>
         </li>
@@ -42,8 +43,8 @@
           </a>
           <!-- Dropdown list -->
           <ul class="drop-down-menu">
-            <li><a class="dropdown-item" href="reporte_administradores.php"><i class="fa fa-user"></i>Mascotas</a></li>
-            <li><a class="dropdown-item" href="reporte_clientes.php"><i class="fa fa-user"></i>Eventos</a></li>
+            <li><a class="dropdown-item" href="reporte_administradores.php"><i class="fa fa-paw"></i>Mascotas</a></li>
+            <li><a class="dropdown-item" href="reporte_clientes.php"><i class="fa fa-home"></i>Eventos</a></li>
             </li>
           </ul>
         </li>

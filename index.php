@@ -271,11 +271,11 @@
 				<div class="col-lg-4">
 					<!-- Social Icons -->
 					<ul class="social-media-icons text-center text-lg-right">
-						<li><a class="fa fa-facebook" href="https://www.facebook.com/themefisher"></a></li>
-						<li><a class="fa fa-twitter" href="https://www.twitter.com/themefisher"></a></li>
-						<li><a class="fa fa-pinterest-p" href="https://www.pinterest.com/themefisher"></a>
+						<li><a class="fa fa-facebook" href="https://www.facebook.com/profile.php?id=61551249643390" target="_blank"></a></li>
+						<li><a class="fa fa-instagram" href="#"></a></li>
+						<li><a class="fa fa-pinterest-p" href="#"></a>
 						</li>
-						<li><a class="fa fa-github-alt" href="https://www.github.com/themefisher"></a></li>
+						<li><a class="fa fa-github-alt" href="#"></a></li>
 					</ul>
 				</div>
 			</div>

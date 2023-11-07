@@ -28,7 +28,7 @@
   </div>
 </header>
 <?php
-              confirmarCierreSesion();
+    confirmarCierreSesion();
 ?>
 
 <script src="https://unpkg.com/jquery@3.7.0/dist/jquery.js"></script>
