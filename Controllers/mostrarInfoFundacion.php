@@ -161,6 +161,33 @@ function cargarMascotasEditar()
     }
 }
 
+function cargarFormularios()
+{
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarFormFun();
+
+    if (!isset($result)) {
+        echo '<h2>NO HAY SOLICITUDES DE ADOPCIÓN</h2>';
+    } else {
+
+        foreach ($result as $f) {
+            echo '
+                <tr>
+                    <td><img src="../' . $f['foto'] . '" alt="Foto Mascota" style="width: 60px; height: 60px; border-radius: 25%"></td>
+                    <td>' . $f['masNombre'] . '</td>
+                    <td>' . $f['masEdad'] . '</td>
+                    <td>' . $f['masRaza'] . '</td>
+                    <td>' . $f['nombre'] . '</td>
+                    <td>' . $f['telefono'] . '</td>
+                    <td><a href="" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
+                    <td><a href="../../Controllers/eliminarFormFun.php?id=' . $f['adopId'] . '" class="btn btn-danger"><i class="ti-trash"></i> Eliminar</a></td>
+                </tr>
+                ';
+        }
+    }
+}
+
 function perfil()
 {
 

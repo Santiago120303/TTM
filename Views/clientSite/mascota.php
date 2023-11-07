@@ -56,7 +56,7 @@
 							<img style="width: 100%; margin: 0 auto;" src="../../Uploads/mascotas/mascotaEsp.jpg"
 								alt="article-01">
 							<p style="text-align:center; margin-top:15px;">Fundación cat in home Jul 19, 2023 </p>
-							<input type="button" id="open" class="btn btn-login" value="adoptar">
+							<input type="button" id="open" class="btn btn-login" href="../../Views/clientSite/for_adop.php" value="adoptar">
 							<h5 class="widget-header mt-4">Acerca de Simba</h5>
 							<ul class="category-list">
 								<li><strong>Nombre:</strong> Simba</li>
@@ -94,8 +94,6 @@
 						<h4>Si estás interesado en adoptar a Simba, por favor, ponte en contacto con nosotros para obtener
 							más información y programar una visita. ¡Simba está ansioso por encontrar a su familia perfecta
 							y comenzar una nueva aventura juntos!</h4>
-	
-	
 					</article>
 	
 				</div>
@@ -107,7 +105,7 @@
 			<h3>¿Quieres adoptar esta mascota?</h3>
 			<p> Si estás seguro de que deseas cerrar sesión, puedes hacerlo haciendo clic en el botón "Sí, Cerrar sesión" a continuación. Si no estás seguro o has llegado aquí por error, simplemente has clic en el botón "No, Cancelar" y seguirás conectado.</p>
 			<a class="cancelar" href="#" id="close">No, Cancelar</a>
-			<a class="cerrar" href="../../Controllers/cerrarSesion.php" id="close">Sí, Cerrar sesión</a>
+			<a class="cerrar" href="../../Views/clientSite/for_adop.php" id="close">Sí, Cerrar sesión</a>
 		</div>
 	</div>    
 
