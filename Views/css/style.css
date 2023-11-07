@@ -392,13 +392,13 @@ button {
 
 .section {
   padding: 70px 0;
-  background-image: url(../images/bgsel.jpg) !important;
+  background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
 }
 
 .section-sm {
   padding: 50px 0;
-  background-image: url(../images/bgsel.jpg) !important;
+  background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
 }
 
@@ -726,14 +726,14 @@ ul.pagination .active a {
 .login{
   /* padding-top: 7%; */
   min-height: 671px;
-  background-image: url(../images/bgsel.jpg) !important;
+  background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
 }
 
 
 section.dashboard{
   min-height: 671px;
-  background-image: url(../images/bgsel.jpg) !important;
+  background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
 }
 
