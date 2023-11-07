@@ -183,7 +183,7 @@ function cargarClienteEditar()
             
                 <div class="form-group col-lg-6">
                         <label>Rol:</label>
-                        <select required name="rol" id="" class="form-control">
+                        <select disabled required name="rol" id="" class="form-control">
                             <option value="' . $f['cod_rol'] . '">' . $f['rol'] . '</option>
                             <option value="1">Administrador</option>
                             <option value="2">Fundacion</option>

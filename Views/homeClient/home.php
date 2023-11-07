@@ -37,7 +37,6 @@
 	<link href="../plugins/slick/slick.css" rel="stylesheet">
 	<link href="../plugins/slick/slick-theme.css" rel="stylesheet">
 	<link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-..
 	<link href="../css/style.css" rel="stylesheet">
 
 </head>
