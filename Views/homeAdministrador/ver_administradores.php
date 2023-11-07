@@ -14,7 +14,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Administrador - Administradores Resgistrados</title>
+  <title>Administrador - Clientes Resgistrados</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,8 +49,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 <body class="body-wrapper">
 
   <?php
-  include("nav-admin.php");
-?>
+    include("nav-admin.php");
+  ?>
   <!--==================================
 =            User Profile            =
 ===================================-->
@@ -78,7 +78,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <th>Foto</th>
                             <th>Identificación</th>
                             <th>Nombre</th>
-                            <th>Email</th>
+                            <th>email</th>
                             <th>Estado</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
@@ -86,7 +86,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         </thead>
                         <tbody>
                           <?php
-                                cargarAdministradores();
+                            cargarAdministradores();
                           ?>
                         </tbody>
                       </table>

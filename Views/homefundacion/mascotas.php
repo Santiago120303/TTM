@@ -1,11 +1,13 @@
 <?php
   require_once("../../Models/conexion.php");
   require_once("../../Models/consultas.php");
-  require_once("../../Models/seguridadClient.php");
-  require_once("../../Controllers/mostrarInfoClient.php");
+  require_once("../../Models/seguridadFundacion.php");
+  require_once("../../Controllers/mostrarInfoFundacion.php");
 ?>
 
 <!DOCTYPE html>
+
+
 <html lang="en">
 
 <head>
@@ -53,43 +55,16 @@
 	<section class="blog single-blog section">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8">
-					<article class="single-post">
-						<p class="text-right mb-0"><a href="fundaciones.php"><i class=" fa fa-chevron-left mr-1"></i>Volver</a></p>
-						<h2 >Doggy in Home  </h2>
-						<ul class="list-inline">
-							<li class="list-inline-item">por <a href="user-profile.html">Admin</a></li>
-							<li class="list-inline-item">Nov 22, 2016</li>
-						</ul>
-						<img src="../../Uploads/fundaciones/fun1.png" alt="article-01">
-						<p>Adopta No Compres fue creada oficialmente en julio del año 2013 como entidad Sin
-							ánimo de Lucro. Sin embargo, ya llevaba ocho años de trabajo independiente;
-							nace al ver la problemática de los animales abandonados, maltratados y con la
-							necesidad de cambiar la vida de todos aquellos perros y gatos que llegan a
-							nosotros con la esperanza de reescribir su historia.</p>
-
-						<p>La Fundación ejerce su labor en Bogotá y en otras zonas de Colombia que han sido
-							olvidadas, tales cómo: Barranquilla, Cali, Mompox, Riohacha, Montería, Tabio,
-							Funza, Malambo, Soledad, San Andrés, Providencia, Ciénaga, y todo lugar donde
-							podamos ofrecer ayuda, para rescatarlos, esterilizarlos mediante nuestras
-							brigadas, recuperarlos, rehabilitarlos y entregarlos en adopción responsable.
-							De esa forma, se les da una segunda oportunidad a cientos de animales que han
-							sido víctimas de maltrato, abandono y abuso.</p>
-
-						<p>Nuestro objetivo final es poder encontrar un hogar para cada uno de nuestros
-							rescatados. Por eso en Adopta No Compres ubicamos familias y personas
-							responsables interesadas en adoptar. Adicional a esta labor nos encargamos de
-							hacer el seguimiento a cada uno de los animales entregados.</p>
-
-					</article>
-
-				</div>
 				<div class="col-lg-4">
 					<div class="sidebar">
 						<!-- Archive Widget -->
 						<div class="widget archive">
 							<!-- Widget Header -->
-							<h5 class="widget-header">Eventos</h5>
+							<!-- <h5 class="widget-header">Patitas Solidarias</h5> -->
+							<a href="fundacion.php"><img class="w-100 mb-4" src="../../Uploads/fundaciones/logfun1.png" alt="logo de la fundacion"></a>
+							<input type="button" id="open" class="btn btn-login mb-4" value="Mascotas">
+							<input type="button" id="open" class="btn btn-login mb-4" value="Eventos">
+
 							<ul class="archive-list">
 								<li><a href="fundacion-events.html">Adopciones y Ferias de Adopción</a>
 								</li>
@@ -118,24 +93,51 @@
 								<!-- Jornadas que ofrecen servicios de salud gratuitos o a bajo costo, como chequeos médicos, desparasitación y cuidados veterinarios básicos. -->
 							</ul>
 						</div>
-						<!-- Category Widget -->
 						<div class="widget category">
 							<!-- Widget Header -->
 							<h5 class="widget-header">Adopciones</h5>
 							<ul class="category-list">
-								<li><a href="fundacion-adoption.html">perros <span
-											class="float-right">(2)</span></a></li>
-								<li><a href="fundacion-adoption.html">gatos <span
-											class="float-right">(5)</span></a></li>
-								<li><a href="fundacion-adoption.html">...<span
-											class="float-right">x</span></a></li>
-								<li><a href="fundacion-adoption.html">...<span
-											class="float-right">x</span></a></li>
-								<li><a href="fundacion-adoption.html">...<span
-											class="float-right">x</span></a></li>
+								<li><a href="fundacion-adoption.html">perros <span class="float-right">(2)</span></a>
+								</li>
+								<li><a href="fundacion-adoption.html">gatos <span class="float-right">(5)</span></a>
+								</li>
+								<li><a href="fundacion-adoption.html">...<span class="float-right">x</span></a></li>
+								<li><a href="fundacion-adoption.html">...<span class="float-right">x</span></a></li>
+								<li><a href="fundacion-adoption.html">...<span class="float-right">x</span></a></li>
 							</ul>
 						</div>
 					</div>
+				</div>
+				<div class="col-lg-8">
+					<article class="single-post">
+						<!-- <p class="text-right mb-0"><a href="fundaciones.php"><i class=" fa fa-chevron-left mr-1"></i>Volver</a></p> -->
+						<h2>Acerca de Patitas Solidarias </h2>
+						<ul class="list-inline">
+							<li class="list-inline-item">por <a href="user-profile.html">Admin</a></li>
+							<li class="list-inline-item">Nov 22, 2016</li>
+						</ul>
+						<img src="../../Uploads/fundaciones/fun1.png" alt="article-01">
+						<p>Adopta No Compres fue creada oficialmente en julio del año 2013 como entidad Sin
+							ánimo de Lucro. Sin embargo, ya llevaba ocho años de trabajo independiente;
+							nace al ver la problemática de los animales abandonados, maltratados y con la
+							necesidad de cambiar la vida de todos aquellos perros y gatos que llegan a
+							nosotros con la esperanza de reescribir su historia.</p>
+	
+						<p>La Fundación ejerce su labor en Bogotá y en otras zonas de Colombia que han sido
+							olvidadas, tales cómo: Barranquilla, Cali, Mompox, Riohacha, Montería, Tabio,
+							Funza, Malambo, Soledad, San Andrés, Providencia, Ciénaga, y todo lugar donde
+							podamos ofrecer ayuda, para rescatarlos, esterilizarlos mediante nuestras
+							brigadas, recuperarlos, rehabilitarlos y entregarlos en adopción responsable.
+							De esa forma, se les da una segunda oportunidad a cientos de animales que han
+							sido víctimas de maltrato, abandono y abuso.</p>
+	
+						<p>Nuestro objetivo final es poder encontrar un hogar para cada uno de nuestros
+							rescatados. Por eso en Adopta No Compres ubicamos familias y personas
+							responsables interesadas en adoptar. Adicional a esta labor nos encargamos de
+							hacer el seguimiento a cada uno de los animales entregados.</p>
+	
+					</article>
+	
 				</div>
 			</div>
 		</div>

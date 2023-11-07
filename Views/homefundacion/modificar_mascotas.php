@@ -2,8 +2,8 @@
 
     require_once("../../Models/conexion.php");
     require_once("../../Models/consultas.php");
-    require_once("../../Models/seguridadAdministrador.php");
-    require_once("../../Controllers/mostrarInfoAdmin.php");
+    require_once("../../Models/seguridadFundacion.php");
+    require_once("../../Controllers/mostrarInfoFundacion.php");
 
 ?>
 
@@ -15,7 +15,7 @@
 
     <!-- ** Basic Page Needs ** -->
     <meta charset="utf-8">
-    <title>Administrador - Modificar Cliente</title>
+    <title> Fundación - Modificar Mascotas</title>
 
     <!-- ** Mobile Specific Metas ** -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +44,7 @@
 <body class="body-wrapper">
 
     <?php
-        include("nav-admin.php");
+        include("nav-fundacion.php");
     ?>
 
     <!--==================================
@@ -57,19 +57,19 @@
             <!-- Row Start -->
             <div class="row">
                 <?php
-                  include("menu-include.php")//col-lg-3
+                  include("menu-include-dashboard.php")//col-lg-3
                 ?>
                 <div class="col-lg-9">
                     <!-- Recently Favorited -->
                     <div class="widget dashboard-container my-adslist">
-                        <h3 class="widget-header">Edición de cliente</h3>
+                        <h3 class="widget-header">Mascota registrado</h3>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="basic-elements">
                                             <?php
-                                                cargarClienteEditar()//col-lg-3
+                                                cargarMascotasEditar()//col-lg-3
                                              ?>
                                         </div>
                                     </div>

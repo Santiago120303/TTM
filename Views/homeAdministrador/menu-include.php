@@ -4,7 +4,6 @@
 
     #menu ul{
       display: none;
-      transition: 1s;
     }
   </style>
 </head>
@@ -32,7 +31,6 @@
         </li>
         <li class="nav-item dropdown dropdown-slide"> <a class="nav-link dropdown-toggle"><i class="fa-solid fa-file-arrow-down"></i>Reportes</a>
             <ul class="drop-down-menu">
-                <li><a class="dropdown-item" href="reporte_administradores.php"><i class="fa fa-user"></i>Administradores</a></li>
                 <li><a class="dropdown-item" href="reporte_clientes.php"><i class="fa fa-user"></i>Clientes</a></li>
                 <li><a class="dropdown-item" href="reporte_fundaciones.php"><i class="fa fa-home"></i>Fundaciones</a></li>
             </ul>
