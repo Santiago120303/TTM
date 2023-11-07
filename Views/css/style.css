@@ -29,7 +29,8 @@ body {
 }
 
 header{
-  background: var(--Humo);
+  background-image: url(../images/bag1.png);
+  background-size: 450px;
 }
 
 header div.header-container{
@@ -385,10 +386,14 @@ button {
 
 .section {
   padding: 70px 0;
+  background-image: url(../images/bgsel.jpg) !important;
+  background-size: cover !important;
 }
 
 .section-sm {
   padding: 50px 0;
+  background-image: url(../images/bgsel.jpg) !important;
+  background-size: cover !important;
 }
 
 .section-title {
@@ -715,14 +720,19 @@ ul.pagination .active a {
 .login{
   /* padding-top: 7%; */
   min-height: 671px;
+  background-image: url(../images/bgsel.jpg) !important;
+  background-size: cover !important;
 }
+
 
 section.dashboard{
   min-height: 671px;
+  background-image: url(../images/bgsel.jpg) !important;
+  background-size: cover !important;
 }
 
 .login-button {
-  border: 2px solid #dedede;
+  border: 2px solid #aeaeae;
   margin-right: 8px;
   background: var(--Gris-claro)!important;
   padding: 6px 20px !important;
@@ -1429,6 +1439,7 @@ li.nav-item.dropdown.dropdown-slide:hover a.nav-link.dropdown-toggle{
   font-size: 18px;
   margin-bottom: 5px;
   font-weight: 600;
+  text-align: center;
 }
 .product-item .card .card-body .card-text {
   color: #777;
@@ -2402,49 +2413,8 @@ form textarea {
   margin-right: 300px;
   padding-left: 40px;
   padding-right: 40px;
-}
-
-.form input {
-  border-radius: 8%;
-  border: 1px solid #4942e4;
-  background-color: #8696fe60;
-}
-
-.form label {
-  color: #000;
-}
-
-.form button {
-  display: flex-box;
-  margin-left: 300px;
-  margin-bottom: 40px;
-}
-
-#adop {
-  padding-top: 40px;
-}
-
-#adop p {
-  margin: 0;
-}
-
-.btn-form {
-  background-color: #8696fe;
-  border-color: #8696fe;
-  color: #ffff;
-}
-
-.btn-form:hover {
-  background-color: #4942e4;
-  color: #ffff;
-}
-
-.hero-area-f{
-  margin-bottom: 120px;
-  margin-top: 40px;
-}
-.m0a{
-  margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
 
 /* CERRAR SESION POPUP */
@@ -2529,13 +2499,13 @@ transform: translate3d(-2070px, 0px, 0px);
 transition: transform 3000ms ease 0s !important;
 }
 
-/* icons style  */
+/* icons style butones de editar y eliminar */
 .fa-pencil{
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .fa-trash{
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 /* background style */
@@ -2709,11 +2679,11 @@ tbody tr td {
 
 .card-header-right-icon {
   display: inline-block;
-  float: right;
+  /* float: right; */
 }
 
 .card-header-right-icon li {
-  float: right;
+  /* float: right; */
   padding-left: 14px;
   color: #868e96;
   cursor: pointer;
@@ -3047,7 +3017,7 @@ span.badge {
 
 .dataTables_length {
   display: inline-block;
-  float: left;
+  /* float: left; */
   margin-right: 30px;
 }
 
@@ -3449,7 +3419,7 @@ a.dt-button.active:not(.disabled) {
   transition: all 0.4s ease-in-out;
   display: inline-block;
   vertical-align: middle;
-  float: left;
+  /* float: left; */
 }
 
 .header-icon i,
@@ -3885,7 +3855,7 @@ a.dt-button.active:not(.disabled) {
   cursor: pointer;
   transition: all 0.2s linear;
   text-align: center;
-  float: right;
+  /* float: right; */
 }
 
 .chat-widget .bottom_wrapper .send_message .text {
@@ -8075,6 +8045,11 @@ only screen and (min-resolution: 2dppx) {
     display: inline-block !important;
   }
 }
+
+fieldset{
+  background: white;
+}
+
 
 /* TABLET */
 

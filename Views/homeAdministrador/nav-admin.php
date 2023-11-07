@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <nav class="navbar navbar-expand-lg navbar-light navigation">
-          <a class="navbar-brand" href="home.php">
+          <a class="navbar-brand" href="../../index.php">
             <img src="../images/logo.png" alt="Logo TTM" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
                         <a class="nav-link login-button nav-button w-1" href="perfil.php">Editar Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <input type="button" id="open" class="nav-link login-button nav-button w-1" value="Cerrar Sesion">
+                        <input type="button" id="open" class="nav-link login-button nav-button w-1" style="font-family: 'Montserrat', sans-serif !important;"  value="Cerrar Sesion">
                     </li>
                 </ul>
           </div>
@@ -28,7 +28,7 @@
   </div>
 </header>
 <?php
-              confirmarCierreSesion();
+    confirmarCierreSesion();
 ?>
 
 <script src="https://unpkg.com/jquery@3.7.0/dist/jquery.js"></script>

@@ -76,8 +76,8 @@
                         </div>
 
                         <div class="form-group col-lg-6">
-                            <label>Edad</label>
-                            <input type="text" class="form-control" placeholder="Ej: 5 años" required name="masEdad">
+                            <label>Edad (años)</label>
+                            <input type="text" class="form-control" placeholder="Ej: 5 " required name="masEdad">
                         </div>
 
                         <div class="form-group col-lg-6">

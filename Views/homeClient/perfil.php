@@ -49,13 +49,7 @@
 ===================================-->
   <section class="dashboard section">
     <!-- Container Start -->
-    <div class="container-fluid">
-      <!-- Row Start -->
-      <div class="row">
-        <?php
-          include("menu-include.php")//col-lg-3
-        ?>
-        <div class="col-lg-9">
+    <div class="container">
           <!-- Recently Favorited -->
           <section id="main-content">
             <div class="widget dashboard-container my-adslist">
@@ -68,10 +62,6 @@
 
               </div>
           </section>
-        </div>
-        <!-- Row End -->
-      </div>
-      <!-- Container End -->
     </div>
   </section>
 

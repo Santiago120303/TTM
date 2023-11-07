@@ -1,8 +1,8 @@
 <?php
   require_once("../../Models/conexion.php");
   require_once("../../Models/consultas.php");
-  require_once("../../Models/seguridadClient.php");
-  require_once("../../Controllers/mostrarInfoClient.php");
+  require_once("../../Models/seguridadFundacion.php");
+  require_once("../../Controllers/mostrarInfoFundacion.php");
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Mascotas - Registrar Usuario</title>
+  <title>Fundación - Registrar Usuario</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,54 +40,60 @@
 <body class="body-wrapper">
 
 <?php
-  include("nav-cliente.php");
+  include("nav-fundacion.php");
 ?>
 <!--==================================
 =            User Profile            =
 ===================================-->
 
-      <div class="col-lg-9">
-        <!-- Recently Favorited -->
-        <div class="widget dashboard-container my-adslist">
-          <h3 class="widget-header">Mascotas</h3>
-          <section id="main-content">
-    <section id="main-content">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
-            <div class="card-body">
-            <div class="table-responsive">
-            <table class="table table-bordered table-hover">
-                 <thead>
-                     <tr>
-                         <th>Foto</th>
-                         <th>Nombre</th>
-                         <th>Edad</th>
-                         <th>Raza</th>
-                         <th>Vacunas</th>
-                         <th>Estado de salud</th>
-                         <th>Editar</th>
-                         <th>Eliminar</th>
-                     </tr>
-                 </thead>
-                 <tbody>
-                     <?php 
-                    cargarMascotas();
-                     ?>
-                </tbody>
-            </table>
+  <section id="main-content">
+    <!-- Container Start -->
+    <div class="container-fluid">
+      <!-- Row Start -->
+      <div class="row">
+        <?php
+            include("menu-include.php")//col-lg-3
+        ?>
+          <div class="col-lg-9">
+            <!-- Recently Favorited -->
+            <div class="widget dashboard-container my-adslist">
+              <h3 class="widget-header">Mascotas</h3>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                            <tr>
+                              <th>Foto</th>
+                              <th>Mascota</th>
+                              <th>Edad</th>
+                              <th>Raza</th>
+                              <th>Adoptante</th>
+                              <th>Número</th>
+                              <th>Formulario</th>
+                              <th>Eliminar</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <?php 
+                                cargarFormularios();
+                            ?>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            </div>
-            </div>
-        </div>
+          </div>
+        <!-- Row End -->
       </div>
-
-      </div>
+      <!-- Container End -->
     </div>
-    <!-- Row End -->
-  </div>
-  <!-- Container End -->
-</section>
+  </section>
 
 <!--============================
 =            Footer            =

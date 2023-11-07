@@ -81,7 +81,7 @@ function cargarAdministradorEditar()
             
                 <div class="form-group col-lg-6">
                         <label>Rol:</label>
-                        <select required name="rol" id="" class="form-control">
+                        <select disabled  name="rol" id="" class="form-control">
                             <option value="' . $f['cod_rol'] . '">' . $f['rol'] . '</option>
                             <option value="1">Administrador</option>
                             <option value="2">Fundacion</option>
@@ -103,32 +103,6 @@ function cargarAdministradorEditar()
             
         </form>
             ';
-    }
-}
-
-function cargarAdministradoresReporte()
-{
-
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarAdministradoresAdmin();
-
-    if (!isset($result)) {
-        echo '<h2>NO HAY USUARIOS REGISTRADOS</h2>';
-    } else {
-
-        foreach ($result as $f) {
-            echo '
-                <tr>
-                    <td>' . $f['id_user'] . '</td>
-                    <td>' . $f['nombre'] . '</td>
-                    <td>' . $f['apellido'] . '</td>
-                    <td>' . $f['email'] . '</td>
-                    <td>' . $f['telefono'] . '</td>
-                    <td>' . $f['estado'] . '</td>
-                    <td>' . $f['rol'] . '</td>
-                </tr>
-                ';
-        }
     }
 }
 
@@ -209,7 +183,7 @@ function cargarClienteEditar()
             
                 <div class="form-group col-lg-6">
                         <label>Rol:</label>
-                        <select required name="rol" id="" class="form-control">
+                        <select disabled required name="rol" id="" class="form-control">
                             <option value="' . $f['cod_rol'] . '">' . $f['rol'] . '</option>
                             <option value="1">Administrador</option>
                             <option value="2">Fundacion</option>
@@ -341,7 +315,7 @@ function cargarFundacionEditar()
                         </select>
                 </div>
             </div>
-            <button type="submit" class="btn btn-main-sm btn-flat mb-30 mt-30 w-100" >Actualizar datos de usuario</button>
+            <button type="submit" class="btn btn-main-sm btn-flat mb-30 mt-30 w-100" >Actualizar datos de fundación</button>
             
         </form>
             ';
@@ -561,6 +535,98 @@ function confirmarCierreSesion()
                     <a class="cerrar" href="../../Controllers/cerrarSesion.php" id="close">Sí, Cerrar sesión</a>
                 </div>
             </div>    
+            ';
+    }
+}
+
+function MostrarCantidadUsuariosRegistrados()
+{
+    $objConsultas = new Consultas();
+    $result = $objConsultas->cantidadUsuariosRegistrados();
+
+    foreach ($result as $f) {
+        echo '
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa-solid fa-user" style="color: #11009e;"></i>
+                            </div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Usuarios registrados</div>
+                                <div class="stat-digit">' . $f ['cantidadUsers'] . '</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ';
+    }
+}
+
+function MostrarCantidadFundacionesRegistradas()
+{
+    $objConsultas = new Consultas();
+    $result = $objConsultas->cantidadFundacionesRegistradas();
+
+    foreach ($result as $f) {
+        echo '
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa-solid fa-house" style="color: #4942e4;"></i>
+                            </div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Fundaciones registradas</div>
+                                <div class="stat-digit">' . $f['cantidadFundaciones'] . '</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ';
+    }
+}
+
+function MostrarCantidadEventosRegistrados()
+{
+    $objConsultas = new Consultas();
+    $result = $objConsultas->cantidadEventosRegistrados();
+
+    foreach ($result as $f) {
+        echo '
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa-regular fa-calendar-check" style="color: #8696FE;"></i>
+                            </div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Eventos registrados</div>
+                                <div class="stat-digit">' . $f['cantidadEventos'] . '</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ';
+    }
+}
+
+function MostrarCantidadMascotasRegistradas()
+{
+    $objConsultas = new Consultas();
+    $result = $objConsultas->cantidadMascotasRegistradas();
+
+    foreach ($result as $f) {
+        echo '
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa-solid fa-paw" style="color: #11009e;"></i>
+                            </div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Mascotas registradas</div>
+                                <div class="stat-digit">' . $f['cantidadMascotas'] . '</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             ';
     }
 }

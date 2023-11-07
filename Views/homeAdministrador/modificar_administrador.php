@@ -62,7 +62,7 @@
                 <div class="col-lg-9">
                     <!-- Recently Favorited -->
                     <div class="widget dashboard-container my-adslist">
-                        <h3 class="widget-header">Administrador registrado</h3>
+                        <h3 class="widget-header">Edición de administrador</h3>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card">
