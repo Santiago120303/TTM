@@ -54,7 +54,7 @@
     <!-- Row Start -->
     <div class="row">
       <?php
-          include("menu-include-dashboard.php")//col-lg-3
+          include("menu-include.php")//col-lg-3
       ?>
       <div class="col-lg-9">
         <!-- Recently Favorited -->
