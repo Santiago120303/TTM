@@ -116,7 +116,7 @@
 	<section class="popular-deals section bg-gray">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12" style="background: rgb(255,255,255); background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 21%, rgba(255,255,255,1) 85%, rgba(255,255,255,0) 100%); border-radius:50px;">
 					<div class="section-title">
 						<h2>Nuestros servicios</h2>
 						<p>A continuación, te presentamos una selección de los servicios que ponemos a tu
@@ -273,17 +273,17 @@
 				<div class="col-lg-4">
 					<!-- Social Icons -->
 					<ul class="social-media-icons text-center text-lg-right">
-						<li><a class="fa fa-facebook" href="https://www.facebook.com/themefisher"></a></li>
-						<li><a class="fa fa-twitter" href="https://www.twitter.com/themefisher"></a></li>
-						<li><a class="fa fa-pinterest-p" href="https://www.pinterest.com/themefisher"></a>
+						<li><a class="fa fa-facebook" href="https://www.facebook.com/profile.php?id=61551249643390" target="_blank"></a></li>
+						<li><a class="fa fa-instagram" href="#"></a></li>
+						<li><a class="fa fa-pinterest-p" href="#"></a>
 						</li>
-						<li><a class="fa fa-github-alt" href="https://www.github.com/themefisher"></a></li>
+						<li><a class="fa fa-github-alt" href="#"></a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<!-- Container End -->
-		<!-- To Top -->
+
 		<div class="scroll-top-to">
 			<i class="fa fa-angle-up"></i>
 		</div>

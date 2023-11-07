@@ -901,6 +901,52 @@ class Consultas
         echo "<script> location.href='../Views/homeFundacion/perfil.php' </script>";
     }
 
+    //Formulario de adopción 
+
+    public function insertarFormulario($adopEdad, $adopMasAnterior, $adopMasActual, $adopTrabajo, $adopMasHogar,
+        $adopMuda, $adopNinos, $adopAcceso, $adopRazon, $adopHorMascota, $adopSalida, $adopVisita, $id_usu_for_fk)
+    {
+
+        //Creamos el objeto de la conexion
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+
+        if ($_SESSION['AUTENTICADO']) {
+
+            //Creamos la variable que contendra la consulta a ejecutar
+            $insertar = "INSERT INTO tbl_adopciones (adopEdad, adopMasAnterior, adopMasActual, adopTrabajo, adopMasHogar,
+            adopMuda, adopNinos, adopAcceso, adopRazon, adopHorMascota, adopSalida, adopVisita, id_usu_for_fk)
+                VALUES (:adopEdad, :adopMasAnterior, :adopMasActual, :adopTrabajo, :adopMasHogar, :adopMuda, :adopNinos, 
+            :adopAcceso, :adopRazon, :adopHorMascota, :adopSalida, :adopVisita, :id_usu_for_fk)";
+
+            //Preparamos todo lo necesario para ejecutar la funcion anterior
+
+            $result = $conexion->prepare($insertar);
+
+            //convertimos los argumentos en parametros
+
+            $result->bindParam(":adopEdad", $adopEdad);
+            $result->bindParam(":adopMasAnterior", $adopMasAnterior);
+            $result->bindParam(":adopMasActual", $adopMasActual);
+            $result->bindParam(":adopTrabajo", $adopTrabajo);
+            $result->bindParam(":adopMasHogar", $adopMasHogar);
+            $result->bindParam(":adopMuda", $adopMuda);
+            $result->bindParam(":adopNinos", $adopNinos);
+            $result->bindParam(":adopAcceso", $adopAcceso);
+            $result->bindParam(":adopRazon", $adopRazon);
+            $result->bindParam(":adopHorMascota", $adopHorMascota);
+            $result->bindParam(":adopSalida", $adopSalida);
+            $result->bindParam(":adopVisita", $adopVisita);
+            $result->bindParam(":id_usu_for_fk", $id_usu_for_fk);
+
+            //Ejecutamos el insert
+            $result->execute();
+
+            echo '<script> alert("Su formulario fue enviado, por favor, espera una respuesta de la fundación") </script>';
+            echo "<script> location.href='../Views/clientSite/mascotas.php' </script>";
+        }
+    }
     //consulta para saber cuantos usuarios estan registrados
     public function cantidadUsuariosRegistrados (){
         $objConexion = new Conexion();

@@ -1,9 +1,3 @@
-/**
- * WEBSITE: https://themefisher.com
- * TWITTER: https://twitter.com/themefisher
- * FACEBOOK: https://www.facebook.com/themefisher
- * GITHUB: https://github.com/themefisher/
- */
 
 /*=== MEDIA QUERY ===*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
@@ -392,13 +386,13 @@ button {
 
 .section {
   padding: 70px 0;
-  background-image: url(../images/bgsel.jpg) !important;
+  background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
 }
 
 .section-sm {
   padding: 50px 0;
-  background-image: url(../images/bgsel.jpg) !important;
+  background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
 }
 
@@ -726,14 +720,14 @@ ul.pagination .active a {
 .login{
   /* padding-top: 7%; */
   min-height: 671px;
-  background-image: url(../images/bgsel.jpg) !important;
+  background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
 }
 
 
 section.dashboard{
   min-height: 671px;
-  background-image: url(../images/bgsel.jpg) !important;
+  background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
 }
 
@@ -2419,49 +2413,8 @@ form textarea {
   margin-right: 300px;
   padding-left: 40px;
   padding-right: 40px;
-}
-
-.form input {
-  border-radius: 8%;
-  border: 1px solid #4942e4;
-  background-color: #8696fe60;
-}
-
-.form label {
-  color: #000;
-}
-
-.form button {
-  display: flex-box;
-  margin-left: 300px;
-  margin-bottom: 40px;
-}
-
-#adop {
-  padding-top: 40px;
-}
-
-#adop p {
-  margin: 0;
-}
-
-.btn-form {
-  background-color: #8696fe;
-  border-color: #8696fe;
-  color: #ffff;
-}
-
-.btn-form:hover {
-  background-color: #4942e4;
-  color: #ffff;
-}
-
-.hero-area-f{
-  margin-bottom: 120px;
-  margin-top: 40px;
-}
-.m0a{
-  margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
 
 /* CERRAR SESION POPUP */

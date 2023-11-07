@@ -42,7 +42,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-8 align-item-center">
           <div class="border">
-            <h3 class="bg-gray p-4 text-center">Inicio de sesión</h3>
+            <h3 class="bg-gray p-4 text-center mb-0">Inicio de sesión</h3>
             <form action="../../Controllers/iniciarSesion.php" method="POST">
               <fieldset class="p-4">
                 <label>Correo electrónico:</label>
