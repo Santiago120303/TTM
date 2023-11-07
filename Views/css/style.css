@@ -388,12 +388,14 @@ button {
   padding: 70px 0;
   background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
+  min-height: 693px !important;
 }
 
 .section-sm {
   padding: 50px 0;
   background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
+  min-height: 693px !important;
 }
 
 .section-title {
@@ -719,14 +721,14 @@ ul.pagination .active a {
 /* Arreglo de la ubicacion del footer en pantallas de clientsite, admin, fundacion, cliente */
 .login{
   /* padding-top: 7%; */
-  min-height: 671px;
+  min-height: 693px;
   background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
 }
 
 
 section.dashboard{
-  min-height: 671px;
+  min-height: 693px;
   background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
 }

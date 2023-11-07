@@ -71,6 +71,19 @@
                       <div class="row">
 
                         <div class="form-group col-lg-6">
+                            <label>Especie</label>
+                            <select name="especie" id="especie">
+                              <option value="1"></option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="Ej: Simba" required name="masNombre">
+                        </div>
+
+                        <div class="form-group col-lg-6">
+                            <label>Raza</label>
+                            <input type="text" class="form-control" placeholder="Ingresa la raza de la mascota." required name="masRaza">
+                        </div>
+
+                        <div class="form-group col-lg-6">
                             <label>Nombre</label>
                             <input type="text" class="form-control" placeholder="Ej: Simba" required name="masNombre">
                         </div>
@@ -88,11 +101,6 @@
                         <div class="form-group col-lg-6">
                             <label>Vacunas</label>
                             <input type="text" class="form-control" placeholder="Ingresa información sobre las vacunas que tiene la mascota." required name="masVacunas">
-                        </div>
-
-                        <div class="form-group col-lg-6">
-                            <label>Raza</label>
-                            <input type="text" class="form-control" placeholder="Ingresa la raza de la mascota." required name="masRaza">
                         </div>
 
                         <div class="form-group col-lg-6">

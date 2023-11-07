@@ -15,43 +15,25 @@
       perfil();
     ?>
     <div class="widget user-dashboard-menu">
-      <ul>
-        <li class="nav-item dropdown dropdown-slide">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <i class="fa fa-solid fa-plus"></i>Registrar
-          </a>
-          <!-- Dropdown list -->
-          <ul class="drop-down-menu">
-            <li><a class="dropdown-item" href="registrar_mascotas.php"><i class="fa fa-paw"></i>Mascota</a></li>
-            <li><a class="dropdown-item" href="registrar_eventos.php"><i class="fa fa-home"></i>Evento</a></li>
-            </li>
-          </ul>
+      <ul id="menu">
+        <li class="nav-item dropdown dropdown-slide"> <a class="nav-link dropdown-toggle"><i class="fa fa-solid fa-plus"></i>Registrar</a>
+            <ul class="drop-down-menu">
+                <li><a class="dropdown-item" href="registrar_mascotas.php"><i class="fa fa-paw"></i>Mascota</a></li>
+                <li><a class="dropdown-item" href="registrar_eventos.php"><i class="fa fa-home"></i>Evento</a></li>
+            </ul>
         </li>
-        <li class="nav-item dropdown dropdown-slide">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <i class="fa fa-solid fa-eye"></i>Ver
-          </a>
-          <!-- Dropdown list -->
-          <ul class="drop-down-menu">
-            <li><a class="dropdown-item" href="ver_mascotas.php"><i class="fa fa-paw"></i>Mascotas</a></li>
-            <li><a class="dropdown-item" href="ver_eventos.php"><i class="fa fa-home"></i>Eventos</a></li>
-            <li><a class="dropdown-item" href="ver_adopciones.php"><i class="fa fa-file-text"></i>Adopciones</a></li>
-            </li>
-          </ul>
+        <li class="nav-item dropdown dropdown-slide"> <a class="nav-link dropdown-toggle"><i class="fa fa-solid fa-eye"></i>Ver</a>
+            <ul class="drop-down-menu">
+                <li><a class="dropdown-item" href="ver_mascotas.php"><i class="fa fa-user"></i>Mascotas</a></li>
+                <li><a class="dropdown-item" href="ver_eventos.php"><i class="fa fa-home"></i>Eventos</a></li>
+                <li><a class="dropdown-item" href="ver_adopciones.php"><i class="fa fa-file-text"></i>Adopciones</a></li>
+            </ul>
         </li>
-        <li class="nav-item dropdown dropdown-slide">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <i class="fa-solid fa-file-arrow-down"></i>Reportes
-          </a>
-          <!-- Dropdown list -->
-          <ul class="drop-down-menu">
-            <li><a class="dropdown-item" href="reporte_administradores.php"><i class="fa fa-paw"></i>Mascotas</a></li>
-            <li><a class="dropdown-item" href="reporte_clientes.php"><i class="fa fa-home"></i>Eventos</a></li>
-            </li>
-          </ul>
+        <li class="nav-item dropdown dropdown-slide"> <a class="nav-link dropdown-toggle"><i class="fa-solid fa-file-arrow-down"></i>Reportes</a>
+            <ul class="drop-down-menu">
+                <li><a class="dropdown-item" href="reporte_administradores.php"><i class="fa fa-paw"></i>Mascotas</a></li>
+                <li><a class="dropdown-item" href="reporte_clientes.php"><i class="fa fa-home"></i>Eventos</a></li>
+            </ul>
         </li>
       </ul>
     </div>
