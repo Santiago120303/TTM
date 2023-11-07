@@ -11,6 +11,7 @@
       $email = $_POST['email'];
       $telefono = $_POST['telefono'];
       $estado = $_POST['estado'];
+      $localidad = $_POST['localidad'];
       $rol = 2;  
       $clave = $_POST['id_user'];  
       
@@ -34,7 +35,7 @@
       //Creamos el objeto a partir de la clase
       //Para enviar los argumentos a la función en el modelo (archivo consultas)
       $objConsultas = new Consultas ();
-      $result = $objConsultas->insertarFundacionAdmin($id, $tipo_doc, $nombre, $email, $telefono, $estado, $rol, $claveMd, $foto);
+      $result = $objConsultas->insertarFundacionAdmin($id, $tipo_doc, $nombre, $email, $telefono, $estado, $localidad, $rol, $claveMd, $foto);
 
 
 ?>

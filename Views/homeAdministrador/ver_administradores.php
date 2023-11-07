@@ -66,7 +66,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
           <div class="col-lg-9">
           <!-- Recently Favorited -->
           <div class="widget dashboard-container my-adslist">
-            <h3 class="widget-header">Clientes registrados</h3>
+            <h3 class="widget-header">Administradores registrados</h3>
             <div class="row">
               <div class="col-lg-12">
                 <div class="card">

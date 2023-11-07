@@ -11,7 +11,7 @@
       $apellido = $_POST['apellido'];
       $email = $_POST['email'];
       $telefono = $_POST['telefono'];
-      $rol = $_POST ['rol'];
+      $rol = 1;
       $estado = $_POST['estado'];
 
 

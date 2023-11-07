@@ -18,7 +18,7 @@
                         <a class="nav-link login-button nav-button w-1" href="perfil.php">Editar Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <input type="button" id="open" class="nav-link login-button nav-button w-1" value="Cerrar Sesion">
+                        <input type="button" id="open" class="nav-link login-button nav-button w-1" style="font-family: 'Montserrat', sans-serif !important;"  value="Cerrar Sesion">
                     </li>
                 </ul>
           </div>

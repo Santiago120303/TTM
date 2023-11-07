@@ -331,7 +331,7 @@ class Consultas
         echo "<script> location.href='../Views/homeAdministrador/ver_clientes.php' </script>";
     }
 
-    public function insertarFundacionAdmin($id, $tipo_doc, $nombre, $email, $telefono, $estado, $rol, $claveMd, $foto){
+    public function insertarFundacionAdmin($id, $tipo_doc, $nombre, $email, $telefono, $estado, $localidad, $rol, $claveMd, $foto){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -382,12 +382,13 @@ class Consultas
             //Ejecutamos el insert
             $result->execute();
 
-            $insertar_tbl_fundaciones = "INSERT INTO tbl_fundaciones (id_fundacion, id_user_fundacion_fk)
-                VALUES (:id, :id)";
+            $insertar_tbl_fundaciones = "INSERT INTO tbl_fundaciones (id_fundacion, id_user_fundacion_fk, cod_localidad_fk)
+                VALUES (:id, :id, :localidad)";
 
             $result = $conexion->prepare($insertar_tbl_fundaciones);
 
             $result->bindParam(":id", $id);
+            $result->bindParam(":localidad", $localidad);
 
             $result->execute();
 
@@ -858,10 +859,78 @@ class Consultas
         echo "<script> location.href='../Views/homeFundacion/perfil.php' </script>";
     }
 
+    //consulta para saber cuantos usuarios estan registrados
+    public function cantidadUsuariosRegistrados (){
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $cantidadusuarios = "SELECT COUNT(id_user) as cantidadUsers FROM tbl_users WHERE cod_rol_fk=3";
+        $result = $conexion->prepare($cantidadusuarios);
+        $result->execute();
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+
+        return $f;
+    }
+
+    //consulta para saber cuantas fundaciones estan registrados
+    public function cantidadFundacionesRegistradas (){
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $cantidafundaciones = "SELECT COUNT(id_user) as cantidadFundaciones FROM tbl_users WHERE cod_rol_fk=2";
+        $result = $conexion->prepare($cantidafundaciones);
+        $result->execute();
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+
+        return $f;
+    }
+
+    //consulta para saber cuantos eventos estan registrados
+    public function cantidadEventosRegistrados (){
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $cantidaeventos = "SELECT COUNT(eveId) as cantidadEventos FROM tbl_eventos";
+        $result = $conexion->prepare($cantidaeventos);
+        $result->execute();
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+
+        return $f;
+    }
+
+    //consulta para saber cuantas mascotas estan registradas
+    public function cantidadMascotasRegistradas (){
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $cantidamascotas = "SELECT COUNT(masId) as cantidadMascotas FROM tbl_mascotas";
+        $result = $conexion->prepare($cantidamascotas);
+        $result->execute();
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+
+        return $f;
+    }
+    
+
+    
+
+
 }
 
-//Función de validad sesión
 
+//Función de validad sesión
 class ValidarSesion
 {
 
@@ -906,7 +975,7 @@ class ValidarSesion
 
                         case '1':
                             echo '<script> alert("Bienvenid@ ' . $f['nombre'] . '") </script>';
-                            echo '<script> location.href="../index.php" </script>';
+                            echo '<script> location.href="../Views/homeAdministrador/home.php" </script>';
                             break;
 
                         case '2':

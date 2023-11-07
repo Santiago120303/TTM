@@ -8082,6 +8082,7 @@ only screen and (min-resolution: 2dppx) {
   }
 }
 
+
 /* TABLET */
 
 @media screen and (min-width:600px) and (max-width:900px){
