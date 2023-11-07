@@ -15,11 +15,7 @@
 
     <!-- ** Basic Page Needs ** -->
     <meta charset="utf-8">
-<<<<<<< HEAD
-    <title> Fundación - Modificar Eventos</title>
-=======
     <title> Fundación - Modificar Mascotas</title>
->>>>>>> main
 
     <!-- ** Mobile Specific Metas ** -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,31 +57,22 @@
             <!-- Row Start -->
             <div class="row">
                 <?php
-<<<<<<< HEAD
+
                   include("menu-include.php")//col-lg-3
-=======
-                  include("menu-include-dashboard.php")//col-lg-3
->>>>>>> main
+
                 ?>
                 <div class="col-lg-9">
                     <!-- Recently Favorited -->
                     <div class="widget dashboard-container my-adslist">
-<<<<<<< HEAD
-                        <h3 class="widget-header">Evento registrado</h3>
-=======
-                        <h3 class="widget-header">Mascota registrado</h3>
->>>>>>> main
+
+                        <h3 class="widget-header">Mascota registrada</h3>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="basic-elements">
                                             <?php
-<<<<<<< HEAD
-                                                cargarEventosEditar()//col-lg-3
-=======
-                                                cargarMascotasEditar()//col-lg-3
->>>>>>> main
+                                                cargarMascotasEditar()
                                              ?>
                                         </div>
                                     </div>
