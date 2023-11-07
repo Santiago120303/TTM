@@ -985,7 +985,7 @@ class ValidarSesion
 
                         case '3':
                             echo '<script> alert("Bienvenido") </script>';
-                            echo "<script> location.href='../index.php' </script>";
+                            echo "<script> location.href='../Views/homeClient/home.php' </script>";
                             break;
                     }
                 } else {

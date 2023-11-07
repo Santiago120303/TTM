@@ -43,7 +43,7 @@
 <body class="body-wrapper">
 
   <?php
-  include("nav-admin.php");
+    include("nav-admin.php");
   ?>
   <!--==================================
 =            User Profile            =
