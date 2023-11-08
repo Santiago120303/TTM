@@ -116,7 +116,7 @@
 	<section class="popular-deals section bg-gray">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12" style="background: rgb(255,255,255); background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 21%, rgba(255,255,255,1) 85%, rgba(255,255,255,0) 100%); border-radius:50px;">
+				<div class="col-md-12 bgradient" >
 					<div class="section-title">
 						<h2>Nuestros servicios</h2>
 						<p>A continuación, te presentamos una selección de los servicios que ponemos a tu

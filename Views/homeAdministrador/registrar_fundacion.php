@@ -41,7 +41,7 @@
 
     <!-- Estilos propios del documento -->
     <style>
-        .nice-select.open .list {
+         .list {
         max-height: 200px !important;
         overflow:hidden !important;
         overflow-y: scroll !important;

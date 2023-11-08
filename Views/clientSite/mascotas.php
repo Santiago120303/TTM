@@ -38,7 +38,7 @@
 		include("nav-clientSite.php");
 	?>
 
-	<section class="section-sm">
+	<section class="section-sm minhe">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">

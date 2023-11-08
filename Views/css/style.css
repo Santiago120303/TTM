@@ -388,13 +388,15 @@ button {
   padding: 70px 0;
   background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
-  min-height: 693px !important;
 }
 
 .section-sm {
   padding: 50px 0;
   background-image: url(../images/bgsel.png) !important;
   background-size: cover !important;
+}
+
+.minhe{
   min-height: 693px !important;
 }
 
@@ -7839,6 +7841,12 @@ h6.h1 {
     min-height: 855px;
   }
 }
+
+.bgradient{
+  background: rgb(255,255,255); background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%); border-radius:50px;
+}
+
+
 
 /*  6 - media screen and (max-width: 991px) End
 ---------------------------------------------------------------------- */

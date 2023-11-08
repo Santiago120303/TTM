@@ -56,14 +56,14 @@
 
 <section class="section">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-6 pt-5 pt-lg-0">
+    <div class="row bgradient">
+      <div class="col-lg-12 pt-5 pt-lg-0 text-center">
         <div class="about-content">
           <h3 class="font-weight-bold">Introducción</h3>
           <p class="">Con el imparable avance de la tecnología y la creciente demanda de soluciones innovadoras, es un privilegio presentar a nuestro excepcional team de tecnólogos en desarrollo de software que encarnan los valores fundamentales de un equipo sobresaliente y destacan por sus habilidades de programación excepcionales. Quedará claro cómo su dedicación a los principios del trabajo en equipo y su destreza en la programación se combinan para crear un conjunto verdaderamente ejemplar de talentos en el mundo del desarrollo de software.</p>
         </div>
       </div>
-      <div class="col-lg-6 pt-5 pt-lg-0">
+      <div class="col-lg-12 pt-5 pt-lg-0 text-center">
         <div class="about-content">
           <h3 class="font-weight-bold">¿Cómo podemos ayudar?</h3>
           <p class="">La colaboración y la diversidad de habilidades en nuesto equipo pueden dar lugar a soluciones innovadoras y creativas, puedemos implementar metodologías ágiles de desarrollo de software con eficiencia nuestra comunicación abierta y la colaboración constante permiten una rápida adaptación a los cambios, mejorando la calidad y la entrega puntual de los proyectos y nuestra combinación de habilidades técnicas sólidas y la capacidad de trabajo en equipo puede abordar problemas tecnológicos complejos de manera eficiente.</p>

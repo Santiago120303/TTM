@@ -67,37 +67,11 @@
 							<a href="mascotas.php" class="btn btn-login mb-4">Mascotas</a>
 							<a href="fundacion.php" class="btn btn-login mb-4">Eventos</a>
 
-							<a class="text-center href="mailto:patitassolidarias@gmail.com">patitassolidarias@gmail.com</a>
-							<a href="whatsapp://send?phone=310123456757&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n.">3101234567</a>
+							<p  class="text-center mb-2">Kennedy </p></a>
+							<p  class="text-center mb-2">Cl. 8 #19a 51</p></a>
+							<a href="mailto:patitassolidarias@gmail.com"><p  class="text-center mb-2">patitassolidarias@gmail.com</p></a>
+							<a href="whatsapp://send?phone=310123456757&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n."><p  class="text-center mb-2">3101234567</p></a>
 
-
-							<ul class="archive-list">
-								<li><a href="fundacion-events.html">Adopciones y Ferias de Adopción</a>
-								</li>
-								<!-- Eventos donde la fundación promueve la adopción responsable de animales rescatados y proporciona una oportunidad para que las personas encuentren un nuevo compañero. -->
-								<li><a href="fundacion-events.html">Campañas de Esterilización y
-										Castración</a></li>
-								<!-- Programas para controlar la población de animales callejeros mediante la esterilización y castración, que suelen llevarse a cabo con la colaboración de veterinarios. -->
-								<li><a href="fundacion-events.html">Eventos de Recaudación de Fondos</a>
-								</li>
-								<!-- Actividades como cenas benéficas, subastas, paseos o carreras para recaudar dinero y recursos para el cuidado y protección de los animales. -->
-								<li><a href="fundacion-events.html">Días de Puertas Abiertas</a></li>
-								<!-- Jornadas en las que la fundación abre sus instalaciones al público, permitiendo que las personas conozcan su trabajo, interactúen con los animales y aprendan sobre sus necesidades. -->
-								<li><a href="fundacion-events.html">Campañas de Concientización</a></li>
-								<!--  Charlas educativas, proyección de documentales y campañas en redes sociales para concientizar sobre temas como el bienestar animal, la protección de especies en peligro y la importancia de la adopción. -->
-								<li><a href="fundacion-events.html">Jornadas de Vacunación</a></li>
-								<!-- Eventos donde se brinda atención veterinaria básica, como vacunas y desparasitación, a animales en comunidades de bajos recursos. -->
-								<li><a href="fundacion-events.html">Voluntariado en Refugios</a></li>
-								<!-- Días dedicados a la participación de voluntarios en tareas de limpieza, cuidado y enriquecimiento ambiental para los animales alojados en refugios. -->
-								<li><a href="fundacion-events.html">Cursos de Adiestramiento y
-										Comportamiento</a></li>
-								<!--  Talleres para dueños de mascotas que promuevan la comprensión y el cuidado adecuado de los animales.-->
-								<li><a href="fundacion-events.html">Eventos de Rescate y Emergencia</a>
-								</li>
-								<!-- Intervención en situaciones de desastres naturales o rescates de animales en peligro. -->
-								<li><a href="fundacion-events.html">Ferias de Salud Animal</a></li>
-								<!-- Jornadas que ofrecen servicios de salud gratuitos o a bajo costo, como chequeos médicos, desparasitación y cuidados veterinarios básicos. -->
-							</ul>
 						</div>
 	
 					</div>
@@ -106,7 +80,7 @@
 					<article class="single-post">
 						<h2 class="text-center mb-4">Acerca de Patitas Solidarias </h2>
 						<div class="row ">
-							<div class="col-lg-6">
+							<div class="col-lg-12">
 								<h3>Descripción</h3>
 								<p>Patitas Solidarias es una organización sin fines de lucro dedicada al bienestar y
 									protección de los animales. Nuestra misión es proporcionar un hogar temporal y
@@ -115,7 +89,7 @@
 									Trabajamos incansablemente para brindar amor, cuidado y una segunda oportunidad
 									a cada patita peluda que llega a nuestras puertas.</p>
 	
-							</div>
+							<!-- </div>
 							<div class="col-lg-6 d-flex align-items-center ">
 								<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 									<div class="carousel-inner">
@@ -132,7 +106,7 @@
 											<img src="../../Uploads/fundaciones/" class="d-block w-100" alt="foto fundacion 4 de 4">
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 							<div class="col-lg-12">
 								<h3>Misión</h3>
