@@ -73,7 +73,7 @@
         <div class="col-lg-9">
             <!-- Recently Favorited -->
             <section id="main-content">
-              <h3 class="widget-header" style="text-align: center; font-size: 25px; margin: 25px 0 20px; padding: 0 0 10px;">Bienvenido Administrador</h3>
+              <h3 class="widget-header" style="text-align: center; font-size: 25px; margin: 25px 0 20px; padding: 0 0 10px;">Detalles del sistema</h3>
                     <div class="row">
                         <?php
                         MostrarCantidadUsuariosRegistrados();
