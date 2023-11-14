@@ -397,6 +397,37 @@ class Consultas
         }
     }
 
+    public function mostrarNombreFundacion($nombrefun, $localidadfun)
+    {
+        $fundaciones = null;
+    
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+        $nombre = "%" .$nombrefun ."%";
+        $localidad = "%" .$localidadfun ."%";
+
+        $consultar = "SELECT tbl_users.id_user, tbl_users.nombre, tbl_users.telefono, tbl_users.email, tbl_users.foto, tbl_localidad.localidad
+        FROM ((tbl_fundaciones
+        INNER JOIN tbl_localidad ON tbl_fundaciones.cod_localidad_fk = tbl_localidad.cod_localidad)
+        INNER JOIN tbl_users ON tbl_fundaciones.id_user_fundacion_fk = tbl_users.id_user)
+        WHERE tbl_users.nombre LIKE :nombre and tbl_fundaciones.cod_localidad_fk LIKE :localidad ";
+    
+        $result = $conexion->prepare($consultar);
+        $result->bindParam(":nombre", $nombre);
+        $result->bindParam(":localidad", $localidad);
+
+        $result->execute(); 
+    
+        while ($resultado = $result->fetch()) {
+            $fundaciones[] = $resultado;
+        }
+    
+        return $fundaciones;
+    }
+
+
+
     public function mostrarFundacionesAdmin(){
 
         $f = null;
@@ -430,7 +461,7 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
     
-        $consultar = "SELECT tbl_users.id_user, tbl_users.nombre, tbl_users.telefono, tbl_users.email, tbl_localidad.localidad, tbl_fundaciones.foto_fundacion
+        $consultar = "SELECT tbl_users.id_user, tbl_users.nombre, tbl_users.telefono, tbl_users.email, tbl_users.foto,  tbl_localidad.localidad
         FROM ((tbl_fundaciones
         INNER JOIN tbl_localidad ON tbl_fundaciones.cod_localidad_fk = tbl_localidad.cod_localidad)
         INNER JOIN tbl_users ON tbl_fundaciones.id_user_fundacion_fk = tbl_users.id_user)";

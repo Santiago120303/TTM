@@ -1,18 +1,21 @@
 <header>
-  <div class="container">
+  <div class="container-fluid header-container">
     <div class="row">
       <div class="col-md-12">
         <nav class="navbar navbar-expand-lg navbar-light navigation">
-          <a class="navbar-brand" href="home.php">
+          <a class="navbar-brand" href="../../index.php">
             <img src="../images/logo.png" alt="Logo TTM" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto main-nav">
-          <li class="nav-item">
-                <a class="nav-link" href="fundacion.php">Fundación</a>
+            <ul class="navbar-nav ml-auto main-nav">
+              <li class="nav-item">
+              <a class="nav-link" href="inicio_fundacion.php">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-item" href="fundaciones.php">Fundaciones</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="mascotas.php">Mascotas</a>
@@ -20,22 +23,21 @@
               <li class="nav-item">
                 <a class="nav-link" href="events.php">Eventos</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="home.php">Dashboard</a>
-              </li>
               <!-- <li class="nav-item">
 									<a class="nav-link" href="Views/clientSite/donation.php">Donación</a>
               </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="aboutUs.php">Acerca de Nosotros</a>
+              </li>
             </ul>
-          </ul>
-          <ul class="navbar-nav ml-auto mt-10">
-                    <li class="nav-item">
-                        <a class="nav-link login-button nav-button w-1" href="perfil.php">Editar Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <input type="button" id="open" class="nav-link login-button nav-button w-1" value="Cerrar Sesion">
-                    </li>
-                </ul>
+            <ul class="navbar-nav ml-auto mt-10">
+              <li class="nav-item">
+                <a class="nav-link login-button" href="home.php">Fundación</a>
+              </li>
+              <li class="nav-item">
+                 <input type="button" id="open" class="nav-link login-button nav-button w-1" style="font-family: 'Montserrat', sans-serif !important;" value="Cerrar Sesión">
+               </li>
+            </ul>
           </div>
         </nav>
       </div>
@@ -43,7 +45,7 @@
   </div>
 </header>
 <?php
-              confirmarCierreSesion();
+    confirmarCierreSesion();
 ?>
 
 <script src="https://unpkg.com/jquery@3.7.0/dist/jquery.js"></script>

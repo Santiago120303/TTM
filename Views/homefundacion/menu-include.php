@@ -16,6 +16,8 @@
     ?>
     <div class="widget user-dashboard-menu">
       <ul id="menu">
+        <!-- <a href="fundacion.php" class="btn btn-login mb-4"><i class="fa fa-home mr-2"></i>Fundación</a> -->
+        <!-- <a href="perfil.php" class="btn btn-login mb-4"><i class="fa fa-home mr-2"></i>Editar perfil</a> -->
         <li class="nav-item dropdown dropdown-slide"> <a class="nav-link dropdown-toggle"><i class="fa fa-solid fa-plus"></i>Registrar</a>
             <ul class="drop-down-menu">
                 <li><a class="dropdown-item" href="registrar_mascotas.php"><i class="fa fa-paw"></i>Mascota</a></li>
@@ -24,6 +26,7 @@
         </li>
         <li class="nav-item dropdown dropdown-slide"> <a class="nav-link dropdown-toggle"><i class="fa fa-solid fa-eye"></i>Ver</a>
             <ul class="drop-down-menu">
+                <li><a class="dropdown-item" href="fundacion.php"><i class="fa fa-user"></i>Fundación</a></li>
                 <li><a class="dropdown-item" href="ver_mascotas.php"><i class="fa fa-user"></i>Mascotas</a></li>
                 <li><a class="dropdown-item" href="ver_eventos.php"><i class="fa fa-home"></i>Eventos</a></li>
                 <li><a class="dropdown-item" href="ver_adopciones.php"><i class="fa fa-file-text"></i>Adopciones</a></li>

@@ -209,7 +209,7 @@ function perfil()
             <!-- User Name -->
             <h5 class="text-center">' . $f['nombre'] . ' ' . $f['apellido'] . '</h5>
             <h6 class="text center">' . $f['rol'] . '</h6>
-            <a href="home.php" class="btn btn-main-sm d-block m0a"><i class="fa fa-home mr-2"></i>Inicio</a>
+            <a href="perfil.php" class="btn btn-login mb-0"><i class="fa fa-home mr-2"></i>Editar perfil</a>
           </div>
             ';
     }

@@ -23,7 +23,7 @@ function cargarFundaciones()
                                     <h4 class="card-title text-center mb-3"><a href="fundacion.php">' . $f['nombre'] . '</a></h4>
                                 </a>
                                 <a href="fundacion.php">
-                                    <img class="card-img-top img-fluid" src="../' . $f['foto_fundacion'] . '" alt="Card image cap">
+                                    <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['foto'] . '" alt="Card image cap">
                                 </a>
                             </div>
                             <div class="card-body">
@@ -38,6 +38,47 @@ function cargarFundaciones()
                 </div>
                 ';
         }
+    }
+}
+
+function buscarNombreFundacion ($nombrefun, $localidadfun)
+{
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarNombreFundacion($nombrefun, $localidadfun);
+
+    if (isset($result)) {
+        foreach ($result as $f) {
+            echo '
+                <div class="col-lg-4 col-md-6">
+                    <!-- product card -->
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <!-- <div class="price">$200</div> -->
+                                <a href="fundacion.php">
+                                    <h4 class="card-title text-center mb-3"><a href="fundacion.php">' . $f['nombre'] . '</a></h4>
+                                </a>
+                                <a href="fundacion.php">
+                                    <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['foto'] . '" alt="Card image cap">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <p class="m-0 pb-2">' . $f['localidad'] . '</p>
+                                <p class="m-0 pb-2">' . $f['email'] . '</p>
+                                <p class="m-0 pb-2">' . $f['telefono'] . '</p>
+                                <div class="product-ratings">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                ';
+            }
+    } else {
+        
+        echo '<h2>NO HAY FUNDACIONES REGISTRADAS</h2>';  //' . $f['id_user'] . '
+
     }
 }
 

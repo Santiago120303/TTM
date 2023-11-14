@@ -72,7 +72,7 @@
         <div class="col-lg-9">
             <!-- Recently Favorited -->
             <section id="main-content">
-              <h3 class="widget-header" style="text-align: center; font-size: 25px; margin: 25px 0 20px; padding: 0 0 10px;">Bienvenida Fundación</h3>
+              <h3 class="widget-header" style="text-align: center; font-size: 25px; margin: 25px 0 20px; padding: 0 0 10px;">Resumen de la fundación</h3>
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="card">
