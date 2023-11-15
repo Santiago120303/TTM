@@ -71,6 +71,7 @@
 				</div>
 				<div class="col-lg-8">
 					<article class="single-post">
+						<a class="d-block w-100 text-right font-weight-bold" href="fundaciones.php"><i class="fa-solid fa-arrow-left mr-2"></i>Volver</a>
 						<h2 class="text-center mb-4">Acerca de Patitas Solidarias </h2>
 						<div class="row ">
 							<div class="col-lg-12">
@@ -133,6 +134,13 @@
 	<?php
 	include("footer-include.php")
 	?>
+
+	<!-- 
+font awesome script
+=====================================-->
+
+<script src="https://kit.fontawesome.com/3b8b956f1a.js" crossorigin="anonymous"></script>
+
 
 	<!-- 
 Essential Scripts

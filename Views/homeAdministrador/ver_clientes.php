@@ -55,7 +55,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 =            User Profile            =
 ===================================-->
 
-  <section class="dashboard section">
+  <section class="dashboard section minhe">
     <!-- Container Start -->
     <div class="container-fluid">
       <!-- Row Start -->
