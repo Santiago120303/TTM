@@ -1,3 +1,11 @@
+<?php
+
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Controllers/mostrarInfoClientSite.php");
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -52,8 +60,7 @@
 					<!-- Search Widget -->
 					<div class="widget search p-0">
 						<div class="input-group">
-							<input type="text" class="form-control" id="expire"
-								placeholder="Buscar...">
+							<input type="text" class="form-control" id="expire" placeholder="Buscar...">
 							<span class="input-group-addon"><i class="fa fa-search px-3"></i></span>
 						</div>
 					</div>
@@ -85,39 +92,22 @@
 								</label>
 							</div>
 						</div>
-
+	
 					</div>
 				</div>
-				
+	
 				<div class="col-lg-9 col-md-8">
 					<div class="product-grid-list">
 						<div class="row mt-30">
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a class="bg-mascota" href="mascota.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/mascotas/mascota1.png"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="mascota.php">Tom</a></h4> 
-											<p><strong>Edad:</strong> 2 años</p>	
-											<p><strong>Personalidad:</strong> Tom es un perro amigable y cariñoso que tiene un corazón lleno de amor para compartir.</p>
-											<p><strong>Sauld:</strong> Tom está en excelente estado de salud y ha recibido todas sus vacunas al día. Ha sido castrado y se encuentra al día con sus chequeos veterinarios regulares.</p>				
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>	
+							<?php
+								cargarMascotas();
+							?>	
 						</div>
 					</div>
 				</div>
+	
+
+	
 	</section>
 	<!--============================
 =            Footer            =

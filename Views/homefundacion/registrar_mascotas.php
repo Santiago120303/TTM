@@ -72,10 +72,15 @@
 
                         <div class="form-group col-lg-6">
                             <label>Especie</label>
-                            <select name="especie" id="especie">
-                              <option value="1"></option>
+                            <select required name="masEspecie" id="especie" class="form-control">
+                              <option value="">Especie...</option>
+                              <option value="1">Perro</option>
+                              <option value="2">Gato</option>
+                              <option value="3">Ave</option>
+                              <option value="4">Conejo</option>
+                              <option value="5">Roedor</option>
+                              <option value="6">Tortuga</option>
                             </select>
-                            <input type="text" class="form-control" placeholder="Ej: Simba" required name="masNombre">
                         </div>
 
                         <div class="form-group col-lg-6">

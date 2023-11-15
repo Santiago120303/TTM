@@ -9,15 +9,15 @@
       $edad = $_POST['masEdad'];
       $historia = $_POST['masHistoria'];
       $vacunas = $_POST['masVacunas'];
+      $especie = $_POST['masEspecie'];
       $raza = $_POST['masRaza'];
       $estSalud = $_POST['masEstSalud'];
-      $fecha = getdate();
       session_start();
       $funId = $_SESSION['id'];
 
             //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
 
-      if (strlen($nombre) > 0 && strlen($edad) > 0 && strlen($historia) > 0 && strlen($vacunas) > 0 && strlen($raza) > 0 && strlen($estSalud) > 0){
+      if (strlen($nombre) > 0 && strlen($edad) > 0 && strlen($historia) > 0 && strlen($vacunas) > 0 && strlen($especie) > 0 && strlen($raza) > 0 && strlen($estSalud) > 0){
             
             $foto = "../Uploads/Fundaciones/" . $_FILES['foto']['name'];
             //Movemos el archivo a la carpeta Uploads y la carpeta de usuario
@@ -28,7 +28,7 @@
             //Creamos el objeto a partir de la clase
             //Para enviar los argumentos a la función en el modelo (archivo consultas)
             $objConsultas = new Consultas ();
-            $result = $objConsultas->insertarMasFun($nombre, $edad, $historia, $vacunas, $raza, $estSalud, $foto, $fecha, $funId);
+            $result = $objConsultas->insertarMasFun($nombre, $edad, $historia, $vacunas, $especie, $raza, $estSalud, $foto, $funId);
       
       }
       else{

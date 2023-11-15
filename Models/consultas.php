@@ -475,20 +475,22 @@ class Consultas
     
         return $fundaciones;
     }
+
     public function mostrarMascotasClientsite()
     {
-        $mascotas = null;
+        $mascotas = [];
     
         // Creamos el objeto de la conexión
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
     
-        $consultar = "SELECT tbl_mascotas.masNombre, tbl_mascotas.masEdad, tbl_mascotas.masRaza, tbl_mascotas.foto
-        FROM ((tbl_mascotas
-        INNER JOIN tbl_mascotas ON tbl_fundaciones.id_fun_mas_fk = tbl_fundaciones.id_user_fundacion_fk)";
+        // Consulta para obtener solo los campos necesarios
+        $consultar = "SELECT tbl_mascotas.masNombre, tbl_mascotas.foto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_especies.especie
+        FROM (tbl_mascotas
+        INNER JOIN tbl_especies ON tbl_mascotas.cod_especie_fk = tbl_especies.cod_especie)";
     
         $result = $conexion->prepare($consultar);
-        $result->execute(); 
+        $result->execute();
     
         while ($resultado = $result->fetch()) {
             $mascotas[] = $resultado;
@@ -496,6 +498,7 @@ class Consultas
     
         return $mascotas;
     }
+    
     public function mostrarFundacionAdmin($id_fundacion){
 
         $f = null;
@@ -698,15 +701,15 @@ class Consultas
     }
 
 
-    public function insertarMasFun($nombre, $edad, $historia, $vacunas, $raza, $estSalud, $foto, $fecha, $funId){   
+    public function insertarMasFun($nombre, $edad, $historia, $vacunas, $especie, $raza, $estSalud, $foto, $funId){   
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
         //Creamos la variable que contendra la consulta a ejecutar
-        $insertar = "INSERT INTO tbl_mascotas (masNombre, masEdad, masHistoria, masVacunas, masRaza, masEstSalud, masFecReg, foto, id_fun_mas_fk)
-            VALUES (:nombre, :edad, :historia, :vacunas, :raza, :estSalud, :fecha, :foto, :funId)";
+        $insertar = "INSERT INTO tbl_mascotas (masNombre, masEdad, masHistoria, masVacunas, cod_especie_fk, masRaza, masEstSalud, foto, id_fun_mas_fk)
+            VALUES (:nombre, :edad, :historia, :vacunas, :especie, :raza, :estSalud, :foto, :funId)";
         //Preparamos todo lo necesario para ejecutar la funcion anterior
         $result = $conexion->prepare($insertar);
         //convertimos los argumentos en parametros
@@ -714,9 +717,9 @@ class Consultas
         $result->bindParam(":edad", $edad);
         $result->bindParam(":historia", $historia);
         $result->bindParam(":vacunas", $vacunas);
+        $result->bindParam(":especie", $especie);
         $result->bindParam(":raza", $raza);
         $result->bindParam(":estSalud", $estSalud);
-        $result->bindParam(":fecha", $fecha);
         $result->bindParam(":funId", $funId);
         $result->bindParam(":foto", $foto);
         //Ejecutamos el insert
