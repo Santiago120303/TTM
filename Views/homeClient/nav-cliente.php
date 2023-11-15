@@ -15,10 +15,10 @@
                   <a class="nav-link" href="">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="mascotas.php">Fundaciones</a>
+                  <a class="nav-link" href="fundaciones.php">Fundaciones</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="events.php">Mascotas</a>
+                  <a class="nav-link" href="mascotas.php">Mascotas</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="home.php">Eventos</a>
