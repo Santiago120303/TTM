@@ -498,7 +498,26 @@ class Consultas
     
         return $mascotas;
     }
+
+    public function mostrarEventosClientsite()
+    {
+        $fundaciones = null;
     
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consultar = "SELECT eveImg, eveNombre, eveFecha, eveHora, eveDireccion FROM tbl_eventos";
+    
+        $result = $conexion->prepare($consultar);
+        $result->execute(); 
+    
+        while ($resultado = $result->fetch()) {
+            $fundaciones[] = $resultado;
+        }
+    
+        return $fundaciones;
+    }
     public function mostrarFundacionAdmin($id_fundacion){
 
         $f = null;
@@ -567,7 +586,7 @@ class Consultas
         echo "<script> location.href='../Views/homeAdministrador/ver_fundaciones.php' </script>";
     }
 
-    public function insertarEveFun($eveNombre, $eveFecha, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId){
+    public function insertarEveFun($eveNombre, $eveFecha, $eveHora, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -594,8 +613,8 @@ class Consultas
         } else {
 
             //Creamos la variable que contendra la consulta a ejecutar
-            $insertar = "INSERT INTO tbl_eventos (eveNombre, eveFecha, eveDireccion, eveDescripcion, eveEstado, eveImg, id_fun_eve_fk)
-                VALUES (:eveNombre, :eveFecha, :eveDireccion, :eveDescripcion, :eveEstado, :img, :funId )";
+            $insertar = "INSERT INTO tbl_eventos (eveNombre, eveFecha, eveHora, eveDireccion, eveDescripcion, eveEstado, eveImg, id_fun_eve_fk)
+                VALUES (:eveNombre, :eveFecha, :eveHora, :eveDireccion, :eveDescripcion, :eveEstado, :img, :funId )";
 
             //Preparamos todo lo necesario para ejecutar la funcion anterior
 
@@ -605,6 +624,7 @@ class Consultas
 
             $result->bindParam(":eveNombre", $eveNombre);
             $result->bindParam(":eveFecha", $eveFecha);
+            $result->bindParam(":eveHora", $eveHora);
             $result->bindParam(":eveDireccion", $eveDireccion);
             $result->bindParam(":eveDescripcion", $eveDescripcion);
             $result->bindParam(":eveEstado", $eveEstado);
@@ -641,6 +661,32 @@ class Consultas
         return $f;
     }
 
+    public function mostrarNombreEvento($eveNombre)
+    {
+        $fundaciones = null;
+    
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+        $eveNombre = "%" .$eveNombre ."%";
+
+
+        $consultar = "SELECT tbl_eventos.eveNombre, tbl_eventos.masFecha, tbl_eventos.eveHora, tbl_eventos.eveImg, tbl_eventos.id_fun_eve_fk
+        FROM tbl_eventos
+        INNER JOIN tbl_eventos ON tbl_fundaciones.id_fun_eve_fk = tbl_fundaciones.id_user_fundacion_fk)";
+    
+        $result = $conexion->prepare($consultar);
+        $result->bindParam(":eveNombre", $eveNombre);
+
+        $result->execute(); 
+    
+        while ($resultado = $result->fetch()) {
+            $fundaciones[] = $resultado;
+        }
+    
+        return $fundaciones;
+    }
+
     public function editarEveFun($eveId){
 
         $f = null;
@@ -664,16 +710,17 @@ class Consultas
         return $f;
     }
 
-    public function actualizarEveFun($eveId, $eveNombre, $eveFecha,  $eveDireccion, $eveDescripcion,  $eveEstado){
+    public function actualizarEveFun($eveId, $eveNombre, $eveFecha, $eveHora,  $eveDireccion, $eveDescripcion,  $eveEstado){
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $actualizar = " UPDATE tbl_eventos SET eveNombre=:eveNombre, eveFecha=:eveFecha, eveDireccion=:eveDireccion, eveEstado=:eveEstado, eveDescripcion=:eveDescripcion WHERE eveId=:eveId ";
+        $actualizar = " UPDATE tbl_eventos SET eveNombre=:eveNombre, eveFecha=:eveFecha, eveHora=:eveHora, eveDireccion=:eveDireccion, eveEstado=:eveEstado, eveDescripcion=:eveDescripcion WHERE eveId=:eveId ";
         $result = $conexion->prepare($actualizar);
 
         $result->bindParam(":eveId", $eveId);
         $result->bindParam(":eveNombre", $eveNombre);
         $result->bindParam(":eveFecha", $eveFecha);
+        $result->bindParam(":eveHora", $eveHora);
         $result->bindParam(":eveDireccion", $eveDireccion);
         $result->bindParam(":eveEstado", $eveEstado);
         $result->bindParam(":eveDescripcion", $eveDescripcion);

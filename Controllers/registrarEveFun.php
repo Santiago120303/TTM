@@ -7,6 +7,7 @@
 
       $eveNombre = $_POST['eveNombre'];
       $eveFecha = $_POST['eveFecha'];
+      $eveHora = $_POST['eveHora'];
       $eveDireccion = $_POST['eveDireccion'];
       $eveDescripcion = $_POST['eveDescripcion'];
       $eveEstado = $_POST['eveEstado'];
@@ -25,7 +26,7 @@
             //Creamos el objeto a partir de la clase
             //Para enviar los argumentos a la función en el modelo (archivo consultas)
             $objConsultas = new Consultas ();
-            $result = $objConsultas->insertarEveFun($eveNombre, $eveFecha, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId);
+            $result = $objConsultas->insertarEveFun($eveNombre, $eveFecha, $eveHora, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId);
       
       }
       else{

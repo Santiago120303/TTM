@@ -78,6 +78,11 @@
                     </div>
 
                     <div class="form-group col-lg-6">
+                        <label>Hora del evento</label>
+                        <input type="time" class="form-control" required name="eveHora">
+                    </div>
+
+                    <div class="form-group col-lg-6">
                         <label>Dirección del evento</label>
                         <input type="text" class="form-control" placeholder="Ej:Carrera 1 #3-4 sur" required name="eveDireccion">
                     </div>

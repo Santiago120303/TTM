@@ -20,6 +20,7 @@ function cargarEventos()
                     <td><img src="../' . $f['eveImg'] . '" alt="Logo Fundación" style="width: 60px; height: 60px; border-radius: 25%"></td>
                     <td>' . $f['eveNombre'] . '</td>
                     <td>' . $f['eveFecha'] . '</td>
+                    <td>' . $f['eveHora'] . '</td>
                     <td>' . $f['eveDireccion'] . '</td>
                     <td>' . $f['eveEstado'] . '</td>
                     <td><a href="modificar_eventos.php?id=' . $f['eveId'] . '" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
@@ -56,6 +57,11 @@ function cargarEventosEditar()
                     <label>Fecha del evento</label>
                     <input type="date" value="' . $f['eveFecha'] . '" class="form-control" required name="eveFecha">
                 </div>
+
+                <div class="form-group col-lg-6">
+                <label>Fecha del evento</label>
+                <input type="date" value="' . $f['eveHora'] . '" class="form-control" required name="eveFecha">
+            </div>
 
                 <div class="form-group col-lg-6">
                     <label>Dirección del evento</label>

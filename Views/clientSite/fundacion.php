@@ -31,6 +31,7 @@
 	<link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 
 	<link href="../css/style.css" rel="stylesheet">
+	<link href="../css/styleDashboarNoCol.css" rel="stylesheet">
 
 </head>
 
@@ -47,89 +48,79 @@
 	<section class="blog single-blog section">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8">
-					<article class="single-post">
-						<p class="text-right mb-0"><a href="fundaciones.php"><i class=" fa fa-chevron-left mr-1"></i>Volver</a></p>
-						<h2 >Doggy in Home  </h2>
-						<ul class="list-inline">
-							<li class="list-inline-item">por <a href="user-profile.html">Admin</a></li>
-							<li class="list-inline-item">Nov 22, 2016</li>
-						</ul>
-						<img src="../../Uploads/fundaciones/fun1.png" alt="article-01">
-						<p>Adopta No Compres fue creada oficialmente en julio del año 2013 como entidad Sin
-							ánimo de Lucro. Sin embargo, ya llevaba ocho años de trabajo independiente;
-							nace al ver la problemática de los animales abandonados, maltratados y con la
-							necesidad de cambiar la vida de todos aquellos perros y gatos que llegan a
-							nosotros con la esperanza de reescribir su historia.</p>
-
-						<p>La Fundación ejerce su labor en Bogotá y en otras zonas de Colombia que han sido
-							olvidadas, tales cómo: Barranquilla, Cali, Mompox, Riohacha, Montería, Tabio,
-							Funza, Malambo, Soledad, San Andrés, Providencia, Ciénaga, y todo lugar donde
-							podamos ofrecer ayuda, para rescatarlos, esterilizarlos mediante nuestras
-							brigadas, recuperarlos, rehabilitarlos y entregarlos en adopción responsable.
-							De esa forma, se les da una segunda oportunidad a cientos de animales que han
-							sido víctimas de maltrato, abandono y abuso.</p>
-
-						<p>Nuestro objetivo final es poder encontrar un hogar para cada uno de nuestros
-							rescatados. Por eso en Adopta No Compres ubicamos familias y personas
-							responsables interesadas en adoptar. Adicional a esta labor nos encargamos de
-							hacer el seguimiento a cada uno de los animales entregados.</p>
-
-					</article>
-
-				</div>
 				<div class="col-lg-4">
 					<div class="sidebar">
 						<!-- Archive Widget -->
 						<div class="widget archive">
 							<!-- Widget Header -->
-							<h5 class="widget-header">Eventos</h5>
-							<ul class="archive-list">
-								<li><a href="fundacion-events.html">Adopciones y Ferias de Adopción</a>
-								</li>
-								<!-- Eventos donde la fundación promueve la adopción responsable de animales rescatados y proporciona una oportunidad para que las personas encuentren un nuevo compañero. -->
-								<li><a href="fundacion-events.html">Campañas de Esterilización y
-										Castración</a></li>
-								<!-- Programas para controlar la población de animales callejeros mediante la esterilización y castración, que suelen llevarse a cabo con la colaboración de veterinarios. -->
-								<li><a href="fundacion-events.html">Eventos de Recaudación de Fondos</a>
-								</li>
-								<!-- Actividades como cenas benéficas, subastas, paseos o carreras para recaudar dinero y recursos para el cuidado y protección de los animales. -->
-								<li><a href="fundacion-events.html">Días de Puertas Abiertas</a></li>
-								<!-- Jornadas en las que la fundación abre sus instalaciones al público, permitiendo que las personas conozcan su trabajo, interactúen con los animales y aprendan sobre sus necesidades. -->
-								<li><a href="fundacion-events.html">Campañas de Concientización</a></li>
-								<!--  Charlas educativas, proyección de documentales y campañas en redes sociales para concientizar sobre temas como el bienestar animal, la protección de especies en peligro y la importancia de la adopción. -->
-								<li><a href="fundacion-events.html">Jornadas de Vacunación</a></li>
-								<!-- Eventos donde se brinda atención veterinaria básica, como vacunas y desparasitación, a animales en comunidades de bajos recursos. -->
-								<li><a href="fundacion-events.html">Voluntariado en Refugios</a></li>
-								<!-- Días dedicados a la participación de voluntarios en tareas de limpieza, cuidado y enriquecimiento ambiental para los animales alojados en refugios. -->
-								<li><a href="fundacion-events.html">Cursos de Adiestramiento y
-										Comportamiento</a></li>
-								<!--  Talleres para dueños de mascotas que promuevan la comprensión y el cuidado adecuado de los animales.-->
-								<li><a href="fundacion-events.html">Eventos de Rescate y Emergencia</a>
-								</li>
-								<!-- Intervención en situaciones de desastres naturales o rescates de animales en peligro. -->
-								<li><a href="fundacion-events.html">Ferias de Salud Animal</a></li>
-								<!-- Jornadas que ofrecen servicios de salud gratuitos o a bajo costo, como chequeos médicos, desparasitación y cuidados veterinarios básicos. -->
-							</ul>
+							<!-- <h5 class="widget-header">Patitas Solidarias</h5> -->
+	
+							<a href="fundacion.php"><img class="w-100 mb-4"
+									src="../../Uploads/fundaciones/logfun1.png" alt="logo de la fundacion"></a>
+							<a href="mascotas.php" class="btn btn-login mb-4">Mascotas</a>
+							<a href="fundacion.php" class="btn btn-login mb-4">Eventos</a>
+
+							<p  class="text-center mb-2">Kennedy </p></a>
+							<p  class="text-center mb-2">Cl. 8 #19a 51</p></a>
+							<a href="mailto:patitassolidarias@gmail.com"><p  class="text-center mb-2">patitassolidarias@gmail.com</p></a>
+							<a href="whatsapp://send?phone=310123456757&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n."><p  class="text-center mb-2">3101234567</p></a>
+
 						</div>
-						<!-- Category Widget -->
-						<div class="widget category">
-							<!-- Widget Header -->
-							<h5 class="widget-header">Adopciones</h5>
-							<ul class="category-list">
-								<li><a href="fundacion-adoption.html">perros <span
-											class="float-right">(2)</span></a></li>
-								<li><a href="fundacion-adoption.html">gatos <span
-											class="float-right">(5)</span></a></li>
-								<li><a href="fundacion-adoption.html">...<span
-											class="float-right">x</span></a></li>
-								<li><a href="fundacion-adoption.html">...<span
-											class="float-right">x</span></a></li>
-								<li><a href="fundacion-adoption.html">...<span
-											class="float-right">x</span></a></li>
-							</ul>
-						</div>
+	
 					</div>
+				</div>
+				<div class="col-lg-8">
+					<article class="single-post">
+						<h2 class="text-center mb-4">Acerca de Patitas Solidarias </h2>
+						<div class="row ">
+							<div class="col-lg-12">
+								<h3>Descripción</h3>
+								<p>Patitas Solidarias es una organización sin fines de lucro dedicada al bienestar y
+									protección de los animales. Nuestra misión es proporcionar un hogar temporal y
+									permanente para mascotas en situación de abandono y maltrato, así como promover
+									la adopción responsable y la conciencia sobre el cuidado de los animales.
+									Trabajamos incansablemente para brindar amor, cuidado y una segunda oportunidad
+									a cada patita peluda que llega a nuestras puertas.</p>
+	
+							<!-- </div>
+							<div class="col-lg-6 d-flex align-items-center ">
+								<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+									<div class="carousel-inner">
+										<div class="carousel-item active">
+											<img src="../../Uploads/fundaciones/" class="d-block w-100" alt="foto fundacion 1 de 4">
+										</div>
+										<div class="carousel-item">
+											<img src="../../Uploads/fundaciones/" class="d-block w-100" alt="foto fundacion 2 de 4">
+										</div>
+										<div class="carousel-item">
+											<img src="../../Uploads/fundaciones/" class="d-block w-100" alt="foto fundacion 3 de 4">
+										</div>
+										<div class="carousel-item">
+											<img src="../../Uploads/fundaciones/" class="d-block w-100" alt="foto fundacion 4 de 4">
+										</div>
+									</div>
+								</div> -->
+							</div>
+							<div class="col-lg-12">
+								<h3>Misión</h3>
+								<p>Nuestra misión es ser el refugio seguro y amoroso para los animales desamparados,
+									donde recibirán atención médica, alimentación adecuada y el afecto necesario
+									para su recuperación física y emocional. Buscamos promover la adopción
+									responsable, educar a la comunidad sobre el bienestar animal y colaborar con
+									otras organizaciones para lograr un mundo donde cada mascota tenga un hogar
+									lleno de amor.</p>
+							</div>
+							<div class="col-lg-12">
+								<h3>Visión</h3>
+								<p>En Patitas Solidarias, soñamos con un mundo en el que cada mascota tenga un hogar
+									donde se les brinde amor, respeto y cuidado adecuado. Nos esforzamos por ser
+									líderes en el rescate y protección animal, trabajando de la mano con la
+									comunidad para crear conciencia sobre la importancia de la adopción responsable
+									y la prevención del abandono. Aspiramos a ser un faro de esperanza para las
+									patitas desamparadas, demostrando que juntos podemos marcar la diferencia en la
+									vida de estos fieles compañeros.</p>
+							</div>
+					</article>
 				</div>
 			</div>
 		</div>

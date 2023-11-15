@@ -66,12 +66,14 @@
                   <table class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                      <th>Nombre del evento</th>
-                      <th>Fecha del evento</th>
-                      <th>Dirección del evento</th>
-                      <th>Estado</th>
-                      <th>Editar</th>
-                      <th>Eliminar</th>
+                    <th>Imagen del evento</th>
+                    <th>Nombre del evento</th>
+                    <th>Fecha del evento</th>
+                    <th>Hora del evento</th>
+                    <th>Dirección del evento</th>
+                    <th>Estado</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
                   </tr>
                   </thead>
                   <tbody>

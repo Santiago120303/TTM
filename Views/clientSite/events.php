@@ -1,3 +1,10 @@
+<?php
+
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Controllers/mostrarInfoClientSite.php");
+
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -103,211 +110,14 @@
 				<div class="col-lg-9 col-md-8">
 					<div class="product-grid-list">
 						<div class="row mt-30">
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a  class="bg-mascota" href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/eventos/evento1.png"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">Amor Peludo (AD)</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-calendar"  style="color: #4942e4;"></i> 9/11/2023</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>12:00 am</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>Bogotá / 
-													Cl 90 No. 19C-74, C.P 11001</a>
-												</li>
-											</ul>
-											<p class="card-text">Es un evento lleno de afecto y oportunidades, donde corazones de todas partes se reúnen para dar un hogar amoroso a nuestras queridas mascotas. Descubre una amplia variedad de adorables compañeros peludos que están listos para encontrar un lugar especial en tu vida.</p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a class="bg-mascota" href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/eventos/evento2.jpg"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">VacunaPlus (JV)</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-calendar"  style="color: #4942e4;"></i> 9/11/2023</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>12:00 am</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>Bogotá / 
-													Cl 90 No. 19C-74, C.P 11001</a>
-												</li>
-											</ul>
-											<p class="card-text">Únete a nosotros en este evento dedicado a cuidar de tu salud y bienestar. En un ambiente amigable y seguro, te ofrecemos la oportunidad de acceder a diversas vacunas que fortalecerán tu sistema inmunológico y te protegerán a ti y a tus seres queridos. </p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a class="bg-mascota" href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/eventos/evento3.png"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">Unidos por los Animales (CC)</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-calendar"  style="color: #4942e4;"></i> 9/11/2023</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>12:00 am</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>Bogotá / 
-													Cl 90 No. 19C-74, C.P 11001</a>
-												</li>
-											</ul>
-											<p class="card-text">En este evento, nos unimos como una comunidad comprometida con el bienestar y la protección de nuestros amigos peludos. A través de charlas inspiradoras, actividades interactivas y campañas de sensibilización, compartiremos conocimientos y pasión por la causa animal.</p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a  class="bg-mascota" href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/eventos/evento1.png"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">Amor Peludo (AD)</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-calendar"  style="color: #4942e4;"></i> 9/11/2023</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>12:00 am</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>Bogotá / 
-													Cl 90 No. 19C-74, C.P 11001</a>
-												</li>
-											</ul>
-											<p class="card-text">Es un evento lleno de afecto y oportunidades, donde corazones de todas partes se reúnen para dar un hogar amoroso a nuestras queridas mascotas. Descubre una amplia variedad de adorables compañeros peludos que están listos para encontrar un lugar especial en tu vida.</p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a class="bg-mascota" href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/eventos/evento3.png"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">Unidos por los Animales (CC)</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-calendar"  style="color: #4942e4;"></i> 9/11/2023</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>12:00 am</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>Bogotá / 
-													Cl 90 No. 19C-74, C.P 11001</a>
-												</li>
-											</ul>
-											<p class="card-text">En este evento, nos unimos como una comunidad comprometida con el bienestar y la protección de nuestros amigos peludos. A través de charlas inspiradoras, actividades interactivas y campañas de sensibilización, compartiremos conocimientos y pasión por la causa animal.</p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a class="bg-mascota" href="fundacion.php">
-												<img class="card-img-top img-fluid"
-													src="../../Uploads/eventos/evento2.jpg"
-													alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="fundacion.php">VacunaPlus (JV)</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="fundacion.php"><i
-															class="fa fa-calendar"  style="color: #4942e4;"></i> 9/11/2023</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>12:00 am</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>Bogotá / 
-													Cl 90 No. 19C-74, C.P 11001</a>
-												</li>
-											</ul>
-											<p class="card-text">Únete a nosotros en este evento dedicado a cuidar de tu salud y bienestar. En un ambiente amigable y seguro, te ofrecemos la oportunidad de acceder a diversas vacunas que fortalecerán tu sistema inmunológico y te protegerán a ti y a tus seres queridos. </p>
-											<div class="product-ratings">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
+						<?php
+							if (isset($_GET['eveNombre'])) {
+								buscarNombreEvento($_GET['eveNombre']);
+							}else{
+								cargarEventos();
+							}
+								
+						?>
 						</div>
 					</div>
 				</div>

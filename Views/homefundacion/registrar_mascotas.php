@@ -3,7 +3,7 @@
     require_once("../../Models/conexion.php");
     require_once("../../Models/consultas.php");
     require_once("../../Models/seguridadFundacion.php");
-    require_once("../../Controllers/mostrarInfoAdmin.php");
+    require_once("../../Controllers/mostrarInfoFundacion.php");
 
 ?>
 
@@ -69,7 +69,6 @@
                     <form action="../../Controllers/registrarMasFun.php" method="POST" enctype="multipart/form-data">
                                
                       <div class="row">
-
                         <div class="form-group col-lg-6">
                             <label>Especie</label>
                             <select required name="masEspecie" id="especie" class="form-control">
