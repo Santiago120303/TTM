@@ -26,7 +26,6 @@
         </li>
         <li class="nav-item dropdown dropdown-slide"> <a class="nav-link dropdown-toggle"><i class="fa fa-solid fa-eye"></i>Ver</a>
             <ul class="drop-down-menu">
-                <li><a class="dropdown-item" href="fundacion.php"><i class="fa fa-user"></i>Fundación</a></li>
                 <li><a class="dropdown-item" href="ver_mascotas.php"><i class="fa fa-user"></i>Mascotas</a></li>
                 <li><a class="dropdown-item" href="ver_eventos.php"><i class="fa fa-home"></i>Eventos</a></li>
                 <li><a class="dropdown-item" href="ver_adopciones.php"><i class="fa fa-file-text"></i>Adopciones</a></li>

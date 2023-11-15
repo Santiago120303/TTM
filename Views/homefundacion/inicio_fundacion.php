@@ -1,10 +1,8 @@
 <?php
-
     require_once("../../Models/conexion.php");
     require_once("../../Models/consultas.php");
     require_once("../../Models/seguridadFundacion.php");
     require_once("../../Controllers/mostrarInfoFundacion.php");
-
 ?>
 
 <!DOCTYPE html>

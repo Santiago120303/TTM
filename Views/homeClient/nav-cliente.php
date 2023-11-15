@@ -12,16 +12,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto main-nav">
             <li class="nav-item">
-                  <a class="nav-link" href="">Inicio</a>
+                  <a class="nav-link" href="home.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="mascotas.php">Fundaciones</a>
+                  <a class="nav-link" href="fundaciones.php">Fundaciones</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="events.php">Mascotas</a>
+                  <a class="nav-link" href="mascotas.php">Mascotas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="home.php">Eventos</a>
+                  <a class="nav-link" href="events.php">Eventos</a>
                 </li>
                 <!-- <li class="nav-item">
 					  				<a class="nav-link" href="Views/clientSite/donation.php">Donación</a>
