@@ -58,7 +58,7 @@
 							<a href="fundacion.php"><img class="w-100 mb-4"
 									src="../../Uploads/fundaciones/logfun1.png" alt="logo de la fundacion"></a>
 							<a href="mascotas.php" class="btn btn-login mb-4">Mascotas</a>
-							<a href="fundacion.php" class="btn btn-login mb-4">Eventos</a>
+							<a href="eventos.php" class="btn btn-login mb-4">Eventos</a>
 
 							<p  class="text-center mb-2">Kennedy </p></a>
 							<p  class="text-center mb-2">Cl. 8 #19a 51</p></a>

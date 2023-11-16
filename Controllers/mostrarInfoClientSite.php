@@ -1,11 +1,11 @@
 <?php
 
 //Este archivo recibe todas las consultas del modelo para mostrar la información al los usuarios que ingresan al sito web
-function cargarFundaciones()
+function cargarFundacionesClientsite()
 {
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarFundacionesClientsite();
+    $result = $objConsultas->mostrarFundacionesTodos();
 
     if (!isset($result)) {
         echo '<h2>NO HAY FUNDACIONES REGISTRADAS</h2>';  //' . $f['id_user'] . '
@@ -176,11 +176,11 @@ function buscarNombreEvento ($eveNombre)
 }
 
 
-function cargarMascotas()
+function cargarMascotasClientsite()
 {
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarMascotasClientsite();
+    $result = $objConsultas->mostrarMascotasTodos();
 
     if (!isset($result)) {
         echo '<h2>NO EXISTEN MASCOTAS REGISTRADAS</h2>';  //' . $f['id_user'] . '
@@ -190,8 +190,8 @@ function cargarMascotas()
             echo ' 
                 <div class="col-lg-4 col-md-6">
                 <!-- product card -->
-                <div class="product-item bg-light">
-                    <div class="card pb-0">
+                <div class="product-item bg-light '. $f['especie'] .'">
+                    <div class="card pb-0 ">
                         <div class="thumb-content">
                             <!-- <div class="price">$200</div> -->
                             <a href="mascota.php">

@@ -453,7 +453,7 @@ class Consultas
 
         return $f;
     }
-    public function mostrarFundacionesClientsite()
+    public function mostrarFundacionesTodos()
     {
         $fundaciones = null;
     
@@ -476,7 +476,7 @@ class Consultas
         return $fundaciones;
     }
 
-    public function mostrarMascotasClientsite()
+    public function mostrarMascotasTodos()
     {
         $mascotas = [];
     
@@ -499,7 +499,7 @@ class Consultas
         return $mascotas;
     }
 
-    public function mostrarEventosClientsite()
+    public function mostrarEventosTodos()
     {
         $fundaciones = null;
     
@@ -1149,7 +1149,7 @@ class ValidarSesion
 
                         case '2':
                             echo '<script> alert("Bienvenida fundación ' . $f['nombre'] . '  ") </script>';
-                            echo "<script> location.href='../Views/homeFundacion/fundacion.php' </script>";
+                            echo "<script> location.href='../Views/homeFundacion/home.php' </script>";
                             break;
 
                         case '3':

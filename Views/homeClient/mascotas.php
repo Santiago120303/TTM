@@ -5,6 +5,7 @@
   require_once("../../Controllers/mostrarInfoClient.php");
 ?>
 
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -45,7 +46,7 @@
 		include("nav-cliente.php");
 	?>
 
-<section class="section-sm minhe">
+	<section class="section-sm minhe">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -99,7 +100,7 @@
 					<div class="product-grid-list">
 						<div class="row mt-30">
 							<?php
-								cargarMascotasBD();
+								cargarMascotasCliente();
 							?>	
 						</div>
 					</div>

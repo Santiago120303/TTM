@@ -62,6 +62,12 @@
                 <div class="col-lg-12">
                   <div class="card">
                     <div class="card-body">
+                      <!-- <div class="row">
+                     /    <?php 
+                              cargarMascotas();
+                            ?>
+                      </div> -->
+
                       <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                           <thead>

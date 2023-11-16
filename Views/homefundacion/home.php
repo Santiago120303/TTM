@@ -12,7 +12,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Dashboard Fundación</title>
+  <title>Mi Perfil</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,88 +69,49 @@
         <?php
           include("menu-include.php")//col-lg-3
         ?>
-        <div class="col-lg-9">
-            <!-- Recently Favorited -->
-            <section id="main-content">
-              <h3 class="widget-header" style="text-align: center; font-size: 25px; margin: 25px 0 20px; padding: 0 0 10px;">Resumen de la fundación</h3>
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Total Profit</div>
-                                        <div class="stat-digit">1,012</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">New Customer</div>
-                                        <div class="stat-digit">961</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Active Projects</div>
-                                        <div class="stat-digit">770</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Referral</div>
-                                        <div class="stat-digit">2,781</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="card">
-                                <div class="card-title">
-                                    <h4>Fee Collections and Expenses</h4>
-
-                                </div>
-                                <div class="card-body">
-                                    <div class="ct-bar-chart m-t-30"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="card">
-
-                                <div class="card-body">
-                                    <div class="ct-pie-chart"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </section>
-        </div>
-        <!-- Row End -->
+      <div class="col-lg-9">
+        <!-- Recently Favorited -->
+        <section id="main-content">
+          <article class="single-post" style="width: 1100px !important; margin: 0 auto;">
+            <h2 class="text-center mb-4">Acerca de Patitas Solidarias </h2>
+            <div class="row ">
+              <div class="col-lg-12">
+                <h3>Descripción</h3>
+                <p>Patitas Solidarias es una organización sin fines de lucro dedicada al bienestar y
+                  protección de los animales. Nuestra misión es proporcionar un hogar temporal y
+                  permanente para mascotas en situación de abandono y maltrato, así como promover
+                  la adopción responsable y la conciencia sobre el cuidado de los animales.
+                  Trabajamos incansablemente para brindar amor, cuidado y una segunda oportunidad
+                  a cada patita peluda que llega a nuestras puertas.</p>
+					  	</div> 
+              <div class="col-lg-12">
+                <h3>Misión</h3>
+                <p>Nuestra misión es ser el refugio seguro y amoroso para los animales desamparados,
+                  donde recibirán atención médica, alimentación adecuada y el afecto necesario
+                  para su recuperación física y emocional. Buscamos promover la adopción
+                  responsable, educar a la comunidad sobre el bienestar animal y colaborar con
+                  otras organizaciones para lograr un mundo donde cada mascota tenga un hogar
+                  lleno de amor.</p>
+              </div>
+              <div class="col-lg-12">
+                <h3>Visión</h3>
+                <p>En Patitas Solidarias, soñamos con un mundo en el que cada mascota tenga un hogar
+                  donde se les brinde amor, respeto y cuidado adecuado. Nos esforzamos por ser
+                  líderes en el rescate y protección animal, trabajando de la mano con la
+                  comunidad para crear conciencia sobre la importancia de la adopción responsable
+                  y la prevención del abandono. Aspiramos a ser un faro de esperanza para las
+                  patitas desamparadas, demostrando que juntos podemos marcar la diferencia en la
+                  vida de estos fieles compañeros.</p>
+              </div>
+            </div>
+          </article>
+        </section>
       </div>
-      <!-- Container End -->
+      <!-- Row End -->
     </div>
-  </section>
+    <!-- Container End -->
+  </div>
+</section>
 
 <!--============================
 =            Footer            =

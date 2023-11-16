@@ -1,8 +1,8 @@
 <?php
-    require_once("../../Models/conexion.php");
-    require_once("../../Models/consultas.php");
-    require_once("../../Models/seguridadFundacion.php");
-    require_once("../../Controllers/mostrarInfoFundacion.php");
+  require_once("../../Models/conexion.php");
+  require_once("../../Models/consultas.php");
+  require_once("../../Models/seguridadClient.php");
+  require_once("../../Controllers/mostrarInfoClient.php");
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
 
 	<!-- ** Basic Page Needs ** -->
 	<meta charset="utf-8">
-	<title>Mascotas - TTM</title>
+	<title>Eventos - TTM</title>
 
 	<!-- ** Mobile Specific Metas ** -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,15 +42,15 @@
 <body class="body-wrapper">
 
 	<?php
-		include("nav-fundacion.php");
+		include("nav-cliente.php");
 	?>
 
-	<section class="section-sm minhe">
+	<section class="section-sm">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="search-result bg-gray text-center">
-						<h2>Mascotas</h2>
+						<h2>Eventos</h2>
 					</div>
 				</div>
 			</div>
@@ -59,54 +59,70 @@
 					<!-- Search Widget -->
 					<div class="widget search p-0">
 						<div class="input-group">
-							<input type="text" class="form-control" id="expire" placeholder="Buscar...">
+							<input type="text" class="form-control" id="expire"
+								placeholder="Buscar...">
 							<span class="input-group-addon"><i class="fa fa-search px-3"></i></span>
 						</div>
 					</div>
 					<div class="category-sidebar">
 						<div class="widget product-shorting">
-							<h4 class="widget-header">Filtrar Mascotas</h4>
+							<h4 class="widget-header">Filtrar Eventos</h4>
 							<div class="form-check">
 								<label class="form-check-label">
 									<input class="form-check-input" type="checkbox" value="">
-									Gatos
+									Adopciones y Ferias de Adopciones  (AD)
 								</label>
 							</div>
 							<div class="form-check">
 								<label class="form-check-label">
 									<input class="form-check-input" type="checkbox" value="">
-									Perros
+									Eventos de Recaudación de Fondos (RF)
 								</label>
 							</div>
 							<div class="form-check">
 								<label class="form-check-label">
 									<input class="form-check-input" type="checkbox" value="">
-									Aves
+									Jornadas de Vacunación (JV)
 								</label>
 							</div>
 							<div class="form-check">
 								<label class="form-check-label">
 									<input class="form-check-input" type="checkbox" value="">
-									Hogar Provisional
+									Campañas de Concientización (CC)
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" value="">
+									Cursos de Adiestramiento y Comportamiento (AC)
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" value="">
+									Ferias de Salud Animal (SA
 								</label>
 							</div>
 						</div>
-	
+
 					</div>
 				</div>
-	
 				<div class="col-lg-9 col-md-8">
 					<div class="product-grid-list">
 						<div class="row mt-30">
-							<?php
-								cargarMascotasFundacion();
-							?>	
+						<?php
+							if (isset($_GET['eveNombre'])) {
+								buscarNombreEvento($_GET['eveNombre']);
+							}else{
+								cargarEventos();
+							}
+								
+						?>
 						</div>
 					</div>
 				</div>
-	
-
-	
+			</div>
+		</div>
 	</section>
 	<!--============================
 =            Footer            =
@@ -116,7 +132,12 @@
 		include("footer-include.php")
 	?>
 
-	<!-- 
+<!-- 
+Font awesome icons
+=====================================-->
+<script src="https://kit.fontawesome.com/3b8b956f1a.js" crossorigin="anonymous"></script>
+
+<!-- 
 Essential Scripts
 =====================================-->
 	<script src="../plugins/jquery/jquery.min.js"></script>

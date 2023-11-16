@@ -100,7 +100,7 @@ require_once("../../Controllers/mostrarInfoClientSite.php");
 					<div class="product-grid-list">
 						<div class="row mt-30">
 							<?php
-								cargarMascotas();
+								cargarMascotasClientsite();
 							?>	
 						</div>
 					</div>

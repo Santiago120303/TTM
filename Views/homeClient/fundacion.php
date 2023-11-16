@@ -1,8 +1,8 @@
 <?php
   require_once("../../Models/conexion.php");
   require_once("../../Models/consultas.php");
-  require_once("../../Models/seguridadFundacion.php");
-  require_once("../../Controllers/mostrarInfoFundacion.php");
+  require_once("../../Models/seguridadClient.php");
+  require_once("../../Controllers/mostrarInfoClient.php");
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +46,7 @@
 
 <!-- header insertado con PHP -->
 	<?php
-		include("nav-fundacion.php");
+		include("nav-cliente.php");
 	?>
 	
 	<!--=================================
@@ -64,8 +64,8 @@
 	
 							<a href="fundacion.php"><img class="w-100 mb-4"
 									src="../../Uploads/fundaciones/logfun1.png" alt="logo de la fundacion"></a>
-							<a href="mascotas.php" class="btn btn-login mb-4">Mascotas</a>
-							<a href="fundacion.php" class="btn btn-login mb-4">Eventos</a>
+							<a href="mascotasFundacionEsp.php" class="btn btn-login mb-4">Mascotas</a>
+							<a href="eventos.php" class="btn btn-login mb-4">Eventos</a>
 
 							<p  class="text-center mb-2">Kennedy </p></a>
 							<p  class="text-center mb-2">Cl. 8 #19a 51</p></a>

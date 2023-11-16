@@ -1,9 +1,8 @@
 <?php
-
-require_once("../../Models/conexion.php");
-require_once("../../Models/consultas.php");
-require_once("../../Controllers/mostrarInfoClientSite.php");
-
+  require_once("../../Models/conexion.php");
+  require_once("../../Models/consultas.php");
+  require_once("../../Models/seguridadFundacion.php");
+  require_once("../../Controllers/mostrarInfoFundacion.php");
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +62,7 @@ require_once("../../Controllers/mostrarInfoClientSite.php");
 <body class="body-wrapper">
 
 	<?php
-		include("nav-clientSite.php");
+		include("nav-fundacion.php");
 	?>
 
 <section class="section-sm minhe">
@@ -113,7 +112,7 @@ require_once("../../Controllers/mostrarInfoClientSite.php");
 							if (isset($_GET['fundacionNombre']) || isset ($_GET['localidad'])) {
 								buscarNombreFundacion($_GET['fundacionNombre'], $_GET['localidad']);
 							}else{
-								cargarFundacionesClientsite();
+								cargarFundacionesFundacion();
 							}
 								
 						?>

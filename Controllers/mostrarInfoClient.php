@@ -22,19 +22,17 @@ function cargarFundaciones()
                     <td >' . $f['nombre'] . '</td>
                     <td>' . $f['rol'] . '</td>
                     <td>' . $f['estado'] . '</td>
-                    <td><a href="modificar_fundacion.php?id=' . $f['id_user'] . '" class=" bg-main"><i class="fa-solid fa-pencil"></i> Editar</a></td>
-                    <td><a href="../../Controllers/eliminarFundacionAdmin.php?id=' . $f['id_user'] . '" class=" bg-red"><i class="fa-solid fa-trash"></i> Eliminar</a></td>
                 </tr>
                 ';
         }
     }
 }
 
-function cargarFundacionesBD()
+function cargarFundacionesCliente()
 {
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarFundacionesClientsite();
+    $result = $objConsultas->mostrarFundacionesTodos();
 
     if (!isset($result)) {
         echo '<h2>NO HAY FUNDACIONES REGISTRADAS</h2>';  //' . $f['id_user'] . '
@@ -69,11 +67,11 @@ function cargarFundacionesBD()
         }
     }
 }
-function cargarEventos()
+function cargarEventosCliente()
 {
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarEveAdmin();
+    $result = $objConsultas->mostrarEventosTodos();
 
     if (!isset($result)) {
         echo '<h2>NO HAY EVENTOS REGISTRADOS</h2>';
@@ -95,38 +93,11 @@ function cargarEventos()
     }
 }
 
-function cargarMascotas()
+function cargarMascotasCliente()
 {
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarMasAdmin();
-
-    if (!isset($result)) {
-        echo '<h2>NO HAY MASCOTAS REGISTRADAS</h2>';
-    } else {
-
-        foreach ($result as $f) {
-            echo '
-                <tr>
-                    <td><img src="../' . $f['foto'] . '" alt="Foto User" style="width: 60px; height: 60px; border-radius: 25%"></td>
-                    <td>' . $f['masNombre'] . '</td>
-                    <td>' . $f['masEdad'] . '</td>
-                    <td>' . $f['masRaza'] . '</td>
-                    <td>' . $f['masVacunas'] . '</td>
-                    <td>' . $f['masEstSalud'] . '</td>
-                    <td><a href="#" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
-                    <td><a href="../../Controllers/eliminarMasAdmin.php?id=' . $f['masId'] . '" class="btn btn-danger"><i class="ti-trash"></i> Eliminar</a></td>
-                </tr>
-                ';
-        }
-    }
-}
-
-function cargarMascotasBD()
-{
-
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarMascotasClientsite();
+    $result = $objConsultas->mostrarMascotasTodos();
 
     if (!isset($result)) {
         echo '<h2>NO EXISTEN MASCOTAS REGISTRADAS</h2>';  //' . $f['id_user'] . '
@@ -319,7 +290,6 @@ function perfilEditar()
     }
 }
 
-
 function confirmarCierreSesion()
 {
 
@@ -346,3 +316,93 @@ function confirmarCierreSesion()
     }
 }
 
+function buscarNombreEvento ($eveNombre)
+{
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarNombreEvento($eveNombre);
+
+    if (isset($result)) {
+        foreach ($result as $f) {
+            echo '
+            <div class="col-lg-4 col-md-6">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card">
+                        <div class="thumb-content">
+                            <a  class="bg-mascota" href="fundacion.php">
+                                <img class="card-img-top img-fluid"
+                                    src="../' . $f['foto'] . '"
+                                    alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title text-center">
+                            <a href="fundacion.php">' . $f['eveNombre'] . '</a>
+                            </h4>
+                            <ul class="list-inline product-meta">
+                                <li class="list-inline-item">
+                                    <a href="fundacion.php"><i class="fa fa-calendar"  style="color: #4942e4;"></i>' . $f['eveFecha'] . '</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>' . $f['eveHora'] . '</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>' . $f['eveDireccion'] . '</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                ';
+            }
+    } else {
+        
+        echo '<h2>NO HAY FUNDACIONES REGISTRADAS</h2>';  //' . $f['id_user'] . '
+
+    }
+}
+
+function buscarNombreFundacion ($nombrefun, $localidadfun)
+{
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarNombreFundacion($nombrefun, $localidadfun);
+
+    if (isset($result)) {
+        foreach ($result as $f) {
+            echo '
+                <div class="col-lg-4 col-md-6">
+                    <!-- product card -->
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <!-- <div class="price">$200</div> -->
+                                <a href="fundacion.php">
+                                    <h4 class="card-title text-center mb-3"><a href="fundacion.php">' . $f['nombre'] . '</a></h4>
+                                </a>
+                                <a href="fundacion.php">
+                                    <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['foto'] . '" alt="Card image cap">
+                                </a>
+                            </div>
+                            <div class="card-body text-center">
+                                <p class="m-0 pb-2">' . $f['localidad'] . '</p>
+                                <p class="m-0 pb-2">' . $f['email'] . '</p>
+                                <p class="m-0 pb-2">' . $f['telefono'] . '</p>
+                                <div class="product-ratings">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                ';
+            }
+    } else {
+        
+        echo '<h2>NO HAY FUNDACIONES REGISTRADAS</h2>';  //' . $f['id_user'] . '
+
+    }
+}
+
+?>

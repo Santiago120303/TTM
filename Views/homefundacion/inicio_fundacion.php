@@ -1,10 +1,8 @@
 <?php
-
     require_once("../../Models/conexion.php");
     require_once("../../Models/consultas.php");
     require_once("../../Models/seguridadFundacion.php");
     require_once("../../Controllers/mostrarInfoFundacion.php");
-
 ?>
 
 <!DOCTYPE html>
@@ -184,32 +182,6 @@
 				</div>
 			</div>
 		</div>
-	</section>
-
-	<!--====================================
-=            Call to Action            =
-=====================================-->
-
-	<section class="call-to-action overly bg-3 section-sm">
-		<!-- Container Start -->
-		<div class="container">
-			<div class="row justify-content-md-center text-center">
-				<div class="col-md-8">
-					<div class="content-holder">
-						<h2>¡Únete a la acción y sé parte del cambio! Desde donaciones que salvan vidas hasta adopciones
-							que llenan de amor, cada acción cuenta. Regístrate hoy y contribuye al impacto positivo.
-							¡Actúa ahora!</h2>
-						<ul class="list-inline mt-30">
-							<li class="list-inline-item"><a class="btn btn-main"
-									href="../clientSite/login.php">Ingresar</a></li>
-							<li class="list-inline-item"><a class="btn btn-light"
-									href="../clientSite/register.php">Registrarse</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Container End -->
 	</section>
 
 	<!--============================
