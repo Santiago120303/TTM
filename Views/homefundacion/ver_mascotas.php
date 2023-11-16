@@ -48,7 +48,7 @@
 
   <section id="main-content">
     <!-- Container Start -->
-    <div class="container-fluid">
+    <div class="container-fluid minhe">
       <!-- Row Start -->
       <div class="row">
         <?php
