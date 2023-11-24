@@ -2,7 +2,8 @@
 
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
-require_once("../../Controllers/mostrarInfoClientSite.php");
+require_once("../../Controllers/mostrarInfoComun.php");
+
 
 ?>
 
@@ -100,7 +101,7 @@ require_once("../../Controllers/mostrarInfoClientSite.php");
 					<div class="product-grid-list">
 						<div class="row mt-30">
 							<?php
-								cargarMascotasClientsite();
+								cargarMascotasComun();
 							?>	
 						</div>
 					</div>

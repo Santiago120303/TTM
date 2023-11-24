@@ -397,7 +397,7 @@ class Consultas
         }
     }
 
-    public function mostrarNombreFundacion($nombrefun, $localidadfun)
+    public function filtrarFundacion($nombrefun, $localidadfun)
     {
         $fundaciones = null;
     
@@ -476,7 +476,7 @@ class Consultas
         return $fundaciones;
     }
 
-    public function mostrarMascotasTodos()
+    public function mostrarMascotasComun()
     {
         $mascotas = [];
     
@@ -939,6 +939,23 @@ class Consultas
 
         echo '<script> alert("Clave actualizada correctamente") </script>';
         echo "<script> location.href='../Views/homeAdministrador/perfil.php' </script>";
+    }
+
+    public function actualizarClaveFundacion($id, $claveMd){
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE tbl_users SET clave=:claveMd WHERE id_user=:id ";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam(":id", $id);
+        $result->bindParam(":claveMd", $claveMd);
+
+
+        $result->execute();
+
+        echo '<script> alert("Clave actualizada correctamente") </script>';
+        echo "<script> location.href='../Views/homeFundacion/perfil.php' </script>";
     }
 
     //Dashboard Fundacion

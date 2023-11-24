@@ -1,8 +1,7 @@
 <?php
 
 //Este archivo recibe todas las consultas del modelo para mostrar la información al administrador
-
-//Esta función es la que se llama en la vista
+//Estas son las que se se llaman en la vista Administrador
 
 function cargarAdministradores()
 {
@@ -10,10 +9,11 @@ function cargarAdministradores()
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarAdministradoresAdmin();
 
+    // En caso de no haber administradores registrados se mostrar este texto
     if (!isset($result)) {
-        echo '<h2>NO HAY ADMINISTRADORES REGISTRADOS</h2>';
+        echo '<h2 class="d-block text-center">NO HAY ADMINISTRADORES REGISTRADOS</h2>';
     } else {
-
+        // Si hay adminsitradores registrados se recorrera cada uno y se mostran en una tabla
         foreach ($result as $f) {
             echo '
                 <tr>
@@ -112,10 +112,12 @@ function cargarClientes()
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarClientesAdmin();
 
+    // En caso de no haber clientes registrados se mostrar este texto
     if (!isset($result)) {
         echo '<h2>NO HAY CLIENTES REGISTRADOS</h2>';
     } else {
 
+        // Si hay clientes registrados se recorrera cada uno y se mostran en una tabla
         foreach ($result as $f) {
             echo '
                 <tr>
@@ -214,10 +216,12 @@ function cargarClientesReporte()
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarClientesAdmin();
 
+    // En caso de no haber clientes registrados se mostrar este texto
     if (!isset($result)) {
         echo '<h2>NO HAY USUARIOS REGISTRADOS</h2>';
     } else {
 
+        // Si hay clientes registrados se recorrera cada uno y se mostran en una tabla para despues generar el respectivo reporte
         foreach ($result as $f) {
             echo '
                 <tr>
@@ -239,15 +243,16 @@ function cargarFundaciones()
 
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarFundacionesAdmin();
-
+    
+    // En caso de no haber fundaciones registradas se mostrar este texto
     if (!isset($result)) {
         echo '<h2>NO HAY FUNDACIONES REGISTRADAS</h2>';
     } else {
-
+        // Si hay fundaciones registradas se recorrera cada uno y se mostran en una tabla
         foreach ($result as $f) {
             echo '
                 <tr>
-                    <td><img src="../' . $f['foto'] . '" alt="Foto User" style="height: 50px; border-radius: 10px; margin: 0 auto;"></td>
+                    <td><img src="../' . $f['foto'] . '" alt="Foto User" style="height: 50px; border-radius: 10px; margin: 0 auto; min-width:115px; max-width:115px;"></td>
                     <td >' . $f['id_user'] . '</td>
                     <td>' . $f['nombre'] . '</td>
                     <td>' . $f['email'] . '</td>
@@ -327,11 +332,11 @@ function cargarFundacionesReporte()
 
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarFundacionesAdmin();
-
+    // En caso de no haber fundaciones registradas se mostrar este texto
     if (!isset($result)) {
         echo '<h2>NO HAY USUARIOS REGISTRADOS</h2>';
     } else {
-
+        // Si hay fundaciones registradas se recorrera cada uno y se mostran en una tabla
         foreach ($result as $f) {
             echo '
                 <tr>

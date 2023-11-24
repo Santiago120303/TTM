@@ -2,7 +2,7 @@
 
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
-require_once("../../Controllers/mostrarInfoClientSite.php");
+require_once("../../Controllers/mostrarInfoComun.php");
 
 ?>
 
@@ -45,18 +45,19 @@ require_once("../../Controllers/mostrarInfoClientSite.php");
 
 	<link href="../css/style.css" rel="stylesheet">
 
-	
-    <!-- Estilos propios del documento -->
-    <style>
-         .list {
-        max-height: 200px !important;
-        overflow:hidden !important;
-        overflow-y: scroll !important;
-        }
-	   input::placeholder{
-		font-family: 'Montserrat', sans-serif;
-	   }
-    </style>
+
+	<!-- Estilos propios del documento -->
+	<style>
+		.list {
+			max-height: 200px !important;
+			overflow: hidden !important;
+			overflow-y: scroll !important;
+		}
+
+		input::placeholder {
+			font-family: 'Montserrat', sans-serif;
+		}
+	</style>
 
 </head>
 
@@ -66,65 +67,67 @@ require_once("../../Controllers/mostrarInfoClientSite.php");
 		include("nav-clientSite.php");
 	?>
 
-<section class="section-sm minhe">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="search-result bg-gray text-center">
-					<h2>Fundaciones</h2>
+	<section class="section-sm minhe">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="search-result bg-gray text-center">
+						<h2>Fundaciones</h2>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-3 col-md-4">
-				<!--Buscador-->
-				<form method="get">
-				<input class="mt-3 nice-select form-control w-100 text-center" type="text" name="fundacionNombre" placeholder="Fundacion...">
-				<select name="localidad" id="" class="form-control mt-3 nice-select form-control w-100 text-center"  >
-					<option value="">Localidad</option>
-					<option value="1">Antonio Nariño</option>
-					<option value="2">Barrio Unidos</option>
-					<option value="3">Bosa</option>
-					<option value="4">Chapinero</option>
-					<option value="5">Ciudad Bolívar</option>
-					<option value="6">Engativá</option>
-					<option value="7">Fontibón</option>
-					<option value="8">Kennedy</option>
-					<option value="9">La Candelaria</option>
-					<option value="10">Los Mártires</option>
-					<option value="11">Puente Aranda</option>
-					<option value="12">Rafael Uribe Uribe</option>
-					<option value="13">San Cristóbal</option>
-					<option value="14">Santa Fe</option>
-					<option value="15">Suba</option>
-					<option value="16">Sumapaz</option>
-					<option value="17">Teusaquillo</option>
-					<option value="18">Tunjuelito</option>
-					<option value="19">Usaquén</option>
-					<option value="20">Usme</option>
-				</select>
-				<input class="mt-3 btn btn-login" type="submit" value="Buscar">
-				</form>
-			</div>
-			<div class="col-lg-9 col-md-8">
-				<div class="product-grid-list">
-					<div class="row mt-30">
-						<?php
+			<div class="row">
+				<div class="col-lg-3 col-md-4">
+					<!--Buscador-->
+					<form method="get" style="padding:20px; background: white;">
+						<input class="mt-3 nice-select form-control w-100 text-center" type="text"
+							name="fundacionNombre" placeholder="Fundacion...">
+						<select name="localidad" id=""
+							class="form-control mt-3 nice-select form-control w-100 text-center">
+							<option value="">Localidad</option>
+							<option value="1">Antonio Nariño</option>
+							<option value="2">Barrio Unidos</option>
+							<option value="3">Bosa</option>
+							<option value="4">Chapinero</option>
+							<option value="5">Ciudad Bolívar</option>
+							<option value="6">Engativá</option>
+							<option value="7">Fontibón</option>
+							<option value="8">Kennedy</option>
+							<option value="9">La Candelaria</option>
+							<option value="10">Los Mártires</option>
+							<option value="11">Puente Aranda</option>
+							<option value="12">Rafael Uribe Uribe</option>
+							<option value="13">San Cristóbal</option>
+							<option value="14">Santa Fe</option>
+							<option value="15">Suba</option>
+							<option value="16">Sumapaz</option>
+							<option value="17">Teusaquillo</option>
+							<option value="18">Tunjuelito</option>
+							<option value="19">Usaquén</option>
+							<option value="20">Usme</option>
+						</select>
+						<input class="mt-3 btn btn-login" type="submit" value="Buscar">
+					</form>
+				</div>
+				<div class="col-lg-9 col-md-8">
+					<div class="product-grid-list">
+						<div class="row mt-30">
+							<?php
 							if (isset($_GET['fundacionNombre']) || isset ($_GET['localidad'])) {
-								buscarNombreFundacion($_GET['fundacionNombre'], $_GET['localidad']);
+								fitroFundaciones($_GET['fundacionNombre'], $_GET['localidad']);
 							}else{
-								cargarFundacionesClientsite();
+								cargarFundacionesComun();
 							}
 								
 						?>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<!--============================
+	<!--============================
 =            Footer            =
 =============================-->
 
