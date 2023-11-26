@@ -4,6 +4,45 @@
 
 //Esta función es la que se llama en la vista
 
+function mostrarInfoFunHome()
+{
+    $id_fundacion = $_SESSION['id'];
+    
+    $objConsultas = new Consultas();
+    $result = $objConsultas->MostrarInfoFunEspecifica($id_fundacion);
+
+    foreach ($result as $f) {
+        echo '
+            <h2 class="text-center mb-4">' . $f['nombre'] . '</h2>
+            <div class="row">';
+                echo'<div class="col-lg-12">
+                            <h3>Descripción</h3>';
+                                if (strlen($f['descripcion']) == 0) {
+                                    echo '<p>No se ha subido la descripción de la fundación, estamos trabajando en ello.</p>';
+                                } else {
+                                    echo '<p>' . $f['descripcion'] . '</p>';
+                                }
+                echo '</div>';       
+                echo'<div class="col-lg-12">
+                            <h3>Misión</h3>';
+                                if (strlen($f['mision']) == 0) {
+                                    echo '<p>No se ha subido la misión de la fundación, estamos trabajando en ello.</p>';
+                                } else {
+                                    echo '<p>' . $f['mision'] . '</p>';
+                                }
+                echo '</div>';       
+                echo'<div class="col-lg-12">
+                            <h3>Visión</h3>';
+                                if (strlen($f['vision']) == 0) {
+                                    echo '<p>No se ha subido la visión de la fundación, estamos trabajando en ello.</p>';
+                                } else {
+                                    echo '<p>' . $f['vision'] . '</p>';
+                                }
+                echo '</div>';       
+    }
+}
+
+
 function cargarEventosFundacion()
 {
 
@@ -437,47 +476,47 @@ function confirmarCierreSesion()
     }
 }
 
-function cargarMascotasFundacion()
-{
+// function cargarMascotasFundacion()
+// {
 
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarMascotasTodos();
+//     $objConsultas = new Consultas();
+//     $result = $objConsultas->mostrarMascotasTodos();
 
-    if (!isset($result)) {
-        echo '<h2>NO EXISTEN MASCOTAS REGISTRADAS</h2>';  //' . $f['id_user'] . '
-    } else {
+//     if (!isset($result)) {
+//         echo '<h2>NO EXISTEN MASCOTAS REGISTRADAS</h2>';  //' . $f['id_user'] . '
+//     } else {
 
-        foreach ($result as $f) {
-            echo ' 
-                <div class="col-lg-4 col-md-6">
-                <!-- product card -->
-                <div class="product-item bg-light">
-                    <div class="card pb-0">
-                        <div class="thumb-content">
-                            <!-- <div class="price">$200</div> -->
-                            <a href="mascota.php">
-                                <h4 class="card-title text-center mb-3"><a href="mascota.php">' .
-                                        $f['masNombre'] . '</a></h4>
-                            </a>
-                            <a href="mascota.php">
-                                <img class="card-img-top img-fluid" style="min-height:100px"
-                                    src="../' . $f['foto'] . '" alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="card-body text-center">
-                            <p class="m-0 pb-2">' . $f['especie'] . '</p>
-                            <p class="m-0 pb-2">' . $f['masRaza'] . '</p>
-                            <p class="m-0 pb-2">' . $f['masEdad'] . ' años</p>
-                            <div class="product-ratings">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        ';
-        }
-    }
-}
+//         foreach ($result as $f) {
+//             echo ' 
+//                 <div class="col-lg-4 col-md-6">
+//                 <!-- product card -->
+//                 <div class="product-item bg-light">
+//                     <div class="card pb-0">
+//                         <div class="thumb-content">
+//                             <!-- <div class="price">$200</div> -->
+//                             <a href="mascota.php">
+//                                 <h4 class="card-title text-center mb-3"><a href="mascota.php">' .
+//                                         $f['masNombre'] . '</a></h4>
+//                             </a>
+//                             <a href="mascota.php">
+//                                 <img class="card-img-top img-fluid" style="min-height:100px"
+//                                     src="../' . $f['foto'] . '" alt="Card image cap">
+//                             </a>
+//                         </div>
+//                         <div class="card-body text-center">
+//                             <p class="m-0 pb-2">' . $f['especie'] . '</p>
+//                             <p class="m-0 pb-2">' . $f['masRaza'] . '</p>
+//                             <p class="m-0 pb-2">' . $f['masEdad'] . ' años</p>
+//                             <div class="product-ratings">
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         ';
+//         }
+//     }
+// }
 
 function cargarEventos()
 {

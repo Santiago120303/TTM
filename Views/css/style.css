@@ -2523,6 +2523,17 @@ transition: transform 3000ms ease 0s !important;
 
 /* background style */
 
+a.bt-editar{
+  display: block !important;
+  width: 100px;
+  background: red;
+}
+
+a.bt-editar:hover{
+  background: var(--Azul-oscuro) !important;
+  color: var(--Blanco) !important;
+}
+
 .bg-main{
   background: var(--Azul-medio);
   color: var(--Blanco);
@@ -7035,7 +7046,7 @@ h6.h1 {
   color: #020b43;
   display: block;
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .dib {

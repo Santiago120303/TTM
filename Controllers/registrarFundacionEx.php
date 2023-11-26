@@ -8,6 +8,7 @@ require_once("../Models/consultas.php");
 $id = $_POST['id_user'];
 $nombre = $_POST['nombre'];
 $email = $_POST['email'];
+$localidad = $_POST['localidad'];
 $telefono = $_POST['telefono'];
 $clave = $_POST['clave'];
 $clave2 = $_POST['clave2'];
@@ -23,7 +24,7 @@ if ($clave == $clave2) {
 
       // CREAMOS UN OBJETO CONSULTAS A PARTIR DE LA CLASE CONSULTAS PARA ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO
       $objConsultas = new Consultas();
-      $result = $objConsultas->insertarFundacionEx($id, $nombre, $email, $telefono, $claveMd, $rol, $estado, $tipo_doc);
+      $result = $objConsultas->insertarFundacionEx($id, $nombre, $email, $localidad, $telefono, $claveMd, $rol, $estado, $tipo_doc);
 } else {
 
       // SI LAS CLAVES NO COINCIDEN SE MOSTRARA UNA VENTANA EMERGENTE COMUNICANDOLE AL USUARIO EL PROBLEMA Y LO REDIRIGIRA A FORMULARIO DE REGISTRO

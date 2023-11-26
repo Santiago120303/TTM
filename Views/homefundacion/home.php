@@ -73,37 +73,9 @@
         <!-- Recently Favorited -->
         <section id="main-content">
           <article class="single-post" style="width: 1100px !important; margin: 0 auto;">
-            <h2 class="text-center mb-4">Acerca de Patitas Solidarias </h2>
-            <div class="row ">
-              <div class="col-lg-12">
-                <h3>Descripción</h3>
-                <p>Patitas Solidarias es una organización sin fines de lucro dedicada al bienestar y
-                  protección de los animales. Nuestra misión es proporcionar un hogar temporal y
-                  permanente para mascotas en situación de abandono y maltrato, así como promover
-                  la adopción responsable y la conciencia sobre el cuidado de los animales.
-                  Trabajamos incansablemente para brindar amor, cuidado y una segunda oportunidad
-                  a cada patita peluda que llega a nuestras puertas.</p>
-					  	</div> 
-              <div class="col-lg-12">
-                <h3>Misión</h3>
-                <p>Nuestra misión es ser el refugio seguro y amoroso para los animales desamparados,
-                  donde recibirán atención médica, alimentación adecuada y el afecto necesario
-                  para su recuperación física y emocional. Buscamos promover la adopción
-                  responsable, educar a la comunidad sobre el bienestar animal y colaborar con
-                  otras organizaciones para lograr un mundo donde cada mascota tenga un hogar
-                  lleno de amor.</p>
-              </div>
-              <div class="col-lg-12">
-                <h3>Visión</h3>
-                <p>En Patitas Solidarias, soñamos con un mundo en el que cada mascota tenga un hogar
-                  donde se les brinde amor, respeto y cuidado adecuado. Nos esforzamos por ser
-                  líderes en el rescate y protección animal, trabajando de la mano con la
-                  comunidad para crear conciencia sobre la importancia de la adopción responsable
-                  y la prevención del abandono. Aspiramos a ser un faro de esperanza para las
-                  patitas desamparadas, demostrando que juntos podemos marcar la diferencia en la
-                  vida de estos fieles compañeros.</p>
-              </div>
-            </div>
+          <?php
+          mostrarInfoFunHome();
+          ?>
           </article>
         </section>
       </div>

@@ -40,7 +40,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-8 align-item-center">
           <div class="border">
-            <h3 class="bg-gray p-4 text-center">Recuperación de contraseña</h3>
+            <h3 class="bg-gray p-4 text-center mb-0">Recuperación de contraseña</h3>
             <form action="../../Controllers/generarClave.php" method="POST">
               <fieldset class="p-4">
                 <label>Identificación:</label>  

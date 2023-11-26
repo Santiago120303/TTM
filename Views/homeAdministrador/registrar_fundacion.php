@@ -124,27 +124,27 @@
                                                     <div class="form-group col-lg-6">
                                                         <label>Localidad:</label>
                                                         <select required name="localidad" id="" class="form-control"  >
-                                                            <option value="">Selecciona una opción</option>
-                                                            <option value="1">Antonio Nariño</option>
-                                                            <option value="2">Barrio Unidos</option>
-                                                            <option value="3">Bosa</option>
-                                                            <option value="4">Chapinero</option>
-                                                            <option value="5">Ciudad Bolívar</option>
-                                                            <option value="6">Engativá</option>
-                                                            <option value="7">Fontibón</option>
-                                                            <option value="8">Kennedy</option>
-                                                            <option value="9">La Candelaria</option>
-                                                            <option value="10">Los Mártires</option>
-                                                            <option value="11">Puente Aranda</option>
-                                                            <option value="12">Rafael Uribe Uribe</option>
-                                                            <option value="13">San Cristóbal</option>
-                                                            <option value="14">Santa Fe</option>
-                                                            <option value="15">Suba</option>
-                                                            <option value="16">Sumapaz</option>
-                                                            <option value="17">Teusaquillo</option>
-                                                            <option value="18">Tunjuelito</option>
-                                                            <option value="19">Usaquén</option>
-                                                            <option value="20">Usme</option>
+                                                        <option value="">Localidad</option>
+                                                        <option value="AnNa">Antonio Nariño</option>
+                                                        <option value="BaUn">Barrio Unidos</option>
+                                                        <option value="Bo">Bosa</option>
+                                                        <option value="Ch">Chapinero</option>
+                                                        <option value="CiBo">Ciudad Bolívar</option>
+                                                        <option value="En">Engativá</option>
+                                                        <option value="Fo">Fontibón</option>
+                                                        <option value="Ke">Kennedy</option>
+                                                        <option value="LaCa">La Candelaria</option>
+                                                        <option value="LoMa">Los Mártires</option>
+                                                        <option value="PuAr">Puente Aranda</option>
+                                                        <option value="RaUrUr">Rafael Uribe Uribe</option>
+                                                        <option value="SaCr">San Cristóbal</option>
+                                                        <option value="Sa">Santa Fe</option>
+                                                        <option value="Su">Suba</option>
+                                                        <option value="Sum">Sumapaz</option>
+                                                        <option value="Te">Teusaquillo</option>
+                                                        <option value="Tu">Tunjuelito</option>
+                                                        <option value="Us">Usaquén</option>
+                                                        <option value="Usm">Usme</option>
                                                         </select>
                                                     </div>
 

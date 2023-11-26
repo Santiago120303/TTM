@@ -61,7 +61,7 @@ class Consultas
         }
     }
 
-    public function insertarFundacionEx($id, $nombre, $email, $telefono, $claveMd, $rol, $estado, $tipo_doc){
+    public function insertarFundacionEx($id, $nombre, $email, $localidad, $telefono, $claveMd, $rol, $estado, $tipo_doc){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -85,17 +85,17 @@ class Consultas
 
         if ($f) {
 
-            echo '<script> alert("Esta fundación ya esta registrada, intentelo nuevamente o inicie sesión") </script>';
+            echo '<script> alert("Esta fundación ya esta registrada, verifica la información o inicie sesión") </script>';
             echo "<script> location.href='../Views/clientSite/register_fundacion.php' </script>";
         } else {
 
             //Creamos la variable que contendra la consulta a ejecutar
-            $insertar = "INSERT INTO tbl_users (id_user, nombre, email, telefono, clave, cod_rol_fk, cod_estado_fk, cod_tipo_doc_fk)
+            $insertarUsers = "INSERT INTO tbl_users (id_user, nombre, email, telefono, clave, cod_rol_fk, cod_estado_fk, cod_tipo_doc_fk)
                 VALUES (:id, :nombre, :email, :telefono, :claveMd, :rol, :estado, :tipo_doc)";
 
             //Preparamos todo lo necesario para ejecutar la funcion anterior
 
-            $result = $conexion->prepare($insertar);
+            $result = $conexion->prepare($insertarUsers);
 
             //convertimos los argumentos en parametros
 
@@ -109,6 +109,16 @@ class Consultas
             $result->bindParam(":tipo_doc", $tipo_doc);
 
             //Ejecutamos el insert
+            $result->execute();
+
+            $insertar_tbl_fundaciones = "INSERT INTO tbl_fundaciones (id_fundacion, id_user_fundacion_fk, cod_localidad_fk)
+            VALUES (:id, :id, :localidad)";
+
+            $result = $conexion->prepare($insertar_tbl_fundaciones);
+
+            $result->bindParam(":id", $id);
+            $result->bindParam(":localidad", $localidad);
+
             $result->execute();
 
             echo '<script> alert("Fundacion Registrada con Exito, porfavor contacte al administrador para activar su cuenta") </script>';
@@ -407,9 +417,9 @@ class Consultas
         $nombre = "%" .$nombrefun ."%";
         $localidad = "%" .$localidadfun ."%";
 
-        $consultar = "SELECT tbl_users.id_user, tbl_users.nombre, tbl_users.telefono, tbl_users.email, tbl_users.foto, tbl_localidad.localidad
+        $consultar = "SELECT tbl_users.id_user, tbl_users.nombre, tbl_users.telefono, tbl_users.email, tbl_users.foto, tbl_localidades.localidad
         FROM ((tbl_fundaciones
-        INNER JOIN tbl_localidad ON tbl_fundaciones.cod_localidad_fk = tbl_localidad.cod_localidad)
+        INNER JOIN tbl_localidades ON tbl_fundaciones.cod_localidad_fk = tbl_localidades.cod_localidad)
         INNER JOIN tbl_users ON tbl_fundaciones.id_user_fundacion_fk = tbl_users.id_user)
         WHERE tbl_users.nombre LIKE :nombre and tbl_fundaciones.cod_localidad_fk LIKE :localidad ";
     
@@ -461,10 +471,11 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
     
-        $consultar = "SELECT tbl_users.id_user, tbl_users.nombre, tbl_users.telefono, tbl_users.email, tbl_users.foto,  tbl_localidad.localidad
+        $consultar = "SELECT tbl_users.id_user, tbl_users.nombre, tbl_users.telefono, tbl_users.email, tbl_users.foto,  tbl_localidades.localidad
         FROM ((tbl_fundaciones
-        INNER JOIN tbl_localidad ON tbl_fundaciones.cod_localidad_fk = tbl_localidad.cod_localidad)
-        INNER JOIN tbl_users ON tbl_fundaciones.id_user_fundacion_fk = tbl_users.id_user)";
+        INNER JOIN tbl_localidades ON tbl_fundaciones.cod_localidad_fk = tbl_localidades.cod_localidad)
+        INNER JOIN tbl_users ON tbl_fundaciones.id_user_fundacion_fk = tbl_users.id_user)
+        WHERE tbl_users.cod_estado_fk = 1";
     
         $result = $conexion->prepare($consultar);
         $result->execute(); 
@@ -474,6 +485,33 @@ class Consultas
         }
     
         return $fundaciones;
+    }
+
+    public function MostrarInfoFunEspecifica($id_fundacion)
+    {
+        $fundacion = null;
+    
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consulta = "SELECT tbl_users.id_user, tbl_users.nombre, tbl_users.telefono, tbl_users.email, tbl_users.foto,  tbl_localidades.localidad, tbl_fundaciones.direccion, tbl_fundaciones.descripcion, tbl_fundaciones.mision, tbl_fundaciones.vision, tbl_fundaciones.foto_fun_1, tbl_fundaciones.foto_fun_2, tbl_fundaciones.foto_fun_3, tbl_fundaciones.foto_fun_3
+        FROM ((tbl_fundaciones
+        INNER JOIN tbl_localidades ON tbl_fundaciones.cod_localidad_fk = tbl_localidades.cod_localidad)
+        INNER JOIN tbl_users ON tbl_fundaciones.id_user_fundacion_fk = tbl_users.id_user)
+        WHERE tbl_users.id_user = :id_fundacion";
+    
+        $result = $conexion->prepare($consulta);
+
+        $result->bindParam(':id_fundacion',$id_fundacion);
+
+        $result->execute(); 
+    
+        while ($resultado = $result->fetch()) {
+            $fundacion[] = $resultado;
+        }
+    
+        return $fundacion;
     }
 
     public function mostrarMascotasComun()

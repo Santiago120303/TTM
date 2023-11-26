@@ -65,7 +65,7 @@
                       </select>
                     </div>
               
-                    <div class="form-group col-lg-12 ">
+                    <div class="form-group col-lg-6 ">
                       <label>Nombre de la fundación:</label>
                       <input type="text" class="form-control" placeholder="Ej: Patitas Solidarias" required name="nombre">
                     </div>
@@ -73,6 +73,33 @@
                     <div class="form-group col-lg-6">
                       <label>Correo electrónico:</label>
                       <input type="email" class="form-control" placeholder="Ej: patitassolidarias@gmail.com" required name="email">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label>Localidad:</label>
+                        <select required name="localidad" id="" class="form-control"  >
+                        <option value="">Localidad</option>
+                        <option value="AnNa">Antonio Nariño</option>
+                        <option value="BaUn">Barrio Unidos</option>
+                        <option value="Bo">Bosa</option>
+                        <option value="Ch">Chapinero</option>
+                        <option value="CiBo">Ciudad Bolívar</option>
+                        <option value="En">Engativá</option>
+                        <option value="Fo">Fontibón</option>
+                        <option value="Ke">Kennedy</option>
+                        <option value="LaCa">La Candelaria</option>
+                        <option value="LoMa">Los Mártires</option>
+                        <option value="PuAr">Puente Aranda</option>
+                        <option value="RaUrUr">Rafael Uribe Uribe</option>
+                        <option value="SaCr">San Cristóbal</option>
+                        <option value="Sa">Santa Fe</option>
+                        <option value="Su">Suba</option>
+                        <option value="Sum">Sumapaz</option>
+                        <option value="Te">Teusaquillo</option>
+                        <option value="Tu">Tunjuelito</option>
+                        <option value="Us">Usaquén</option>
+                        <option value="Usm">Usme</option>
+                        </select>
                     </div>
               
                     <div class="form-group col-lg-6">
