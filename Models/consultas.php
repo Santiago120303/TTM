@@ -521,7 +521,7 @@ class Consultas
         $conexion = $objConexion->get_conexion();
     
         // Consulta para obtener solo los campos necesarios
-        $consultar = "SELECT tbl_mascotas.masNombre, tbl_mascotas.masFoto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_especies.especie, tbl_mascota_sexo.mascota_sexo
+        $consultar = "SELECT tbl_mascotas.masId, tbl_mascotas.masNombre, tbl_mascotas.masFoto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_especies.especie, tbl_mascota_sexo.mascota_sexo
         FROM ((tbl_mascotas
         INNER JOIN tbl_especies ON tbl_mascotas.cod_especie_fk = tbl_especies.cod_especie)
         INNER JOIN tbl_mascota_sexo ON tbl_mascotas.cod_mascota_sexo_fk = tbl_mascota_sexo.cod_mascota_sexo)";
@@ -580,7 +580,7 @@ class Consultas
         $conexion = $objConexion->get_conexion();
     
         // Consulta para obtener solo los campos necesarios
-        $consultar = "SELECT tbl_mascotas.id_fun_mas_fk, tbl_mascotas.masNombre, tbl_mascotas.masFoto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_especies.especie, tbl_mascota_sexo.mascota_sexo
+        $consultar = "SELECT tbl_mascotas.id_fun_mas_fk, tbl_mascotas.masId, tbl_mascotas.masNombre, tbl_mascotas.masFoto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_especies.especie, tbl_mascota_sexo.mascota_sexo
         FROM ((tbl_mascotas
         INNER JOIN tbl_especies ON tbl_mascotas.cod_especie_fk = tbl_especies.cod_especie)
         INNER JOIN tbl_mascota_sexo ON tbl_mascotas.cod_mascota_sexo_fk = tbl_mascota_sexo.cod_mascota_sexo)
@@ -598,6 +598,38 @@ class Consultas
     
         return $mascotas;
     }
+
+    public function mostrarMascotaFundacionEspecificaComun($id_mascota)
+    {
+        $mascota = [];
+    
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta para obtener solo los campos necesarios
+        $consultar = "SELECT  *
+        FROM (((((tbl_mascotas
+        INNER JOIN tbl_especies ON tbl_mascotas.cod_especie_fk = tbl_especies.cod_especie)
+        INNER JOIN tbl_mascota_sexo ON tbl_mascotas.cod_mascota_sexo_fk = tbl_mascota_sexo.cod_mascota_sexo)
+        INNER JOIN tbl_users ON tbl_mascotas.id_fun_mas_fk = tbl_users.id_user)
+        INNER JOIN tbl_fundaciones ON tbl_mascotas.id_fun_mas_fk  = tbl_fundaciones.id_fundacion)
+        INNER JOIN tbl_localidades ON tbl_fundaciones.cod_localidad_fk  = tbl_localidades.cod_localidad)
+        WHERE tbl_mascotas.masId = :id_mascota";
+    
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam('id_mascota',$id_mascota);
+        
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $mascota[] = $resultado;
+        }
+    
+        return $mascota;
+    }
+    
 
     public function mostrarEventosTodos()
     {
