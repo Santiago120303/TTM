@@ -436,8 +436,6 @@ class Consultas
         return $fundaciones;
     }
 
-
-
     public function mostrarFundacionesAdmin(){
 
         $f = null;
@@ -529,6 +527,41 @@ class Consultas
         INNER JOIN tbl_mascota_sexo ON tbl_mascotas.cod_mascota_sexo_fk = tbl_mascota_sexo.cod_mascota_sexo)";
     
         $result = $conexion->prepare($consultar);
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $mascotas[] = $resultado;
+        }
+    
+        return $mascotas;
+    }
+
+    public function filtrarMascotas ($masEspecie, $masEdad, $masSexo, $masRaza)
+    {
+        $fundaciones = null;
+    
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+        $especie = "%" .$masEspecie ."%";
+        $edad = "%" .$masEdad ."%";
+        $sexo = "%" .$masSexo ."%";
+        $raza = "%" .$masRaza ."%";
+
+        // Consulta para obtener solo los campos necesarios
+        $consultar = "SELECT tbl_mascotas.masNombre, tbl_mascotas.masFoto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_especies.especie, tbl_mascota_sexo.mascota_sexo
+        FROM ((tbl_mascotas
+        INNER JOIN tbl_especies ON tbl_mascotas.cod_especie_fk = tbl_especies.cod_especie)
+        INNER JOIN tbl_mascota_sexo ON tbl_mascotas.cod_mascota_sexo_fk = tbl_mascota_sexo.cod_mascota_sexo)
+        WHERE tbl_mascotas.cod_especie_fk LIKE :especie AND tbl_mascotas.masEdad LIKE :edad AND tbl_mascotas.cod_mascota_sexo_fk LIKE :sexo AND tbl_mascotas.masRaza LIKE :raza";
+    
+        $result = $conexion->prepare($consultar);
+        $result->bindParam(":especie", $especie);
+        $result->bindParam(":edad", $edad);
+        $result->bindParam(":sexo", $sexo);
+        $result->bindParam(":raza", $raza);
+
+
         $result->execute();
     
         while ($resultado = $result->fetch()) {

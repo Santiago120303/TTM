@@ -56,45 +56,36 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-3 col-md-4">
-					<!-- Search Widget -->
-					<div class="widget search p-0">
-						<div class="input-group">
-							<input type="text" class="form-control" id="expire" placeholder="Buscar...">
-							<span class="input-group-addon"><i class="fa fa-search px-3"></i></span>
-						</div>
-					</div>
-					<div class="category-sidebar">
-						<div class="widget product-shorting">
-							<h4 class="widget-header">Filtrar Mascotas</h4>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									Gatos
-								</label>
-							</div>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									Perros
-								</label>
-							</div>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									Aves
-								</label>
-							</div>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									Hogar Provisional
-								</label>
-							</div>
-						</div>
-	
-					</div>
-				</div>
+			<div class="col-lg-3 col-md-4">
+				<!--Buscador-->
+				<form method="get">
+				<input class="mt-3 nice-select form-control w-100 text-center" type="text" name="fundacionNombre" placeholder="Fundacion...">
+				<select name="localidad" id="" class="form-control mt-3 nice-select form-control w-100 text-center"  >
+					<option value="">Localidad</option>
+					<option value="1">Antonio Nariño</option>
+					<option value="2">Barrio Unidos</option>
+					<option value="3">Bosa</option>
+					<option value="4">Chapinero</option>
+					<option value="5">Ciudad Bolívar</option>
+					<option value="6">Engativá</option>
+					<option value="7">Fontibón</option>
+					<option value="8">Kennedy</option>
+					<option value="9">La Candelaria</option>
+					<option value="10">Los Mártires</option>
+					<option value="11">Puente Aranda</option>
+					<option value="12">Rafael Uribe Uribe</option>
+					<option value="13">San Cristóbal</option>
+					<option value="14">Santa Fe</option>
+					<option value="15">Suba</option>
+					<option value="16">Sumapaz</option>
+					<option value="17">Teusaquillo</option>
+					<option value="18">Tunjuelito</option>
+					<option value="19">Usaquén</option>
+					<option value="20">Usme</option>
+				</select>
+				<input class="mt-3 btn btn-login" type="submit" value="Buscar">
+				</form>
+			</div>
 	
 				<div class="col-lg-9 col-md-8">
 					<div class="product-grid-list">

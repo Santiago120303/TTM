@@ -303,6 +303,45 @@ function cargarMascotasComun()
     }
 }
 
+function fitroMascotas ($nombrefun, $localidadfun)
+{
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->filtrarFundacion($nombrefun, $localidadfun);
+
+    if (isset($result)) {
+        foreach ($result as $f) {
+            echo '
+                <div class="col-lg-4 col-md-6">
+                    <!-- product card -->
+                    <div class="product-item bg-light">
+                        <div class="card pb-0 card-fundaciones">
+                            <div class="thumb-content">
+                                <!-- <div class="price">$200</div> -->
+                                    <h4 class="card-title text-center mb-3"><a href="fundacion_especifica.php?id='.$f['id_user'].'">' . $f['nombre'] . '</a></h4>
+                                <a href="fundacion_especifica.php?id='.$f['id_user'].'">
+                                    <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['foto'] . '" alt="Card image cap">
+                                </a>
+                            </div>
+                            <div class="card-body text-center">
+                                <p class="m-0 pb-2">' . $f['localidad'] . '</p>
+                                <p class="m-0 pb-2">' . $f['email'] . '</p>
+                                <p class="m-0 pb-2">' . $f['telefono'] . '</p>
+                                <div class="product-ratings">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                ';
+            }
+    } else {
+        
+        echo '<h2>No existen fundaciones registradas con estas caracteristicas</h2>';  //' . $f['id_user'] . '
+
+    }
+}
+
 // function cargarEventos()
 // {
 
