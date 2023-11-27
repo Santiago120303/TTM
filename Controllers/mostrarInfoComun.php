@@ -442,36 +442,42 @@ function cargarMascotasComun()
     }
 }
 
-function fitroMascotas ($nombrefun, $localidadfun)
+function fitroMascotas ($masEspecie, $masEdad, $masSexo, $masRaza)
 {
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->filtrarFundacion($nombrefun, $localidadfun);
+    $result = $objConsultas->filtrarMascotas($masEspecie, $masEdad, $masSexo, $masRaza);
 
     if (isset($result)) {
         foreach ($result as $f) {
             echo '
-                <div class="col-lg-4 col-md-6">
-                    <!-- product card -->
-                    <div class="product-item bg-light">
-                        <div class="card pb-0 card-fundaciones">
-                            <div class="thumb-content">
-                                <!-- <div class="price">$200</div> -->
-                                    <h4 class="card-title text-center mb-3"><a href="fundacion_especifica.php?id='.$f['id_user'].'">' . $f['nombre'] . '</a></h4>
-                                <a href="fundacion_especifica.php?id='.$f['id_user'].'">
-                                    <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['foto'] . '" alt="Card image cap">
-                                </a>
-                            </div>
-                            <div class="card-body text-center">
-                                <p class="m-0 pb-2">' . $f['localidad'] . '</p>
-                                <p class="m-0 pb-2">' . $f['email'] . '</p>
-                                <p class="m-0 pb-2">' . $f['telefono'] . '</p>
-                                <div class="product-ratings">
-                                </div>
+            <div class="col-lg-4 col-md-6">
+                <!-- mascotas card -->
+                <div class="product-item bg-light" >
+                    <div class="card pb-0 card-mascotas">
+                        <div class="thumb-content">
+
+                            <a href="mascota_especifica_fundacion.php?id=' .$f['masId'] . '">
+                                <img class="card-img-top img-fluid" style="min-height:100px"
+                                    src="../' . $f['masFoto'] . '" alt="Imagen de la mascota">
+                            </a>
+                            
+                        </div>
+                        <div class="card-body">
+                            <a href="mascota_especifica_fundacion.php?id=' .$f['masId'] . '">
+                                <h4 class="card-title text-center mb-3"><a href="mascota.php">' .$f['masNombre'] . '</a></h4>
+                            </a>
+
+                            <p class="m-0 pb-2"><b>Especie: </b>' . $f['especie'] . '</p>
+                            <p class="m-0 pb-2"><b>Raza: </b>' . $f['masRaza'] . '</p>
+                            <p class="m-0 pb-2"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
+                            <p class="m-0 pb-2"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
+                            <div class="product-ratings">
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
                 ';
             }
     } else {

@@ -75,12 +75,12 @@ require_once("../../Controllers/mostrarInfoComun.php");
 						<select name="masEspecie" class="form-control mt-3 nice-select form-control w-100 text-center">
 							<option value="">Especie...</option>
 							<option value="1">Perro</option>
-							<option value="1">Gato</option>
-							<option value="1">Ave</option>
-							<option value="1">Conejo</option>
-							<option value="1">Roedor</option>
+							<option value="2">Gato</option>
+							<option value="3">Ave</option>
+							<option value="4">Conejo</option>
+							<option value="5">Roedor</option>
 						</select>
-						<input class="mt-3 form-control " type="text" name="masEdad" placeholder="Edad: 2 (años)">
+						<input class="mt-3 form-control " type="number" name="masEdad" placeholder="Edad: 2 (años)">
 						<select name="masSexo" class="form-control mt-3 nice-select form-control w-100 text-center">
 							<option value="">Sexo...</option>
 							<option value="1">Macho</option>
@@ -94,9 +94,13 @@ require_once("../../Controllers/mostrarInfoComun.php");
 				<div class="col-lg-9 col-md-8">
 					<div class="product-grid-list">
 						<div class="row mt-30">
-							<?php
+						<?php
+							if (isset($_GET['masEspecie']) || isset ($_GET['masEdad']) || isset ($_GET['masSexo'])  || isset ($_GET['masRaza'])) {
+								fitroMascotas($_GET['masEspecie'], $_GET['masEdad'], $_GET['masSexo'], $_GET['masRaza']);
+							}else{
 								cargarMascotasComun();
-							?>	
+							}
+						?>
 						</div>
 					</div>
 				</div>
