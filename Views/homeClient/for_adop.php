@@ -2,6 +2,7 @@
     require_once("../../Models/conexion.php");
     require_once("../../Models/consultas.php");
     require_once("../../Models/seguridadClient.php");
+    require_once("../../Controllers/mostrarInfoClient.php");
 ?>
 <!DOCTYPE html>
 
@@ -42,13 +43,13 @@
 
 <!-- header insertado con PHP -->
 	<?php
-		include("nav-clientSite.php");
+		include("nav-cliente.php");
 	?>
 	
 	<!--=================================
 =            Single Blog            =
 ==================================-->
-<section class="hero-area-f">
+<section class="hero">
 
     <div class="form">
         <div class="widget dashboard-container">
@@ -134,7 +135,7 @@
                                              
                                </div>
                                          
-                               <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30">Registrar nueva mascota</button>
+                               <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30">Enviar</button>
          
                              </form>
 

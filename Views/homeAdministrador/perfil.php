@@ -68,8 +68,6 @@
                 perfilEditar();
               ?>
 
-
-
               </div>
           </section>
         </div>
@@ -78,8 +76,6 @@
       <!-- Container End -->
     </div>
   </section>
-
-
 
   <!--============================
 =            Footer            =

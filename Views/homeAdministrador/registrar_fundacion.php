@@ -90,19 +90,19 @@
                                                     <div class="form-group col-lg-6">
                                                         <label>Tipo de Identificación:</label>
                                                         <select id="tipo_doc" class="form-control" required style="width: 100%;" name="tipo_doc">
-                                                            <option value="">Seleccion una opción</option>
+                                                            <option value="">Selecciona una opción</option>
                                                             <option value="4">NIT</option>
                                                             <option value="1">CC</option>
                                                         </select>
                                                     </div>
 
                                                     <div class="form-group col-lg-6 ">
-                                                        <label>Nombre de la fundación:</label>
+                                                        <label>Nombre de la Fundación o Razón Social:</label>
                                                         <input type="text" class="form-control" placeholder="Ej: Patitas Solidarias" required name="nombre">
                                                     </div>
 
                                                     <div class="form-group col-lg-6">
-                                                        <label>Correo electrónico:</label>
+                                                        <label>Correo Electrónico:</label>
                                                         <input type="email" class="form-control" placeholder="Ej: patitassolidarias@gmail.com" required  name="email">
                                                     </div>
 
@@ -149,7 +149,7 @@
                                                     </div>
 
                                                     <div class="form-group col-lg-6">
-                                                        <label>logo de la fundación:</label>
+                                                        <label>Logo de la Fundación:</label>
                                                         <input type="file" class="form-control" name="foto" accept=".jpeg, .jpg, .png, .gif">
                                                     </div>
 

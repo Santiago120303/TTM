@@ -62,8 +62,8 @@ function cargarEventosFundacion()
                     <td>' . $f['eveHora'] . '</td>
                     <td>' . $f['eveDireccion'] . '</td>
                     <td>' . $f['eveEstado'] . '</td>
-                    <td><a href="modificar_eventos.php?id=' . $f['eveId'] . '" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
-                    <td><a href="../../Controllers/eliminarEveFun.php?id=' . $f['eveId'] . '" class="btn btn-danger"><i class="ti-trash"></i> Eliminar</a></td>
+                    <td><a href="modificar_eventos.php?id=' . $f['eveId'] . '" class=" bg-main"><i class="fa-solid fa-pencil"></i> Editar</a></td>
+                    <td><a href="../../Controllers/eliminarEveFun.php?id=' . $f['eveId'] . '" class=" bg-red"><i class="fa-solid fa-trash"></i> Eliminar</a></td>
                 </tr>
                 ';
         }
@@ -174,8 +174,6 @@ function cargarMascotas()
             // ';
             echo '
 
-
-
                 <tr>
                     <td><img src="../' . $f['foto'] . '" alt="Foto User" style="width: 60px; height: 60px; border-radius: 25%"></td>
                     <td>' . $f['masNombre'] . '</td>
@@ -183,8 +181,8 @@ function cargarMascotas()
                     <td>' . $f['masRaza'] . '</td>
                     <td>' . $f['masVacunas'] . '</td>
                     <td>' . $f['masEstSalud'] . '</td>
-                    <td><a href="modificar_mascotas.php?id=' . $f['masId'] . '" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
-                    <td><a href="../../Controllers/eliminarMasFun.php?id=' . $f['masId'] . '" class="btn btn-danger"><i class="ti-trash"></i> Eliminar</a></td>
+                    <td><a href="modificar_mascotas.php?id=' . $f['masId'] . '" class=" bg-main"><i class="fa-solid fa-pencil"></i> Editar</a></td>
+                    <td><a href="../../Controllers/eliminarMasFun.php?id=' . $f['masId'] . '" class=" bg-red"><i class="fa-solid fa-trash"></i> Eliminar</a></td>
                 </tr>
                 ';
         }
@@ -240,6 +238,30 @@ function cargarMascotasEditar()
 
             </form>
             ';
+    }
+}
+
+function cargarMascotasReporte()
+{
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarMascotasComun();
+    // En caso de no haber fundaciones registradas se mostrar este texto
+    if (!isset($result)) {
+        echo '<h2>NO HAY MASCOTAS REGISTRADAS</h2>';
+    } else {
+        foreach ($result as $f) {
+            echo '
+                <tr>
+                    <td>' . $f['masNombre'] . '</td>
+                    <td>' . $f['masEdad'] . '</td>
+                    <td>' . $f['masRaza'] . '</td>
+                    <td>' . $f['especie'] .'</td>
+                    <td>' . $f['masVacunas'] . '</td>
+                    <td>' . $f['masEstSalud'] . '</td>
+                </tr>
+                ';
+        }
     }
 }
 
@@ -366,7 +388,7 @@ function perfilEditar()
                                 </div>
         
                                 <div class="form-group col-lg-6">
-                                    <label>Correo electrónico:</label>
+                                    <label>Correo Electrónico:</label>
                                     <input type="email" class="form-control" placeholder="Ej:Diana@gmail.com" required name="email" value="' . $f['email'] . '">
                                 </div>
         
@@ -391,7 +413,7 @@ function perfilEditar()
                                 </div>
         
                                 <div class="form-group col-lg-6">
-                                    <label>Foto de logo</label>
+                                    <label>Foto de Logo</label>
                                     <input type="file" class="form-control" required name="logo" accept=".jpeg, .jpg, .png, .gif">
                                 </div>
                             </div>
@@ -409,7 +431,7 @@ function perfilEditar()
                                 </div>
         
                                 <div class="form-group col-lg-6">
-                                    <label>Imagen principal</label>
+                                    <label>Imagen Principal</label>
                                     <input type="file" class="form-control" required name="foto" accept=".jpeg, .jpg, .png, .gif">
                                 </div>
                             </div>
@@ -428,17 +450,17 @@ function perfilEditar()
                                         name="id_user" value="' . $f['id_user'] . '">
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label>Nueva clave:</label>
+                                    <label>Nueva Clave:</label>
                                     <input type="password" class="form-control" placeholder="Ej:**********" required
                                         name="clave">
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label>Confirmar clave:</label>
+                                    <label>Confirmar Clave:</label>
                                     <input type="password" class="form-control" placeholder="Ej:**********" required
                                         name="clave2">
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-main-sm btn-flat  mt-30 w-100">Actualizar Clave</button>
+                            <button type="submit" class="btn btn-main-sm btn-flat  mt-30 w-100">Actualizar clave</button>
         
                         </form>
                     </div>

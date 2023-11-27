@@ -4,7 +4,6 @@ require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
 require_once("../../Controllers/mostrarInfoComun.php");
 
-
 ?>
 
 <!DOCTYPE html>
@@ -106,9 +105,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 						</div>
 					</div>
 				</div>
-	
-
-	
+			</div>
 	</section>
 	<!--============================
 =            Footer            =

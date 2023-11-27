@@ -95,7 +95,7 @@
                                                         <input type="text" class="form-control" placeholder="Ej:Gomez" required name="apellido">
                                                     </div>
                                                     <div class="form-group col-lg-6">
-                                                        <label>Correo electrónico:</label>
+                                                        <label>Correo Electrónico:</label>
                                                         <input type="email" class="form-control" placeholder="Ej:ejemplo@gmail.com" required name="email">
                                                     </div>
                                                     <div class="form-group col-lg-6">
@@ -106,7 +106,7 @@
                                                     <div class="form-group col-lg-6">
                                                         <label>Rol:</label>
                                                         <select required name="rol" id="" class="form-control">
-                                                            <option value="">Selecciona una opcion</option>
+                                                            <option value="">Selecciona una opción</option>
                                                             <option value="1">Administrador</option>
                                                             <option value="3">Cliente</option>
                                                         </select>
@@ -115,7 +115,7 @@
                                                     <div class="form-group col-lg-6">
                                                         <label>Estado:</label>
                                                         <select required name="estado" id="" class="form-control">
-                                                            <option value="">Selecciona una opcion</option>
+                                                            <option value="">Selecciona una opción</option>
                                                             <option value="1">Activo</option>
                                                             <option value="2">Pendiente</option>
                                                             <option value="3">Bloqueado</option>

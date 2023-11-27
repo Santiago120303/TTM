@@ -1,8 +1,8 @@
 <?php
   require_once("../../Models/conexion.php");
   require_once("../../Models/consultas.php");
-  require_once("../../Models/seguridadFundacion.php");
-  require_once("../../Controllers/mostrarInfoFundacion.php");
+  require_once("../../Models/seguridadAdministrador.php");
+  require_once("../../Controllers/mostrarInfoAdmin.php");
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Fundación - Eventos</title>
+  <title>Administrador - Mascotas</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,59 +40,60 @@
 <body class="body-wrapper">
 
 <?php
-  include("nav-fundacion.php");
+  include("nav-admin.php");
 ?>
 <!--==================================
 =            User Profile            =
 ===================================-->
-<section class="dashboard section minhe">
-  <!-- Container Start -->
-  <div class="container-fluid">
-    <!-- Row Start -->
-    <div class="row">
-      <?php
-          include("menu-include.php")//col-lg-3
-      ?>
-      <div class="col-lg-9">
-        <!-- Recently Favorited -->
-        <div class="widget dashboard-container my-adslist">
-          <h3 class="widget-header">Eventos</h3>
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="basic-elements">
-                                            
-                  <table class="table table-bordered table-hover">
-                  <thead>
-                  <tr>
-                    <th>Imagen del Evento</th>
-                    <th>Nombre del Evento</th>
-                    <th>Fecha del Evento</th>
-                    <th>Hora del Evento</th>
-                    <th>Dirección del Evento</th>
-                    <th>Estado</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                      <?php 
-                      cargarEventos();
-                      ?>
-                  </tbody>
-                  </table>
-                              
+
+  <section id="main-content">
+    <!-- Container Start -->
+    <div class="container-fluid minhe">
+      <!-- Row Start -->
+      <div class="row">
+        <?php
+            include("menu-include.php")//col-lg-3
+        ?>
+          <div class="col-lg-9">
+            <!-- Recently Favorited -->
+            <div class="widget dashboard-container my-adslist">
+              <h3 class="widget-header">Mascotas</h3>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                          <thead>
+                            <tr>
+                              <th>Foto</th>
+                              <th>Fundación</th>
+                              <th>Nombre</th>
+                              <th>Edad</th>
+                              <th>Raza</th>
+                              <th>Vacunas</th>
+                              <th>Estado de Salud</th>
+                              <th>Eliminar</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <?php 
+                              cargarMascotas();
+                            ?>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-        </div>
-      <!-- Row End -->
+          </div>
+        <!-- Row End -->
       </div>
-    <!-- Container End -->
+      <!-- Container End -->
     </div>
-</section>
+  </section>
 
 <!--============================
 =            Footer            =
@@ -101,6 +102,7 @@
 <?php
 		include("footer-include.php")
 	?>
+
 
 <!-- 
 Essential Scripts

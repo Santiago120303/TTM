@@ -14,13 +14,13 @@
             <h2>Administración</h2>
           </ul>
           <ul class="navbar-nav ml-auto mt-10">
-                    <li class="nav-item">
-                        <a class="nav-link login-button nav-button w-1" href="perfil.php">Editar Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <input type="button" id="open" class="nav-link login-button nav-button w-1" style="font-family: 'Montserrat', sans-serif !important;"  value="Cerrar Sesion">
-                    </li>
-                </ul>
+              <li class="nav-item">
+                  <a class="nav-link login-button nav-button w-1" href="perfil.php">Editar Perfil</a>
+              </li>
+              <li class="nav-item">
+                  <input type="button" id="open" class="nav-link login-button nav-button w-1" style="font-family: 'Montserrat', sans-serif !important;"  value="Cerrar Sesión">
+              </li>
+          </ul>
           </div>
         </nav>
       </div>

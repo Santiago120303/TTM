@@ -78,7 +78,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <th>Foto</th>
                             <th>Identificación</th>
                             <th>Nombre</th>
-                            <th>email</th>
+                            <th>Email</th>
                             <th>Estado</th>
                             <th>Editar</th>
                             <th>Eliminar</th>

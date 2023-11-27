@@ -223,7 +223,7 @@ function perfilEditar()
                                 </div>
         
                                 <div class="form-group col-lg-6">
-                                    <label>Correo electrónico:</label>
+                                    <label>Correo Electrónico:</label>
                                     <input type="email" class="form-control" placeholder="Ej:Diana@gmail.com" required name="email" value="' . $f['email'] . '">
                                 </div>
         
@@ -249,7 +249,7 @@ function perfilEditar()
                             </div>
     
                             <div class="form-group col-lg-6">
-                                <label>Foto de usuario:</label>
+                                <label>Foto de Usuario:</label>
                                 <input type="file" class="form-control" required name="foto"
                                     accept=".jpeg, .jpg, .png, .gif">
                             </div>
@@ -269,17 +269,17 @@ function perfilEditar()
                                         name="id_user" value="' . $f['id_user'] . '">
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label>Nueva clave:</label>
+                                    <label>Nueva Clave:</label>
                                     <input type="password" class="form-control" placeholder="Ej:**********" required
                                         name="clave">
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label>Confirmar clave:</label>
+                                    <label>Confirmar Clave:</label>
                                     <input type="password" class="form-control" placeholder="Ej:**********" required
                                         name="clave2">
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-main-sm btn-flat  mt-30 w-100">Actualizar Clave</button>
+                            <button type="submit" class="btn btn-main-sm btn-flat  mt-30 w-100">Actualizar clave</button>
         
                         </form>
                     </div>

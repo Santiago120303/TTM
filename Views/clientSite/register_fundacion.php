@@ -6,7 +6,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Registro usuario externo</title>
+  <title>Registro fundación</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,7 +46,7 @@
           <div class="login-content border border">
 
             <div class="login-form">
-            <h3 class="bg-gray p-4 text-center">Registro de fundación</h3>
+            <h3 class="bg-gray p-4 text-center">Registro de Fundación</h3>
 
               <form action="../../Controllers/registrarFundacionEx.php" method="POST">
                 <fieldset class="p-4">
@@ -59,19 +59,19 @@
                     <div class="form-group col-lg-6">
                       <label>Tipo de Identificación:</label>
                       <select id="tipo_doc" class="form-control" required style="width: 100%;" name="tipo_doc">
-                        <option value="">Seleccion una opción</option>
+                        <option value="">Selecciona una opción</option>
                         <option value="4">NIT</option>
                         <option value="1">CC</option>
                       </select>
                     </div>
               
                     <div class="form-group col-lg-6 ">
-                      <label>Nombre de la fundación:</label>
+                      <label>Nombre de la Fundación o Razón Social:</label>
                       <input type="text" class="form-control" placeholder="Ej: Patitas Solidarias" required name="nombre">
                     </div>
               
                     <div class="form-group col-lg-6">
-                      <label>Correo electrónico:</label>
+                      <label>Correo Electrónico:</label>
                       <input type="email" class="form-control" placeholder="Ej: patitassolidarias@gmail.com" required name="email">
                     </div>
 
@@ -113,7 +113,7 @@
                     </div>
               
                     <div class="form-group col-lg-6">
-                      <label>Confirmar contraseña:</label>
+                      <label>Confirmar Contraseña:</label>
                       <input type="password" class="form-control" placeholder="Ej: **********" required name="clave2">
                     </div>
               

@@ -11,7 +11,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Fundación - Registrar Usuario</title>
+  <title>Fundación - Mascotas</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,12 +62,6 @@
                 <div class="col-lg-12">
                   <div class="card">
                     <div class="card-body">
-                      <!-- <div class="row">
-                     /    <?php 
-                              cargarMascotas();
-                            ?>
-                      </div> -->
-
                       <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                           <thead>
@@ -77,7 +71,7 @@
                               <th>Edad</th>
                               <th>Raza</th>
                               <th>Vacunas</th>
-                              <th>Estado de salud</th>
+                              <th>Estado de Salud</th>
                               <th>Editar</th>
                               <th>Eliminar</th>
                             </tr>

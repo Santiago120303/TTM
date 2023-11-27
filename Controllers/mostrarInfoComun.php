@@ -220,7 +220,7 @@ function cargarMascotasComun()
 
                                 <a href="mascota.php">
                                     <img class="card-img-top img-fluid" style="min-height:100px"
-                                        src="../' . $f['foto'] . '" alt="Card image cap">
+                                        src="../' . $f['foto'] . '" alt="Imagen de mascota">
                                 </a>
 
                                 <a href="mascota.php">

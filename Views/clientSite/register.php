@@ -46,7 +46,7 @@
           <div class="login-content border border">
 
             <div class="login-form">
-            <h3 class="bg-gray p-4 text-center">Registro de usuario</h3>
+            <h3 class="bg-gray p-4 text-center">Registro de Usuario</h3>
 
               <form action="../../Controllers/registrarUserEx.php" method="POST">
                 <fieldset class="p-4">
@@ -59,7 +59,7 @@
                     <div class="form-group col-lg-6">
                       <label for="tipo_doc">Tipo de Identificación:</label>
                       <select id="tipo_doc" class="form-control" required style="width: 100%;" name="tipo_doc">
-                        <option value="">Seleccion una opción</option>
+                        <option value="">Selecciona una opción</option>
                         <option value="1">CC</option>
                         <option value="2">CE</option>
                         <option value="3">PASAPORTE</option>
@@ -76,7 +76,7 @@
                       <input id="apellido" type="text" class="form-control" placeholder="Ej:Gomez" name="apellido">
                     </div>
                     <div class="form-group col-lg-6">
-                      <label for="email">Correo electrónico:</label>
+                      <label for="email">Correo Electrónico:</label>
                       <input id="email" autocomplete="email" type="email" class="form-control" placeholder="Ej:ejemplo@gmail.com"
                         required name="email">
                     </div>
@@ -89,7 +89,7 @@
                       <input id="clave" type="password" class="form-control" placeholder="Ej:**********" required name="clave">
                     </div>
                     <div class="form-group col-lg-6">
-                      <label for="clave2">Confirmar contraseña:</label>
+                      <label for="clave2">Confirmar Contraseña:</label>
                       <input id="clave2" type="password" class="form-control" placeholder="Ej:**********" required name="clave2">
                     </div>
                   </div>

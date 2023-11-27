@@ -13,7 +13,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Administrador - Registrar Mascotas</title>
+  <title>Fundación - Registrar Mascotas</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

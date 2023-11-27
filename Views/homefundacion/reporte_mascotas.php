@@ -2,8 +2,8 @@
 
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
-require_once("../../Models/seguridadAdministrador.php");
-require_once("../../Controllers/mostrarInfoAdmin.php");
+require_once("../../Models/seguridadFundacion.php");
+require_once("../../Controllers/mostrarInfoFundacion.php");
 
 ?>
 
@@ -14,7 +14,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Administrador - Clientes Resgistrados</title>
+  <title>Fundación - Reporte de mascotas</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,12 +26,6 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
   <!-- favicon -->
   <link href="../images/favicon.png" rel="shortcut icon">
 
-  <!-- Link  stylesheet dashboard -->
-  <link href="../dashboard/css/lib/data-table/buttons.bootstrap.min.css" rel="stylesheet" />
-  <!-- <link href="../css/styleDashboarNoCol.css" rel="stylesheet"> -->
-
-
-  
   <!-- 
   Essential stylesheets
   =====================================-->
@@ -42,14 +36,38 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
   <link href="../plugins/slick/slick-theme.css" rel="stylesheet">
   <link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 
+  <!-- include Link dashboard -->
+
+  <!-- Link  stylesheet dashboard -->
+  <link href="../dashboard/css/lib/data-table/buttons.bootstrap.min.css" rel="stylesheet" />
+  <link href="../css/styleDashboarNoCol.css" rel="stylesheet">
+
+  <!-- Link main stylesheet -->
+
   <link href="../css/style.css" rel="stylesheet">
+
+  <style>
+    label {
+      display: none !important;
+    }
+
+    #bootstrap-data-table-export_info,
+    .pagination {
+      display: none;
+    }
+
+    div.dt-buttons {
+      display: flex;
+    }
+  </style>
+
 
 </head>
 
 <body class="body-wrapper">
 
   <?php
-    include("nav-admin.php");
+    include("nav-fundacion.php");
   ?>
   <!--==================================
 =            User Profile            =
@@ -61,32 +79,31 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
       <!-- Row Start -->
       <div class="row">
         <?php
-            include("menu-include.php")//col-lg-3
+          include("menu-include.php")//col-lg-3
         ?>
-          <div class="col-lg-9">
+        <div class="col-lg-9">
           <!-- Recently Favorited -->
           <div class="widget dashboard-container my-adslist">
-            <h3 class="widget-header">Administradores registrados</h3>
+            <h3 class="widget-header">Reporte de mascotas</h3>
             <div class="row">
               <div class="col-lg-12">
                 <div class="card">
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table class="table table-striped table-bordered">
+                      <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                         <thead>
-                          <tr class="text-left">
-                            <th>Foto</th>
-                            <th>Identificación</th>
-                            <th>Nombre</th>
-                            <th>Email</th>
-                            <th>Estado</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
+                          <tr class="text-center">
+                              <th>Nombre</th>
+                              <th>Edad</th>
+                              <th>Raza</th>
+                              <th>Especie</th>
+                              <th>Vacunas</th>
+                              <th>Estado de Salud</th>  
                           </tr>
                         </thead>
                         <tbody>
                           <?php
-                            cargarAdministradores();
+                                cargarMascotasReporte();
                           ?>
                         </tbody>
                       </table>
@@ -97,9 +114,10 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
             </div>
           </div>
         </div>
-      <!-- Row End -->
-    </div>
-    <!-- Container End -->
+
+        <!-- Row End -->
+      </div>
+      <!-- Container End -->
     </div>
   </section>
 
@@ -111,17 +129,37 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 =============================-->
 
   <?php
-		include("footer-include.php")
-	?>
+  include("footer-include.php")
+  ?>
 
   <!-- 
-Font awesome
+Daschboard Scripts
 =====================================-->
-<script src="https://kit.fontawesome.com/3b8b956f1a.js" crossorigin="anonymous"></script>
 
+  <!-- jquery vendor -->
+  <script src="../dashboard/js/lib/jquery.min.js"></script>
+  <script src="../dashboard/js/lib/jquery.nanoscroller.min.js"></script>
+  <!-- nano scroller -->
+  <script src="../dashboard/js/lib/menubar/sidebar.js"></script>
+  <script src="../dashboard/js/lib/preloader/pace.min.js"></script>
+  <!-- sidebar -->
 
+  <!-- bootstrap -->
 
-<!-- 
+  <script src="../dashboard/js/lib/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <!-- scripit init-->
+  <script src="../dashboard/js/lib/data-table/datatables.min.js"></script>
+  <script src="../dashboard/js/lib/data-table/dataTables.buttons.min.js"></script>
+  <script src="../dashboard/js/lib/data-table/buttons.flash.min.js"></script>
+  <script src="../dashboard/js/lib/data-table/jszip.min.js"></script>
+  <script src="../dashboard/js/lib/data-table/pdfmake.min.js"></script>
+  <script src="../dashboard/js/lib/data-table/vfs_fonts.js"></script>
+  <script src="../dashboard/js/lib/data-table/buttons.html5.min.js"></script>
+  <script src="../dashboard/js/lib/data-table/buttons.print.min.js"></script>
+  <script src="../dashboard/js/lib/data-table/datatables-init.js"></script>
+
+  <!-- 
 Essential Scripts
 =====================================-->
   <script src="../plugins/jquery/jquery.min.js"></script>
@@ -136,7 +174,12 @@ Essential Scripts
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
   <script src="../plugins/google-map/map.js" defer></script>
 
+
+  <!-- Script main -->
+
   <script src="../js/script.js"></script>
+
+
 
 </body>
 

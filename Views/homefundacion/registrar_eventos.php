@@ -68,40 +68,40 @@
                 <div class="row">
 
                     <div class="form-group col-lg-6">
-                        <label>Nombre del evento</label>
+                        <label>Nombre del Evento</label>
                         <input type="text" class="form-control" placeholder="Ej:Evento caritativo" required name="eveNombre">
                     </div>
 
                     <div class="form-group col-lg-6">
-                        <label>Fecha del evento</label>
+                        <label>Fecha del Evento</label>
                         <input type="date" class="form-control" required name="eveFecha">
                     </div>
 
                     <div class="form-group col-lg-6">
-                        <label>Hora del evento</label>
+                        <label>Hora del Evento</label>
                         <input type="time" class="form-control" required name="eveHora">
                     </div>
 
                     <div class="form-group col-lg-6">
-                        <label>Dirección del evento</label>
+                        <label>Dirección del Evento</label>
                         <input type="text" class="form-control" placeholder="Ej:Carrera 1 #3-4 sur" required name="eveDireccion">
                     </div>
                     <div class="form-group col-lg-6">
-                        <label>Estado del evento</label>
+                        <label>Estado del Evento</label>
                         <select required name="eveEstado" id="" class="form-control">
-                            <option value="">Selecciona una opcion</option>
+                            <option value="">Selecciona una opción</option>
                             <option value="Activo">Activo</option>
                             <option value="Cancelado">Cancelado</option>
                             <option value="En estado de confirmacion">En estado de confirmación</option>
                         </select>
                     </div>
                     <div class="form-group col-lg-6">
-                        <label>Descripción del evento</label>
+                        <label>Descripción del Evento</label>
                         <input type="text" class="form-control" placeholder="Escriba la descripción del evento" required name="eveDescripcion">
                     </div>
 
                     <div class="form-group col-lg-6">
-                            <label>Imagen o foto del evento</label>
+                            <label>Imagen o foto del Evento</label>
                             <input type="file" class="form-control" name="img" accept=".jpeg, .jpg, .png, .gif">
                     </div>
                 </div>

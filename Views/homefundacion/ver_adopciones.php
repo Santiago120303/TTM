@@ -11,7 +11,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Fundación - Registrar Usuario</title>
+  <title>Fundación - Adopciones</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,7 +71,7 @@
                               <th>Edad</th>
                               <th>Raza</th>
                               <th>Adoptante</th>
-                              <th>Número</th>
+                              <th>Teléfono</th>
                               <th>Formulario</th>
                               <th>Eliminar</th>
                             </tr>

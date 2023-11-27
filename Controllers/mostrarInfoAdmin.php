@@ -301,7 +301,7 @@ function cargarFundacionEditar()
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label>Correo electrónico:</label>
+                    <label>Correo Electrónico:</label>
                     <input type="email" value="' . $f['email'] . '" class="form-control" placeholder="Ej:Diana@gmail.com" required name="email">
                 </div>
 
@@ -390,7 +390,7 @@ function perfilEditar()
         echo '
         <div class="col-lg-3">
             <div class="card perfil-user">
-                <img class="w-100" src="../' . $f['foto'] . '" alt="Photo perfil">
+                <img class="w-100" src="../' . $f['foto'] . '" alt="Foto de admin">
                 <h3 class="text-center pt-5 pb-1">' . $f['nombre'] . ' ' . $f['apellido'] . '</h3>
                 <h4 class="text-center pb-4">' . $f['rol'] . '</h4>
             </div>
@@ -448,7 +448,7 @@ function perfilEditar()
                                 </div>
         
                                 <div class="form-group col-lg-6">
-                                    <label>Correo electrónico:</label>
+                                    <label>Correo Electrónico:</label>
                                     <input type="email" class="form-control" placeholder="Ej:Diana@gmail.com" required
                                         name="email" value="' . $f['email'] . '">
                                 </div>
@@ -496,17 +496,17 @@ function perfilEditar()
                                         name="id_user" value="' . $f['id_user'] . '">
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label>Nueva clave:</label>
+                                    <label>Nueva Clave:</label>
                                     <input type="password" class="form-control" placeholder="Ej:**********" required
                                         name="clave">
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label>Confirmar clave:</label>
+                                    <label>Confirmar Clave:</label>
                                     <input type="password" class="form-control" placeholder="Ej:**********" required
                                         name="clave2">
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-main-sm btn-flat  mt-30 w-100">Actualizar Clave</button>
+                            <button type="submit" class="btn btn-main-sm btn-flat  mt-30 w-100">Actualizar clave</button>
         
                         </form>
                     </div>
@@ -633,5 +633,92 @@ function MostrarCantidadMascotasRegistradas()
                     </div>
                 </div>
             ';
+    }
+}
+
+function cargarMascotas()
+{
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarMasFun();
+
+    if (!isset($result)) {
+        echo '<h2>NO HAY MASCOTAS REGISTRADAS</h2>';
+    } else {
+
+        foreach ($result as $f) {
+
+
+            // echo '
+            
+            // <div class="col-lg-4 col-md-6">
+            //             <!-- product card -->
+            //             <div class="product-item bg-light">
+            //                 <div class="card">
+            //                     <div class="thumb-content">
+            //                         <h4 class="card-title text-center mb-3">
+            //                             <a href="eventoEsp.php">' . $f['eveNombre'] . '</a>
+            //                         </h4>
+            //                         <a  class="bg-mascota" href="eventoEsp.php">
+            //                             <img class="card-img-top img-fluid" src="../' . $f['eveImg'] . '" alt="Imagen de evento">
+            //                         </a>
+            //                     </div>
+            //                     <div class="card-body">
+            //                         <ul class="list-inline product-meta">
+            //                             <li class="list-inline-item">
+            //                                 <a href="fundacion.php"><i class="fa fa-calendar"  style="color: #4942e4;"></i>' . $f['eveFecha'] . '</a>
+            //                             </li>
+            //                             <li class="list-inline-item">
+            //                                 <a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>' . $f['eveHora'] . '</a>
+            //                             </li>
+            //                             <li class="list-inline-item">
+            //                                 <a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>' . $f['eveDireccion'] . '</a>
+            //                             </li>
+            //                         </ul>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //         </div>
+            
+            // ';
+            echo '
+
+                <tr>
+                    <td><img src="../' . $f['foto'] . '" alt="Foto User" style="width: 60px; height: 60px; border-radius: 25%"></td>
+                    <td>' . $f['id_fun_mas_fk'] . '</td>
+                    <td>' . $f['masNombre'] . '</td>
+                    <td>' . $f['masEdad'] . '</td>
+                    <td>' . $f['masRaza'] . '</td>
+                    <td>' . $f['masVacunas'] . '</td>
+                    <td>' . $f['masEstSalud'] . '</td>
+                    <td><a href="../../Controllers/eliminarMasFun.php?id=' . $f['masId'] . '" class=" bg-red"><i class="fa-solid fa-trash"></i> Eliminar</a></td>
+                </tr>
+                ';
+        }
+    }
+}
+
+function cargarMascotasReporte()
+{
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarMascotasComun();
+    // En caso de no haber fundaciones registradas se mostrar este texto
+    if (!isset($result)) {
+        echo '<h2>NO HAY MASCOTAS REGISTRADAS</h2>';
+    } else {
+        foreach ($result as $f) {
+            echo '
+                <tr>
+                    <td>' . $f['id_fun_mas_fk'] . '</td>
+                    <td>' . $f['masNombre'] . '</td>
+                    <td>' . $f['masEdad'] . '</td>
+                    <td>' . $f['masRaza'] . '</td>
+                    <td>' . $f['especie'] .'</td>
+                    <td>' . $f['masVacunas'] . '</td>
+                    <td>' . $f['masEstSalud'] . '</td>
+                </tr>
+                ';
+        }
     }
 }

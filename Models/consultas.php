@@ -523,7 +523,7 @@ class Consultas
         $conexion = $objConexion->get_conexion();
     
         // Consulta para obtener solo los campos necesarios
-        $consultar = "SELECT tbl_mascotas.masNombre, tbl_mascotas.foto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_especies.especie
+        $consultar = "SELECT tbl_mascotas.masId, tbl_mascotas.masNombre, tbl_mascotas.foto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_mascotas.masEstSalud, tbl_mascotas.masVacunas, tbl_especies.especie, tbl_mascotas.id_fun_mas_fk
         FROM (tbl_mascotas
         INNER JOIN tbl_especies ON tbl_mascotas.cod_especie_fk = tbl_especies.cod_especie)";
     

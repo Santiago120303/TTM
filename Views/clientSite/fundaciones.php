@@ -8,13 +8,6 @@ require_once("../../Controllers/mostrarInfoComun.php");
 
 <!DOCTYPE html>
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
 <html lang="en">
 
 <head>
@@ -79,7 +72,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 			<div class="col-lg-3 col-md-4">
 				<!--Buscador-->
 				<form class="p-3" style="background: white;" method="get">
-				<input class="mt-3 form-control " type="text" name="fundacionNombre" placeholder="Fundacion...">
+				<input class="mt-3 form-control " type="text" name="fundacionNombre" placeholder="Fundación...">
 				<select name="localidad" id="" class="form-control mt-3 nice-select form-control w-100 text-center"  >
 					<option value="">Localidad</option>
 					<option value="AnNa">Antonio Nariño</option>
