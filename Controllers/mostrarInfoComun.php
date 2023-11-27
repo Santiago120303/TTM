@@ -16,18 +16,18 @@ function cargarFundacionesComun()
                 <div class="col-lg-4 col-md-6">
                     <!-- product card -->
                     <div class="product-item bg-light">
-                        <div class="card pb-0">
+                        <div class="card pb-0 card-fundaciones">
                             <div class="thumb-content">
                                 <!-- <div class="price">$200</div> -->
-                                    <h4 class="card-title text-center mb-3"><a href="fundacion.php?id='.$f['id_user'].'">' . $f['nombre'] . '</a></h4>
-                                <a href="fundacion.php?id='.$f['id_user'].'">
+                                    <h4 class="card-title text-center mb-3"><a href="fundacion_especifica.php?id='.$f['id_user'].'">' . $f['nombre'] . '</a></h4>
+                                <a href="fundacion_especifica.php?id='.$f['id_user'].'">
                                     <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['foto'] . '" alt="Card image cap">
                                 </a>
                             </div>
                             <div class="card-body text-center">
-                                <p class="m-0 pb-2">' . $f['localidad'] . '</p>
-                                <p class="m-0 pb-2">' . $f['email'] . '</p>
-                                <p class="m-0 pb-2">' . $f['telefono'] . '</p>
+                                <p class="m-0 pb-2" style="font-size:17px; color: #333333;">' . $f['localidad'] . '</p>
+                                <p class="m-0 pb-2" style="font-size:17px; color: #333333;">' . $f['email'] . '</p>
+                                <p class="m-0 pb-2" style="font-size:17px; color: #333333;">' . $f['telefono'] . '</p>
                                 <div class="product-ratings">
                                 </div>
                             </div>
@@ -51,11 +51,11 @@ function fitroFundaciones($nombrefun, $localidadfun)
                 <div class="col-lg-4 col-md-6">
                     <!-- product card -->
                     <div class="product-item bg-light">
-                        <div class="card pb-0">
+                        <div class="card pb-0 card-fundaciones">
                             <div class="thumb-content">
                                 <!-- <div class="price">$200</div> -->
-                                    <h4 class="card-title text-center mb-3"><a href="fundacion.php?id='.$f['id_user'].'">' . $f['nombre'] . '</a></h4>
-                                <a href="fundacion.php?id='.$f['id_user'].'">
+                                    <h4 class="card-title text-center mb-3"><a href="fundacion_especifica.php?id='.$f['id_user'].'">' . $f['nombre'] . '</a></h4>
+                                <a href="fundacion_especifica.php?id='.$f['id_user'].'">
                                     <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['foto'] . '" alt="Card image cap">
                                 </a>
                             </div>
@@ -96,22 +96,22 @@ function MostrarFundacionEspecificaSidebar()
 						
 							<div class="widget archive">
 							
-							<a href="fundacion.php?id='.$f['id_user'].'"><img class="w-100 mb-4"
+							<a href="fundacion_especifica.php?id='.$f['id_user'].'"><img class="w-100 mb-4"
 									src="../'.$f['foto'].'" alt="logo de la fundación">
 							</a>
 
 
 
-							<a href="mascotas.php" class="btn btn-login mb-4">Mascotas</a>
+							<a href="mascotas_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Mascotas</a>
 							<a href="eventos.php" class="btn btn-login mb-4">Eventos</a>
 
 
 
                                 
-							<p  class="text-center mb-2">'.$f['localidad'].'</p></a>
-							<p  class="text-center mb-2">'.$f['direccion'].'</p></a>
-							<a href="mailto:'.$f['email'].'"><p  class="text-center mb-2">'.$f['email'].'</p></a>
-							<a href="whatsapp://send?phone='.$f['telefono'].'&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n."><p  class="text-center mb-2">'.$f['telefono'].'</p></a>
+							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['localidad'].'</p></a>
+							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['direccion'].'</p></a>
+							<a href="mailto:'.$f['email'].'"><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['email'].'</p></a>
+							<a href="whatsapp://send?phone='.$f['telefono'].'&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n."><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['telefono'].'</p></a>
 
 							<a href="donaciones.php" class="btn btn-success mt-4" style="text-transform:Uppercase;" >Donar</a>
 
@@ -144,7 +144,7 @@ function MostrarFundacionEspecificaInfo()
 					<article class="single-post">
 						<a class="d-block w-100 text-right font-weight-bold align-items-center" href="fundaciones.php"><i class="fa-solid fa-arrow-left mr-2"></i>Volver</a>
 						<h2 class="text-center mb-4">'.$f['nombre'].'</h2>
-						<div class="row ">';
+						<div class="row d-flex align-items-center">';
                 echo'<div class="col-lg-6">
                             <h3>Descripción</h3>';
                                 if (strlen($f['descripcion']) == 0) {
@@ -153,7 +153,7 @@ function MostrarFundacionEspecificaInfo()
                                     echo '<p>' . $f['descripcion'] . '</p>';
                                 }
                 echo '</div>
-                        <div id="carouselExampleSlidesOnly" class="col-lg-6 carousel slide mb-4" data-bs-ride="carousel">
+                        <div id="carouselExampleSlidesOnly" class="col-lg-6 carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <img src="../../Uploads/fundaciones/fun1.jpg" class="d-block w-100" alt="foto fundacion 1 de 4">
@@ -198,6 +198,66 @@ function MostrarFundacionEspecificaInfo()
 
 
 }
+function VolveFundacionEspecificaInfo()
+{
+    //Se aterriza el Id de la fundacion enviado por el metodo GET (URL)
+    $id_fundacion = $_GET['id'];
+
+    //Se evia la el ID de la fundacion a una funcion de la clase consultas con el fin de traer la informacion de esta fundacion en especifico
+    $objConsultas = new Consultas();
+    $result = $objConsultas->MostrarInfoFunEspecifica($id_fundacion);
+
+    foreach ($result as $f) {
+        echo  '
+			    <a class="d-block w-100 text-right font-weight-bold align-items-center" href="fundacion_especifica.php?id=' . $f['id_user'] . '"><i class="fa-solid fa-arrow-left mr-2"></i>Volver</a>
+            '; 
+    }
+}
+
+function MostrarMascotasFundacionEspecificaComun()
+{
+    //Se aterriza el Id de la fundacion enviado por el metodo GET (URL)
+    $id_fundacion = $_GET['id'];
+
+    //Se evia la el ID de la fundacion a una funcion de la clase consultas con el fin de traer la informacion de esta fundacion en especifico
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarMascotasFundacionEspecificaComun($id_fundacion);
+
+        //Pintamos la información consultada en el artefacto (FORM)
+
+        foreach ($result as $f) {
+            echo  '
+                    <div class="col-lg-6">
+                        <div class="product-item bg-light" >
+                            <div class="card pb-0 card-mascotas">
+                                <div class="thumb-content">
+
+                                    <a href="mascota.php">
+                                        <img class="card-img-top img-fluid mb-0" style="min-height:100px"
+                                            src="../' . $f['masFoto'] . '" alt="Imagen de la mascota">
+                                    </a>
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <a href="mascota.php">
+                                        <h4 class="card-title text-center mb-3"><a href="mascota.php">' . $f['masNombre'] . '</a></h4>
+                                    </a>
+
+                                    <p class="m-0 pb-2"><b>Especie: </b>' . $f['especie'] . '</p>
+                                    <p class="m-0 pb-2"><b>Raza: </b>' . $f['masRaza'] . '</p>
+                                    <p class="m-0 pb-2"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
+                                    <p class="m-0 pb-2"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                '; 
+        }
+
+
+
+
+}
 
 function cargarMascotasComun()
 {
@@ -212,25 +272,25 @@ function cargarMascotasComun()
         foreach ($result as $f) {
             echo ' 
                 <div class="col-lg-4 col-md-6">
-                    <!-- product card -->
-                    <div class="product-item bg-light">
-                        <div class="card pb-0 ">
+                    <!-- mascotas card -->
+                    <div class="product-item bg-light" >
+                        <div class="card pb-0 card-mascotas">
                             <div class="thumb-content">
-                                <!-- <div class="price">$200</div> -->
 
                                 <a href="mascota.php">
                                     <img class="card-img-top img-fluid" style="min-height:100px"
-                                        src="../' . $f['foto'] . '" alt="Card image cap">
-                                </a>
-
-                                <a href="mascota.php">
-                                    <h4 class="card-title text-center mb-3"><a href="mascota.php">' .$f['masNombre'] . '</a></h4>
+                                        src="../' . $f['masFoto'] . '" alt="Imagen de la mascota">
                                 </a>
                                 
                             </div>
                             <div class="card-body">
+                                <a href="mascota.php">
+                                    <h4 class="card-title text-center mb-3"><a href="mascota.php">' .$f['masNombre'] . '</a></h4>
+                                </a>
+
                                 <p class="m-0 pb-2"><b>Especie: </b>' . $f['especie'] . '</p>
                                 <p class="m-0 pb-2"><b>Raza: </b>' . $f['masRaza'] . '</p>
+                                <p class="m-0 pb-2"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
                                 <p class="m-0 pb-2"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
                                 <div class="product-ratings">
                                 </div>

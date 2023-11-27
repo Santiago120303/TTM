@@ -50,7 +50,7 @@
                 <button type="submit" class="btn btn-login font-weight-bold mt-3">
                   Recuperar contraseña
                 </button>
-                <a class="mt-3 d-block text-primary text-center" href="login.php">Volver</a>
+                <a class="mt-3 d-block text-primary text-center" href="login.php">Iniciar sesión</a>
               </fieldset>
             </form>
           </div>

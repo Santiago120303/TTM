@@ -1433,8 +1433,10 @@ li.nav-item.dropdown.dropdown-slide:hover a.nav-link.dropdown-toggle{
 
 .product-item {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
+  margin-bottom: 30px;  
 }
+
+
 .product-item .card {
   border: none;
 }
@@ -2670,13 +2672,26 @@ tbody tr td {
   padding: 0;
 }
 
-.card {
+.card{
   background: #ffffff;
   margin: 7.5px 0;
   padding: 20px;
   border: 1px solid #e7e7e7;
-  /* border-radius: 3px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); */
+}
+
+.card-fundaciones {
+  background: #ffffff;
+  margin: 7.5px 0;
+  padding: 20px;
+  border: 1px solid #e7e7e7;
+}
+
+.card-mascotas {
+  background: #ffffff;
+  margin: 7.5px 0;
+  padding: 20px;
+  border: 1px solid #e7e7e7;
+  min-height: 440px;
 }
 
 .card-subtitle {
@@ -8113,6 +8128,14 @@ fieldset{
     width: 100%;
   }
   
+  .card-mascotas {
+    background: #ffffff;
+    margin: 7.5px 0;
+    padding: 20px;
+    border: 1px solid #e7e7e7;
+    min-height: 390px;
+  }
+
 }
 
 /* SMART PHONE */
