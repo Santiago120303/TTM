@@ -99,13 +99,13 @@
 							<div class="product-item bg-light">
 								<div class="card">
 									<div class="thumb-content">
-										<a href="../clientSite/fundaciones.php">
+										<a href="../homeFundacion/fundaciones.php">
 											<img class="card-img-top img-fluid"
 												src="../images/products/products-1.jpg" alt="Card image cap">
 										</a>
 									</div>
 									<div class="card-body">
-										<h4 class="card-title"><a href="../clientSite/fundaciones.php">Fundaciones</a></h4>
+										<h4 class="card-title"><a href="../homeFundacion/fundaciones.php">Fundaciones</a></h4>
 										<p class="card-text">En nuestro sitio, tendrás acceso a una amplia gama de
 											fundaciones de animales ubicadas en Bogotá. En cada perfil, encontrarás
 											información esencial detallada sobre cada una de estas organizaciones.</p>
@@ -115,38 +115,17 @@
 						</div>
 
 
-						<!-- <div class="col-sm-12 col-lg-4">
-							<div class="product-item bg-light">
-								<div class="card">
-									<div class="thumb-content">
-										<a href="single.php">
-											<img class="card-img-top img-fluid"
-												src="../images/products/products-2.jpg" alt="Card image cap">
-										</a>
-									</div>
-									<div class="card-body">
-										<h4 class="card-title"><a href="single.php">Donaciones</a></h4>
-										<p class="card-text"> A través de nuestro sitio, tendrás la oportunidad única de
-											brindar tu apoyo vital a estas organizaciones, contribuyendo directamente a
-											fortalecer y potenciar sus funciones esenciales en beneficio de los
-											animales.</p>
-									</div>
-								</div>
-							</div>
-						</div> -->
-
-
 						<div class="col-sm-12 col-lg-4">
 							<div class="product-item bg-light">
 								<div class="card">
 									<div class="thumb-content">
-										<a href="../clientSite/mascotas.php">
+										<a href="../homeFundacion/mascotas.php">
 											<img class="card-img-top img-fluid"
 												src="../images/products/products-3.png" alt="Card image cap">
 										</a>
 									</div>
 									<div class="card-body">
-										<h4 class="card-title"><a href="../clientSite/mascotas.php">Mascotas</a></h4>
+										<h4 class="card-title"><a href="../homeFundacion/mascotas.php">Mascotas</a></h4>
 										<p class="card-text">A través de nuestra plataforma, te brindamos la oportunidad
 											de descubrir una amplia diversidad de adorables animales que están en busca
 											de un hogar amoroso. ¡No pierdas tiempo, únete a nosotros y abre tus brazos
@@ -161,13 +140,13 @@
 							<div class="product-item bg-light">
 								<div class="card">
 									<div class="thumb-content">
-										<a href="../clientSite/events.php">
+										<a href="../homeFundacion/events.php">
 											<img class="card-img-top img-fluid"
 												src="../images/products/products-4.png" alt="Card image cap">
 										</a>
 									</div>
 									<div class="card-body">
-										<h4 class="card-title"><a href="../clientSite/events.php">Eventos</a></h4>
+										<h4 class="card-title"><a href="../homeFundacion/events.php">Eventos</a></h4>
 										<p class="card-text">Explora nuestra plataforma y sumérgete en una amplia
 											variedad de eventos respaldados por diversas fundaciones. Regístrate de
 											manera sencilla y lleva un registro de tus participaciones. Tu compromiso
