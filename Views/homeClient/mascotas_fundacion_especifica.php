@@ -10,13 +10,14 @@ require_once("../../Controllers/mostrarInfoComun.php");
 
 <!DOCTYPE html>
 
+
 <html lang="en">
 
 <head>
 
 	<!-- ** Basic Page Needs ** -->
 	<meta charset="utf-8">
-	<title>Fundaciones</title>
+	<title>Fundación específica - TTM</title>
 
 	<!-- ** Mobile Specific Metas ** -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,6 +32,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 	<!-- 
   Essential stylesheets
   =====================================-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<link href="../plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="../plugins/bootstrap/bootstrap-slider.css" rel="stylesheet">
 	<link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -39,92 +41,57 @@ require_once("../../Controllers/mostrarInfoComun.php");
 	<link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 
 	<link href="../css/style.css" rel="stylesheet">
-
-	
-    <!-- Estilos propios del documento -->
-    <style>
-         .list {
-        max-height: 200px !important;
-        overflow:hidden !important;
-        overflow-y: scroll !important;
-        }
-	   input::placeholder{
-		font-family: 'Montserrat', sans-serif;
-	   }
-    </style>
+	<link href="../css/styleDashboarNoCol.css" rel="stylesheet">
 
 </head>
 
 <body class="body-wrapper">
 
+	<!-- header insertado con PHP -->
 	<?php
-		include("nav-cliente.php");
+	include("nav-cliente.php");
 	?>
 
-<section class="section-sm minhe">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="search-result bg-gray text-center">
-					<h2>Fundaciones</h2>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-3 col-md-4">
-				<!--Buscador-->
-				<form class="p-3" style="background: white;" method="get">
-				<input class="mt-3 form-control " type="text" name="fundacionNombre" placeholder="Fundación...">
-				<select name="localidad" id="" class="form-control mt-3 nice-select form-control w-100 text-center"  >
-					<option value="">Localidad</option>
-					<option value="AnNa">Antonio Nariño</option>
-					<option value="BaUn">Barrio Unidos</option>
-					<option value="Bo">Bosa</option>
-					<option value="Ch">Chapinero</option>
-					<option value="CiBo">Ciudad Bolívar</option>
-					<option value="En">Engativá</option>
-					<option value="Fo">Fontibón</option>
-					<option value="Ke">Kennedy</option>
-					<option value="LaCa">La Candelaria</option>
-					<option value="LoMa">Los Mártires</option>
-					<option value="PuAr">Puente Aranda</option>
-					<option value="RaUrUr">Rafael Uribe Uribe</option>
-					<option value="SaCr">San Cristóbal</option>
-					<option value="Sa">Santa Fe</option>
-					<option value="Su">Suba</option>
-					<option value="Sum">Sumapaz</option>
-					<option value="Te">Teusaquillo</option>
-					<option value="Tu">Tunjuelito</option>
-					<option value="Us">Usaquén</option>
-					<option value="Usm">Usme</option>
-				</select>
-				<input class="mt-3 btn btn-login" type="submit" value="Buscar">
-				</form>
-			</div>
-			<div class="col-lg-9 col-md-8">
-				<div class="product-grid-list">
-					<div class="row mt-30">
+	<!--=================================
+=            Single Blog            =
+==================================-->
+	<section class="blog single-blog section">
+		<div class="container">
+			<div class="row">
+				<?php
+				MostrarFundacionEspecificaSidebar()
+				?>
+				<div class="col-lg-8">
+					<article class="single-post">
 						<?php
-							if (isset($_GET['fundacionNombre']) || isset ($_GET['localidad'])) {
-								fitroFundaciones($_GET['fundacionNombre'], $_GET['localidad']);
-							}else{
-								cargarFundacionesComun();
-							}
+							VolverFundacionEspecificaInfo()
 						?>
-					</div>
+                    		<h2 class="text-center mb-4">Mascotas</h2>
+						<div class="row">
+							<?php
+							MostrarMascotasFundacionEspecificaComun()
+							?>
+						</div>
+					</article>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<!--============================
+	<!--============================
 =            Footer            =
 =============================-->
 
 	<?php
-		include("footer-include.php")
+	include("footer-include.php")
 	?>
+
+	<!-- 
+font awesome script
+=====================================-->
+
+	<script src="https://kit.fontawesome.com/3b8b956f1a.js" crossorigin="anonymous"></script>
+
 
 	<!-- 
 Essential Scripts
@@ -140,6 +107,7 @@ Essential Scripts
 	<!-- google map -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 	<script src="../plugins/google-map/map.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 	<script src="../js/script.js"></script>
 

@@ -483,19 +483,19 @@ function informacionEditar()
                             role="tab" aria-controls="home" aria-selected="true">Informacion</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="logo-tab" data-toggle="tab" data-target="#logo" type="button" role="tab"
-                            aria-controls="logo" aria-selected="false">Foto 1</button>
+                        <button class="nav-link" id="foto1" data-toggle="tab" data-target="#foto1" type="button" role="tab"
+                            aria-controls="foto1" aria-selected="false">Foto 1</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="Foto1" data-toggle="tab" data-target="#img-principal"
-                            type="button" role="tab" aria-controls="img-principal" aria-selected="false">Foto 2</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="Foto2" data-toggle="tab" data-target="#contact" type="button"
-                            role="tab" aria-controls="contact" aria-selected="false">Foto 3</button>
+                        <button class="nav-link" id="foto2" data-toggle="tab" data-target="#foto2"
+                            type="button" role="tab" aria-controls="foto2" aria-selected="false">Foto 2</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="Foto3" data-toggle="tab" data-target="#contact" type="button"
+                            role="tab" aria-controls="contact" aria-selected="false">Foto 3</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="Foto4" data-toggle="tab" data-target="#contact" type="button"
                             role="tab" aria-controls="contact" aria-selected="false">Foto 4</button>
                     </li>
                 </ul>
@@ -570,17 +570,23 @@ function informacionEditar()
                     </div>
         
         
-                    <div class="p-5 tab-pane fade" id="logo" role="tabpanel" aria-labelledby="logo-tab">
+                    <div class="p-5 tab-pane fade" id="foto1" role="tabpanel" aria-labelledby="logo-tab">
                         <form action="../../Controllers/modificarLogoFundacion.php" method="POST" enctype="multipart/form-data">
                             <div class="row">
-                                <div class="form-group col-lg-6">
+                                <div class="col-lg-4">
+                                    <div class="card perfil-user">
+                                        <img class="w-100" src="../' . $f['foto_fun_1'] . '" alt="Photo perfil">
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-lg-4">
                                     <label class="mtop-4">Identificación:</label>
                                     <input readonly type="text" class="form-control" placeholder="Ej:10000004436" required
                                         name="id_user" value="' . $f['id_user'] . '">
                                 </div>
         
-                                <div class="form-group col-lg-6">
-                                    <label>Foto de Logo</label>
+                                <div class="form-group col-lg-4">
+                                    <label>Foto representativa 1</label>
                                     <input type="file" class="form-control" required name="logo"
                                         accept=".jpeg, .jpg, .png, .gif">
                                 </div>

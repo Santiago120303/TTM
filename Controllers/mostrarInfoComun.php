@@ -19,7 +19,7 @@ function cargarFundacionesComun()
                         <div class="card pb-0 card-fundaciones">
                             <div class="thumb-content">
                                 <!-- <div class="price">$200</div> -->
-                                    <h4 class="card-title text-center mb-3"><a href="fundacion_especifica.php?id='.$f['id_user'].'" style="color:#333333;">' . $f['nombre'] . '</a></h4>
+                                    <h4 class="card-title text-center mb-3"><a href="fundacion_especifica.php?id='.$f['id_user'].'" style="color:#333333; font-size:smaller;">' . $f['nombre'] . '</a></h4>
                                 <a href="fundacion_especifica.php?id='.$f['id_user'].'">
                                     <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['foto'] . '" alt="Card image cap">
                                 </a>
@@ -54,15 +54,15 @@ function fitroFundaciones($nombrefun, $localidadfun)
                         <div class="card pb-0 card-fundaciones">
                             <div class="thumb-content">
                                 <!-- <div class="price">$200</div> -->
-                                    <h4 class="card-title text-center mb-3"><a href="fundacion_especifica.php?id='.$f['id_user'].'">' . $f['nombre'] . '</a></h4>
+                                    <h4 class="card-title text-center mb-3"><a href="fundacion_especifica.php?id='.$f['id_user'].'" style="color:#333333; font-size:smaller;">' . $f['nombre'] . '</a></h4>
                                 <a href="fundacion_especifica.php?id='.$f['id_user'].'">
                                     <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['foto'] . '" alt="Card image cap">
                                 </a>
                             </div>
-                            <div class="card-body text-center">
-                                <p class="m-0 pb-2">' . $f['localidad'] . '</p>
-                                <p class="m-0 pb-2">' . $f['email'] . '</p>
-                                <p class="m-0 pb-2">' . $f['telefono'] . '</p>
+                            <div class="card-body">
+                                <p class="m-0 pb-2" style="color:#333333;"><b>Localidad: </b> <br>' . $f['localidad'] . '</p>
+                                <p class="m-0 pb-2" style="color:#333333;"><b>Email: </b> <br>' . $f['email'] . '</p>
+                                <p class="m-0 pb-2" style="color:#333333;"><b>Telefono: </b> <br>' . $f['telefono'] . '</p>
                                 <div class="product-ratings">
                                 </div>
                             </div>
@@ -145,9 +145,9 @@ function MostrarFundacionEspecificaInfo()
                 echo'<div class="col-lg-6">
                             <h3>Descripción</h3>';
                                 if (strlen($f['descripcion']) == 0) {
-                                    echo '<p>No se ha subido la descripción de la fundación, estamos trabajando en ello.</p>';
+                                    echo '<p style="color:#333333;" >No se ha subido la descripción de la fundación, estamos trabajando en ello.</p>';
                                 } else {
-                                    echo '<p>' . $f['descripcion'] . '</p>';
+                                    echo '<p style="color:#333333;" > ' . $f['descripcion'] . '</p>';
                                 }
                 echo '</div>
                         <div id="carouselExampleSlidesOnly" class="col-lg-6 carousel slide" data-bs-ride="carousel">
@@ -166,22 +166,22 @@ function MostrarFundacionEspecificaInfo()
                                 </div>
                             </div>
                         </div>
-                '; 
+                ';
                  
                 echo'<div class="col-lg-12">
                             <h3>Misión</h3>';
                                 if (strlen($f['mision']) == 0) {
-                                    echo '<p>No se ha subido la misión de la fundación, estamos trabajando en ello.</p>';
+                                    echo '<p style="color:#333333;" >No se ha subido la misión de la fundación, estamos trabajando en ello.</p>';
                                 } else {
-                                    echo '<p>' . $f['mision'] . '</p>';
+                                    echo '<p style="color:#333333;" >' . $f['mision'] . '</p>';
                                 }
                 echo '</div>';       
                 echo'<div class="col-lg-12">
                             <h3>Visión</h3>';
                                 if (strlen($f['vision']) == 0) {
-                                    echo '<p>No se ha subido la visión de la fundación, estamos trabajando en ello.</p>';
+                                    echo '<p style="color:#333333;" >No se ha subido la visión de la fundación, estamos trabajando en ello.</p>';
                                 } else {
-                                    echo '<p>' . $f['vision'] . '</p>';
+                                    echo '<p style="color:#333333;" >' . $f['vision'] . '</p>';
                                 }
                 echo '</div>  
                         </div>
@@ -361,6 +361,75 @@ function MostrarMascotaFundacionEspecificaComun() {
     }
 }
 
+function MostrarMascotaFundacionEspecificaCliete() {
+    // Se obtiene el ID de la mascota enviado por el método GET (URL)
+    $id_mascota = isset($_GET['id']) ? $_GET['id'] : null;
+
+    // Verificamos que se haya proporcionado un ID válido
+    if (!$id_mascota) {
+        echo "Error: ID de mascota no válido.";
+        return;
+    }
+
+    // Se instancia el objeto Consultas
+    $objConsultas = new Consultas();
+
+    // Se llama a la función para obtener la información de la mascota específica
+    $result = $objConsultas->mostrarMascotaFundacionEspecificaComun($id_mascota);
+
+    // Verificamos que se haya obtenido algún resultado
+    if (!$result) {
+        echo "Error: No se encontró la mascota con el ID proporcionado.";
+        return;
+    }
+
+    // Pintamos la información consultada en el artefacto (FORM)
+    foreach ($result as $f) {
+        echo  '
+            <div class="col-lg-6">
+                <p class="p-0 m-0" style="color:#333333; text-align:center;">Registrado por '.$f['nombre'].' <br>  '.$f['masFecRegistro'].' </p>
+                <div class="product-item bg-light">
+                    <div class="card pb-0">
+                        <div class="thumb-content">
+                            <a href="#">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../' . $f['masFoto'] . '"
+                                    alt="Imagen de la mascota">
+                            </a>
+                        </div>
+                        <div class="card-body p-0">
+                            <a href="#">
+                                <h4 class="card-title text-center my-3" style="font-size:25px; color:#333333;">' .$f['masNombre'] . '</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Especie: </b>' . $f['especie'] . '</p>
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Raza: </b>' . $f['masRaza'] . '</p>
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
+                <a href="alskdfadfjkllskdfjsfssk" class="btn btn-login mt-5 align-self-end">Adoptar</a>
+            </div>
+            <div class="col-lg-12">
+                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Vacunas: </b> '.$f['masVacunas'].' ( ' . obtenerVacunas($f) . ')</p>
+            </div>
+            <div class="col-lg-12">
+                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Personalidad: </b>' . $f['masPersonalidad'] . '</p>
+            </div>
+            <div class="col-lg-12">
+                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Estado de salud: </b>' . $f['masEstSalud'] . '</p>
+            </div>
+            <div class="col-lg-12">
+                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Historia: </b>' . $f['masHistoria'] . '</p>
+            </div>
+            <div class="col-lg-12">
+                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Requisitos de adopción: </b>' . $f['masReqAdopcion'] . '</p>
+            </div>
+        '; 
+    }
+}
+
 // Función auxiliar para obtener las vacunas de la mascota
 function obtenerVacunas($f) {
     $vacunas = [$f['masVacuna1'], $f['masVacuna2'], $f['masVacuna3'], $f['masVacuna4']];
@@ -474,7 +543,7 @@ function cargarMascotasComun()
                                 </a>
                                 
                             </div>
-                            <div class="card-body">
+                            <div class="card-body pt-0">
                                 <a href="mascota_especifica_fundacion.php?id=' .$f['masId'] . '">
                                     <h4 class="card-title text-center mb-3"><a href="mascota.php" style="color:#333333;">' .$f['masNombre'] . '</a></h4>
                                 </a>
@@ -550,28 +619,26 @@ function cargarEventosComun(){
         foreach ($result as $f) {
             echo ' 
                 <div class="col-lg-4 col-md-6">
-                    <!-- mascotas card -->
-                    <div class="product-item bg-light" >
-                        <div class="card pb-0">
-                            <div class="thumb-content">
-
-                                <a href="evento_especifico.php?">
-                                    <img class="card-img-top img-fluid" style="min-height:100px"
-                                        src="../' . $f['eveImg'] . '" alt="Imagen del evento">
-                                </a>
-                                
-                            </div>
-                            <div class="card-body">
-                                <a href="evento_especifico.php?">
-                                    <h4 class="card-title text-center mb-3"><a href="mascota.php">' . $f['eveNombre'] . '</a></h4>
-                                </a>
-
-                                <p class="m-0 pb-2"><b>Fecha:<br> </b>' . $f['eveFecha'] . '</p>
-                                <p class="m-0 pb-2"><b>Dirección:<br> </b>' . $f['eveDireccion'] . '</p>
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card pb-0 card-fundaciones">
+                        <div class="thumb-content">
+                            <!-- <div class="price">$200</div> -->
+                                <h4 class="card-title text-center mb-3"><a href="fundacion_especifica.php?id='.$f['id_fun_eve_fk'].'" style="color:#333333; font-size:smaller;">' . $f['eveNombre'] . '</a></h4>
+                            <a href="fundacion_especifica.php?id='.$f['id_fun_eve_fk'].'">
+                                <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['eveFoto'] . '" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <p class="m-0 pb-2" style="color:#333333;"><b>Fecha: </b> <br>' . $f['eveFecha'] . '</p>
+                            <p class="m-0 pb-2" style="color:#333333;"><b>Dirección: </b> <br>' . $f['eveDireccion'] . '</p>
+                            <p class="m-0 pb-2" style="color:#333333;"><b>Hora: </b> <br>' . $f['eveHora'] . '</p>
+                            <div class="product-ratings">
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             ';
         }
     }

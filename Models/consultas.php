@@ -640,7 +640,7 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
     
-        $consultar = "SELECT eveImg, eveNombre, eveFecha, eveHora, eveDireccion FROM tbl_eventos";
+        $consultar = "SELECT * FROM tbl_eventos";
     
         $result = $conexion->prepare($consultar);
         $result->execute(); 

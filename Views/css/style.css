@@ -372,6 +372,7 @@ button {
   cursor: pointer;
 }
 
+
 .btn.active:focus,
 .btn:active:focus,
 .btn:focus {
@@ -2691,7 +2692,7 @@ tbody tr td {
   margin: 7.5px 0;
   padding: 20px;
   border: 1px solid #e7e7e7;
-  min-height: 440px;
+  min-height: 433px;
 }
 
 .card-subtitle {
