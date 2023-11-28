@@ -39,6 +39,8 @@ function mostrarInfoFunHome()
                                     echo '<p>' . $f['vision'] . '</p>';
                                 }
                 echo '</div>
+
+                
                 
                 <a href="perfil.php" class="btn btn-login mb-3"><i class="fa fa-pencil mr-2"></i>Actualizar</a>
                 
@@ -199,16 +201,12 @@ function perfil()
             <div class="widget user-dashboard-profile">
             <!-- User Image -->
             <div class="profile-thumb">
-                <img src="../' . $f['foto'] . '" alt="Foto de admin" class="">
+                <img class="w-50" src="../' . $f['foto'] . '" alt="Foto de admin" class="">
             </div>
             <!-- User Name -->
-            <h5 class="text-center">' . $f['nombre'] . ' ' . $f['apellido'] . '</h5>
+            <h5 class="text-center">' . $f['nombre'] . '</h5>
             <h6 class="text center">' . $f['rol'] . '</h6>
                 <a href="perfil.php" class="btn btn-login mb-3"><i class="fa fa-home mr-2"></i>Editar perfil</a>
-			<p  class="text-center mb-2">Kennedy </p></a>
-			<p  class="text-center mb-2">Cl. 8 #19a 51</p></a>
-				<a href="mailto:patitassolidarias@gmail.com"><p  class="text-center mb-2">patitassolidarias@gmail.com</p></a>
-				<a href="whatsapp://send?phone=310123456757&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n."><p  class="text-center mb-2">3101234567</p></a>
           </div>
             ';
     }
@@ -388,48 +386,6 @@ function confirmarCierreSesion()
             ';
     }
 }
-
-// function cargarMascotasFundacion()
-// {
-
-//     $objConsultas = new Consultas();
-//     $result = $objConsultas->mostrarMascotasTodos();
-
-//     if (!isset($result)) {
-//         echo '<h2>NO EXISTEN MASCOTAS REGISTRADAS</h2>';  //' . $f['id_user'] . '
-//     } else {
-
-//         foreach ($result as $f) {
-//             echo ' 
-//                 <div class="col-lg-4 col-md-6">
-//                 <!-- product card -->
-//                 <div class="product-item bg-light">
-//                     <div class="card pb-0">
-//                         <div class="thumb-content">
-//                             <!-- <div class="price">$200</div> -->
-//                             <a href="mascota.php">
-//                                 <h4 class="card-title text-center mb-3"><a href="mascota.php">' .
-//                                         $f['masNombre'] . '</a></h4>
-//                             </a>
-//                             <a href="mascota.php">
-//                                 <img class="card-img-top img-fluid" style="min-height:100px"
-//                                     src="../' . $f['foto'] . '" alt="Card image cap">
-//                             </a>
-//                         </div>
-//                         <div class="card-body text-center">
-//                             <p class="m-0 pb-2">' . $f['especie'] . '</p>
-//                             <p class="m-0 pb-2">' . $f['masRaza'] . '</p>
-//                             <p class="m-0 pb-2">' . $f['masEdad'] . ' años</p>
-//                             <div class="product-ratings">
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         ';
-//         }
-//     }
-// }
 
 function cargarEventos()
 {
