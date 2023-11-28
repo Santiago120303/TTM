@@ -61,9 +61,6 @@ require_once("../../Controllers/mostrarInfoComun.php");
 				?>
 				<div class="col-lg-8">
 					<article class="single-post">
-						<?php
-							VolverMascotasFundacionEspecificaComun()
-						?>
                     		<h2 class="text-center mb-4">Mascota</h2>
 						<div class="row d-flex align-items-center">
 							<?php
@@ -75,6 +72,14 @@ require_once("../../Controllers/mostrarInfoComun.php");
 			</div>
 		</div>
 	</section>
+	<div id="popup">
+		<div class="popup-cont ">
+			<h3>¿Deseas adoptar esta mascota?</h3>
+			<p>Hola! Antes de adoptar una mascota, es necesario iniciar sesión en el sistema. Si ya estás registrado, haz clic en "Si, Ingresar". De lo contrario, si deseas cancelar esta acción, haz clic en "Cancelar".</p>
+			<a class="cerrar" href="#" id="close">No, Cancelar</a>
+			<a class="cancelar" href="login.php" id="close">Si, Ingresar</a>
+		</div>
+	</div>
 
 	<!--============================
 =            Footer            =
@@ -108,6 +113,20 @@ Essential Scripts
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 	<script src="../js/script.js"></script>
+
+	<!-- Codigo para abrir y cerrar el popup -->
+	<script src="https://unpkg.com/jquery@3.7.0/dist/jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function () {
+	$("#open").on("click", function () {
+		$("#popup").fadeIn(100);
+	});
+
+	$("#close").on("click", function () {
+		$("#popup").fadeOut(100);
+	});
+	});
+	</script>
 
 </body>
 

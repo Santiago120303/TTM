@@ -599,8 +599,7 @@ class Consultas
         return $mascotas;
     }
 
-    public function mostrarMascotaFundacionEspecificaComun($id_mascota)
-    {
+    public function mostrarMascotaFundacionEspecificaComun($id_mascota) {
         $mascota = [];
     
         // Creamos el objeto de la conexión
@@ -631,25 +630,55 @@ class Consultas
     }
     
 
-    public function mostrarEventosTodos()
-    {
-        $fundaciones = null;
+    public function mostrarEventosComun(){
+        $eventos = null;
     
         // Creamos el objeto de la conexión
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
     
-        $consultar = "SELECT eveImg, eveNombre, eveFecha, eveHora, eveDireccion FROM tbl_eventos";
+        $consultar = "SELECT eveImg, eveNombre, eveFecha, eveDireccion FROM tbl_eventos";
     
         $result = $conexion->prepare($consultar);
         $result->execute(); 
     
         while ($resultado = $result->fetch()) {
-            $fundaciones[] = $resultado;
+            $eventos[] = $resultado;
         }
     
-        return $fundaciones;
+        return $eventos;
     }
+
+    public function mostrarEventoEspecificoComun($id_evento) {
+        $evento = [];
+    
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta para obtener solo los campos necesarios
+        $consultar = "SELECT  *
+        FROM (((((tbl_eventos
+        INNER JOIN tbl_especies ON tbl_mascotas.cod_especie_fk = tbl_especies.cod_especie)
+        INNER JOIN tbl_mascota_sexo ON tbl_mascotas.cod_mascota_sexo_fk = tbl_mascota_sexo.cod_mascota_sexo)
+        INNER JOIN tbl_users ON tbl_mascotas.id_fun_mas_fk = tbl_users.id_user)
+        INNER JOIN tbl_fundaciones ON tbl_mascotas.id_fun_mas_fk  = tbl_fundaciones.id_fundacion)
+        INNER JOIN tbl_localidades ON tbl_fundaciones.cod_localidad_fk  = tbl_localidades.cod_localidad)
+        WHERE tbl_eventos.eveId = :id_evento";
+    
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam('id_evento',$id_evento);
+        
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $evento[] = $resultado;
+        }
+    
+        return $evento;
+    }
+
     public function mostrarFundacionAdmin($id_fundacion){
 
         $f = null;
@@ -718,7 +747,7 @@ class Consultas
         echo "<script> location.href='../Views/homeAdministrador/ver_fundaciones.php' </script>";
     }
 
-    public function insertarEveFun($eveNombre, $eveFecha, $eveHora, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId){
+    public function insertarEveFun($eveNombre, $eveFecha, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -745,8 +774,8 @@ class Consultas
         } else {
 
             //Creamos la variable que contendra la consulta a ejecutar
-            $insertar = "INSERT INTO tbl_eventos (eveNombre, eveFecha, eveHora, eveDireccion, eveDescripcion, eveEstado, eveImg, id_fun_eve_fk)
-                VALUES (:eveNombre, :eveFecha, :eveHora, :eveDireccion, :eveDescripcion, :eveEstado, :img, :funId )";
+            $insertar = "INSERT INTO tbl_eventos (eveNombre, eveFecha, eveDireccion, eveDescripcion, eveEstado, eveImg, id_fun_eve_fk)
+                VALUES (:eveNombre, :eveFecha, :eveDireccion, :eveDescripcion, :eveEstado, :img, :funId )";
 
             //Preparamos todo lo necesario para ejecutar la funcion anterior
 
@@ -756,7 +785,6 @@ class Consultas
 
             $result->bindParam(":eveNombre", $eveNombre);
             $result->bindParam(":eveFecha", $eveFecha);
-            $result->bindParam(":eveHora", $eveHora);
             $result->bindParam(":eveDireccion", $eveDireccion);
             $result->bindParam(":eveDescripcion", $eveDescripcion);
             $result->bindParam(":eveEstado", $eveEstado);

@@ -2,7 +2,7 @@
   require_once("../../Models/conexion.php");
   require_once("../../Models/consultas.php");
   require_once("../../Models/seguridadClient.php");
-  require_once("../../Controllers/mostrarInfoClient.php");
+  require_once("../../Controllers/mostrarInfoComun.php");
 ?>
 
 <!DOCTYPE html>
@@ -110,14 +110,33 @@
 				<div class="col-lg-9 col-md-8">
 					<div class="product-grid-list">
 						<div class="row mt-30">
-						<?php
-							if (isset($_GET['eveNombre'])) {
-								buscarNombreEvento($_GET['eveNombre']);
-							}else{
-								cargarEventos();
-							}
-								
-						?>
+						<div class="col-lg-4 col-md-6">
+                    <!-- mascotas card -->
+							<div class="product-item bg-light" >
+								<div class="card pb-0 card-mascotas">
+									<div class="thumb-content">
+
+										<a href="mascota_especifica_fundacion.php?id=' .$f['masId'] . '">
+											<img class="card-img-top img-fluid" style="min-height:100px"
+												src="../' . $f['masFoto'] . '" alt="Imagen de la mascota">
+										</a>
+										
+									</div>
+									<div class="card-body">
+										<a href="mascota_especifica_fundacion.php?id=' .$f['masId'] . '">
+											<h4 class="card-title text-center mb-3"><a href="mascota.php">' .$f['masNombre'] . '</a></h4>
+										</a>
+
+										<p class="m-0 pb-2"><b>Especie: </b>' . $f['especie'] . '</p>
+										<p class="m-0 pb-2"><b>Raza: </b>' . $f['masRaza'] . '</p>
+										<p class="m-0 pb-2"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
+										<p class="m-0 pb-2"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
+										<div class="product-ratings">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 						</div>
 					</div>
 				</div>

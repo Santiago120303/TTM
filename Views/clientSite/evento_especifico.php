@@ -8,13 +8,14 @@ require_once("../../Controllers/mostrarInfoComun.php");
 
 <!DOCTYPE html>
 
+
 <html lang="en">
 
 <head>
 
 	<!-- ** Basic Page Needs ** -->
 	<meta charset="utf-8">
-	<title>Mascotas - TTM</title>
+	<title>Fundación específica - TTM</title>
 
 	<!-- ** Mobile Specific Metas ** -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,6 +30,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 	<!-- 
   Essential stylesheets
   =====================================-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<link href="../plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="../plugins/bootstrap/bootstrap-slider.css" rel="stylesheet">
 	<link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -37,81 +39,54 @@ require_once("../../Controllers/mostrarInfoComun.php");
 	<link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 
 	<link href="../css/style.css" rel="stylesheet">
-
-    <!-- Estilos propios del documento -->
-    <style>
-         .list {
-        max-height: 200px !important;
-        overflow:hidden !important;
-        overflow-y: scroll !important;
-        }
-	   input::placeholder{
-		font-family: 'Montserrat', sans-serif;
-	   }
-    </style>
+	<link href="../css/styleDashboarNoCol.css" rel="stylesheet">
 
 </head>
 
 <body class="body-wrapper">
 
+	<!-- header insertado con PHP -->
 	<?php
-		include("nav-clientSite.php");
+	include("nav-clientSite.php");
 	?>
 
-	<section class="section-sm minhe">
+	<!--=================================
+=            Single Blog            =
+==================================-->
+	<section class="blog single-blog section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
-					<div class="search-result bg-gray text-center">
-						<h2>Mascotas</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-3 col-md-4">
-					<!--Buscador-->
-					<form class="p-3" style="background: white;" method="get">
-						<select name="masEspecie" class="form-control mt-3 nice-select form-control w-100 text-center">
-							<option value="">Especie...</option>
-							<option value="1">Perro</option>
-							<option value="2">Gato</option>
-							<option value="3">Ave</option>
-							<option value="4">Conejo</option>
-							<option value="5">Roedor</option>
-						</select>
-						<input class="mt-3 form-control " type="number" name="masEdad" placeholder="Edad: 2 (años)">
-						<select name="masSexo" class="form-control mt-3 nice-select form-control w-100 text-center">
-							<option value="">Sexo...</option>
-							<option value="1">Macho</option>
-							<option value="2">Hembra</option>
-						</select>
-						<input class="mt-3 form-control " type="text" name="masRaza" placeholder="Raza: Beagle">
-					<input class="mt-3 btn btn-login" type="submit" value="Buscar">
-					</form>
-				</div>
-	
-				<div class="col-lg-9 col-md-8">
-					<div class="product-grid-list">
-						<div class="row mt-30">
-						<?php
-							if (isset($_GET['masEspecie']) || isset ($_GET['masEdad']) || isset ($_GET['masSexo'])  || isset ($_GET['masRaza'])) {
-								filtroMascotas($_GET['masEspecie'], $_GET['masEdad'], $_GET['masSexo'], $_GET['masRaza']);
-							}else{
-								cargarMascotasComun();
-							}
-							?>	
+				<?php
+				MostrarEventoEspecificoSidebar()
+				?>
+				<div class="col-lg-8">
+					<article class="single-post">
+                    		<h2 class="text-center mb-4">Mascota</h2>
+						<div class="row d-flex align-items-center">
+							<?php
+							mostrarEventoEspecificoComun()
+							?>
 						</div>
-					</div>
+					</article>
 				</div>
 			</div>
+		</div>
 	</section>
+
 	<!--============================
 =            Footer            =
 =============================-->
 
 	<?php
-		include("footer-include.php")
+	include("footer-include.php")
 	?>
+
+	<!-- 
+font awesome script
+=====================================-->
+
+	<script src="https://kit.fontawesome.com/3b8b956f1a.js" crossorigin="anonymous"></script>
+
 
 	<!-- 
 Essential Scripts
@@ -127,6 +102,7 @@ Essential Scripts
 	<!-- google map -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 	<script src="../plugins/google-map/map.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 	<script src="../js/script.js"></script>
 
