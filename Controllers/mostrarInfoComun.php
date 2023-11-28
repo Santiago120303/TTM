@@ -123,9 +123,6 @@ function MostrarFundacionEspecificaSidebar()
                 ';
         }
 
-
-
-
 }
 function MostrarFundacionEspecificaInfo()
 {
