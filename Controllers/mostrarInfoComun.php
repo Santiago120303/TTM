@@ -198,7 +198,7 @@ function MostrarFundacionEspecificaInfo()
 
 
 }
-function VolveFundacionEspecificaInfo()
+function VolverFundacionEspecificaInfo()
 {
     //Se aterriza el Id de la fundacion enviado por el metodo GET (URL)
     $id_fundacion = $_GET['id'];
@@ -300,26 +300,8 @@ function MostrarMascotaFundacionEspecificaSidebar()
                 ';
         }
 
-
-
-
 }
 
-function VolverMascotasFundacionEspecificaComun()
-{
-    //Se aterriza el Id de la fundacion enviado por el metodo GET (URL)
-    $id_fundacion = $_GET['id'];
-
-    //Se evia la el ID de la fundacion a una funcion de la clase consultas con el fin de traer la informacion de esta fundacion en especifico
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarMascotaFundacionEspecificaComun($id_fundacion);
-
-    foreach ($result as $f) {
-        echo  '
-			    <a class="d-block w-100 text-right font-weight-bold align-items-center" href="mascotas_fundacion_especifica.php?id=' . $f['id_fun_mas_fk'] . '"><i class="fa-solid fa-arrow-left mr-2"></i>Volver</a>
-            '; 
-    }
-}
 
 function MostrarMascotaFundacionEspecificaComun() {
     // Se obtiene el ID de la mascota enviado por el método GET (URL)
@@ -424,13 +406,13 @@ function cargarMascotasComun()
                             </div>
                             <div class="card-body">
                                 <a href="mascota_especifica_fundacion.php?id=' .$f['masId'] . '">
-                                    <h4 class="card-title text-center mb-3"><a href="mascota.php">' .$f['masNombre'] . '</a></h4>
+                                    <h4 class="card-title text-center mb-3"><a href="mascota.php" style="color:#333333;">' .$f['masNombre'] . '</a></h4>
                                 </a>
 
-                                <p class="m-0 pb-2"><b>Especie: </b>' . $f['especie'] . '</p>
-                                <p class="m-0 pb-2"><b>Raza: </b>' . $f['masRaza'] . '</p>
-                                <p class="m-0 pb-2"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
-                                <p class="m-0 pb-2"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
+                                <p class="m-0 pb-2" style="color:#333333; "><b>Especie: </b>' . $f['especie'] . '</p>
+                                <p class="m-0 pb-2" style="color:#333333; "><b>Raza: </b>' . $f['masRaza'] . '</p>
+                                <p class="m-0 pb-2" style="color:#333333; "><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
+                                <p class="m-0 pb-2" style="color:#333333; "><b>Edad: </b>' . $f['masEdad'] . ' años</p>
                                 <div class="product-ratings">
                                 </div>
                             </div>
@@ -442,7 +424,7 @@ function cargarMascotasComun()
     }
 }
 
-function fitroMascotas ($masEspecie, $masEdad, $masSexo, $masRaza)
+function filtroMascotas ($masEspecie, $masEdad, $masSexo, $masRaza)
 {
 
     $objConsultas = new Consultas();

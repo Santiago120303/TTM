@@ -38,7 +38,11 @@ function mostrarInfoFunHome()
                                 } else {
                                     echo '<p>' . $f['vision'] . '</p>';
                                 }
-                echo '</div>';       
+                echo '</div>
+                
+                <a href="perfil.php" class="btn btn-login mb-3"><i class="fa fa-pencil mr-2"></i>Actualizar</a>
+                
+                ';       
     }
 }
 
@@ -127,70 +131,6 @@ function cargarEventosEditar()
     }
 }
 
-function cargarMascotas()
-{
-
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarMasFun();
-
-    if (!isset($result)) {
-        echo '<h2>NO HAY MASCOTAS REGISTRADAS</h2>';
-    } else {
-
-        foreach ($result as $f) {
-
-
-            // echo '
-            
-            // <div class="col-lg-4 col-md-6">
-            //             <!-- product card -->
-            //             <div class="product-item bg-light">
-            //                 <div class="card">
-            //                     <div class="thumb-content">
-            //                         <h4 class="card-title text-center mb-3">
-            //                             <a href="eventoEsp.php">' . $f['eveNombre'] . '</a>
-            //                         </h4>
-            //                         <a  class="bg-mascota" href="eventoEsp.php">
-            //                             <img class="card-img-top img-fluid" src="../' . $f['eveImg'] . '" alt="Imagen de evento">
-            //                         </a>
-            //                     </div>
-            //                     <div class="card-body">
-            //                         <ul class="list-inline product-meta">
-            //                             <li class="list-inline-item">
-            //                                 <a href="fundacion.php"><i class="fa fa-calendar"  style="color: #4942e4;"></i>' . $f['eveFecha'] . '</a>
-            //                             </li>
-            //                             <li class="list-inline-item">
-            //                                 <a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>' . $f['eveHora'] . '</a>
-            //                             </li>
-            //                             <li class="list-inline-item">
-            //                                 <a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>' . $f['eveDireccion'] . '</a>
-            //                             </li>
-            //                         </ul>
-            //                     </div>
-            //                 </div>
-            //             </div>
-            //         </div>
-            
-            // ';
-            echo '
-
-
-
-                <tr>
-                    <td><img src="../' . $f['foto'] . '" alt="Foto User" style="width: 60px; height: 60px; border-radius: 25%"></td>
-                    <td>' . $f['masNombre'] . '</td>
-                    <td>' . $f['masEdad'] . '</td>
-                    <td>' . $f['masRaza'] . '</td>
-                    <td>' . $f['masVacunas'] . '</td>
-                    <td>' . $f['masEstSalud'] . '</td>
-                    <td><a href="modificar_mascotas.php?id=' . $f['masId'] . '" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
-                    <td><a href="../../Controllers/eliminarMasFun.php?id=' . $f['masId'] . '" class="btn btn-danger"><i class="ti-trash"></i> Eliminar</a></td>
-                </tr>
-                ';
-        }
-    }
-}
-
 function cargarMascotasEditar()
 {
     // Aterrizamos la PK enviada desde la tabla 
@@ -242,33 +182,6 @@ function cargarMascotasEditar()
             ';
     }
 }
-
-// function cargarFormularios()
-// {
-
-//     $objConsultas = new Consultas();
-//     $result = $objConsultas->mostrarFormFun();
-
-//     if (!isset($result)) {
-//         echo '<h2>NO HAY SOLICITUDES DE ADOPCIÓN</h2>';
-//     } else {
-
-//         foreach ($result as $f) {
-//             echo '
-//                 <tr>
-//                     <td><img src="../' . $f['foto'] . '" alt="Foto Mascota" style="width: 60px; height: 60px; border-radius: 25%"></td>
-//                     <td>' . $f['masNombre'] . '</td>
-//                     <td>' . $f['masEdad'] . '</td>
-//                     <td>' . $f['masRaza'] . '</td>
-//                     <td>' . $f['nombre'] . '</td>
-//                     <td>' . $f['telefono'] . '</td>
-//                     <td><a href="" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
-//                     <td><a href="../../Controllers/eliminarFormFun.php?id=' . $f['adopId'] . '" class="btn btn-danger"><i class="ti-trash"></i> Eliminar</a></td>
-//                 </tr>
-//                 ';
-//         }
-//     }
-// }
 
 function perfil()
 {

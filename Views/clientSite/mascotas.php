@@ -96,7 +96,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 						<div class="row mt-30">
 						<?php
 							if (isset($_GET['masEspecie']) || isset ($_GET['masEdad']) || isset ($_GET['masSexo'])  || isset ($_GET['masRaza'])) {
-								fitroMascotas($_GET['masEspecie'], $_GET['masEdad'], $_GET['masSexo'], $_GET['masRaza']);
+								filtroMascotas($_GET['masEspecie'], $_GET['masEdad'], $_GET['masSexo'], $_GET['masRaza']);
 							}else{
 								cargarMascotasComun();
 							}
