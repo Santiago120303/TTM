@@ -485,6 +485,8 @@ class Consultas
         return $fundaciones;
     }
 
+ 
+
     public function MostrarInfoFunEspecifica($id_fundacion)
     {
         $fundacion = null;
@@ -493,10 +495,11 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
     
-        $consulta = "SELECT tbl_users.id_user, tbl_users.nombre, tbl_users.telefono, tbl_users.email, tbl_users.foto,  tbl_localidades.localidad, tbl_fundaciones.direccion, tbl_fundaciones.descripcion, tbl_fundaciones.mision, tbl_fundaciones.vision, tbl_fundaciones.foto_fun_1, tbl_fundaciones.foto_fun_2, tbl_fundaciones.foto_fun_3, tbl_fundaciones.foto_fun_3
-        FROM ((tbl_fundaciones
+        $consulta = "SELECT *
+        FROM (((tbl_fundaciones
         INNER JOIN tbl_localidades ON tbl_fundaciones.cod_localidad_fk = tbl_localidades.cod_localidad)
         INNER JOIN tbl_users ON tbl_fundaciones.id_user_fundacion_fk = tbl_users.id_user)
+        INNER JOIN tbl_tipo_doc ON tbl_users.cod_tipo_doc_fk = tbl_tipo_doc.cod_tipo_doc)
         WHERE tbl_users.id_user = :id_fundacion";
     
         $result = $conexion->prepare($consulta);
@@ -745,6 +748,29 @@ class Consultas
 
         echo '<script> alert("Fundacion eliminada") </script>';
         echo "<script> location.href='../Views/homeAdministrador/ver_fundaciones.php' </script>";
+    }
+
+    public function actualizarInfoFundacion($id_fundacion, $direccion, $localidad, $descripcion, $mision, $vision){
+
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE tbl_fundaciones SET direccion=:direccion, descripcion=:descripcion, mision=:mision, vision=:vision, cod_localidad_fk=:localidad WHERE id_fundacion=:id_fundacion ";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam(":id_fundacion", $id_fundacion);
+        $result->bindParam(":direccion", $direccion);
+        $result->bindParam(":descripcion", $descripcion);
+        $result->bindParam(":mision", $mision);
+        $result->bindParam(":vision", $vision);
+        $result->bindParam(":localidad", $localidad);
+
+        $result->execute();
+
+        echo '<script> alert("Información de fundación actualizada exitosamente") </script>';
+        echo "<script> location.href='../Views/homefundacion/home.php' </script>";
+
+    
     }
 
     public function insertarEveFun($eveNombre, $eveFecha, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId){

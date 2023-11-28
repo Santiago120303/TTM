@@ -639,7 +639,7 @@ function MostrarCantidadMascotasRegistradas()
 function cargarMascotas()
 {
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarMasFun();
+    $result = $objConsultas->mostrarMascotasComun();
 
     if (!isset($result)) {
         echo '<h2>NO HAY MASCOTAS REGISTRADAS</h2>';

@@ -7,46 +7,59 @@
 function mostrarInfoFunHome()
 {
     $id_fundacion = $_SESSION['id'];
-    
+
     $objConsultas = new Consultas();
     $result = $objConsultas->MostrarInfoFunEspecifica($id_fundacion);
 
     foreach ($result as $f) {
-        echo '
-            <h2 class="text-center mb-4">' . $f['nombre'] . '</h2>
-            <div class="row">';
-                echo'<div class="col-lg-12">
-                            <h3>Descripción</h3>';
-                                if (strlen($f['descripcion']) == 0) {
-                                    echo '<p>No se ha subido la descripción de la fundación, estamos trabajando en ello.</p>';
-                                } else {
-                                    echo '<p>' . $f['descripcion'] . '</p>';
-                                }
-                echo '</div>';       
-                echo'<div class="col-lg-12">
-                            <h3>Misión</h3>';
-                                if (strlen($f['mision']) == 0) {
-                                    echo '<p>No se ha subido la misión de la fundación, estamos trabajando en ello.</p>';
-                                } else {
-                                    echo '<p>' . $f['mision'] . '</p>';
-                                }
-                echo '</div>';       
-                echo'<div class="col-lg-12">
-                            <h3>Visión</h3>';
-                                if (strlen($f['vision']) == 0) {
-                                    echo '<p>No se ha subido la visión de la fundación, estamos trabajando en ello.</p>';
-                                } else {
-                                    echo '<p>' . $f['vision'] . '</p>';
-                                }
-                echo '</div>
+        echo '<h2 class="text-center mb-4">Detalles de ' . htmlspecialchars($f['nombre']) . '</h2>';
 
+        MostrarCantidadEventosRegistrados();
+        MostrarCantidadMascotasRegistradas();
 
-                
-                <a href="perfil.php" class="btn btn-login mb-3"><i class="fa fa-pencil mr-2"></i>Actualizar</a>
-                
-                ';       
+        echo '</div><div class="row">
+            <div class="col-lg-12">
+                <h3>Descripción</h3>';
+        echo strlen($f['descripcion']) == 0 ? '<p>No se ha subido la descripción de la fundación, estamos trabajando en ello.</p>' : '<p>' . htmlspecialchars($f['descripcion']) . '</p>';
+        echo '</div>
+            <div class="col-lg-12">
+                <h3>Misión</h3>';
+        echo strlen($f['mision']) == 0 ? '<p>No se ha subido la misión de la fundación, estamos trabajando en ello.</p>' : '<p>' . htmlspecialchars($f['mision']) . '</p>';
+        echo '</div>
+            <div class="col-lg-12">
+                <h3>Visión</h3>';
+        echo strlen($f['vision']) == 0 ? '<p>No se ha subido la visión de la fundación, estamos trabajando en ello.</p>' : '<p>' . htmlspecialchars($f['vision']) . '</p>';
+        echo '</div>
+            <div class="col-lg-6">
+                <p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Dirección: </b>' . htmlspecialchars($f['direccion']) . '</p>
+            </div>
+            <div class="col-lg-6">
+                <p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Localidad: </b>' . htmlspecialchars($f['localidad']) . '</p>
+            </div>
+            <div class="col-lg-12">
+                <p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Fotos Representativas: </b> <br>' . htmlspecialchars($f['direccion']) . '</p>
+            </div>';
+
+        $fotos = array($f['foto_fun_1'], $f['foto_fun_2'], $f['foto_fun_3'], $f['foto_fun_4']);
+
+        foreach ($fotos as $foto) {
+            if (!empty($foto)) {
+                echo '<div class="col-lg-3">
+                        <div class="product-item bg-light">
+                            <div class="card pb-0">
+                                <div class="thumb-content">
+                                    <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../' . htmlspecialchars($foto) . '" alt="Imagen representativa">
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+            }
+        }
+
+        echo '<a href="actualizar_informacion_fundacion.php" class="btn btn-login mb-3"><i class="fa fa-pencil mr-2"></i>Actualizar</a>';
     }
 }
+
 
 
 function cargarEventosFundacion()
@@ -235,7 +248,7 @@ function cargarMascotasEditar()
                         <input type="text" value="' . $f['masRaza'] . '" class="form-control" placeholder="Ingresa la raza de la mascota." required name="masRaza">
                     </div>
                     <div class="form-group col-lg-6">
-                        <label>Estado de salud</label>
+                        <label>Estado de Salud</label>
                         <input type="text" value="' . $f['masEstSalud'] . '" class="form-control" placeholder="Describe el estado de salud de la mascota." required name="masEstSalud">
                     </div>
                                 
@@ -355,10 +368,6 @@ function perfilEditar()
                             role="tab" aria-controls="logo" aria-selected="false">Cambiar logo</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="img-principal-tab" data-toggle="tab" data-target="#img-principal" type="button"
-                            role="tab" aria-controls="img-principal" aria-selected="false">Cambiar imagen principal</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
                         <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" type="button"
                             role="tab" aria-controls="contact" aria-selected="false">Cambiar clave</button>
                     </li>
@@ -425,18 +434,175 @@ function perfilEditar()
         
                         </form>
                     </div>
+        
+                    <div class="p-5 tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <form action="../../Controllers/modificarClaveAdmin.php" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="form-group col-lg-12">
+                                    <label class="mtop-4">Identificación:</label>
+                                    <input readonly type="text" class="form-control" placeholder="Ej:10000004436" required
+                                        name="id_user" value="' . $f['id_user'] . '">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Nueva Clave:</label>
+                                    <input type="password" class="form-control" placeholder="Ej:**********" required
+                                        name="clave">
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Confirmar Clave:</label>
+                                    <input type="password" class="form-control" placeholder="Ej:**********" required
+                                        name="clave2">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-main-sm btn-flat  mt-30 w-100">Actualizar clave</button>
+        
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        ';
+    }
+}
 
+function informacionEditar()
+{
+    $id_fundacion = $_SESSION['id'];
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->MostrarInfoFunEspecifica($id_fundacion);
+
+    foreach ($result as $f) {
+        echo '
+        
+        <div class="col-lg-12">
+            <div class="card modificar-user">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button"
+                            role="tab" aria-controls="home" aria-selected="true">Informacion</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="logo-tab" data-toggle="tab" data-target="#logo" type="button" role="tab"
+                            aria-controls="logo" aria-selected="false">Foto 1</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="Foto1" data-toggle="tab" data-target="#img-principal"
+                            type="button" role="tab" aria-controls="img-principal" aria-selected="false">Foto 2</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="Foto2" data-toggle="tab" data-target="#contact" type="button"
+                            role="tab" aria-controls="contact" aria-selected="false">Foto 3</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="Foto3" data-toggle="tab" data-target="#contact" type="button"
+                            role="tab" aria-controls="contact" aria-selected="false">Foto 4</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+        
+        
+                    <div class="p-5 tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        
+                        <form action="../../Controllers/actualizarInfoFundacion.php" method="POST"
+                            enctype="multipart/form-data">
+                            <div class="row">
+        
+                                <div class="form-group col-lg-12">
+                                    <label class="mtop-4">Identificación</label>
+                                    <input readonly type="text" class="form-control" placeholder="Ej:10000004436" required
+                                        name="id_user" value="' . $f['id_user'] . '">
+                                </div>
+
+                                <div class="form-group col-lg-6">
+                                    <label class="mtop-4">Dirección</label>
+                                    <input required type="text" class="form-control" placeholder="Ej: Cl 39 No. 15-13" 
+                                        name="direccion" value="' . $f['direccion'] . '">
+                                </div>
+
+                                <div class="form-group col-lg-6">
+                                <label>Localidad</label>
+                                <select required name="localidad" id="" class="form-control"  >
+                                <option value="' . $f['cod_localidad_fk'] . '">' . $f['localidad'] . '</option>
+                                <option value="AnNa">Antonio Nariño</option>
+                                <option value="BaUn">Barrio Unidos</option>
+                                <option value="Bo">Bosa</option>
+                                <option value="Ch">Chapinero</option>
+                                <option value="CiBo">Ciudad Bolívar</option>
+                                <option value="En">Engativá</option>
+                                <option value="Fo">Fontibón</option>
+                                <option value="Ke">Kennedy</option>
+                                <option value="LaCa">La Candelaria</option>
+                                <option value="LoMa">Los Mártires</option>
+                                <option value="PuAr">Puente Aranda</option>
+                                <option value="RaUrUr">Rafael Uribe Uribe</option>
+                                <option value="SaCr">San Cristóbal</option>
+                                <option value="Sa">Santa Fe</option>
+                                <option value="Su">Suba</option>
+                                <option value="Sum">Sumapaz</option>
+                                <option value="Te">Teusaquillo</option>
+                                <option value="Tu">Tunjuelito</option>
+                                <option value="Us">Usaquén</option>
+                                <option value="Usm">Usme</option>
+                                </select>
+                                </div>
+    
+        
+                                <div class="form-group col-lg-12">
+                                    <label>Descripción</label>
+                                    <textarea class="form-control" required name="descripcion" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['descripcion'] . '</textarea>
+                                </div>
+
+                                <div class="form-group col-lg-12">
+                                    <label>Misión</label>
+                                    <textarea class="form-control" required name="mision" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['descripcion'] . '</textarea>
+                                </div>
+
+                                <div class="form-group col-lg-12">
+                                    <label>Visión</label>
+                                    <textarea class="form-control" required name="vision" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['descripcion'] . '</textarea>
+                                </div>
+
+                            </div>
+                            <button type="submit" class="btn btn-main-sm btn-flat  mt-30 w-100">Actualizar datos</button>
+        
+                        </form>
+                    </div>
+        
+        
+                    <div class="p-5 tab-pane fade" id="logo" role="tabpanel" aria-labelledby="logo-tab">
+                        <form action="../../Controllers/modificarLogoFundacion.php" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label class="mtop-4">Identificación:</label>
+                                    <input readonly type="text" class="form-control" placeholder="Ej:10000004436" required
+                                        name="id_user" value="' . $f['id_user'] . '">
+                                </div>
+        
+                                <div class="form-group col-lg-6">
+                                    <label>Foto de Logo</label>
+                                    <input type="file" class="form-control" required name="logo"
+                                        accept=".jpeg, .jpg, .png, .gif">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-main-sm btn-flat  mt-30 w-100">Actualizar logo</button>
+        
+                        </form>
+                    </div>
+        
                     <div class="p-5 tab-pane fade" id="img-principal" role="tabpanel" aria-labelledby="img-principal-tab">
                         <form action="../../Controllers/modificarFotoFundacion.php" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="form-group col-lg-6">
                                     <label class="mtop-4">Identificación:</label>
-                                    <input readonly type="text" class="form-control" placeholder="Ej:10000004436" required name="id_user" value="' . $f['id_user'] . '">
+                                    <input readonly type="text" class="form-control" placeholder="Ej:10000004436" required
+                                        name="id_user" value="' . $f['id_user'] . '">
                                 </div>
         
                                 <div class="form-group col-lg-6">
                                     <label>Imagen Principal</label>
-                                    <input type="file" class="form-control" required name="foto" accept=".jpeg, .jpg, .png, .gif">
+                                    <input type="file" class="form-control" required name="foto"
+                                        accept=".jpeg, .jpg, .png, .gif">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-main-sm btn-flat  mt-30 w-100">Actualizar foto</button>
@@ -595,7 +761,7 @@ function MostrarCantidadEventosRegistrados()
 
     foreach ($result as $f) {
         echo '
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-4">
                     <div class="card">
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="fa-regular fa-calendar-check" style="color: #8696FE;"></i>
@@ -619,7 +785,7 @@ function MostrarCantidadMascotasRegistradas()
 
     foreach ($result as $f) {
         echo '
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-4">
                     <div class="card">
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="fa-solid fa-paw" style="color: #11009e;"></i>

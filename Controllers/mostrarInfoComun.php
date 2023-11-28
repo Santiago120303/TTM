@@ -292,6 +292,82 @@ function MostrarMascotaFundacionEspecificaSidebar(){
         }
 }
 
+function MostrarMascotaFundacionEspecificaComun() {
+    // Se obtiene el ID de la mascota enviado por el método GET (URL)
+    $id_mascota = isset($_GET['id']) ? $_GET['id'] : null;
+
+    // Verificamos que se haya proporcionado un ID válido
+    if (!$id_mascota) {
+        echo "Error: ID de mascota no válido.";
+        return;
+    }
+
+    // Se instancia el objeto Consultas
+    $objConsultas = new Consultas();
+
+    // Se llama a la función para obtener la información de la mascota específica
+    $result = $objConsultas->mostrarMascotaFundacionEspecificaComun($id_mascota);
+
+    // Verificamos que se haya obtenido algún resultado
+    if (!$result) {
+        echo "Error: No se encontró la mascota con el ID proporcionado.";
+        return;
+    }
+
+    // Pintamos la información consultada en el artefacto (FORM)
+    foreach ($result as $f) {
+        echo  '
+            <div class="col-lg-6">
+                <p class="p-0 m-0" style="color:#333333; text-align:center;">Registrado por '.$f['nombre'].' <br>  '.$f['masFecRegistro'].' </p>
+                <div class="product-item bg-light">
+                    <div class="card pb-0">
+                        <div class="thumb-content">
+                            <a href="#">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../' . $f['masFoto'] . '"
+                                    alt="Imagen de la mascota">
+                            </a>
+                        </div>
+                        <div class="card-body p-0">
+                            <a href="#">
+                                <h4 class="card-title text-center my-3" style="font-size:25px; color:#333333;">' .$f['masNombre'] . '</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Especie: </b>' . $f['especie'] . '</p>
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Raza: </b>' . $f['masRaza'] . '</p>
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
+                <a href="#" id="open" class="btn btn-login mt-5 align-self-end">Adoptar</a>
+            </div>
+            <div class="col-lg-12">
+                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Vacunas: </b> '.$f['masVacunas'].' ( ' . obtenerVacunas($f) . ')</p>
+            </div>
+            <div class="col-lg-12">
+                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Personalidad: </b>' . $f['masPersonalidad'] . '</p>
+            </div>
+            <div class="col-lg-12">
+                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Estado de salud: </b>' . $f['masEstSalud'] . '</p>
+            </div>
+            <div class="col-lg-12">
+                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Historia: </b>' . $f['masHistoria'] . '</p>
+            </div>
+            <div class="col-lg-12">
+                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Requisitos de adopción: </b>' . $f['masReqAdopcion'] . '</p>
+            </div>
+        '; 
+    }
+}
+
+// Función auxiliar para obtener las vacunas de la mascota
+function obtenerVacunas($f) {
+    $vacunas = [$f['masVacuna1'], $f['masVacuna2'], $f['masVacuna3'], $f['masVacuna4']];
+    $vacunas = array_filter($vacunas); // Elimina elementos vacíos
+    return implode(', ', $vacunas);
+}
+
 function MostrarEventoEspecificoComun() {
     //Se aterriza el Id de la fundacion enviado por el metodo GET (URL)
     $id_fundacion = $_GET['id'];
@@ -371,83 +447,6 @@ function MostrarEventoEspecificoSidebar(){
                 ';
         }
 
-}
-
-
-function MostrarMascotaFundacionEspecificaComun() {
-    // Se obtiene el ID de la mascota enviado por el método GET (URL)
-    $id_mascota = isset($_GET['id']) ? $_GET['id'] : null;
-
-    // Verificamos que se haya proporcionado un ID válido
-    if (!$id_mascota) {
-        echo "Error: ID de mascota no válido.";
-        return;
-    }
-
-    // Se instancia el objeto Consultas
-    $objConsultas = new Consultas();
-
-    // Se llama a la función para obtener la información de la mascota específica
-    $result = $objConsultas->mostrarMascotaFundacionEspecificaComun($id_mascota);
-
-    // Verificamos que se haya obtenido algún resultado
-    if (!$result) {
-        echo "Error: No se encontró la mascota con el ID proporcionado.";
-        return;
-    }
-
-    // Pintamos la información consultada en el artefacto (FORM)
-    foreach ($result as $f) {
-        echo  '
-            <div class="col-lg-6">
-                <p class="p-0 m-0" style="color:#333333; text-align:center;">Registrado por '.$f['nombre'].' <br>  '.$f['masFecRegistro'].' </p>
-                <div class="product-item bg-light">
-                    <div class="card pb-0">
-                        <div class="thumb-content">
-                            <a href="#">
-                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../' . $f['masFoto'] . '"
-                                    alt="Imagen de la mascota">
-                            </a>
-                        </div>
-                        <div class="card-body p-0">
-                            <a href="#">
-                                <h4 class="card-title text-center my-3" style="font-size:25px; color:#333333;">' .$f['masNombre'] . '</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Especie: </b>' . $f['especie'] . '</p>
-                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Raza: </b>' . $f['masRaza'] . '</p>
-                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
-                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
-                <a href="#" id="open" class="btn btn-login mt-5 align-self-end">Adoptar</a>
-            </div>
-            <div class="col-lg-12">
-                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Vacunas: </b> '.$f['masVacunas'].' ( ' . obtenerVacunas($f) . ')</p>
-            </div>
-            <div class="col-lg-12">
-                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Personalidad: </b>' . $f['masPersonalidad'] . '</p>
-            </div>
-            <div class="col-lg-12">
-                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Estado de salud: </b>' . $f['masEstSalud'] . '</p>
-            </div>
-            <div class="col-lg-12">
-                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Historia: </b>' . $f['masHistoria'] . '</p>
-            </div>
-            <div class="col-lg-12">
-                <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Requisitos de adopción: </b>' . $f['masReqAdopcion'] . '</p>
-            </div>
-        '; 
-    }
-}
-
-// Función auxiliar para obtener las vacunas de la mascota
-function obtenerVacunas($f) {
-    $vacunas = [$f['masVacuna1'], $f['masVacuna2'], $f['masVacuna3'], $f['masVacuna4']];
-    $vacunas = array_filter($vacunas); // Elimina elementos vacíos
-    return implode(', ', $vacunas);
 }
 
 
