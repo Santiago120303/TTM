@@ -98,6 +98,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 								fitroMascotas($_GET['masEspecie'], $_GET['masEdad'], $_GET['masSexo'], $_GET['masRaza']);
 							}else{
 								cargarMascotasComun();
+							}
 							?>	
 						</div>
 					</div>

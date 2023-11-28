@@ -73,7 +73,6 @@
                               <th>Raza</th>
                               <th>Vacunas</th>
                               <th>Estado de Salud</th>
-                              <th>Eliminar</th>
                             </tr>
                           </thead>
                           <tbody>

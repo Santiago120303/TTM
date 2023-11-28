@@ -129,9 +129,10 @@ function cargarEventosEditar()
 
 function cargarMascotas()
 {
+    $id_fundacion = $_SESSION['id'];
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarMasFun();
+    $result = $objConsultas->mostrarMasFun($id_fundacion);
 
     if (!isset($result)) {
         echo '<h2>NO HAY MASCOTAS REGISTRADAS</h2>';
@@ -175,7 +176,7 @@ function cargarMascotas()
             echo '
 
                 <tr>
-                    <td><img src="../' . $f['foto'] . '" alt="Foto User" style="width: 60px; height: 60px; border-radius: 25%"></td>
+                    <td><img src="../' . $f['masFoto'] . '" alt="Foto User" style="width: 60px; height: 60px; border-radius: 25%"></td>
                     <td>' . $f['masNombre'] . '</td>
                     <td>' . $f['masEdad'] . '</td>
                     <td>' . $f['masRaza'] . '</td>
@@ -314,10 +315,6 @@ function perfil()
             <h5 class="text-center">' . $f['nombre'] . ' ' . $f['apellido'] . '</h5>
             <h6 class="text center">' . $f['rol'] . '</h6>
                 <a href="perfil.php" class="btn btn-login mb-3"><i class="fa fa-home mr-2"></i>Editar perfil</a>
-			<p  class="text-center mb-2">Kennedy </p></a>
-			<p  class="text-center mb-2">Cl. 8 #19a 51</p></a>
-				<a href="mailto:patitassolidarias@gmail.com"><p  class="text-center mb-2">patitassolidarias@gmail.com</p></a>
-				<a href="whatsapp://send?phone=310123456757&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n."><p  class="text-center mb-2">3101234567</p></a>
           </div>
             ';
     }

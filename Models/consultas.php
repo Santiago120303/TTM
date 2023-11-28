@@ -915,7 +915,7 @@ class Consultas
         echo "<script> location.href='../Views/homeFundacion/registrar_mascotas.php' </script>";
     }
 
-    public function mostrarMasFun(){
+    public function mostrarMasFun($id_fundacion){
 
         $f = null;
 
@@ -923,9 +923,12 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $consultar = "SELECT * FROM tbl_mascotas";
+        $consultar = "SELECT  tbl_mascotas.masId, tbl_mascotas.masNombre, tbl_mascotas.masFoto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_mascotas.masEstSalud, tbl_mascotas.masVacunas
+        FROM tbl_mascotas WHERE tbl_mascotas.id_fun_mas_fk = :id_fundacion";
 
         $result = $conexion->prepare($consultar);
+
+        $result->bindParam(':id_fundacion', $id_fundacion);
 
         $result->execute();
 

@@ -638,7 +638,6 @@ function MostrarCantidadMascotasRegistradas()
 
 function cargarMascotas()
 {
-
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarMasFun();
 
@@ -684,14 +683,13 @@ function cargarMascotas()
             echo '
 
                 <tr>
-                    <td><img src="../' . $f['foto'] . '" alt="Foto User" style="width: 60px; height: 60px; border-radius: 25%"></td>
+                    <td><img src="../' . $f['masFoto'] . '" alt="Foto User" style="width: 60px; height: 60px; border-radius: 25%"></td>
                     <td>' . $f['id_fun_mas_fk'] . '</td>
                     <td>' . $f['masNombre'] . '</td>
                     <td>' . $f['masEdad'] . '</td>
                     <td>' . $f['masRaza'] . '</td>
                     <td>' . $f['masVacunas'] . '</td>
                     <td>' . $f['masEstSalud'] . '</td>
-                    <td><a href="../../Controllers/eliminarMasFun.php?id=' . $f['masId'] . '" class=" bg-red"><i class="fa-solid fa-trash"></i> Eliminar</a></td>
                 </tr>
                 ';
         }
