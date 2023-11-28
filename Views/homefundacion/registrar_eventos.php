@@ -71,22 +71,15 @@
                         <label>Nombre del evento</label>
                         <input type="text" class="form-control" placeholder="Ej:Evento caritativo" required name="eveNombre">
                     </div>
-
-                    <div class="form-group col-lg-6">
-                        <label>Fecha del evento</label>
-                        <input type="date" class="form-control" required name="eveFecha">
-                    </div>
-
-                    <div class="form-group col-lg-6">
-                        <label>Hora del evento</label>
-                        <input type="time" class="form-control" required name="eveHora">
-                    </div>
-
                     <div class="form-group col-lg-6">
                         <label>Dirección del evento</label>
                         <input type="text" class="form-control" placeholder="Ej:Carrera 1 #3-4 sur" required name="eveDireccion">
                     </div>
-                    <div class="form-group col-lg-6">
+                    <div class="form-group col-lg-4">
+                        <label>Fecha del evento</label>
+                        <input type="date" class="form-control" required name="eveFecha">
+                    </div>
+                    <div class="form-group col-lg-4">
                         <label>Estado del evento</label>
                         <select required name="eveEstado" id="" class="form-control">
                             <option value="">Selecciona una opcion</option>
@@ -95,14 +88,13 @@
                             <option value="En estado de confirmacion">En estado de confirmación</option>
                         </select>
                     </div>
-                    <div class="form-group col-lg-6">
-                        <label>Descripción del evento</label>
-                        <input type="text" class="form-control" placeholder="Escriba la descripción del evento" required name="eveDescripcion">
-                    </div>
-
-                    <div class="form-group col-lg-6">
+                    <div class="form-group col-lg-4">
                             <label>Imagen o foto del evento</label>
                             <input type="file" class="form-control" name="img" accept=".jpeg, .jpg, .png, .gif">
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label>Descripción del evento</label>
+                        <input type="text" class="form-control" placeholder="Escriba la descripción del evento" required name="eveDescripcion">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30">Registrar nuevo evento</button>

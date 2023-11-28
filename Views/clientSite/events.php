@@ -2,7 +2,7 @@
 
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
-require_once("../../Controllers/mostrarInfoClientSite.php");
+require_once("../../Controllers/mostrarInfoComun.php");
 
 ?>
 <!DOCTYPE html>
@@ -110,15 +110,12 @@ require_once("../../Controllers/mostrarInfoClientSite.php");
 				<div class="col-lg-9 col-md-8">
 					<div class="product-grid-list">
 						<div class="row mt-30">
+						
 						<?php
-							if (isset($_GET['eveNombre'])) {
-								buscarNombreEvento($_GET['eveNombre']);
-							}else{
-								cargarEventos();
-							}
-								
+							cargarEventosComun();
 						?>
-						</div>
+						
+					</div>
 					</div>
 				</div>
 			</div>
