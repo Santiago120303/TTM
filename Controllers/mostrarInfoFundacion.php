@@ -40,7 +40,7 @@ function mostrarInfoFunHome()
                                 }
                 echo '</div>
 
-                
+
                 
                 <a href="perfil.php" class="btn btn-login mb-3"><i class="fa fa-pencil mr-2"></i>Actualizar</a>
                 
@@ -53,7 +53,7 @@ function cargarEventosFundacion()
 {
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarEventosTodos();
+    $result = $objConsultas->mostrarEventosComun();
 
     if (!isset($result)) {
         echo '<h2>NO HAY EVENTOS REGISTRADOS</h2>';
@@ -391,7 +391,7 @@ function cargarEventos()
 {
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarEventosTodos();
+    $result = $objConsultas->mostrarEventosComun();
 
     if (!isset($result)) {
         echo '<h2>NO HAY EVENTOS REGISTRADOS</h2>';
