@@ -1250,11 +1250,46 @@ class Consultas
 
         return $f;
     }
-    
 
-    
+    //consulta para saber cuantos eventos tiene la fundación activos
+    public function cantidadEventosRegistradosFundacion($id_fundacion){
 
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
 
+        $cantidaeventos = "SELECT COUNT(eveId) as cantidadEventos FROM tbl_eventos WHERE tbl_eventos.id_fun_eve_fk = :id_fundacion";
+        $result = $conexion->prepare($cantidaeventos);
+
+        $result->bindParam(':id_fundacion', $id_fundacion);
+
+        $result->execute();
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+
+        return $f;
+    }
+
+    //consulta para saber cuantas mascotas estan registradas
+    public function cantidadMascotasRegistradasFundacion($id_fundacion){
+
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $cantidamascotas = "SELECT COUNT(masId) as cantidadMascotas FROM tbl_mascotas WHERE tbl_mascotas.id_fun_mas_fk = :id_fundacion";
+        $result = $conexion->prepare($cantidamascotas);
+
+        $result->bindParam(':id_fundacion', $id_fundacion);
+
+        $result->execute();
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+
+        return $f;
+    }
 }
 
 
@@ -1342,3 +1377,4 @@ class ValidarSesion
         echo "<script> location.href='../Views/clientSite/login.php' </script>";
     }
 }
+?>

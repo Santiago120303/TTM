@@ -62,21 +62,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="basic-elements">
-                                            
-                  <table class="table table-bordered table-hover">
-                  <thead>
-                  <tr>
-                    <th>Imagen del Evento</th>
-                    <th>Nombre del Evento</th>
-                    <th>Fecha del Evento</th>
-                    <th>Hora del Evento</th>
-                    <th>Dirección del Evento</th>
-                    <th>Estado</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                  </tr>
-                  </thead>
-                  <tbody>
+                                          
                       <?php 
                       cargarEventos();
                       ?>

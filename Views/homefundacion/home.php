@@ -72,6 +72,14 @@
       <div class="col-lg-9">
         <!-- Recently Favorited -->
         <section id="main-content">
+          <div class="row">
+            <?php
+            MostrarCantidadEventosRegistrados();
+            ?>
+            <?php
+            MostrarCantidadMascotasRegistradas();
+            ?>
+          </div>
           <article class="single-post" style="width: 1100px !important; margin: 0 auto;">
           <?php
           mostrarInfoFunHome();

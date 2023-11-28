@@ -24,10 +24,8 @@
 				<!-- Social Icons -->
 				<ul class="social-media-icons text-center text-lg-right">
 					<li><a class="fa fa-facebook" href="https://www.facebook.com/profile.php?id=61551249643390" target="_blank"></a></li>
-					<li><a class="fa fa-instagram" href="#"></a></li>
-					<li><a class="fa fa-pinterest-p" href="#"></a>
-					</li>
-					<li><a class="fa fa-github-alt" href="#"></a></li>
+					<li><a class="fa fa-google-plus" href="mailto:tomandotumanottm@gmail.com" ></a></li>
+					<li><a class="fa fa-whatsapp" href="https://w.app/TomandotuMano" target="_blank"></a></li>
 				</ul>
 			</div>
 		</div>

@@ -622,4 +622,51 @@ function cargarFundacionesFundacion()
     }
 }
 
+function MostrarCantidadEventosRegistrados()
+{
+    $id_fundacion = $_SESSION['id'];
+    $objConsultas = new Consultas();
+    $result = $objConsultas->cantidadEventosRegistradosFundacion($id_fundacion);
+
+    foreach ($result as $f) {
+        echo '
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa-regular fa-calendar-check" style="color: #8696FE;"></i>
+                            </div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">EventoS Registrados</div>
+                                <div class="stat-digit">' . $f['cantidadEventos'] . '</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ';
+    }
+}
+
+function MostrarCantidadMascotasRegistradas()
+{
+    $id_fundacion = $_SESSION['id'];
+    $objConsultas = new Consultas();
+    $result = $objConsultas->cantidadMascotasRegistradasFundacion($id_fundacion);
+
+    foreach ($result as $f) {
+        echo '
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa-solid fa-paw" style="color: #11009e;"></i>
+                            </div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Mascotas Registradas</div>
+                                <div class="stat-digit">' . $f['cantidadMascotas'] . '</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ';
+    }
+}
 ?>
