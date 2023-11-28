@@ -38,6 +38,18 @@ require_once("../../Controllers/mostrarInfoComun.php");
 
 	<link href="../css/style.css" rel="stylesheet">
 
+    <!-- Estilos propios del documento -->
+    <style>
+         .list {
+        max-height: 200px !important;
+        overflow:hidden !important;
+        overflow-y: scroll !important;
+        }
+	   input::placeholder{
+		font-family: 'Montserrat', sans-serif;
+	   }
+    </style>
+
 </head>
 
 <body class="body-wrapper">
@@ -57,49 +69,34 @@ require_once("../../Controllers/mostrarInfoComun.php");
 			</div>
 			<div class="row">
 				<div class="col-lg-3 col-md-4">
-					<!-- Search Widget -->
-					<div class="widget search p-0">
-						<div class="input-group">
-							<input type="text" class="form-control" id="expire" placeholder="Buscar...">
-							<span class="input-group-addon"><i class="fa fa-search px-3"></i></span>
-						</div>
-					</div>
-					<div class="category-sidebar">
-						<div class="widget product-shorting">
-							<h4 class="widget-header">Filtrar Mascotas</h4>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									Gatos
-								</label>
-							</div>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									Perros
-								</label>
-							</div>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									Aves
-								</label>
-							</div>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									Hogar Provisional
-								</label>
-							</div>
-						</div>
-	
-					</div>
+					<!--Buscador-->
+					<form class="p-3" style="background: white;" method="get">
+						<select name="masEspecie" class="form-control mt-3 nice-select form-control w-100 text-center">
+							<option value="">Especie...</option>
+							<option value="1">Perro</option>
+							<option value="2">Gato</option>
+							<option value="3">Ave</option>
+							<option value="4">Conejo</option>
+							<option value="5">Roedor</option>
+						</select>
+						<input class="mt-3 form-control " type="number" name="masEdad" placeholder="Edad: 2 (años)">
+						<select name="masSexo" class="form-control mt-3 nice-select form-control w-100 text-center">
+							<option value="">Sexo...</option>
+							<option value="1">Macho</option>
+							<option value="2">Hembra</option>
+						</select>
+						<input class="mt-3 form-control " type="text" name="masRaza" placeholder="Raza: Beagle">
+					<input class="mt-3 btn btn-login" type="submit" value="Buscar">
+					</form>
 				</div>
 	
 				<div class="col-lg-9 col-md-8">
 					<div class="product-grid-list">
 						<div class="row mt-30">
-							<?php
+						<?php
+							if (isset($_GET['masEspecie']) || isset ($_GET['masEdad']) || isset ($_GET['masSexo'])  || isset ($_GET['masRaza'])) {
+								fitroMascotas($_GET['masEspecie'], $_GET['masEdad'], $_GET['masSexo'], $_GET['masRaza']);
+							}else{
 								cargarMascotasComun();
 							?>	
 						</div>

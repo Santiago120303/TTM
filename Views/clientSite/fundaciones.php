@@ -108,7 +108,6 @@ require_once("../../Controllers/mostrarInfoComun.php");
 							}else{
 								cargarFundacionesComun();
 							}
-								
 						?>
 					</div>
 				</div>

@@ -36,6 +36,17 @@
   <link href="../plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
   
   <link href="../css/style.css" rel="stylesheet">
+  
+  <style>
+         .list {
+        max-height: 200px !important;
+        overflow:hidden !important;
+        overflow-y: scroll !important;
+        }
+	   input::placeholder{
+		font-family: 'Montserrat', sans-serif;
+	   }
+    </style>
 
 </head>
 
@@ -59,7 +70,7 @@
       <div class="col-lg-9">
         <!-- Recently Favorited -->
         <div class="widget dashboard-container my-adslist">
-          <h3 class="widget-header">Registrar Mascotas</h3>
+          <h3 class="widget-header">Registro de Mascota</h3>
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
@@ -78,13 +89,12 @@
                               <option value="3">Ave</option>
                               <option value="4">Conejo</option>
                               <option value="5">Roedor</option>
-                              <option value="6">Tortuga</option>
                             </select>
                         </div>
 
                         <div class="form-group col-lg-6">
                             <label>Raza</label>
-                            <input type="text" class="form-control" placeholder="Ingresa la raza de la mascota." required name="masRaza">
+                            <input type="text" class="form-control" placeholder="Ej: Golden Retriever" required name="masRaza">
                         </div>
 
                         <div class="form-group col-lg-6">
@@ -93,32 +103,66 @@
                         </div>
 
                         <div class="form-group col-lg-6">
+                            <label>Sexo</label>
+                            <select required name="masSexo" class="form-control">
+                              <option value="">Sexo...</option>
+                              <option value="1">Macho</option>
+                              <option value="2">Hembra</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-lg-6">
                             <label>Edad (años)</label>
                             <input type="text" class="form-control" placeholder="Ej: 5 " required name="masEdad">
                         </div>
 
                         <div class="form-group col-lg-6">
-                            <label>Historia</label>
-                            <input type="text" class="form-control" placeholder="Ingresa aquí la historia de la mascota." required name="masHistoria">
+                            <label>Vacunas</label>
+                            <select required name="masVacunas" id="masVacunas" class="form-control">
+                              <option value="">Vacunas...</option>
+                              <option value="Si">Sí</option>
+                              <option value="No">No</option>
+                              <option value="No aplica">No aplica</option>
+                            </select>
                         </div>
 
-                        <div class="form-group col-lg-6">
-                            <label>Vacunas</label>
-                            <input type="text" class="form-control" placeholder="Ingresa información sobre las vacunas que tiene la mascota." required name="masVacunas">
+                        <div class="form-group col-lg-12">
+                            <label>¿Cuáles vacunas?</label>
+                              <div class="row">
+                                <input type="text" name="masVacuna1" class="form-control col-lg-3 col-md-4 " placeholder="Ej 1: rabia">
+                                <input type="text" name="masVacuna2" class="form-control col-lg-3 col-md-4 " placeholder="Ej 2: parvovirus">
+                                <input type="text" name="masVacuna3" class="form-control col-lg-3 col-md-4 " placeholder="Ej 3: triple felina">
+                                <input type="text" name="masVacuna4" class="form-control col-lg-3 col-md-4 " placeholder="Ej 4: mixomatosis ">
+                              </div>
                         </div>
 
                         <div class="form-group col-lg-6">
                             <label>Estado de salud</label>
-                            <input type="text" class="form-control" placeholder="Describe el estado de salud de la mascota." required name="masEstSalud">
+                            <input type="text" class="form-control" placeholder="Ej: Óptimo, Bueno, Excelente..." required name="masEstSalud">
+                        </div>
+
+                        <div class="form-group col-lg-6">
+                            <label>Personalidad</label>
+                            <input type="text" class="form-control" placeholder="Ej: Juguetón y curioso" required name="masPersonalidad">
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <label>Historia</label>
+                            <textarea class="form-control" required name="masHistoria" cols="20" rows="4" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto."></textarea>
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <label>Requisitos de adopción</label>
+                            <textarea class="form-control" required name="masReqAdopcion" cols="20" rows="4" placeholder="Ingresa aquí, los requisitos de adopción de la mascota en un parrafo corto."></textarea>
                         </div>
                                     
-                        <div class="form-group col-lg-6">
-                            <label>Foto</label>
-                            <input type="file" class="form-control" name="foto" accept=".jpeg, .jpg, .png, .gif">
+                        <div class="form-group col-lg-12">
+                            <label>Foto de la mascota</label>
+                            <input type="file" class="form-control" name="masFoto" accept=".jpeg, .jpg, .png, .gif">
                         </div>
                       </div>
                                 
-                      <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30">Registrar nueva mascota</button>
+                      <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30 w-100">Registrar nueva mascota</button>
 
                     </form>
                               
