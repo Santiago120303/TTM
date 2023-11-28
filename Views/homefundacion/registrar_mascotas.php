@@ -127,7 +127,7 @@
                         </div>
 
                         <div class="form-group col-lg-12">
-                            <label>¿Cuáles vacunas?</label>
+                            <label>¿Cuáles Vacunas?</label>
                               <div class="row">
                                 <input type="text" name="masVacuna1" class="form-control col-lg-3 col-md-4 " placeholder="Ej 1: rabia">
                                 <input type="text" name="masVacuna2" class="form-control col-lg-3 col-md-4 " placeholder="Ej 2: parvovirus">
@@ -137,7 +137,7 @@
                         </div>
 
                         <div class="form-group col-lg-6">
-                            <label>Estado de salud</label>
+                            <label>Estado de Salud</label>
                             <input type="text" class="form-control" placeholder="Ej: Óptimo, Bueno, Excelente..." required name="masEstSalud">
                         </div>
 
@@ -152,12 +152,12 @@
                         </div>
 
                         <div class="form-group col-lg-12">
-                            <label>Requisitos de adopción</label>
+                            <label>Requisitos de Adopción</label>
                             <textarea class="form-control" required name="masReqAdopcion" cols="20" rows="4" placeholder="Ingresa aquí, los requisitos de adopción de la mascota en un parrafo corto."></textarea>
                         </div>
                                     
                         <div class="form-group col-lg-12">
-                            <label>Foto de la mascota</label>
+                            <label>Foto de la Mascota</label>
                             <input type="file" class="form-control" name="masFoto" accept=".jpeg, .jpg, .png, .gif">
                         </div>
                       </div>

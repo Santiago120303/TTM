@@ -637,7 +637,7 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
     
-        $consultar = "SELECT eveImg, eveNombre, eveFecha, eveDireccion FROM tbl_eventos";
+        $consultar = "SELECT eveImg, eveNombre, eveFecha, eveHora, eveDireccion FROM tbl_eventos";
     
         $result = $conexion->prepare($consultar);
         $result->execute(); 
@@ -951,8 +951,10 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $consultar = "SELECT  tbl_mascotas.masId, tbl_mascotas.masNombre, tbl_mascotas.masFoto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_mascotas.masEstSalud, tbl_mascotas.masVacunas
-        FROM tbl_mascotas WHERE tbl_mascotas.id_fun_mas_fk = :id_fundacion";
+        $consultar = "SELECT  tbl_mascotas.masId, tbl_mascotas.masNombre, tbl_mascotas.masFoto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_mascotas.masEstSalud, tbl_mascotas.masVacunas, tbl_especies.especie
+        FROM (tbl_mascotas
+        INNER JOIN tbl_especies ON tbl_mascotas.cod_especie_fk=tbl_especies.cod_especie)
+        WHERE tbl_mascotas.id_fun_mas_fk = :id_fundacion";
 
         $result = $conexion->prepare($consultar);
 

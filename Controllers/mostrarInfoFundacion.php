@@ -251,8 +251,9 @@ function cargarMascotasEditar()
 function cargarMascotasReporte()
 {
 
+    $id_fundacion = $_SESSION['id'];
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarMascotasComun();
+    $result = $objConsultas->mostrarMasFun($id_fundacion);
     // En caso de no haber fundaciones registradas se mostrar este texto
     if (!isset($result)) {
         echo '<h2>NO HAY MASCOTAS REGISTRADAS</h2>';
