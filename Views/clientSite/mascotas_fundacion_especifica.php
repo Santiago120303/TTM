@@ -62,7 +62,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 				<div class="col-lg-8">
 					<article class="single-post">
 						<?php
-							VolveFundacionEspecificaInfo()
+							VolverFundacionEspecificaInfo()
 						?>
                     		<h2 class="text-center mb-4">Mascotas</h2>
 						<div class="row">
