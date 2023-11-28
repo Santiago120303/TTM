@@ -646,40 +646,6 @@ function cargarMascotas()
     } else {
 
         foreach ($result as $f) {
-
-
-            // echo '
-            
-            // <div class="col-lg-4 col-md-6">
-            //             <!-- product card -->
-            //             <div class="product-item bg-light">
-            //                 <div class="card">
-            //                     <div class="thumb-content">
-            //                         <h4 class="card-title text-center mb-3">
-            //                             <a href="eventoEsp.php">' . $f['eveNombre'] . '</a>
-            //                         </h4>
-            //                         <a  class="bg-mascota" href="eventoEsp.php">
-            //                             <img class="card-img-top img-fluid" src="../' . $f['eveImg'] . '" alt="Imagen de evento">
-            //                         </a>
-            //                     </div>
-            //                     <div class="card-body">
-            //                         <ul class="list-inline product-meta">
-            //                             <li class="list-inline-item">
-            //                                 <a href="fundacion.php"><i class="fa fa-calendar"  style="color: #4942e4;"></i>' . $f['eveFecha'] . '</a>
-            //                             </li>
-            //                             <li class="list-inline-item">
-            //                                 <a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>' . $f['eveHora'] . '</a>
-            //                             </li>
-            //                             <li class="list-inline-item">
-            //                                 <a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>' . $f['eveDireccion'] . '</a>
-            //                             </li>
-            //                         </ul>
-            //                     </div>
-            //                 </div>
-            //             </div>
-            //         </div>
-            
-            // ';
             echo '
 
                 <tr>

@@ -773,7 +773,7 @@ class Consultas
     
     }
 
-    public function insertarEveFun($eveNombre, $eveFecha, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId){
+    public function insertarEveFun($eveNombre, $eveFecha, $eveHora, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -811,6 +811,7 @@ class Consultas
 
             $result->bindParam(":eveNombre", $eveNombre);
             $result->bindParam(":eveFecha", $eveFecha);
+            $result->bindParam(":eveHora", $eveHora);
             $result->bindParam(":eveDireccion", $eveDireccion);
             $result->bindParam(":eveDescripcion", $eveDescripcion);
             $result->bindParam(":eveEstado", $eveEstado);
@@ -826,7 +827,7 @@ class Consultas
         }
     }
 
-    public function mostrarEveFun(){
+    public function mostrarEveFun($id_fundacion){
 
         $f = null;
 
@@ -834,9 +835,11 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $consultar = "SELECT * FROM tbl_eventos";
+        $consultar = "SELECT * FROM tbl_eventos WHERE id_fun_eve_fk = :id_fundacion";
 
         $result = $conexion->prepare($consultar);
+
+        $result->bindParam(':id_fundacion', $id_fundacion);
 
         $result->execute();
 

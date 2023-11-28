@@ -59,33 +59,9 @@
             <div class="widget dashboard-container my-adslist">
               <h3 class="widget-header">Mascotas</h3>
               <div class="row">
-                <div class="col-lg-12">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
-                          <thead>
-                            <tr>
-                              <th>Foto</th>
-                              <th>Nombre</th>
-                              <th>Edad</th>
-                              <th>Raza</th>
-                              <th>Vacunas</th>
-                              <th>Estado de Salud</th>
-                              <th>Editar</th>
-                              <th>Eliminar</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <?php 
-                              cargarMascotas();
-                            ?>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <?php 
+                  cargarMascotas();
+                ?>
               </div>
             </div>
           </div>
