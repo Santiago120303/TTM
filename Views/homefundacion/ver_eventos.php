@@ -57,27 +57,17 @@
         <!-- Recently Favorited -->
         <div class="widget dashboard-container my-adslist">
           <h3 class="widget-header">Eventos</h3>
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="card">
-                <div class="card-body">
-                  <div class="basic-elements">
-                                          
-                      <?php 
-                      cargarEventos();
-                      ?>
-                  </tbody>
-                  </table>
-                              
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="row">                             
+            <?php 
+              cargarEventos();
+            ?>         
+          </div>
         </div>
-      <!-- Row End -->
       </div>
-    <!-- Container End -->
+      <!-- Row End -->
     </div>
+    <!-- Container End -->
+  </div>
 </section>
 
 <!--============================

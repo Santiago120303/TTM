@@ -107,35 +107,36 @@ function cargarEventosEditar()
             <div class="row">
 
                 <div class="form-group col-lg-6">
-                    <label>Nombre del evento</label>
+                    <label>Nombre del Evento</label>
                     <input type="text" value="' . $f['eveNombre'] . '" class="form-control" placeholder="Ej:Evento caritativo" required name="eveNombre">
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label>Fecha del evento</label>
+                <label>Dirección del Evento</label>
+                <input type="text" value="' . $f['eveDireccion'] . '" class="form-control" placeholder="Ej:Carrera 1 #3-4 sur" required name="eveDireccion">
+            </div>
+
+                <div class="form-group col-lg-4">
+                    <label>Fecha del Evento</label>
                     <input type="date" value="' . $f['eveFecha'] . '" class="form-control" required name="eveFecha">
                 </div>
 
-                <div class="form-group col-lg-6">
-                <label>Fecha del evento</label>
-                <input type="date" value="' . $f['eveHora'] . '" class="form-control" required name="eveFecha">
-            </div>
-
-                <div class="form-group col-lg-6">
-                    <label>Dirección del evento</label>
-                    <input type="text" value="' . $f['eveDireccion'] . '" class="form-control" placeholder="Ej:Carrera 1 #3-4 sur" required name="eveDireccion">
+                <div class="form-group col-lg-4">
+                <label>Hora del Evento</label>
+                <input type="time" value="' . $f['eveHora'] . '" class="form-control" required name="eveHora">
                 </div>
-                <div class="form-group col-lg-6">
-                    <label>Estado del evento</label>
-                    <select required name="eveEstado"  class="form-control">
+
+                <div class="form-group col-lg-4">
+                    <label>Estado del Evento</label>
+                    <select required class="form-control" name="eveEstado">
                         <option value="' . $f['eveEstado'] . '">' . $f['eveEstado'] . '</option>
                         <option value="Activo">Activo</option>
                         <option value="Cancelado">Cancelado</option>
                         <option value="En estado de confirmacion">En estado de confirmación</option>
                     </select>
                 </div>
-                <div class="form-group col-lg-6">
-                    <label>Descripción del evento</label>
+                <div class="form-group col-lg-12">
+                    <label>Descripción del Evento</label>
                     <input type="text" value="' . $f['eveDescripcion'] . '" class="form-control" placeholder="Escriba la descripción del evento" required name="eveDescripcion">
                 </div>
 
@@ -160,51 +161,33 @@ function cargarMascotas()
         foreach ($result as $f) {
 
 
-            // echo '
-            
-            // <div class="col-lg-4 col-md-6">
-            //             <!-- product card -->
-            //             <div class="product-item bg-light">
-            //                 <div class="card">
-            //                     <div class="thumb-content">
-            //                         <h4 class="card-title text-center mb-3">
-            //                             <a href="eventoEsp.php">' . $f['eveNombre'] . '</a>
-            //                         </h4>
-            //                         <a  class="bg-mascota" href="eventoEsp.php">
-            //                             <img class="card-img-top img-fluid" src="../' . $f['eveImg'] . '" alt="Imagen de evento">
-            //                         </a>
-            //                     </div>
-            //                     <div class="card-body">
-            //                         <ul class="list-inline product-meta">
-            //                             <li class="list-inline-item">
-            //                                 <a href="fundacion.php"><i class="fa fa-calendar"  style="color: #4942e4;"></i>' . $f['eveFecha'] . '</a>
-            //                             </li>
-            //                             <li class="list-inline-item">
-            //                                 <a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>' . $f['eveHora'] . '</a>
-            //                             </li>
-            //                             <li class="list-inline-item">
-            //                                 <a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>' . $f['eveDireccion'] . '</a>
-            //                             </li>
-            //                         </ul>
-            //                     </div>
-            //                 </div>
-            //             </div>
-            //         </div>
-            
-            // ';
             echo '
-
-                <tr>
-                    <td><img src="../' . $f['masFoto'] . '" alt="Foto User" style="width: 60px; height: 60px; border-radius: 25%"></td>
-                    <td>' . $f['masNombre'] . '</td>
-                    <td>' . $f['masEdad'] . '</td>
-                    <td>' . $f['masRaza'] . '</td>
-                    <td>' . $f['masVacunas'] . '</td>
-                    <td>' . $f['masEstSalud'] . '</td>
-                    <td><a href="modificar_mascotas.php?id=' . $f['masId'] . '" class=" bg-main"><i class="fa-solid fa-pencil"></i> Editar</a></td>
-                    <td><a href="../../Controllers/eliminarMasFun.php?id=' . $f['masId'] . '" class=" bg-red"><i class="fa-solid fa-trash"></i> Eliminar</a></td>
-                </tr>
-                ';
+            
+            <div class="col-lg-3">
+                <!-- mascotas card -->
+                <div class="product-item bg-light">
+                    <div class="card pb-0 card-mascotas">
+                        <div class="thumb-content">
+                            <h4 class="card-title text-center mb-3">
+                                <a href="eventoEsp.php">' . $f['masNombre'] . '</a>
+                            </h4>
+                            <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['masFoto'] . '"
+                                alt="Imagen de la mascota"> </a>
+                        </div>
+                        <div class="card-body">
+                            <li>
+                                <a href="modificar_mascotas.php?id=' . $f['masId'] . '" class=" bg-main"><i
+                                        class="fa-solid fa-pencil"></i> Editar</a></td>
+                            </li>
+                            <li>
+                                <a href="../../Controllers/eliminarMasFun.php?id=' . $f['masId'] . '" class=" bg-red"><i
+                                        class="fa-solid fa-trash"></i> Eliminar</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            ';
         }
     }
 }
@@ -225,38 +208,69 @@ function cargarMascotasEditar()
         <a class="d-block w-100 text-right font-weight-bold" href="ver_mascotas.php"><i class="fa-solid fa-arrow-left mr-2"></i>Volver</a>
             
             <form action="../../Controllers/actualizarMasFun.php?id='. $f['masId'] .'" method="POST" enctype="multipart/form-data">
-                               
-                <div class="row">
-                    <div class="form-group col-lg-6">
-                        <label>Nombre</label>
-                        <input type="text" value="' . $f['masNombre'] . '" class="form-control" placeholder="Ej: Simba" required name="masNombre">
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label>Edad (años)</label>
-                        <input type="text" value="' . $f['masEdad'] . '" class="form-control" placeholder="Ej: 5 " required name="masEdad">
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label>Historia</label>
-                        <input type="text" value="' . $f['masHistoria'] . '" class="form-control" placeholder="Ingresa aquí la historia de la mascota." required name="masHistoria">
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label>Vacunas</label>
-                        <input type="text" value="' . $f['masVacunas'] . '" class="form-control" placeholder="Ingresa información sobre las vacunas que tiene la mascota." required name="masVacunas">
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label>Raza</label>
-                        <input type="text" value="' . $f['masRaza'] . '" class="form-control" placeholder="Ingresa la raza de la mascota." required name="masRaza">
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label>Estado de Salud</label>
-                        <input type="text" value="' . $f['masEstSalud'] . '" class="form-control" placeholder="Describe el estado de salud de la mascota." required name="masEstSalud">
-                    </div>
-                                
-                </div>  
+                                                 
+            <div class="row">
 
-                <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30">Editar información de mascota</button>
+              <div class="form-group col-lg-6">
+                  <label>Raza</label>
+                  <input type="text" value="' . $f['masRaza'] . '" class="form-control" placeholder="Ej: Golden Retriever" required name="masRaza">
+              </div>
 
-            </form>
+              <div class="form-group col-lg-6">
+                  <label>Nombre</label>
+                  <input type="text" value="' . $f['masNombre'] . '" class="form-control" placeholder="Ej: Simba" required name="masNombre">
+              </div>
+
+              <div class="form-group col-lg-6">
+                  <label>Edad (años)</label>
+                  <input type="text" value="' . $f['masEdad'] . '" class="form-control" placeholder="Ej: 5 " required name="masEdad">
+              </div>
+
+              <div class="form-group col-lg-6">
+                  <label>Vacunas</label>
+                  <select required name="masVacunas" id="masVacunas" class="form-control">
+                    <option value="' . $f['masVacunas'] . '">' . $f['masVacunas'] . '</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No aplica">No aplica</option>
+                  </select>
+              </div>
+
+              <div class="form-group col-lg-12">
+                  <label>¿Cuáles Vacunas?</label>
+                    <div class="row">
+                      <input type="text" value="' . $f['masVacuna1'] . '" name="masVacuna1" class="form-control col-lg-3 col-md-4 " placeholder="Ej 1: rabia">
+                      <input type="text" value="' . $f['masVacuna2'] . '" name="masVacuna2" class="form-control col-lg-3 col-md-4 " placeholder="Ej 2: parvovirus">
+                      <input type="text" value="' . $f['masVacuna3'] . '" name="masVacuna3" class="form-control col-lg-3 col-md-4 " placeholder="Ej 3: triple felina">
+                      <input type="text" value="' . $f['masVacuna4'] . '" name="masVacuna4" class="form-control col-lg-3 col-md-4 " placeholder="Ej 4: mixomatosis ">
+                    </div>
+              </div>
+
+              <div class="form-group col-lg-6">
+                  <label>Estado de Salud</label>
+                  <input type="text" value="' . $f['masEstSalud'] . '" class="form-control" placeholder="Ej: Óptimo, Bueno, Excelente..." required name="masEstSalud">
+              </div>
+
+              <div class="form-group col-lg-6">
+                  <label>Personalidad</label>
+                  <input type="text" value="' . $f['masPersonalidad'] . '" class="form-control" placeholder="Ej: Juguetón y curioso" required name="masPersonalidad">
+              </div>
+
+              <div class="form-group col-lg-12">
+                  <label>Historia</label>
+                  <textarea class="form-control" value="' . $f['masHistoria'] . '" required name="masHistoria" cols="20" rows="4" placeholder="Ingresa aquí, la historia de la mascota en un párrafo corto.">' . $f['masHistoria'] . '</textarea>
+              </div>
+
+              <div class="form-group col-lg-12">
+                  <label>Requisitos de Adopción</label>
+                  <textarea class="form-control" value="' . $f['masReqAdopcion'] . '" required name="masReqAdopcion" cols="20" rows="4" placeholder="Ingresa aquí, los requisitos de adopción de la mascota en un párrafo corto.">' . $f['masReqAdopcion'] . '  </textarea>
+              </div>
+                          
+            </div>
+                      
+            <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30 w-100">Actualizar información de mascota</button>
+
+          </form>
             ';
     }
 }
@@ -676,9 +690,10 @@ function confirmarCierreSesion()
 
 function cargarEventos()
 {
+    $id_fundacion = $_SESSION['id'];
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarEventosComun();
+    $result = $objConsultas->mostrarEveFun($id_fundacion);
 
     if (!isset($result)) {
         echo '<h2>NO HAY EVENTOS REGISTRADOS</h2>';
@@ -686,34 +701,29 @@ function cargarEventos()
 
         foreach ($result as $f) {
             echo '
-                    <div class="col-lg-4 col-md-6">
-                        <!-- product card -->
-                        <div class="product-item bg-light">
-                            <div class="card">
-                                <div class="thumb-content">
-                                    <h4 class="card-title text-center mb-3">
-                                        <a href="eventoEsp.php">' . $f['eveNombre'] . '</a>
-                                    </h4>
-                                    <a  class="bg-mascota" href="eventoEsp.php">
-                                        <img class="card-img-top img-fluid" src="../' . $f['eveFoto'] . '" alt="Imagen de evento">
-                                    </a>
-                                </div>
-                                <div class="card-body">
-                                    <ul class="list-inline product-meta">
-                                        <li class="list-inline-item">
-                                            <a href="fundacion.php"><i class="fa fa-calendar"  style="color: #4942e4;"></i>' . $f['eveFecha'] . '</a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="category.php"><i class="fa-solid fa-clock" style="color: #4942e4;"></i>' . $f['eveHora'] . '</a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="category.php"><i class="fa-sharp fa-solid fa-location-dot"  style="color: #4942e4;"></i>' . $f['eveDireccion'] . '</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+            
+            <div class="col-lg-3">
+                <!-- mascotas card -->
+                <div class="product-item bg-light">
+                    <div class="card pb-0 card-mascotas">
+                        <div class="thumb-content">
+                            <h4 class="card-title text-center mb-3">
+                                <a href="eventoEsp.php">' . $f['eveNombre'] . '</a>
+                            </h4>
+                            <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['eveImg'] . '"
+                                alt="Imagen de la mascota"> </a>
+                        </div>
+                        <div class="card-body">
+                            <li>
+                                <a href="modificar_eventos.php?id=' . $f['eveId'] . '" class=" bg-main"><i class="fa-solid fa-pencil"></i> Editar</a></td>
+                            </li>
+                            <li>
+                                <a href="../../Controllers/eliminareveFun.php?id=' . $f['eveId'] . '" class=" bg-red"><i class="fa-solid fa-trash"></i> Eliminar</a>
+                            </li>
                         </div>
                     </div>
+                </div>
+            </div>
                 ';
         }
     }
@@ -773,7 +783,7 @@ function MostrarCantidadEventosRegistrados()
                             <div class="stat-icon dib"><i class="fa-regular fa-calendar-check" style="color: #8696FE;"></i>
                             </div>
                             <div class="stat-content dib">
-                                <div class="stat-text">EventoS Registrados</div>
+                                <div class="stat-text">Eventos Registrados</div>
                                 <div class="stat-digit">' . $f['cantidadEventos'] . '</div>
                             </div>
                         </div>
@@ -804,6 +814,30 @@ function MostrarCantidadMascotasRegistradas()
                     </div>
                 </div>
             ';
+    }
+}
+
+function cargarEventosReporte()
+{
+
+    $id_fundacion = $_SESSION['id'];
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarEveFun($id_fundacion);
+    // En caso de no haber fundaciones registradas se mostrar este texto
+    if (!isset($result)) {
+        echo '<h2>NO HAY EVENTOS REGISTRADOS</h2>';
+    } else {
+        foreach ($result as $f) {
+            echo '
+                <tr>
+                    <td>' . $f['eveNombre'] . '</td>
+                    <td>' . $f['eveFecha'] . '</td>
+                    <td>' . $f['eveHora'] . '</td>
+                    <td>' . $f['eveDireccion'] .'</td>
+                    <td>' . $f['eveEstado'] . '</td>
+                </tr>
+                ';
+        }
     }
 }
 ?>

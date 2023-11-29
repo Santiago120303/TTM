@@ -65,9 +65,6 @@
               <?php
                 perfilEditar();
               ?>
-
-
-
               </div>
           </section>
         </div>

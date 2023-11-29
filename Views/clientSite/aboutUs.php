@@ -87,7 +87,7 @@
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Santiago Gutiérrez</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
-            <a href=""><button class="btnPortafolio">Ver Portafolio</button></a>
+            <a href="https://santiago1203.github.io/portafolio/" target="_blank"><button class="btnPortafolio">Ver Portafolio</button></a>
           </div>
         </div>
       </div>
@@ -97,7 +97,7 @@
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Diana Ramírez</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
-            <a href=""><button class="btnPortafolio">Ver Portafolio</button></a>
+            <a href="https://dianar577.github.io/Portafolio-Diana/" target="_blank"><button class="btnPortafolio">Ver Portafolio</button></a>
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Johan Echavez</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
-            <a href=""><button class="btnPortafolio">Ver Portafolio</button></a>
+            <a href="https://johan12345678990.github.io/PortafolioJE/" target="_blank"><button class="btnPortafolio">Ver Portafolio</button></a>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Ricardo Reyes</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
-            <a href=""><button class="btnPortafolio">Ver Portafolio</button></a>
+            <a href="https://ricrehard.github.io/miPortafolio/" target="_blank"><button class="btnPortafolio">Ver Portafolio</button></a>
           </div>
         </div>
       </div>
@@ -127,7 +127,7 @@
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Andersson Acosta</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
-            <a href=""><button class="btnPortafolio">Ver Portafolio</button></a>
+            <a href="https://andersson-acosta-dev.github.io/Portfolio/" target="_blank"><button class="btnPortafolio">Ver Portafolio</button></a>
           </div>
         </div>
       </div>

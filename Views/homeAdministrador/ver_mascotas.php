@@ -75,7 +75,6 @@
                               <th>Estado de Salud</th>
                             </tr>
                           </thead>
-                          <tbody>
                             <?php 
                               cargarMascotas();
                             ?>

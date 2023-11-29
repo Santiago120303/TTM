@@ -9,5 +9,4 @@ $eveId = $_GET['id'];
 $objConsultas = new Consultas();
 $result = $objConsultas->eliminarEveFun($eveId);
 
-
 ?>

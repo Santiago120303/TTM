@@ -773,7 +773,7 @@ class Consultas
     
     }
 
-    public function insertarEveFun($eveNombre, $eveFecha, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId){
+    public function insertarEveFun($eveNombre, $eveFecha, $eveHora, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -811,6 +811,7 @@ class Consultas
 
             $result->bindParam(":eveNombre", $eveNombre);
             $result->bindParam(":eveFecha", $eveFecha);
+            $result->bindParam(":eveHora", $eveHora);
             $result->bindParam(":eveDireccion", $eveDireccion);
             $result->bindParam(":eveDescripcion", $eveDescripcion);
             $result->bindParam(":eveEstado", $eveEstado);
@@ -826,7 +827,7 @@ class Consultas
         }
     }
 
-    public function mostrarEveFun(){
+    public function mostrarEveFun($id_fundacion){
 
         $f = null;
 
@@ -834,9 +835,11 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $consultar = "SELECT * FROM tbl_eventos";
+        $consultar = "SELECT * FROM tbl_eventos WHERE id_fun_eve_fk = :id_fundacion";
 
         $result = $conexion->prepare($consultar);
+
+        $result->bindParam(':id_fundacion', $id_fundacion);
 
         $result->execute();
 
@@ -1018,11 +1021,16 @@ class Consultas
         return $f;
     }
 
-    public function actualizarMasFun($masId, $masNombre, $masEdad, $masHistoria, $masVacunas, $masEstSalud){
+    public function actualizarMasFun($masId, $masNombre, $masEdad, $masHistoria, $masVacunas, $masEstSalud, $masRaza, $masReqAdopcion, $masVacuna1, 
+    $masVacuna2, $masVacuna3, $masVacuna4, $masPersonalidad){
+
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $actualizar = " UPDATE tbl_mascotas SET masNombre=:masNombre, masEdad=:masEdad, masHistoria=:masHistoria, masVacunas=:masVacunas, masEstSalud=:masEstSalud WHERE masId=:masId ";
+        $actualizar = "UPDATE tbl_mascotas SET masNombre=:masNombre, masEdad=:masEdad, masHistoria=:masHistoria, masVacunas=:masVacunas, masEstSalud=:masEstSalud, 
+        masRaza=:masRaza, masReqAdopcion=:masReqAdopcion, masVacuna1=:masVacuna1, masVacuna2=:masVacuna2, masVacuna3=:masVacuna3, masVacuna4=:masVacuna4,
+        masPersonalidad=:masPersonalidad WHERE masId=:masId ";
+
         $result = $conexion->prepare($actualizar);
 
         $result->bindParam(":masId", $masId);
@@ -1031,6 +1039,14 @@ class Consultas
         $result->bindParam(":masHistoria", $masHistoria);
         $result->bindParam(":masVacunas", $masVacunas);
         $result->bindParam(":masEstSalud", $masEstSalud);
+        $result->bindParam(":masRaza", $masRaza);
+        $result->bindParam(":masReqAdopcion", $masReqAdopcion);
+        $result->bindParam(":masVacuna1", $masVacuna1);
+        $result->bindParam(":masVacuna2", $masVacuna2);
+        $result->bindParam(":masVacuna3", $masVacuna3);
+        $result->bindParam(":masVacuna4", $masVacuna4);
+        $result->bindParam(":masPersonalidad", $masPersonalidad);
+
         $result->execute();
 
         echo '<script> alert("Información de mascota actualizada exitosamente") </script>';
