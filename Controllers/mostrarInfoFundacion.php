@@ -208,38 +208,69 @@ function cargarMascotasEditar()
         <a class="d-block w-100 text-right font-weight-bold" href="ver_mascotas.php"><i class="fa-solid fa-arrow-left mr-2"></i>Volver</a>
             
             <form action="../../Controllers/actualizarMasFun.php?id='. $f['masId'] .'" method="POST" enctype="multipart/form-data">
-                               
-                <div class="row">
-                    <div class="form-group col-lg-6">
-                        <label>Nombre</label>
-                        <input type="text" value="' . $f['masNombre'] . '" class="form-control" placeholder="Ej: Simba" required name="masNombre">
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label>Edad (años)</label>
-                        <input type="text" value="' . $f['masEdad'] . '" class="form-control" placeholder="Ej: 5 " required name="masEdad">
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label>Historia</label>
-                        <input type="text" value="' . $f['masHistoria'] . '" class="form-control" placeholder="Ingresa aquí la historia de la mascota." required name="masHistoria">
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label>Vacunas</label>
-                        <input type="text" value="' . $f['masVacunas'] . '" class="form-control" placeholder="Ingresa información sobre las vacunas que tiene la mascota." required name="masVacunas">
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label>Raza</label>
-                        <input type="text" value="' . $f['masRaza'] . '" class="form-control" placeholder="Ingresa la raza de la mascota." required name="masRaza">
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label>Estado de Salud</label>
-                        <input type="text" value="' . $f['masEstSalud'] . '" class="form-control" placeholder="Describe el estado de salud de la mascota." required name="masEstSalud">
-                    </div>
-                                
-                </div>  
+                                                 
+            <div class="row">
 
-                <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30">Editar información de mascota</button>
+              <div class="form-group col-lg-6">
+                  <label>Raza</label>
+                  <input type="text" value="' . $f['masRaza'] . '" class="form-control" placeholder="Ej: Golden Retriever" required name="masRaza">
+              </div>
 
-            </form>
+              <div class="form-group col-lg-6">
+                  <label>Nombre</label>
+                  <input type="text" value="' . $f['masNombre'] . '" class="form-control" placeholder="Ej: Simba" required name="masNombre">
+              </div>
+
+              <div class="form-group col-lg-6">
+                  <label>Edad (años)</label>
+                  <input type="text" value="' . $f['masEdad'] . '" class="form-control" placeholder="Ej: 5 " required name="masEdad">
+              </div>
+
+              <div class="form-group col-lg-6">
+                  <label>Vacunas</label>
+                  <select required name="masVacunas" id="masVacunas" class="form-control">
+                    <option value="' . $f['masVacunas'] . '">' . $f['masVacunas'] . '</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                    <option value="No aplica">No aplica</option>
+                  </select>
+              </div>
+
+              <div class="form-group col-lg-12">
+                  <label>¿Cuáles Vacunas?</label>
+                    <div class="row">
+                      <input type="text" value="' . $f['masVacuna1'] . '" name="masVacuna1" class="form-control col-lg-3 col-md-4 " placeholder="Ej 1: rabia">
+                      <input type="text" value="' . $f['masVacuna2'] . '" name="masVacuna2" class="form-control col-lg-3 col-md-4 " placeholder="Ej 2: parvovirus">
+                      <input type="text" value="' . $f['masVacuna3'] . '" name="masVacuna3" class="form-control col-lg-3 col-md-4 " placeholder="Ej 3: triple felina">
+                      <input type="text" value="' . $f['masVacuna4'] . '" name="masVacuna4" class="form-control col-lg-3 col-md-4 " placeholder="Ej 4: mixomatosis ">
+                    </div>
+              </div>
+
+              <div class="form-group col-lg-6">
+                  <label>Estado de Salud</label>
+                  <input type="text" value="' . $f['masEstSalud'] . '" class="form-control" placeholder="Ej: Óptimo, Bueno, Excelente..." required name="masEstSalud">
+              </div>
+
+              <div class="form-group col-lg-6">
+                  <label>Personalidad</label>
+                  <input type="text" value="' . $f['masPersonalidad'] . '" class="form-control" placeholder="Ej: Juguetón y curioso" required name="masPersonalidad">
+              </div>
+
+              <div class="form-group col-lg-12">
+                  <label>Historia</label>
+                  <textarea class="form-control" value="' . $f['masHistoria'] . '" required name="masHistoria" cols="20" rows="4" placeholder="Ingresa aquí, la historia de la mascota en un párrafo corto.">' . $f['masHistoria'] . '</textarea>
+              </div>
+
+              <div class="form-group col-lg-12">
+                  <label>Requisitos de Adopción</label>
+                  <textarea class="form-control" value="' . $f['masReqAdopcion'] . '" required name="masReqAdopcion" cols="20" rows="4" placeholder="Ingresa aquí, los requisitos de adopción de la mascota en un párrafo corto.">' . $f['masReqAdopcion'] . '  </textarea>
+              </div>
+                          
+            </div>
+                      
+            <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30 w-100">Actualizar información de mascota</button>
+
+          </form>
             ';
     }
 }
@@ -752,7 +783,7 @@ function MostrarCantidadEventosRegistrados()
                             <div class="stat-icon dib"><i class="fa-regular fa-calendar-check" style="color: #8696FE;"></i>
                             </div>
                             <div class="stat-content dib">
-                                <div class="stat-text">EventoS Registrados</div>
+                                <div class="stat-text">Eventos Registrados</div>
                                 <div class="stat-digit">' . $f['cantidadEventos'] . '</div>
                             </div>
                         </div>
@@ -794,7 +825,7 @@ function cargarEventosReporte()
     $result = $objConsultas->mostrarEveFun($id_fundacion);
     // En caso de no haber fundaciones registradas se mostrar este texto
     if (!isset($result)) {
-        echo '<h2>NO HAY EVENTOS REGISTRADAS</h2>';
+        echo '<h2>NO HAY EVENTOS REGISTRADOS</h2>';
     } else {
         foreach ($result as $f) {
             echo '

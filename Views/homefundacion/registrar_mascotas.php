@@ -148,12 +148,12 @@
 
                         <div class="form-group col-lg-12">
                             <label>Historia</label>
-                            <textarea class="form-control" required name="masHistoria" cols="20" rows="4" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto."></textarea>
+                            <textarea class="form-control" required name="masHistoria" cols="20" rows="4" placeholder="Ingresa aquí, la historia de la mascota en un párrafo corto."></textarea>
                         </div>
 
                         <div class="form-group col-lg-12">
                             <label>Requisitos de Adopción</label>
-                            <textarea class="form-control" required name="masReqAdopcion" cols="20" rows="4" placeholder="Ingresa aquí, los requisitos de adopción de la mascota en un parrafo corto."></textarea>
+                            <textarea class="form-control" required name="masReqAdopcion" cols="20" rows="4" placeholder="Ingresa aquí, los requisitos de adopción de la mascota en un párrafo corto."></textarea>
                         </div>
                                     
                         <div class="form-group col-lg-12">

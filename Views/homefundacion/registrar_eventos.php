@@ -102,7 +102,7 @@
                     </div>
 
                     <div class="form-group col-lg-12">
-                      <label>Imagen o foto del Evento</label>
+                      <label>Imagen o Foto del Evento</label>
                       <input type="file" class="form-control" name="img" accept=".jpeg, .jpg, .png, .gif">
                     </div>
                 </div>
