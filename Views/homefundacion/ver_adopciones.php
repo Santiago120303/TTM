@@ -72,13 +72,13 @@
                               <th>Raza</th>
                               <th>Adoptante</th>
                               <th>Teléfono</th>
-                              <th>Formulario</th>
+                              <!-- <th>Formulario</th> -->
                               <th>Eliminar</th>
                             </tr>
                           </thead>
                           <tbody>
                             <?php 
-                                cargarFormularios();
+                                cargarFormulario();
                             ?>
                           </tbody>
                         </table>

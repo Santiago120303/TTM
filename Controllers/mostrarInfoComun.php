@@ -340,7 +340,7 @@ function MostrarMascotaFundacionEspecificaComun() {
                 <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Raza: </b>' . $f['masRaza'] . '</p>
                 <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
                 <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
-                <a href="#" id="open" class="btn btn-login mt-5 align-self-end">Adoptar</a>
+                <a href="for_adop.php?id='.$f['masId'].'" class="btn btn-login mt-5 align-self-end">Adoptar</a>
             </div>
             <div class="col-lg-12">
                 <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Vacunas: </b> '.$f['masVacunas'].' ( ' . obtenerVacunas($f) . ')</p>

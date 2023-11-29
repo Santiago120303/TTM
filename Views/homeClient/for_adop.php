@@ -3,6 +3,7 @@
     require_once("../../Models/consultas.php");
     require_once("../../Models/seguridadClient.php");
     require_once("../../Controllers/mostrarInfoClient.php");
+    require_once("../../Controllers/mostrarInfoComun.php");
 ?>
 <!DOCTYPE html>
 
@@ -61,9 +62,12 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="basic-elements">
+                            <div class="basic-elements">.
+                                <?php
+                                    cargarFormulario();
+                                ?>
 
-                            <form action="../../Controllers/formularioAdop.php" method="POST">
+                            <!-- <form action="../../Controllers/formularioAdop.php" method="POST">
                                
                                <div class="row">
                                 <div class="form-group col-lg-12">
@@ -137,7 +141,7 @@
                                          
                                <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30">Enviar</button>
          
-                             </form>
+                            </form> -->
 
                             </div>
                         </div>

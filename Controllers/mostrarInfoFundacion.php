@@ -176,12 +176,10 @@ function cargarMascotas()
                         </div>
                         <div class="card-body">
                             <li>
-                                <a href="modificar_mascotas.php?id=' . $f['masId'] . '" class=" bg-main"><i
-                                        class="fa-solid fa-pencil"></i> Editar</a></td>
+                                <a href="modificar_mascotas.php?id=' . $f['masId'] . '" class=" bg-main"><i class="fa-solid fa-pencil"></i> Editar</a></td>
                             </li>
                             <li>
-                                <a href="../../Controllers/eliminarMasFun.php?id=' . $f['masId'] . '" class=" bg-red"><i
-                                        class="fa-solid fa-trash"></i> Eliminar</a>
+                                <a href="../../Controllers/eliminarMasFun.php?id=' . $f['masId'] . '" class=" bg-red"><i class="fa-solid fa-trash"></i> Eliminar</a>
                             </li>
                         </div>
                     </div>
@@ -300,32 +298,33 @@ function cargarMascotasReporte()
     }
 }
 
-// function cargarFormularios()
-// {
+function cargarFormulario()
+{
+    $id_fundacion = $_SESSION['id'];
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarFormFun($id_fundacion);
 
-//     $objConsultas = new Consultas();
-//     $result = $objConsultas->mostrarFormFun();
+    if (!isset($result)) {
+        echo '<h2>NO HAY SOLICITUDES DE ADOPCIÓN</h2>';
+    } else {
 
-//     if (!isset($result)) {
-//         echo '<h2>NO HAY SOLICITUDES DE ADOPCIÓN</h2>';
-//     } else {
+        foreach ($result as $f) {
+            echo '
+                <tr>
+                    <td><img src="../' . $f['masFoto'] . '" alt="Foto Mascota" style="width: 60px; height: 60px; border-radius: 25%"></td>
+                    <td>' . $f['masNombre'] . '</td>
+                    <td>' . $f['masEdad'] . '</td>
+                    <td>' . $f['masRaza'] . '</td>
+                    <td>' . $f['nombre'] . '</td>
+                    <td>' . $f['telefono'] . '</td>
+                    <td><a href="../../Controllers/eliminarFormFun.php?id=' . $f['adopId'] . '" class="bg-red"><i class="fa-solid fa-trash"></i> Eliminar</a></td>
+                </tr>
+                ';  
+        }                           
+    }
+}
 
-//         foreach ($result as $f) {
-//             echo '
-//                 <tr>
-//                     <td><img src="../' . $f['foto'] . '" alt="Foto Mascota" style="width: 60px; height: 60px; border-radius: 25%"></td>
-//                     <td>' . $f['masNombre'] . '</td>
-//                     <td>' . $f['masEdad'] . '</td>
-//                     <td>' . $f['masRaza'] . '</td>
-//                     <td>' . $f['nombre'] . '</td>
-//                     <td>' . $f['telefono'] . '</td>
-//                     <td><a href="" class="btn btn-primary"><i class="ti-pencil-alt"></i> Editar</a></td>
-//                     <td><a href="../../Controllers/eliminarFormFun.php?id=' . $f['adopId'] . '" class="btn btn-danger"><i class="ti-trash"></i> Eliminar</a></td>
-//                 </tr>
-//                 ';
-//         }
-//     }
-// }
+// <td><a href="../../Controllers/descargarFormFun.php?id=' . $f['adopId'] . '" class="bg-main"><i class="fa fa-eye"></i> Formulario</a></td>
 
 function perfil()
 {

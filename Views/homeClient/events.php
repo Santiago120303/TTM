@@ -2,7 +2,7 @@
   require_once("../../Models/conexion.php");
   require_once("../../Models/consultas.php");
   require_once("../../Models/seguridadClient.php");
-  require_once("../../Controllers/mostrarInfoComun.php");
+  require_once("../../Controllers/mostrarInfoClient.php");
 ?>
 
 <!DOCTYPE html>

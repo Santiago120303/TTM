@@ -1215,7 +1215,7 @@ class Consultas
 
     //Formulario de adopción 
 
-    public function insertarFormulario($adopEdad, $adopMasAnterior, $adopMasActual, $adopTrabajo, $adopMasHogar,
+    public function insertarFormulario($masId, $adopEdad, $adopMasAnterior, $adopMasActual, $adopTrabajo, $adopMasHogar,
         $adopMuda, $adopNinos, $adopAcceso, $adopRazon, $adopHorMascota, $adopSalida, $adopVisita, $id_usu_for_fk)
     {
 
@@ -1227,9 +1227,9 @@ class Consultas
         if ($_SESSION['AUTENTICADO']) {
 
             //Creamos la variable que contendra la consulta a ejecutar
-            $insertar = "INSERT INTO tbl_adopciones (adopEdad, adopMasAnterior, adopMasActual, adopTrabajo, adopMasHogar,
+            $insertar = "INSERT INTO tbl_adopciones (id_mas_for_fk, adopEdad, adopMasAnterior, adopMasActual, adopTrabajo, adopMasHogar,
             adopMuda, adopNinos, adopAcceso, adopRazon, adopHorMascota, adopSalida, adopVisita, id_usu_for_fk)
-                VALUES (:adopEdad, :adopMasAnterior, :adopMasActual, :adopTrabajo, :adopMasHogar, :adopMuda, :adopNinos, 
+                VALUES (:masId, :adopEdad, :adopMasAnterior, :adopMasActual, :adopTrabajo, :adopMasHogar, :adopMuda, :adopNinos, 
             :adopAcceso, :adopRazon, :adopHorMascota, :adopSalida, :adopVisita, :id_usu_for_fk)";
 
             //Preparamos todo lo necesario para ejecutar la funcion anterior
@@ -1238,6 +1238,7 @@ class Consultas
 
             //convertimos los argumentos en parametros
 
+            $result->bindParam(":masId", $masId);
             $result->bindParam(":adopEdad", $adopEdad);
             $result->bindParam(":adopMasAnterior", $adopMasAnterior);
             $result->bindParam(":adopMasActual", $adopMasActual);
@@ -1256,7 +1257,7 @@ class Consultas
             $result->execute();
 
             echo '<script> alert("Su formulario fue enviado, por favor, espera una respuesta de la fundación") </script>';
-            echo "<script> location.href='../Views/clientSite/mascotas.php' </script>";
+            echo "<script> location.href='../Views/homeClient/mascotas.php' </script>";
         }
     }
     //consulta para saber cuantos usuarios estan registrados
@@ -1362,6 +1363,50 @@ class Consultas
 
         return $f;
     }
+
+    public function mostrarFormFun($id_fundacion){
+
+        $f = null;
+
+        //Creamos el objeto de la conexion
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "SELECT tbl_mascotas.masNombre, tbl_mascotas.masFoto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_users.nombre, tbl_users.telefono, tbl_adopciones.adopId
+        FROM ((tbl_adopciones
+        INNER JOIN tbl_mascotas ON tbl_mascotas.masId=tbl_adopciones.id_mas_for_fk)
+        INNER JOIN tbl_users ON tbl_users.id_user=tbl_adopciones.id_usu_for_fk)
+        WHERE tbl_mascotas.id_fun_mas_fk = :id_fundacion";
+
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam(':id_fundacion', $id_fundacion);
+
+        $result->execute();
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+
+        return $f;
+    }
+
+    public function eliminarFormFun($adopId){
+
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $eliminar = "DELETE FROM tbl_adopciones WHERE adopId=:id";
+        $result = $conexion->prepare($eliminar);
+
+        $result->bindParam(":id", $adopId);
+
+        $result->execute();
+
+        echo '<script> alert("Formulario Eliminado") </script>';
+        echo "<script> location.href='../Views/homefundacion/ver_adopciones.php' </script>";
+    }
+
 }
 
 

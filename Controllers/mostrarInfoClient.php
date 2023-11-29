@@ -401,4 +401,93 @@ function buscarNombreFundacion ($nombrefun, $localidadfun)
     }
 }
 
+function cargarFormulario(){
+
+    $id_mascota = isset($_GET['id']) ? $_GET['id'] : null;
+
+    $objConsultas = new Consultas();
+    // Se llama a la función para obtener la información de la mascota específica
+    $result = $objConsultas->mostrarMascotaFundacionEspecificaComun($id_mascota);
+
+    foreach ($result as $f) {
+        echo '
+        <form action="../../Controllers/formularioAdop.php?id='. $f['masId'] .'"  method="POST">
+                               
+            <div class="row">
+             <div class="form-group col-lg-12">
+                 <label>¿Qué edad tienes?</label>
+                 <input type="number" class="form-control" placeholder="Ej: 25" required name="adopEdad">
+             </div>
+        
+             <div class="form-group col-lg-12">
+                 <label>¿Has tenido mascotas anteriormente?</label><br>
+                     <input type="radio" value="1" name="adopMasAnterior" required>
+                     <label for="radio">Sí</label><br>
+                     <input type="radio" value="2" name="adopMasAnterior" required>
+                     <label for="radio">No</label>
+             </div>
+        
+             <div class="form-group col-lg-12">
+                 <label>¿Actualmente tienes mascotas? Si tiene mencione cuántas.</label>
+                 <input type="text" class="form-control" placeholder="Ej: Sí, 4 mascotas" required name="adopMasActual">
+             </div>
+        
+             <div class="form-group col-lg-12">
+                 <label>¿Cuál es su situación laboral o fuentes de ingreso actualmente?</label>
+                 <input type="text" class="form-control" placeholder="Ej: Tengo un trabajo estable como..." required name="adopTrabajo">
+             </div>
+        
+             <div class="form-group col-lg-12">
+                 <label>¿Cuenta con casa propia o renta?</label><br>
+                     <input type="radio" value="1" name="adopMasHogar" required>
+                     <label for="radio">Casa propia</label><br>
+                     <input type="radio" value="2" name="adopMasHogar" required>
+                     <label for="radio">Renta</label>
+             </div>
+        
+             <div class="form-group col-lg-12">
+                 <label>Si se muda de casa, de ciudad o de país en el futuro, ¿qué sucedera con su mascota?</label>
+                 <input type="text" class="form-control" placeholder="Ej: Mi mascota se mudará conmigo..." required name="adopMuda">
+             </div>
+             <div class="form-group col-lg-12">
+                 <label>¿Hay niños en casa? Por favor, describa sus edades.</label>
+                 <input type="text" class="form-control" placeholder="Ej: Sí, 1 niño de 8 años." required name="adopNinos">
+             </div>
+        
+             <div class="form-group col-lg-12">
+                <label>¿La mascota tendrá acceso a cualquier lugar de la casa?</label><br>
+                    <input type="radio" value="1" name="adopAcceso" required>
+                    <label for="radio">Sí</label><br>
+                    <input type="radio" value=""2 name="adopAcceso" required>
+                    <label for="radio">No</label>
+             </div>
+             <div class="form-group col-lg-12">
+                 <label>¿Cuál es la razón por la cual quiere adoptar a la mascota?</label>
+                 <input type="text" class="form-control" placeholder="Ej: Quiero adptar una mascota porque.." required name="adopRazon">
+             </div>
+             <div class="form-group col-lg-12">
+                 <label>¿Cuántas horas al día estará sola en casa la mascota?</label>
+                 <input type="text" class="form-control" placeholder="Ej: 2 horas." required name="adopHorMascota">
+             </div>
+             <div class="form-group col-lg-12">
+                 <label>Si tiene que salir de emergencia de su ciudad, ¿con quién dejaría a su nuevo amigo?</label>
+                 <input type="text" class="form-control" placeholder="Ej: La dejaría con mi familiar." required name="adopSalida">
+             </div>
+             <div class="form-group col-lg-12">
+                <label>¿Está de acuerdo que se le haga una visita previa a la mascota en su dirección de residencia?</label><br>
+                    <input type="radio" value="1" name="adopVisita" required>
+                    <label for="radio">Sí</label><br>
+                    <input type="radio" value="2" name="adopVisita" required>
+                    <label for="radio">No</label>
+             </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30">Enviar</button>
+    
+        </form>
+            ';
+        }
+
+}
 ?>

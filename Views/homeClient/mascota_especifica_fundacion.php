@@ -5,7 +5,6 @@ require_once("../../Models/consultas.php");
 require_once("../../Models/seguridadClient.php");
 require_once("../../Controllers/mostrarInfoClient.php");
 require_once("../../Controllers/mostrarInfoComun.php");
-
 ?>
 
 <!DOCTYPE html>
