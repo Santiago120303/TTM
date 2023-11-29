@@ -335,6 +335,7 @@ function perfil()
             <h5 class="text-center">' . $f['nombre'] . '</h5>
             <h6 class="text center">' . $f['rol'] . '</h6>
                 <a href="perfil.php" class="btn btn-login mb-3"><i class="fa fa-home mr-2"></i>Editar perfil</a>
+                <a href="home.php" class="btn btn-login mb-3"><i class="fa fa-info mr-2"></i>Mi perfil</a>
           </div>
             ';
     }

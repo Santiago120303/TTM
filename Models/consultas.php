@@ -652,6 +652,55 @@ class Consultas
         return $eventos;
     }
 
+    public function mostrarEventosFundacionEspecificaComun($id_fundacion){
+        $eventos = null;
+    
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consultar = "SELECT * FROM tbl_eventos WHERE tbl_eventos.id_fun_eve_fk = :id_fundacion";
+    
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam('id_fundacion',$id_fundacion);
+
+        $result->execute(); 
+    
+        while ($resultado = $result->fetch()) {
+            $eventos[] = $resultado;
+        }
+    
+        return $eventos;
+    }
+
+    public function MostrarEventoFundacionEspecificaComun($id_evento) {
+        $mascota = [];
+    
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta para obtener solo los campos necesarios
+        $consultar = "SELECT * 
+        FROM (tbl_eventos
+        INNER JOIN tbl_users ON tbl_eventos.id_fun_eve_fk = tbl_users.id_user)
+        WHERE tbl_eventos.eveId = :id_evento";
+
+    
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam('id_evento',$id_evento);
+        
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $mascota[] = $resultado;
+        }
+    
+        return $mascota;
+    }
+
     public function mostrarEventoEspecificoComun($id_evento) {
         $evento = [];
     
@@ -773,7 +822,7 @@ class Consultas
     
     }
 
-    public function insertarEveFun($eveNombre, $eveFecha, $eveDireccion, $eveDescripcion, $eveEstado, $img, $funId){
+    public function insertarEveFun($eveNombre, $eveTipo, $eveDireccion, $eveFecha, $eveHoraInicio, $eveHoraFin, $eveEstado, $eveDescripcion,  $eveFoto, $funId){
 
         //Creamos el objeto de la conexion
         $objConexion = new Conexion();
@@ -782,12 +831,13 @@ class Consultas
 
         //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
 
-        $validarEve = "SELECT * FROM tbl_eventos WHERE eveNombre=:eveNombre OR eveFecha=:eveFecha";
+        $validarEve = "SELECT * FROM tbl_eventos WHERE eveNombre=:eveNombre AND eveFecha=:eveFecha AND eveDireccion=:eveDireccion ";
 
         $result = $conexion->prepare($validarEve);
 
         $result->bindParam(":eveNombre", $eveNombre);
         $result->bindParam(":eveFecha", $eveFecha);
+        $result->bindParam(":eveDireccion", $eveDireccion);
 
         $result->execute();
 
@@ -795,13 +845,13 @@ class Consultas
 
         if ($f) {
 
-            echo '<script> alert("Los datos ingresados ya se encuentran registrados, ingreselos nuevamente") </script>';
+            echo '<script> alert(" Los datos proporcionados ya han sido registrados. Por favor, verifique la información e intente ingresarla nuevamente.") </script>';
             echo "<script> location.href='../Views/homefundacion/registrar_eventos.php' </script>";
         } else {
 
             //Creamos la variable que contendra la consulta a ejecutar
-            $insertar = "INSERT INTO tbl_eventos (eveNombre, eveFecha, eveDireccion, eveDescripcion, eveEstado, eveImg, id_fun_eve_fk)
-                VALUES (:eveNombre, :eveFecha, :eveDireccion, :eveDescripcion, :eveEstado, :img, :funId )";
+            $insertar = "INSERT INTO tbl_eventos (eveNombre, eveFecha, eveHoraInicio, eveHoraFin, eveDireccion, eveEstado, eveTipo, eveDescripcion, eveFoto, id_fun_eve_fk)
+                VALUES (:eveNombre, :eveFecha, :eveHoraInicio, :eveHoraFin, :eveDireccion, :eveEstado, :eveTipo, :eveDescripcion, :eveFoto, :funId )";
 
             //Preparamos todo lo necesario para ejecutar la funcion anterior
 
@@ -811,11 +861,14 @@ class Consultas
 
             $result->bindParam(":eveNombre", $eveNombre);
             $result->bindParam(":eveFecha", $eveFecha);
+            $result->bindParam(":eveHoraInicio", $eveHoraInicio);
+            $result->bindParam(":eveHoraFin", $eveHoraFin);
             $result->bindParam(":eveDireccion", $eveDireccion);
-            $result->bindParam(":eveDescripcion", $eveDescripcion);
             $result->bindParam(":eveEstado", $eveEstado);
+            $result->bindParam(":eveTipo", $eveTipo);
+            $result->bindParam(":eveDescripcion", $eveDescripcion);
+            $result->bindParam(":eveFoto", $eveFoto);
             $result->bindParam(":funId", $funId);
-            $result->bindParam(":img", $img);
 
 
             //Ejecutamos el insert

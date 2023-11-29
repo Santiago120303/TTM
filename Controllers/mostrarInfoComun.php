@@ -103,7 +103,7 @@ function MostrarFundacionEspecificaSidebar()
 
 
 							<a href="mascotas_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Mascotas</a>
-							<a href="eventos.php" class="btn btn-login mb-4">Eventos</a>
+							<a href="eventos_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Eventos</a>
 
 
 
@@ -276,7 +276,7 @@ function MostrarMascotaFundacionEspecificaSidebar(){
 							</a>
 
 							<a href="mascotas_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Mascotas</a>
-							<a href="eventos.php" class="btn btn-login mb-4">Eventos</a>
+							<a href="eventos_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Eventos</a>
 
 							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['localidad'].'</p></a>
 							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['direccion'].'</p></a>
@@ -439,87 +439,6 @@ function obtenerVacunas($f) {
     return implode(', ', $vacunas);
 }
 
-function MostrarEventoEspecificoComun() {
-    //Se aterriza el Id de la fundacion enviado por el metodo GET (URL)
-    $id_fundacion = $_GET['id'];
-
-    //Se evia la el ID de la fundacion a una funcion de la clase consultas con el fin de traer la informacion de esta fundacion en especifico
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarEventoEspecificoComun($id_fundacion);
-
-        //Pintamos la información consultada en el artefacto (FORM)
-
-        foreach ($result as $f) {
-            echo  '
-                    <div class="col-lg-6">
-                        <div class="product-item bg-light" >
-                            <div class="card pb-0 card-mascotas">
-                                <div class="thumb-content">
-
-                                    <a href="mascota_especifica_fundacion.php?id='.$f['masId'].'">
-                                        <img class="card-img-top img-fluid mb-0" style="min-height:100px"
-                                            src="../' . $f['eveFoto'] . '" alt="Imagen de la mascota">
-                                    </a>
-                                    
-                                </div>
-                                <div class="card-body">
-                                    <a href="mascota.php">
-                                        <h4 class="card-title text-center mb-3"><a href="mascota_especifica_fundacion.php?id='.$f['masId'].'">' . $f['masNombre'] . '</a></h4>
-                                    </a>
-
-                                    <p class="m-0 pb-2"><b>Especie: </b>' . $f['especie'] . '</p>
-                                    <p class="m-0 pb-2"><b>Raza: </b>' . $f['masRaza'] . '</p>
-                                    <p class="m-0 pb-2"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
-                                    <p class="m-0 pb-2"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                '; 
-        }
-}
-
-function MostrarEventoEspecificoSidebar(){
-    //Se aterriza el Id de la fundacion enviado por el metodo GET (URL)
-    $id_evento = $_GET['id'];
-
-    //Se evia la el ID de la fundacion a una funcion de la clase consultas con el fin de traer la informacion de esta fundacion en especifico
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarEventoEspecificoComun($id_evento);
-
-        //Pintamos la información consultada en el artefacto (FORM)
-
-        foreach ($result as $f) {
-            echo  '
-				<div class="col-lg-4">
-					<div class="sidebar">
-						
-							<div class="widget archive">
-							
-							<a href="fundacion_especifica.php?id='.$f['id_user'].'"><img class="w-100 mb-4"
-									src="../'.$f['foto'].'" alt="logo de la fundación">
-							</a>
-
-							<a href="mascotas_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Mascotas</a>
-							<a href="eventos.php" class="btn btn-login mb-4">Eventos</a>
-
-							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['localidad'].'</p></a>
-							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['direccion'].'</p></a>
-							<a href="mailto:'.$f['email'].'"><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['email'].'</p></a>
-							<a href="whatsapp://send?phone='.$f['telefono'].'&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n."><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['telefono'].'</p></a>
-
-							<a href="donaciones.php" class="btn btn-success mt-4" style="text-transform:Uppercase;" >Donar</a>
-
-						</div>
-	
-					</div>
-				</div>
-
-                ';
-        }
-
-}
-
 function cargarMascotasComun()
 {
 
@@ -625,15 +544,15 @@ function cargarEventosComun(){
                     <div class="card pb-0 card-fundaciones">
                         <div class="thumb-content">
                             <!-- <div class="price">$200</div> -->
-                                <h4 class="card-title text-center mb-3"><a href="fundacion_especifica.php?id='.$f['id_fun_eve_fk'].'" style="color:#333333; font-size:smaller;">' . $f['eveNombre'] . '</a></h4>
-                            <a href="fundacion_especifica.php?id='.$f['id_fun_eve_fk'].'">
+                                <h4 class="card-title text-center mb-3"><a href="evento_especifico_fundacion.php?id='.$f['eveId'].'" style="color:#333333; font-size:smaller; min-height:44px;">' . $f['eveNombre'] . '</a></h4>
+                            <a href="evento_especifico_fundacion.php?id='.$f['eveId'].'">
                                 <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['eveFoto'] . '" alt="Card image cap">
                             </a>
                         </div>
                         <div class="card-body">
                             <p class="m-0 pb-2" style="color:#333333;"><b>Fecha: </b> <br>' . $f['eveFecha'] . '</p>
                             <p class="m-0 pb-2" style="color:#333333;"><b>Dirección: </b> <br>' . $f['eveDireccion'] . '</p>
-                            <p class="m-0 pb-2" style="color:#333333;"><b>Hora: </b> <br>' . $f['eveHora'] . '</p>
+                            <p class="m-0 pb-2" style="color:#333333;"><b>Hora: </b> <br>' . $f['eveHoraInicio'] . '</p>
                             <div class="product-ratings">
                             </div>
                         </div>
@@ -642,6 +561,140 @@ function cargarEventosComun(){
             </div>
             ';
         }
+    }
+}
+
+function MostrarEventosFundacionEspecificaComun() {
+    //Se aterriza el Id de la fundacion enviado por el metodo GET (URL)
+    $id_fundacion = $_GET['id'];
+
+    //Se evia la el ID de la fundacion a una funcion de la clase consultas con el fin de traer la informacion de esta fundacion en especifico
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarEventosFundacionEspecificaComun($id_fundacion);
+
+        //Pintamos la información consultada en el artefacto (FORM)
+
+        foreach ($result as $f) {
+            echo  '
+            <div class="col-lg-6">
+                <!-- product card -->
+                <div class="product-item bg-light">
+                    <div class="card pb-0 card-fundaciones">
+                        <div class="thumb-content">
+                            <!-- <div class="price">$200</div> -->
+                                <h4 class="card-title text-center mb-3"><a href="evento_especifico_fundacion.php?id='.$f['eveId'].'" style="color:#333333; font-size:smaller; min-height:44px;">' . $f['eveNombre'] . '</a></h4>
+                            <a href="evento_especifico_fundacion.php?id='.$f['eveId'].'">
+                                <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['eveFoto'] . '" alt="Card image cap">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <p class="m-0 pb-2" style="color:#333333;"><b>Fecha: </b> <br>' . $f['eveFecha'] . '</p>
+                            <p class="m-0 pb-2" style="color:#333333;"><b>Dirección: </b> <br>' . $f['eveDireccion'] . '</p>
+                            <p class="m-0 pb-2" style="color:#333333;"><b>Hora: </b> <br>' . $f['eveHoraInicio'] . '</p>
+                            <div class="product-ratings">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                '; 
+        }
+}
+
+function MostrarEventoFundacionEspecificaSidebar(){
+    //Se aterriza el Id de la fundacion enviado por el metodo GET (URL)
+    $id_evento = $_GET['id'];
+
+    //Se evia la el ID de la fundacion a una funcion de la clase consultas con el fin de traer la informacion de esta fundacion en especifico
+    $objConsultas = new Consultas();
+    $result = $objConsultas->MostrarInfoFunEspecifica($id_evento);
+
+        //Pintamos la información consultada en el artefacto (FORM)
+
+        foreach ($result as $f) {
+            echo  '
+				<div class="col-lg-4">
+					<div class="sidebar">
+						
+							<div class="widget archive">
+							
+							<a href="fundacion_especifica.php?id='.$f['id_user'].'"><img class="w-100 mb-4"
+									src="../'.$f['foto'].'" alt="logo de la fundación">
+							</a>
+
+							<a href="mascotas_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Mascotas</a>
+							<a href="eventos_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Eventos</a>
+
+							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['localidad'].'</p></a>
+							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['direccion'].'</p></a>
+							<a href="mailto:'.$f['email'].'"><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['email'].'</p></a>
+							<a href="whatsapp://send?phone='.$f['telefono'].'&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n."><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['telefono'].'</p></a>
+
+							<a href="donaciones.php" class="btn btn-success mt-4" style="text-transform:Uppercase;" >Donar</a>
+
+						</div>
+	
+					</div>
+				</div>
+
+                ';
+        }
+}
+
+function MostrarEventoFundacionEspecificaComun() {
+    // Se obtiene el ID de la mascota enviado por el método GET (URL)
+    $id_evento = isset($_GET['id']) ? $_GET['id'] : null;
+
+    // Verificamos que se haya proporcionado un ID válido
+    if (!$id_evento) {
+        echo "Error: ID de mascota no válido.";
+        return;
+    }
+
+    // Se instancia el objeto Consultas
+    $objConsultas = new Consultas();
+
+    // Se llama a la función para obtener la información de la mascota específica
+    $result = $objConsultas->MostrarEventoFundacionEspecificaComun($id_evento);
+
+    // Verificamos que se haya obtenido algún resultado
+    if (!$result) {
+        echo "Error: No se encontró la mascota con el ID proporcionado.";
+        return;
+    }
+
+    // Pintamos la información consultada en el artefacto (FORM)
+    foreach ($result as $f) {
+        echo  '
+            <div class="col-lg-6">
+                <p class="p-0 m-0" style="color:#333333; text-align:center;">Registrado por '.$f['nombre'].' <br>  '.$f['eveFecRegistro'].' </p>
+                <div class="product-item bg-light">
+                    <div class="card pb-0">
+                        <div class="thumb-content">
+                            <a href="#">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../' . $f['eveFoto'] . '"
+                                    alt="Imagen de la mascota">
+                            </a>
+                        </div>
+                        <div class="card-body p-0">
+                            <a href="#">
+                                <h4 class="card-title text-center my-3" style="font-size:25px; color:#333333;">' .$f['eveNombre'] . '</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Tipo de evento: </b>' . $f['eveTipo'] . '</p>
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Fecha: </b>' . $f['eveFecha'] . '</p>
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Hora de inicio: </b>' . $f['eveHoraInicio'] . '</p>
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Hora de finalización: </b>' . $f['eveHoraFin'] . '</p>
+                <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Dirección: </b>' . $f['eveDireccion'] . '</p>
+            </div>
+            <div class="col-lg-12">
+                <p class="mt-3 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Descripción del evento: </b>' . $f['eveDescripcion'] . '</p>
+            </div>
+        '; 
     }
 }
 

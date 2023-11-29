@@ -61,10 +61,10 @@ require_once("../../Controllers/mostrarInfoComun.php");
 				?>
 				<div class="col-lg-8">
 					<article class="single-post">
-                    		<h2 class="text-center mb-4">Mascota</h2>
+                    		<h2 class="text-center mb-4">Evento</h2>
 						<div class="row d-flex align-items-center">
 							<?php
-							mostrarMascotaFundacionEspecificaComun()
+							MostrarEventoFundacionEspecificaComun()
 							?>
 						</div>
 					</article>
