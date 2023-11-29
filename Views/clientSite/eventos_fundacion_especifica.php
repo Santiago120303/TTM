@@ -15,7 +15,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 
 	<!-- ** Basic Page Needs ** -->
 	<meta charset="utf-8">
-	<title>Fundación específica - TTM</title>
+	<title>Eventos Fundación específica - TTM</title>
 
 	<!-- ** Mobile Specific Metas ** -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,14 +57,17 @@ require_once("../../Controllers/mostrarInfoComun.php");
 		<div class="container">
 			<div class="row">
 				<?php
-				MostrarEventoEspecificoSidebar()
+				MostrarFundacionEspecificaSidebar()
 				?>
 				<div class="col-lg-8">
 					<article class="single-post">
-                    		<h2 class="text-center mb-4">Mascota</h2>
-						<div class="row d-flex align-items-center">
+						<?php
+							VolverFundacionEspecificaInfo()
+						?>
+                    		<h2 class="text-center mb-4">Mascotas</h2>
+						<div class="row">
 							<?php
-							mostrarEventoEspecificoComun()
+							MostrarEventosFundacionEspecificaComun()
 							?>
 						</div>
 					</article>
