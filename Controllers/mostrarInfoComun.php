@@ -73,7 +73,7 @@ function fitroFundaciones($nombrefun, $localidadfun)
             }
     } else {
         
-        echo '<h2>No existen fundaciones registradas con estas caracteristicas</h2>';  //' . $f['id_user'] . '
+        echo '<h2 style="text-align:center;">No se encontraron fundaciones que coincidan con las características seleccionadas.</h2>';  //' . $f['id_user'] . '
 
     }
 }
@@ -124,6 +124,7 @@ function MostrarFundacionEspecificaSidebar()
         }
 
 }
+
 function MostrarFundacionEspecificaInfo()
 {
     //Se aterriza el Id de la fundacion enviado por el metodo GET (URL)
@@ -195,6 +196,7 @@ function MostrarFundacionEspecificaInfo()
 
 
 }
+
 function VolverFundacionEspecificaInfo()
 {
     //Se aterriza el Id de la fundacion enviado por el metodo GET (URL)
@@ -518,7 +520,6 @@ function MostrarEventoEspecificoSidebar(){
 
 }
 
-
 function cargarMascotasComun()
 {
 
@@ -584,15 +585,15 @@ function filtroMascotas ($masEspecie, $masEdad, $masSexo, $masRaza)
                             </a>
                             
                         </div>
-                        <div class="card-body">
+                        <div class="card-body pt-0">
                             <a href="mascota_especifica_fundacion.php?id=' .$f['masId'] . '">
                                 <h4 class="card-title text-center mb-3"><a href="mascota.php" style="color:#333333;">' .$f['masNombre'] . '</a></h4>
                             </a>
 
-                            <p class="m-0 pb-2" style="color:#333333;"><b>Especie: </b>' . $f['especie'] . '</p>
-                            <p class="m-0 pb-2" style="color:#333333;"><b>Raza: </b>' . $f['masRaza'] . '</p>
-                            <p class="m-0 pb-2" style="color:#333333;"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
-                            <p class="m-0 pb-2" style="color:#333333;"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
+                            <p class="m-0 pb-2" style="color:#333333; "><b>Especie: </b>' . $f['especie'] . '</p>
+                            <p class="m-0 pb-2" style="color:#333333; "><b>Raza: </b>' . $f['masRaza'] . '</p>
+                            <p class="m-0 pb-2" style="color:#333333; "><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
+                            <p class="m-0 pb-2" style="color:#333333; "><b>Edad: </b>' . $f['masEdad'] . ' años</p>
                             <div class="product-ratings">
                             </div>
                         </div>
@@ -603,7 +604,7 @@ function filtroMascotas ($masEspecie, $masEdad, $masSexo, $masRaza)
             }
     } else {
         
-        echo '<h2>No existen fundaciones registradas con estas caracteristicas</h2>';  //' . $f['id_user'] . '
+        echo '<h2 style="text-align:center;">No se encontraron mascotas que coincidan con las características seleccionadas.</h2>';  //' . $f['id_user'] . '
 
     }
 }
