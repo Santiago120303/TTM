@@ -64,7 +64,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 		<div class="row">
 			<div class="col-md-12">
 				<div class="search-result bg-gray text-center">
-					<h2>Fundaciones</h2>
+					<h2>Eventos</h2>
 				</div>
 			</div>
 		</div>
