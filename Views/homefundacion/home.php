@@ -72,7 +72,7 @@
       <div class="col-lg-9">
         <!-- Recently Favorited -->
         <section id="main-content">
-          <article class="single-post" style="width: 1100px !important; margin: 0 auto;">
+          <article class="single-post">
             <div class="row">
           <?php
           mostrarInfoFunHome();

@@ -1,10 +1,12 @@
 <?php
-  require_once("../../Models/conexion.php");
-  require_once("../../Models/consultas.php");
-  require_once("../../Models/seguridadClient.php");
-  require_once("../../Controllers/mostrarInfoClient.php");
-?>
 
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadClient.php");
+require_once("../../Controllers/mostrarInfoClient.php");
+require_once("../../Controllers/mostrarInfoComun.php");
+
+?>
 
 <!DOCTYPE html>
 
@@ -38,6 +40,18 @@
 
 	<link href="../css/style.css" rel="stylesheet">
 
+    <!-- Estilos propios del documento -->
+    <style>
+         .list {
+        max-height: 200px !important;
+        overflow:hidden !important;
+        overflow-y: scroll !important;
+        }
+	   input::placeholder{
+		font-family: 'Montserrat', sans-serif;
+	   }
+    </style>
+
 </head>
 
 <body class="body-wrapper">
@@ -56,49 +70,42 @@
 				</div>
 			</div>
 			<div class="row">
-			<div class="col-lg-3 col-md-4">
-				<!--Buscador-->
-				<form method="get">
-				<input class="mt-3 nice-select form-control w-100 text-center" type="text" name="fundacionNombre" placeholder="Fundacion...">
-				<select name="localidad" id="" class="form-control mt-3 nice-select form-control w-100 text-center"  >
-					<option value="">Localidad</option>
-					<option value="1">Antonio Nariño</option>
-					<option value="2">Barrio Unidos</option>
-					<option value="3">Bosa</option>
-					<option value="4">Chapinero</option>
-					<option value="5">Ciudad Bolívar</option>
-					<option value="6">Engativá</option>
-					<option value="7">Fontibón</option>
-					<option value="8">Kennedy</option>
-					<option value="9">La Candelaria</option>
-					<option value="10">Los Mártires</option>
-					<option value="11">Puente Aranda</option>
-					<option value="12">Rafael Uribe Uribe</option>
-					<option value="13">San Cristóbal</option>
-					<option value="14">Santa Fe</option>
-					<option value="15">Suba</option>
-					<option value="16">Sumapaz</option>
-					<option value="17">Teusaquillo</option>
-					<option value="18">Tunjuelito</option>
-					<option value="19">Usaquén</option>
-					<option value="20">Usme</option>
-				</select>
-				<input class="mt-3 btn btn-login" type="submit" value="Buscar">
-				</form>
-			</div>
+				<div class="col-lg-3 col-md-4">
+					<!--Buscador-->
+					<form class="p-3" style="background: white;" method="get">
+						<select name="masEspecie" class="form-control mt-3 nice-select form-control w-100 text-center">
+							<option value="">Especie...</option>
+							<option value="1">Perro</option>
+							<option value="2">Gato</option>
+							<option value="3">Ave</option>
+							<option value="4">Conejo</option>
+							<option value="5">Roedor</option>
+						</select>
+						<input class="mt-3 form-control " type="number" name="masEdad" placeholder="Edad: 2 (años)">
+						<select name="masSexo" class="form-control mt-3 nice-select form-control w-100 text-center">
+							<option value="">Sexo...</option>
+							<option value="1">Macho</option>
+							<option value="2">Hembra</option>
+						</select>
+						<input class="mt-3 form-control " type="text" name="masRaza" placeholder="Raza: Beagle">
+					<input class="mt-3 btn btn-login" type="submit" value="Buscar">
+					</form>
+				</div>
 	
 				<div class="col-lg-9 col-md-8">
 					<div class="product-grid-list">
 						<div class="row mt-30">
-							<?php
-								cargarMascotasCliente();
+						<?php
+							if (isset($_GET['masEspecie']) || isset ($_GET['masEdad']) || isset ($_GET['masSexo'])  || isset ($_GET['masRaza'])) {
+								filtroMascotas($_GET['masEspecie'], $_GET['masEdad'], $_GET['masSexo'], $_GET['masRaza']);
+							}else{
+								cargarMascotasComun();
+							}
 							?>	
 						</div>
 					</div>
 				</div>
-	
-
-	
+			</div>
 	</section>
 	<!--============================
 =            Footer            =

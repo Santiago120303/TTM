@@ -2,8 +2,6 @@
 
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
-require_once("../../Models/seguridadClient.php");
-require_once("../../Controllers/mostrarInfoClient.php");
 require_once("../../Controllers/mostrarInfoComun.php");
 
 ?>
@@ -16,7 +14,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 
 	<!-- ** Basic Page Needs ** -->
 	<meta charset="utf-8">
-	<title>Fundaciones</title>
+	<title>Eventos</title>
 
 	<!-- ** Mobile Specific Metas ** -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,7 +56,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 <body class="body-wrapper">
 
 	<?php
-		include("nav-cliente.php");
+		include("nav-clientSite.php");
 	?>
 
 <section class="section-sm minhe">
@@ -105,11 +103,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 				<div class="product-grid-list">
 					<div class="row mt-30">
 						<?php
-							if (isset($_GET['fundacionNombre']) || isset ($_GET['localidad'])) {
-								fitroFundaciones($_GET['fundacionNombre'], $_GET['localidad']);
-							}else{
-								cargarFundacionesComun();
-							}
+							cargarEventosComun();
 						?>
 					</div>
 				</div>
