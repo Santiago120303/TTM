@@ -74,7 +74,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 			<div class="col-lg-3 col-md-4">
 				<!--Buscador-->
 				<form class="p-3" style="background: white;" method="get">
-				<input class="mt-3 form-control " type="text" name="fundacionNombre" placeholder="Fundación...">
+				<input class="mt-3 form-control " type="text" name="fundacionNombre" placeholder="Nombre de la fundación...">
 				<select name="localidad" id="" class="form-control mt-3 nice-select form-control w-100 text-center"  >
 					<option value="">Localidad</option>
 					<option value="AnNa">Antonio Nariño</option>
@@ -89,13 +89,13 @@ require_once("../../Controllers/mostrarInfoComun.php");
 					<option value="LoMa">Los Mártires</option>
 					<option value="PuAr">Puente Aranda</option>
 					<option value="RaUrUr">Rafael Uribe Uribe</option>
-					<option value="SaCr">San Cristóbal</option>
-					<option value="Sa">Santa Fe</option>
+					<option value="SCr">San Cristóbal</option>
+					<option value="SFe">Santa Fe</option>
 					<option value="Su">Suba</option>
-					<option value="Sum">Sumapaz</option>
+					<option value="Sp">Sumapaz</option>
 					<option value="Te">Teusaquillo</option>
 					<option value="Tu">Tunjuelito</option>
-					<option value="Us">Usaquén</option>
+					<option value="Uq">Usaquén</option>
 					<option value="Usm">Usme</option>
 				</select>
 				<input class="mt-3 btn btn-login" type="submit" value="Buscar">
