@@ -695,7 +695,7 @@ function cargarEventos()
                                         <a href="eventoEsp.php">' . $f['eveNombre'] . '</a>
                                     </h4>
                                     <a  class="bg-mascota" href="eventoEsp.php">
-                                        <img class="card-img-top img-fluid" src="../' . $f['eveImg'] . '" alt="Imagen de evento">
+                                        <img class="card-img-top img-fluid" src="../' . $f['eveFoto'] . '" alt="Imagen de evento">
                                     </a>
                                 </div>
                                 <div class="card-body">
