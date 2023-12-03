@@ -569,12 +569,12 @@ function informacionEditar()
 
                                 <div class="form-group col-lg-12">
                                     <label>Misión</label>
-                                    <textarea class="form-control" required name="mision" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['descripcion'] . '</textarea>
+                                    <textarea class="form-control" required name="mision" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['mision'] . '</textarea>
                                 </div>
 
                                 <div class="form-group col-lg-12">
                                     <label>Visión</label>
-                                    <textarea class="form-control" required name="vision" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['descripcion'] . '</textarea>
+                                    <textarea class="form-control" required name="vision" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['vision'] . '</textarea>
                                 </div>
 
                             </div>

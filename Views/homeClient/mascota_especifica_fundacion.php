@@ -65,7 +65,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
                     		<h2 class="text-center mb-4">Mascota</h2>
 						<div class="row d-flex align-items-center">
 							<?php
-							mostrarMascotaFundacionEspecificaComun()
+							MostrarMascotaFundacionEspecificaCliete()
 							?>
 						</div>
 					</article>

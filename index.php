@@ -150,27 +150,6 @@
 						</div>
 
 
-						<!-- <div class="col-sm-12 col-lg-4">
-							<div class="product-item bg-light">
-								<div class="card">
-									<div class="thumb-content">
-										<a href="single.php">
-											<img class="card-img-top img-fluid"
-												src="Views/images/products/products-2.jpg" alt="Card image cap">
-										</a>
-									</div>
-									<div class="card-body">
-										<h4 class="card-title"><a href="single.php">Donaciones</a></h4>
-										<p class="card-text"> A través de nuestro sitio, tendrás la oportunidad única de
-											brindar tu apoyo vital a estas organizaciones, contribuyendo directamente a
-											fortalecer y potenciar sus funciones esenciales en beneficio de los
-											animales.</p>
-									</div>
-								</div>
-							</div>
-						</div> -->
-
-
 						<div class="col-sm-12 col-lg-4">
 							<div class="product-item bg-light">
 								<div class="card">
@@ -196,17 +175,37 @@
 							<div class="product-item bg-light">
 								<div class="card">
 									<div class="thumb-content">
-										<a href="Views/clientSite/events.php">
+										<a href="Views/clientSite/eventos.php">
 											<img class="card-img-top img-fluid"
 												src="Views/images/products/products-4.png" alt="Card image cap">
 										</a>
 									</div>
 									<div class="card-body">
-										<h4 class="card-title"><a href="Views/clientSite/events.php">Eventos</a></h4>
+										<h4 class="card-title"><a href="Views/clientSite/eventos.php">Eventos</a></h4>
 										<p class="card-text">Explora nuestra plataforma y sumérgete en una amplia
 											variedad de eventos respaldados por diversas fundaciones. Regístrate de
 											manera sencilla y lleva un registro de tus participaciones. Tu compromiso
 											hacia un cambio positivo.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-sm-12 col-lg-4">
+							<div class="product-item bg-light">
+								<div class="card">
+									<div class="thumb-content">
+										<a href="Views/clientSite/fundaciones.php">
+											<img class="card-img-top img-fluid"
+												src="Views/images/products/products-2.jpg" alt="Card image cap">
+										</a>
+									</div>
+									<div class="card-body">
+										<h4 class="card-title"><a href="Views/clientSite/fundaciones.php">Donaciones</a></h4>
+										<p class="card-text">Proporcionamos los números de cuenta Daviplata y Nequi en nuestro 
+											sitio para que puedas realizar donaciones directas a lasundaciones, fortaleciendo así sus 
+											funciones esenciales en beneficio de los animales.</p>
 									</div>
 								</div>
 							</div>

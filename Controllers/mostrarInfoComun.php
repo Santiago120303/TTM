@@ -1,6 +1,7 @@
 <?php
 
 //Este archivo recibe todas las consultas del modelo para mostrar la información al los usuarios que ingresan al sito web
+
 function cargarFundacionesComun()
 {
 
@@ -77,6 +78,8 @@ function fitroFundaciones($nombrefun, $localidadfun)
 
     }
 }
+
+// Función para traer el sidebar de fundacion especifica
 
 function MostrarFundacionEspecificaSidebar()
 {
@@ -196,6 +199,8 @@ function MostrarFundacionEspecificaInfo()
 
 
 }
+
+// Función que retorna a la sección de información de la fundación después de que se ingresa a mascotas o eventos específicos de una fundación.
 
 function VolverFundacionEspecificaInfo()
 {
@@ -342,7 +347,7 @@ function MostrarMascotaFundacionEspecificaComun() {
                 <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Raza: </b>' . $f['masRaza'] . '</p>
                 <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
                 <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
-                <a href="for_adop.php?id='.$f['masId'].'" class="btn btn-login mt-5 align-self-end">Adoptar</a>
+                <a href="#" id="open" class="btn btn-login mt-5 align-self-end">Adoptar</a>
             </div>
             <div class="col-lg-12">
                 <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Vacunas: </b> '.$f['masVacunas'].' ( ' . obtenerVacunas($f) . ')</p>
@@ -411,7 +416,7 @@ function MostrarMascotaFundacionEspecificaCliete() {
                 <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Raza: </b>' . $f['masRaza'] . '</p>
                 <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Sexo: </b>' . $f['mascota_sexo'] . '</p>
                 <p class="m-0 pb-2 pl-3" style="font-size:18px; color:#333333;"><b>Edad: </b>' . $f['masEdad'] . ' años</p>
-                <a href="alskdfadfjkllskdfjsfssk" class="btn btn-login mt-5 align-self-end">Adoptar</a>
+                <a href="for_adop.php?id='.$f['masId'].'" class="btn btn-login mt-5 align-self-end">Adoptar</a>
             </div>
             <div class="col-lg-12">
                 <p class="m-0 pb-5 pl-3" style="font-size:18px; color:#333333;"><b>Vacunas: </b> '.$f['masVacunas'].' ( ' . obtenerVacunas($f) . ')</p>
@@ -561,6 +566,44 @@ function cargarEventosComun(){
             </div>
             ';
         }
+    }
+}
+
+function filtroEventos ($eveNombre, $eveFecha){
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->filtrarEventos($eveNombre, $eveFecha);
+
+    if (isset($result)) {
+        foreach ($result as $f) {
+            echo '
+            <div class="col-lg-4 col-md-6">
+            <!-- product card -->
+            <div class="product-item bg-light">
+                <div class="card pb-0 card-fundaciones">
+                    <div class="thumb-content">
+                        <!-- <div class="price">$200</div> -->
+                            <h4 class="card-title text-center mb-3"><a href="evento_especifico_fundacion.php?id='.$f['eveId'].'" style="color:#333333; font-size:smaller; min-height:44px;">' . $f['eveNombre'] . '</a></h4>
+                        <a href="evento_especifico_fundacion.php?id='.$f['eveId'].'">
+                            <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['eveFoto'] . '" alt="Card image cap">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <p class="m-0 pb-2" style="color:#333333;"><b>Fecha: </b> <br>' . $f['eveFecha'] . '</p>
+                        <p class="m-0 pb-2" style="color:#333333;"><b>Dirección: </b> <br>' . $f['eveDireccion'] . '</p>
+                        <p class="m-0 pb-2" style="color:#333333;"><b>Hora: </b> <br>' . $f['eveHoraInicio'] . '</p>
+                        <div class="product-ratings">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                ';
+            }
+    } else {
+        
+        echo '<h2 style="text-align:center;">No se encontraron eventos que coincidan con las características seleccionadas.</h2>';  //' . $f['id_user'] . '
+
     }
 }
 

@@ -83,7 +83,7 @@
       </div>
       <div class="col-lg-2 col-sm-12 mt-5">
         <div class="card my-3 my-lg-0 p-0 cardsFotos">
-          <img class="card-img-top" src="../../Uploads/usuarios/Santiago.png" class="img-fluid w-100" alt="Card image cap">
+          <img class="card-img-top card-height" src="../../Uploads/usuarios/Santiago.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Santiago Gutiérrez</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
@@ -93,7 +93,7 @@
       </div>
       <div class="col-lg-2 col-sm-12 mt-5">
         <div class="card my-3 my-lg-0 p-0 cardsFotos">
-          <img class="card-img-top" src="../../Uploads/usuarios/Diana.png" class="img-fluid w-100" alt="Card image cap">
+          <img class="card-img-top card-height" src="../../Uploads/usuarios/Diana.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Diana Ramírez</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
@@ -103,7 +103,7 @@
       </div>
       <div class="col-lg-2 col-sm-12 mt-5">
         <div class="card my-3 my-lg-0 p-0 cardsFotos">
-          <img class="card-img-top" src="../../Uploads/usuarios/Johan.png" class="img-fluid w-100" alt="Card image cap">
+          <img class="card-img-top card-height" src="../../Uploads/usuarios/Johan.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Johan Echavez</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
@@ -113,7 +113,7 @@
       </div>
       <div class="col-lg-2 col-sm-12 mt-5">
         <div class="card my-3 my-lg-0 p-0 cardsFotos">
-          <img class="card-img-top" src="../../Uploads/usuarios/Ricardo.png" class="img-fluid w-100" alt="Card image cap">
+          <img class="card-img-top card-height" src="../../Uploads/usuarios/Ricardo.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Ricardo Reyes</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
@@ -123,7 +123,7 @@
       </div>
       <div class="col-lg-2 col-sm-12 mt-5">
         <div class="card my-3 my-lg-0 p-0 cardsFotos">
-          <img class="card-img-top" src="../../Uploads/usuarios/Andersson.png" class="img-fluid w-100" alt="Card image cap">
+          <img class="card-img-top card-height" src="../../Uploads/usuarios/Andersson.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Andersson Acosta</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>

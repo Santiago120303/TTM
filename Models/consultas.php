@@ -652,6 +652,35 @@ class Consultas
         return $eventos;
     }
 
+    public function filtrarEventos ($eveNombre, $eveFecha)
+    {
+        $eventos = null;
+    
+        // Creamos el objeto de la conexión
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+        $nombre = "%" .$eveNombre ."%";
+        $fecha = "%" .$eveFecha ."%";
+
+        // Consulta para obtener solo los campos necesarios
+
+        $consultar = "SELECT * FROM tbl_eventos WHERE tbl_eventos.eveNombre LIKE :nombre AND tbl_eventos.eveFecha LIKE :fecha";
+    
+        $result = $conexion->prepare($consultar);
+        $result->bindParam(":nombre", $nombre);
+        $result->bindParam(":fecha", $fecha);
+
+
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $eventos[] = $resultado;
+        }
+    
+        return $eventos;
+    }
+
+
     public function mostrarEventosFundacionEspecificaComun($id_fundacion){
         $eventos = null;
     
