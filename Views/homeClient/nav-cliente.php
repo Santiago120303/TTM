@@ -21,7 +21,7 @@
                   <a class="nav-link" href="mascotas.php">Mascotas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="events.php">Eventos</a>
+                  <a class="nav-link" href="eventos.php">Eventos</a>
                 </li>
                 <!-- <li class="nav-item">
 					  				<a class="nav-link" href="Views/clientSite/donation.php">Donación</a>

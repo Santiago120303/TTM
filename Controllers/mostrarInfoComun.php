@@ -107,8 +107,24 @@ function MostrarFundacionEspecificaSidebar()
 
 							<a href="mascotas_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Mascotas</a>
 							<a href="eventos_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Eventos</a>
-
-
+                            
+                            <div mb-4">
+                                <h3 class="text-center mb-2" style="font-size:25px;">Donar</h3>
+                                <div class="row d-flex align-items-center pb-4">
+                                    <div class="col-4 mb-3">
+                                        <img src="../../Uploads/fundaciones/nequi.png" class="d-block w-100" style="border-radius:100%;" alt="foto fundacion 3 de 4">
+                                    </div>
+                                    <div class="col-8 mb-3">';
+                                    echo strlen($f['numero_nequi']) <= 0 ? ' <p  class="text-center mb-2 num-donar">No tiene</p>' : '<p  class="text-center mb-2 num-donar">'.$f['numero_nequi'].'</p>';
+                                    echo '</div>
+                                    <div class="col-4">
+                                        <img src="../../Uploads/fundaciones/daviplata.png" class="d-block w-100" style="border-radius:100%;" alt="foto fundacion 3 de 4">
+                                    </div>
+                                    <div class="col-8">';
+                                        echo strlen($f['numero_daviplata']) <= 0 ? ' <p  class="text-center mb-2 num-donar">No tiene</p>' : '<p  class="text-center mb-2 num-donar">'.$f['numero_daviplata'].'</p>';
+                                    echo'</div>
+                                </div>
+                            </div>
 
                         
 							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['localidad'].'</p></a>
@@ -116,7 +132,6 @@ function MostrarFundacionEspecificaSidebar()
 							<a href="mailto:'.$f['email'].'"><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['email'].'</p></a>
 							<a href="whatsapp://send?phone='.$f['telefono'].'&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n."><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['telefono'].'</p></a>
 
-							<a href="donaciones.php" class="btn btn-success mt-4" style="text-transform:Uppercase;" >Donar</a>
 
 						</div>
 	
@@ -146,32 +161,89 @@ function MostrarFundacionEspecificaInfo()
 						<a class="d-block w-100 text-right font-weight-bold align-items-center" href="fundaciones.php"><i class="fa-solid fa-arrow-left mr-2"></i>Volver</a>
 						<h2 class="text-center mb-4">'.$f['nombre'].'</h2>
 						<div class="row d-flex align-items-center">';
-                echo'<div class="col-lg-6">
-                            <h3>Descripción</h3>';
-                                if (strlen($f['descripcion']) == 0) {
-                                    echo '<p style="color:#333333;" >No se ha subido la descripción de la fundación, estamos trabajando en ello.</p>';
-                                } else {
-                                    echo '<p style="color:#333333;" > ' . $f['descripcion'] . '</p>';
-                                }
-                echo '</div>
-                        <div id="carouselExampleSlidesOnly" class="col-lg-6 carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="../../Uploads/fundaciones/fun1.jpg" class="d-block w-100" alt="foto fundacion 1 de 4">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../../Uploads/fundaciones/fun2.jpg" class="d-block w-100" alt="foto fundacion 2 de 4">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../../Uploads/fundaciones/fun4.jpg" class="d-block w-100" alt="foto fundacion 3 de 4">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../../Uploads/fundaciones/fun5.jpg" class="d-block w-100" alt="foto fundacion 4 de 4">
-                                </div>
-                            </div>
-                        </div>
-                ';
-                 
+                                if (strlen($f['descripcion']) == 0 && strlen($f['foto_fun_1']) == 0 && strlen($f['foto_fun_2']) == 0 && strlen($f['foto_fun_3']) == 0 && strlen($f['foto_fun_4']) == 0) {
+                                    echo '
+                                    <div class="col-lg-12">
+                                        <h3>Descripción</h3>
+                                        <p style="color:#333333;" >No se ha subido la descripción de la fundación, estamos trabajando en ello.</p>
+                                    </div>';
+                                } elseif (strlen($f['descripcion']) > 0 && strlen($f['foto_fun_1']) == 0 && strlen($f['foto_fun_2']) == 0 && strlen($f['foto_fun_3']) == 0 && strlen($f['foto_fun_4']) == 0){
+                                 echo '
+                                    <div class="col-lg-12">
+                                        <h3>Descripción</h3>
+                                        <p style="color:#333333;" >' . $f['descripcion'] . '</p>
+                                    </div>';
+                                }elseif (strlen($f['descripcion']) > 0 && strlen($f['foto_fun_1']) > 0 && strlen($f['foto_fun_2']) == 0 && strlen($f['foto_fun_3']) == 0 && strlen($f['foto_fun_4']) == 0){
+                                    echo '
+                                        <div class="col-lg-6">
+                                            <h3>Descripción</h3>
+                                            <p style="color:#333333;" >' . $f['descripcion'] . '</p>
+                                        </div>
+                                        <div id="carouselExampleSlidesOnly" class="col-lg-6 carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="../' . $f['foto_fun_1'] . '" class="d-block w-100" alt="foto fundacion 1 de 4">
+                                                </div>
+                                            </div>
+                                        </div>    ';
+                                   }elseif (strlen($f['descripcion']) > 0 && strlen($f['foto_fun_1']) > 0 && strlen($f['foto_fun_2']) > 0 && strlen($f['foto_fun_3']) == 0 && strlen($f['foto_fun_4']) == 0){
+                                    echo '
+                                        <div class="col-lg-6">
+                                            <h3>Descripción</h3>
+                                            <p style="color:#333333;" >' . $f['descripcion'] . '</p>
+                                        </div>
+                                        <div id="carouselExampleSlidesOnly" class="col-lg-6 carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="../' . $f['foto_fun_1'] . '" class="d-block w-100" alt="foto fundacion 1 de 4">
+                                                </div>
+                                                <div class="carousel-item active">
+                                                    <img src="../' . $f['foto_fun_2'] . '" class="d-block w-100" alt="foto fundacion 2 de 4">
+                                                </div>
+                                            </div>
+                                        </div>    ';
+                                   }elseif (strlen($f['descripcion']) > 0 && strlen($f['foto_fun_1']) > 0 && strlen($f['foto_fun_2']) > 0 && strlen($f['foto_fun_3']) > 0 && strlen($f['foto_fun_4']) == 0){
+                                    echo '
+                                        <div class="col-lg-6">
+                                            <h3>Descripción</h3>
+                                            <p style="color:#333333;" >' . $f['descripcion'] . '</p>
+                                        </div>
+                                        <div id="carouselExampleSlidesOnly" class="col-lg-6 carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="../' . $f['foto_fun_1'] . '" class="d-block w-100" alt="foto fundacion 1 de 4">
+                                                </div>
+                                                <div class="carousel-item active">
+                                                    <img src="../' . $f['foto_fun_2'] . '" class="d-block w-100" alt="foto fundacion 2 de 4">
+                                                </div>
+                                                <div class="carousel-item active">
+                                                    <img src="../' . $f['foto_fun_3'] . '" class="d-block w-100" alt="foto fundacion 3 de 4">
+                                                </div>
+                                            </div>
+                                        </div>    ';
+                                   }elseif (strlen($f['descripcion']) > 0 && strlen($f['foto_fun_1']) > 0 && strlen($f['foto_fun_2']) > 0 && strlen($f['foto_fun_3']) > 0 && strlen($f['foto_fun_4']) > 0){
+                                    echo '
+                                        <div class="col-lg-6">
+                                            <h3>Descripción</h3>
+                                            <p style="color:#333333;" >' . $f['descripicion'] . '</p>
+                                        </div>
+                                        <div id="carouselExampleSlidesOnly" class="col-lg-6 carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="../' . $f['foto_fun_1'] . '" class="d-block w-100" alt="foto fundacion 1 de 4">
+                                                </div>
+                                                <div class="carousel-item active">
+                                                    <img src="../' . $f['foto_fun_2'] . '" class="d-block w-100" alt="foto fundacion 2 de 4">
+                                                </div>
+                                                <div class="carousel-item active">
+                                                    <img src="../' . $f['foto_fun_3'] . '" class="d-block w-100" alt="foto fundacion 3 de 4">
+                                                </div>
+                                                <div class="carousel-item active">
+                                                    <img src="../' . $f['foto_fun_4'] . '" class="d-block w-100" alt="foto fundacion 4 de 4">
+                                                </div>
+                                            </div>
+                                        </div>    ';
+                                   }
                 echo'<div class="col-lg-12">
                             <h3>Misión</h3>';
                                 if (strlen($f['mision']) == 0) {
@@ -283,12 +355,29 @@ function MostrarMascotaFundacionEspecificaSidebar(){
 							<a href="mascotas_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Mascotas</a>
 							<a href="eventos_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Eventos</a>
 
+                            <div mb-4">
+                                <h3 class="text-center mb-2" style="font-size:25px;">Donar</h3>
+                                <div class="row d-flex align-items-center pb-4">
+                                    <div class="col-4 mb-3">
+                                        <img src="../../Uploads/fundaciones/nequi.png" class="d-block w-100" style="border-radius:100%;" alt="foto fundacion 3 de 4">
+                                    </div>
+                                    <div class="col-8 mb-3">';
+                                    echo strlen($f['numero_nequi']) <= 0 ? ' <p  class="text-center mb-2 num-donar">No tiene</p>' : '<p  class="text-center mb-2 num-donar">'.$f['numero_nequi'].'</p>';
+                                    echo '</div>
+                                    <div class="col-4">
+                                        <img src="../../Uploads/fundaciones/daviplata.png" class="d-block w-100" style="border-radius:100%;" alt="foto fundacion 3 de 4">
+                                    </div>
+                                    <div class="col-8">';
+                                        echo strlen($f['numero_daviplata']) <= 0 ? ' <p  class="text-center mb-2 num-donar">No tiene</p>' : '<p  class="text-center mb-2 num-donar">'.$f['numero_daviplata'].'</p>';
+                                    echo'</div>
+                                </div>
+                            </div>
+
 							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['localidad'].'</p></a>
 							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['direccion'].'</p></a>
 							<a href="mailto:'.$f['email'].'"><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['email'].'</p></a>
 							<a href="whatsapp://send?phone='.$f['telefono'].'&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n."><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['telefono'].'</p></a>
 
-							<a href="donaciones.php" class="btn btn-success mt-4" style="text-transform:Uppercase;" >Donar</a>
 
 						</div>
 	
@@ -668,12 +757,29 @@ function MostrarEventoFundacionEspecificaSidebar(){
 							<a href="mascotas_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Mascotas</a>
 							<a href="eventos_fundacion_especifica.php?id='.$f['id_user'].'" class="btn btn-login mb-4">Eventos</a>
 
+                            <div mb-4">
+                                <h3 class="text-center mb-2" style="font-size:25px;">Donar</h3>
+                                <div class="row d-flex align-items-center pb-4">
+                                    <div class="col-4 mb-3">
+                                        <img src="../../Uploads/fundaciones/nequi.png" class="d-block w-100" style="border-radius:100%;" alt="foto fundacion 3 de 4">
+                                    </div>
+                                    <div class="col-8 mb-3">';
+                                    echo strlen($f['numero_nequi']) <= 0 ? ' <p  class="text-center mb-2 num-donar">No tiene</p>' : '<p  class="text-center mb-2 num-donar">'.$f['numero_nequi'].'</p>';
+                                    echo '</div>
+                                    <div class="col-4">
+                                        <img src="../../Uploads/fundaciones/daviplata.png" class="d-block w-100" style="border-radius:100%;" alt="foto fundacion 3 de 4">
+                                    </div>
+                                    <div class="col-8">';
+                                        echo strlen($f['numero_daviplata']) <= 0 ? ' <p  class="text-center mb-2 num-donar">No tiene</p>' : '<p  class="text-center mb-2 num-donar">'.$f['numero_daviplata'].'</p>';
+                                    echo'</div>
+                                </div>
+                            </div>
+
 							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['localidad'].'</p></a>
 							<p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['direccion'].'</p></a>
 							<a href="mailto:'.$f['email'].'"><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['email'].'</p></a>
 							<a href="whatsapp://send?phone='.$f['telefono'].'&text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20acerca%20de%20su%20fundaci%C3%B3n."><p  class="text-center mb-2" style="font-size:18px; color: #333333;">'.$f['telefono'].'</p></a>
 
-							<a href="donaciones.php" class="btn btn-success mt-4" style="text-transform:Uppercase;" >Donar</a>
 
 						</div>
 	

@@ -18,49 +18,142 @@ function mostrarInfoFunHome()
         MostrarCantidadMascotasRegistradas();
 
         echo '</div><div class="row">
+        <div class="col-lg-6">';
+        echo strlen($f['direccion']) == 0 ? '<p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Dirección: </b> No se ha actulizado la dirección</p>' : '<p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Dirección: </b>' . htmlspecialchars($f['direccion']) . '</p>';
+        echo '</div>
+            <div class="col-lg-6">';
+        echo strlen($f['localidad']) == 0 ? '<p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Localidad: </b> No se ha actulizado la localidad</p>' : '<p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Localidad: </b>' . htmlspecialchars($f['localidad']) . '</p>';
+        echo '</div>
+            <div class="col-lg-6">';
+        echo strlen($f['numero_nequi']) <= 0 ? '<p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Número de Nequi: </b> Sin actualizar</p>' : '<p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Número Nequi: </b>' . htmlspecialchars($f['numero_nequi']) . '</p>';
+        echo '</div>
+            <div class="col-lg-6">';
+        echo strlen($f['numero_daviplata']) <= 0 ? '<p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Número de Daviplata: </b> Sin actualizar</p>' : '<p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Número Daviplata: </b>' . htmlspecialchars($f['numero_daviplata']) . '</p>';
+        echo '</div>
             <div class="col-lg-12">
                 <h3>Descripción</h3>';
-        echo strlen($f['descripcion']) == 0 ? '<p>No se ha subido la descripción de la fundación, estamos trabajando en ello.</p>' : '<p>' . htmlspecialchars($f['descripcion']) . '</p>';
+        echo strlen($f['descripcion']) == 0 ? '<p style="color:#333333; font-size:15px;">No se ha subido la descripción de la fundación, estamos trabajando en ello.</p>' : '<p style="color:#333333; font-size:15px;">' . htmlspecialchars($f['descripcion']) . '</p>';
         echo '</div>
             <div class="col-lg-12">
                 <h3>Misión</h3>';
-        echo strlen($f['mision']) == 0 ? '<p>No se ha subido la misión de la fundación, estamos trabajando en ello.</p>' : '<p>' . htmlspecialchars($f['mision']) . '</p>';
+        echo strlen($f['mision']) == 0 ? '<p style="color:#333333; font-size:15px;">No se ha subido la misión de la fundación, estamos trabajando en ello.</p>' : '<p style="color:#333333; font-size:15px;">' . htmlspecialchars($f['mision']) . '</p>';
         echo '</div>
             <div class="col-lg-12">
                 <h3>Visión</h3>';
-        echo strlen($f['vision']) == 0 ? '<p>No se ha subido la visión de la fundación, estamos trabajando en ello.</p>' : '<p>' . htmlspecialchars($f['vision']) . '</p>';
-        echo '</div>
-            <div class="col-lg-6">
-                <p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Dirección: </b>' . htmlspecialchars($f['direccion']) . '</p>
-            </div>
-            <div class="col-lg-6">
-                <p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Localidad: </b>' . htmlspecialchars($f['localidad']) . '</p>
-            </div>
-            <div class="col-lg-12">
-                <p class="mb-4 pb-2" style="color:#333333; font-size:18px;"><b>Fotos Representativas: </b> <br>' . htmlspecialchars($f['direccion']) . '</p>
-            </div>';
-
-        $fotos = array($f['foto_fun_1'], $f['foto_fun_2'], $f['foto_fun_3'], $f['foto_fun_4']);
-
-        foreach ($fotos as $foto) {
-            if (!empty($foto)) {
-                echo '<div class="col-lg-3">
-                        <div class="product-item bg-light">
-                            <div class="card pb-0">
-                                <div class="thumb-content">
-                                    <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../' . htmlspecialchars($foto) . '" alt="Imagen representativa">
-                                </div>
+        echo strlen($f['vision']) == 0 ? '<p style="color:#333333; font-size:15px;">No se ha subido la visión de la fundación, estamos trabajando en ello.</p>' : '<p style="color:#333333; font-size:15px;">' . htmlspecialchars($f['vision']) . '</p>';
+        echo '</div>';
+         echo'<p class="mb-4 pb-2 col-lg-12" style="color:#333333; font-size:18px;"><b>Fotos Representativas: </b>';
+                if (strlen($f['foto_fun_1']) == 0 && strlen($f['foto_fun_2']) == 0 && strlen($f['foto_fun_3']) == 0 && strlen($f['foto_fun_4']) == 0){
+                    echo 'No se han subido fotos representativas</p>';
+                }elseif(strlen($f['foto_fun_1']) > 0 && strlen($f['foto_fun_2']) == 0 && strlen($f['foto_fun_3']) == 0 && strlen($f['foto_fun_4']) == 0){
+                    echo '
+                    </p>
+                    <div class="col-lg-3">
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../ ' . $f['foto_fun_1'] . '" alt="Imagen representativa">
                             </div>
                         </div>
-                    </div>';
-            }
-        }
+                    </div>
+                </div>';
+                }elseif(strlen($f['foto_fun_1']) > 0 && strlen($f['foto_fun_2']) > 0 && strlen($f['foto_fun_3']) == 0 && strlen($f['foto_fun_4']) == 0){
+                    echo '
+                    </p>
+                    <div class="col-lg-3">
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../ ' . $f['foto_fun_1'] . '" alt="Imagen representativa">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../ ' . $f['foto_fun_2'] . '" alt="Imagen representativa">
+                            </div>
+                        </div>
+                    </div>
+                </div>';
+                }elseif(strlen($f['foto_fun_1']) > 0 && strlen($f['foto_fun_2']) > 0 && strlen($f['foto_fun_3']) > 0 && strlen($f['foto_fun_4']) == 0){
+                    echo '
+                    </p>
+                    <div class="col-lg-3">
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../ ' . $f['foto_fun_1'] . '" alt="Imagen representativa">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../ ' . $f['foto_fun_2'] . '" alt="Imagen representativa">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../ ' . $f['foto_fun_3'] . '" alt="Imagen representativa">
+                            </div>
+                        </div>
+                    </div>
+                </div>';
+                }elseif(strlen($f['foto_fun_1']) > 0 && strlen($f['foto_fun_2']) > 0 && strlen($f['foto_fun_3']) > 0 && strlen($f['foto_fun_4']) > 0){
+                    echo' 
+                    </p>
+                    <div class="col-lg-3">
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../ ' . $f['foto_fun_1'] . '" alt="Imagen representativa">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../ ' . $f['foto_fun_2'] . '" alt="Imagen representativa">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../ ' . $f['foto_fun_3'] . '" alt="Imagen representativa">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="product-item bg-light">
+                        <div class="card pb-0">
+                            <div class="thumb-content">
+                                <img class="card-img-top img-fluid mb-0" style="min-height:100px" src="../ ' . $f['foto_fun_4'] . '" alt="Imagen representativa">
+                            </div>
+                        </div>
+                    </div>
+                </div>';
+                }
+                echo '
+            </div>';
 
         echo '<a href="actualizar_informacion_fundacion.php" class="btn btn-login mb-3"><i class="fa fa-pencil mr-2"></i>Actualizar</a>';
     }
 }
-
-
 
 function cargarEventosFundacion()
 {
@@ -162,17 +255,19 @@ function cargarMascotas()
 
 
             echo '
-            
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4">
                 <!-- mascotas card -->
-                <div class="product-item bg-light">
-                    <div class="card pb-0 card-mascotas">
+                <div class="product-item bg-light" >
+                    <div class="card pb-0">
                         <div class="thumb-content">
-                            <h4 class="card-title text-center mb-3">
-                                <a href="eventoEsp.php">' . $f['masNombre'] . '</a>
-                            </h4>
-                            <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['masFoto'] . '"
-                                alt="Imagen de la mascota"> </a>
+                            <h4 class="card-title text-center mb-3"><a href="#" style="color:#333333;">' .$f['masNombre'] . '</a></h4>
+
+                            <a href="#">
+
+                                <img class="card-img-top img-fluid" style="min-height:100px"
+                                    src="../' . $f['masFoto'] . '" alt="Imagen de la mascota">
+                            </a>
+                            
                         </div>
                         <div class="card-body">
                             <li>
@@ -450,7 +545,7 @@ function perfilEditar()
                     </div>
         
                     <div class="p-5 tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                        <form action="../../Controllers/modificarClaveAdmin.php" method="POST" enctype="multipart/form-data">
+                        <form action="../../Controllers/modificarClaveFundacion.php" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="form-group col-lg-12">
                                     <label class="mtop-4">Identificación:</label>
@@ -493,8 +588,8 @@ function informacionEditar()
             <div class="card modificar-user">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button"
-                            role="tab" aria-controls="home" aria-selected="true">Informacion</button>
+                        <button class="nav-link active" id="actualizar-info-tab" data-toggle="tab" data-target="#actualizar-info" type="button"
+                            role="tab" aria-controls="actualizar-info" aria-selected="true">Informacion</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="foto1" data-toggle="tab" data-target="#foto1" type="button" role="tab"
@@ -516,7 +611,7 @@ function informacionEditar()
                 <div class="tab-content" id="myTabContent">
         
         
-                    <div class="p-5 tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="p-5 tab-pane fade show active" id="actualizar-info" role="tabpanel" aria-labelledby="actualizar-info-tab">
         
                         <form action="../../Controllers/actualizarInfoFundacion.php" method="POST"
                             enctype="multipart/form-data">
@@ -530,7 +625,7 @@ function informacionEditar()
 
                                 <div class="form-group col-lg-6">
                                     <label class="mtop-4">Dirección</label>
-                                    <input required type="text" class="form-control" placeholder="Ej: Cl 39 No. 15-13" 
+                                    <input type="text" class="form-control" placeholder="Ej: Cl 39 No. 15-13" 
                                         name="direccion" value="' . $f['direccion'] . '">
                                 </div>
 
@@ -560,21 +655,32 @@ function informacionEditar()
                                 <option value="Usm">Usme</option>
                                 </select>
                                 </div>
+
+                                <div class="form-group col-lg-6">
+                                    <label class="mtop-4">Número de Nequi</label>
+                                    <input  type="text" class="form-control" placeholder="Ej: 3159648594" 
+                                        name="numNequi" value="' . $f['numero_nequi'] . '">
+                                </div>
+
+                                <div class="form-group col-lg-6">
+                                    <label class="mtop-4">Número de Daviplata</label>
+                                    <input  type="text" class="form-control" placeholder="Ej: 3159648594" 
+                                        name="numDaviplata" value="' . $f['numero_daviplata'] . '">
+                                </div>
     
-        
                                 <div class="form-group col-lg-12">
                                     <label>Descripción</label>
-                                    <textarea class="form-control" required name="descripcion" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['descripcion'] . '</textarea>
+                                    <textarea class="form-control"  name="descripcion" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['descripcion'] . '</textarea>
                                 </div>
 
                                 <div class="form-group col-lg-12">
                                     <label>Misión</label>
-                                    <textarea class="form-control" required name="mision" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['mision'] . '</textarea>
+                                    <textarea class="form-control"  name="mision" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['mision'] . '</textarea>
                                 </div>
 
                                 <div class="form-group col-lg-12">
                                     <label>Visión</label>
-                                    <textarea class="form-control" required name="vision" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['vision'] . '</textarea>
+                                    <textarea class="form-control"  name="vision" cols="20" rows="5" placeholder="Ingresa aquí, la historia de la mascota en un parrfo corto.">' . $f['vision'] . '</textarea>
                                 </div>
 
                             </div>
@@ -701,17 +807,16 @@ function cargarEventos()
 
         foreach ($result as $f) {
             echo '
-            
-            <div class="col-lg-3">
-                <!-- mascotas card -->
+            <div class="col-lg-3 col-md-4">
+                <!-- product card -->
                 <div class="product-item bg-light">
-                    <div class="card pb-0 card-mascotas">
+                    <div class="card pb-0 card-fundaciones">
                         <div class="thumb-content">
-                            <h4 class="card-title text-center mb-3">
-                                <a href="eventoEsp.php">' . $f['eveNombre'] . '</a>
-                            </h4>
-                            <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['eveImg'] . '"
-                                alt="Imagen de la mascota"> </a>
+                            <!-- <div class="price">$200</div> -->
+                                <h4 class="card-title text-center mb-3"><a href="#" style="color:#333333; font-size:smaller; min-height:44px;">' . $f['eveNombre'] . '</a></h4>
+                            <a href="#">
+                                <img class="card-img-top img-fluid" style="min-height:100px" src="../' . $f['eveFoto'] . '" alt="Card image cap">
+                            </a>
                         </div>
                         <div class="card-body">
                             <li>

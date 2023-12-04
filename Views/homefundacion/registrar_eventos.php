@@ -77,17 +77,13 @@
                         <input type="text" class="form-control" placeholder="Ej:Caminata Canina" required name="eveTipo">
                     </div>
 
-                    <div class="form-group col-lg-6">
-                        <label>Dirección del Evento</label>
-                        <input type="text" class="form-control" placeholder="Ej:Carrera 1 #3-4 sur" required name="eveDireccion">
-                    </div>
                     
                     <div class="form-group col-lg-6">
                         <label>Dirección del Evento</label>
                         <input type="text" class="form-control" placeholder="Ej:Carrera 1 #3-4 sur" required name="eveDireccion">
                     </div>
 
-                    <div class="form-group col-lg-4">
+                    <div class="form-group col-lg-6">
                         <label>Fecha del Evento</label>
                         <input type="date" class="form-control" required name="eveFecha">
                     </div>

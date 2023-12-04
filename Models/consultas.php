@@ -828,12 +828,12 @@ class Consultas
         echo "<script> location.href='../Views/homeAdministrador/ver_fundaciones.php' </script>";
     }
 
-    public function actualizarInfoFundacion($id_fundacion, $direccion, $localidad, $descripcion, $mision, $vision){
+    public function actualizarInfoFundacion($id_fundacion, $direccion,  $localidad, $nequi, $daviplata, $descripcion, $mision, $vision){
 
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $actualizar = " UPDATE tbl_fundaciones SET direccion=:direccion, descripcion=:descripcion, mision=:mision, vision=:vision, cod_localidad_fk=:localidad WHERE id_fundacion=:id_fundacion ";
+        $actualizar = " UPDATE tbl_fundaciones SET direccion=:direccion, descripcion=:descripcion, mision=:mision, vision=:vision, cod_localidad_fk=:localidad, numero_nequi=:nequi, numero_daviplata=:daviplata WHERE id_fundacion=:id_fundacion ";
         $result = $conexion->prepare($actualizar);
 
         $result->bindParam(":id_fundacion", $id_fundacion);
@@ -842,11 +842,13 @@ class Consultas
         $result->bindParam(":mision", $mision);
         $result->bindParam(":vision", $vision);
         $result->bindParam(":localidad", $localidad);
-
+        $result->bindParam(":nequi", $nequi);
+        $result->bindParam(":daviplata", $daviplata);
+        
         $result->execute();
 
         echo '<script> alert("Información de fundación actualizada exitosamente") </script>';
-        echo "<script> location.href='../Views/homefundacion/home.php' </script>";
+        echo "<script> location.href='../Views/homeFundacion/home.php' </script>";
 
     
     }
@@ -875,7 +877,7 @@ class Consultas
         if ($f) {
 
             echo '<script> alert(" Los datos proporcionados ya han sido registrados. Por favor, verifique la información e intente ingresarla nuevamente.") </script>';
-            echo "<script> location.href='../Views/homefundacion/registrar_eventos.php' </script>";
+            echo "<script> location.href='../Views/homeFundacion/registrar_eventos.php' </script>";
         } else {
 
             //Creamos la variable que contendra la consulta a ejecutar
@@ -904,7 +906,7 @@ class Consultas
             $result->execute();
 
             echo '<script> alert("Evento Registrado con Éxito") </script>';
-            echo "<script> location.href='../Views/homefundacion/registrar_eventos.php' </script>";
+            echo "<script> location.href='../Views/homeFundacion/registrar_eventos.php' </script>";
         }
     }
 
@@ -997,7 +999,7 @@ class Consultas
         $result->execute();
 
         echo '<script> alert("Información de evento actualizada exitosamente") </script>';
-        echo "<script> location.href='../Views/homefundacion/modificar_eventos.php?id=$eveId' </script>";
+        echo "<script> location.href='../Views/homeFundacion/modificar_eventos.php?id=$eveId' </script>";
 
     }
 
@@ -1014,7 +1016,7 @@ class Consultas
         $result->execute();
 
         echo '<script> alert("Evento Eliminado") </script>';
-        echo "<script> location.href='../Views/homefundacion/ver_eventos.php' </script>";
+        echo "<script> location.href='../Views/homeFundacion/ver_eventos.php' </script>";
     }
 
 
@@ -1131,7 +1133,7 @@ class Consultas
         $result->execute();
 
         echo '<script> alert("Información de mascota actualizada exitosamente") </script>';
-        echo "<script> location.href='../Views/homefundacion/modificar_mascotas.php?id=$masId' </script>";
+        echo "<script> location.href='../Views/homeFundacion/modificar_mascotas.php?id=$masId' </script>";
 
     }
 
@@ -1485,7 +1487,7 @@ class Consultas
         $result->execute();
 
         echo '<script> alert("Formulario Eliminado") </script>';
-        echo "<script> location.href='../Views/homefundacion/ver_adopciones.php' </script>";
+        echo "<script> location.href='../Views/homeFundacion/ver_adopciones.php' </script>";
     }
 
 }

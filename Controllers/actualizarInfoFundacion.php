@@ -8,6 +8,8 @@
       $id_fundacion = $_POST['id_user'];
       $direccion = $_POST['direccion'];
       $localidad = $_POST['localidad'];
+      $nequi = $_POST['numNequi'];
+      $daviplata = $_POST['numDaviplata'];
       $descripcion = $_POST['descripcion'];
       $mision = $_POST['mision'];
       $vision = $_POST['vision'];
@@ -16,7 +18,7 @@
       //Creamos el objeto a partir de la clase
       //Para enviar los argumentos a la función en el modelo (archivo consultas)
       $objConsultas = new Consultas ();
-      $result = $objConsultas->actualizarInfoFundacion($id_fundacion, $direccion, $localidad, $descripcion, $mision, $vision);
+      $result = $objConsultas->actualizarInfoFundacion($id_fundacion, $direccion,  $localidad, $nequi, $daviplata, $descripcion, $mision, $vision);
 
 
 

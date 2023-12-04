@@ -582,8 +582,14 @@ button {
 }
 
 .card-height{
-  min-height: 260px;
-  max-height: 260px;
+  min-height: 260px !important;
+  max-height: 260px !important;
+}
+
+.num-donar{
+  font-size:20px;
+  color: #333333;
+
 }
 
 .mb-30 {
