@@ -274,7 +274,7 @@
 				<ul class="social-media-icons text-center text-lg-right">
 					<li><a class="fa fa-facebook" href="https://www.facebook.com/profile.php?id=61551249643390" target="_blank"></a></li>
 					<li><a class="fa fa-google-plus" href="mailto:tomandotumanottm@gmail.com" ></a></li>
-					<li><a class="fa fa-whatsapp" href="https://w.app/TomandotuMano" target="_blank"></a></li>
+					<li><a class="fa fa-whatsapp" href="https://api.whatsapp.com/send?phone=3027195267" target="_blank"></a></li>
 				</ul>
 				</div>
 			</div>
