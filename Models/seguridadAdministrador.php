@@ -4,7 +4,7 @@
 
         if (!isset($_SESSION['AUTENTICADO'])) {
             echo '<script> alert("Por favor, inicie sesión") </script>';
-            echo "<script> location.href='../ClientSite/login.php' </script>";
+            echo "<script> location.href='../clientSite/login.php' </script>";
             exit; // Termina la ejecución del script después de la redirección
         }
 
@@ -14,17 +14,4 @@
             exit; // Termina la ejecución del script después de la redirección
         }
 
-    // if(!isset($_SESSION['AUTENTICADO'])){
-
-    //     echo '<script> alert("Por favor, inicie sesión") </script>';
-    //     echo "<script> location.href='../ClientSite/login.php' </script>";
-
-    // }
-
-    // if($_SESSION['rol']!="Administrador"){
-
-    //     echo '<script> alert("NO POSEE PERMISOS PARA ACCEDER A ESTA INTERFAZ") </script>';
-    //     echo "<script> location.href='../ClientSite/login.php' </script>";
-
-    // }
 ?>

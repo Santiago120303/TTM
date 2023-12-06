@@ -20,7 +20,7 @@
       }
       else{
             echo '<script> alert("Las clacves no coinciden, intentelo de nuevo") </script>';
-            echo "<script> location.href='../Views/homeAdministrador/perfil.php?id=$id'</script>";
+            echo "<script> location.href='../Views/homeFundacion/perfil.php?id=$id'</script>";
       }
 
 ?>

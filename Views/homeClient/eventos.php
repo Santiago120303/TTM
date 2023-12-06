@@ -2,6 +2,8 @@
 
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadClient.php");
+require_once("../../Controllers/mostrarInfoClient.php");
 require_once("../../Controllers/mostrarInfoComun.php");
 
 ?>
@@ -56,7 +58,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 <body class="body-wrapper">
 
 	<?php
-		include("nav-clientSite.php");
+		include("nav-cliente.php");
 	?>
 
 <section class="section-sm minhe">

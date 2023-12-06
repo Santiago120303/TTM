@@ -1,8 +1,11 @@
 <?php
-  require_once("../../Models/conexion.php");
-  require_once("../../Models/consultas.php");
-  require_once("../../Models/seguridadFundacion.php");
-  require_once("../../Controllers/mostrarInfoFundacion.php");
+
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadFundacion.php");
+require_once("../../Controllers/mostrarInfoFundacion.php");
+require_once("../../Controllers/mostrarInfoComun.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +45,7 @@
 
 <!-- header insertado con PHP -->
 <?php
-  include("nav-fundacion.php");
+		include("nav-fundacion.php");
 ?>
 
 <!--================================
@@ -63,14 +66,14 @@
 
 <section class="section">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-6 pt-5 pt-lg-0">
+    <div class="row bgradient">
+      <div class="col-lg-12 pt-5 pt-lg-0 text-center">
         <div class="about-content">
           <h3 class="font-weight-bold">Introducción</h3>
           <p class="">Con el imparable avance de la tecnología y la creciente demanda de soluciones innovadoras, es un privilegio presentar a nuestro excepcional team de tecnólogos en desarrollo de software que encarnan los valores fundamentales de un equipo sobresaliente y destacan por sus habilidades de programación excepcionales. Quedará claro cómo su dedicación a los principios del trabajo en equipo y su destreza en la programación se combinan para crear un conjunto verdaderamente ejemplar de talentos en el mundo del desarrollo de software.</p>
         </div>
       </div>
-      <div class="col-lg-6 pt-5 pt-lg-0">
+      <div class="col-lg-12 pt-5 pt-lg-0 text-center">
         <div class="about-content">
           <h3 class="font-weight-bold">¿Cómo podemos ayudar?</h3>
           <p class="">La colaboración y la diversidad de habilidades en nuesto equipo pueden dar lugar a soluciones innovadoras y creativas, puedemos implementar metodologías ágiles de desarrollo de software con eficiencia nuestra comunicación abierta y la colaboración constante permiten una rápida adaptación a los cambios, mejorando la calidad y la entrega puntual de los proyectos y nuestra combinación de habilidades técnicas sólidas y la capacidad de trabajo en equipo puede abordar problemas tecnológicos complejos de manera eficiente.</p>
@@ -89,47 +92,52 @@
         </div>
       </div>
       <div class="col-lg-2 col-sm-12 mt-5">
-        <div class="card my-3 my-lg-0 p-0">
-          <img class="card-img-top" src="../../Uploads/usuarios/Santiago.png" class="img-fluid w-100" alt="Card image cap">
+        <div class="card my-3 my-lg-0 p-0 cardsFotos">
+          <img class="card-img-top card-height" src="../../Uploads/usuarios/Santiago.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Santiago Gutiérrez</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
+            <a href="https://santiago1203.github.io/portafolio/" target="_blank"><button class="btnPortafolio">Ver Portafolio</button></a>
           </div>
         </div>
       </div>
       <div class="col-lg-2 col-sm-12 mt-5">
-        <div class="card my-3 my-lg-0 p-0">
-          <img class="card-img-top" src="../../Uploads/usuarios/Diana.png" class="img-fluid w-100" alt="Card image cap">
+        <div class="card my-3 my-lg-0 p-0 cardsFotos">
+          <img class="card-img-top card-height" src="../../Uploads/usuarios/Diana.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Diana Ramírez</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
+            <a href="https://dianar577.github.io/Portafolio-Diana/" target="_blank"><button class="btnPortafolio">Ver Portafolio</button></a>
           </div>
         </div>
       </div>
       <div class="col-lg-2 col-sm-12 mt-5">
-        <div class="card my-3 my-lg-0 p-0">
-          <img class="card-img-top" src="../../Uploads/usuarios/Johan.png" class="img-fluid w-100" alt="Card image cap">
+        <div class="card my-3 my-lg-0 p-0 cardsFotos">
+          <img class="card-img-top card-height" src="../../Uploads/usuarios/Johan.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Johan Echavez</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
+            <a href="https://johan12345678990.github.io/PortafolioJE/" target="_blank"><button class="btnPortafolio">Ver Portafolio</button></a>
           </div>
         </div>
       </div>
       <div class="col-lg-2 col-sm-12 mt-5">
-        <div class="card my-3 my-lg-0 p-0">
-          <img class="card-img-top" src="../../Uploads/usuarios/Ricardo.png" class="img-fluid w-100" alt="Card image cap">
+        <div class="card my-3 my-lg-0 p-0 cardsFotos">
+          <img class="card-img-top card-height" src="../../Uploads/usuarios/Ricardo.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Ricardo Reyes</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
+            <a href="https://ricrehard.github.io/miPortafolio/" target="_blank"><button class="btnPortafolio">Ver Portafolio</button></a>
           </div>
         </div>
       </div>
       <div class="col-lg-2 col-sm-12 mt-5">
-        <div class="card my-3 my-lg-0 p-0">
-          <img class="card-img-top" src="../../Uploads/usuarios/Andersson.png" class="img-fluid w-100" alt="Card image cap">
+        <div class="card my-3 my-lg-0 p-0 cardsFotos">
+          <img class="card-img-top card-height" src="../../Uploads/usuarios/Andersson.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Andersson Acosta</h5>
             <p class="card-text">Analista y Desarrollador de Software</p>
+            <a href="https://andersson-acosta-dev.github.io/Portfolio/" target="_blank"><button class="btnPortafolio">Ver Portafolio</button></a>
           </div>
         </div>
       </div>

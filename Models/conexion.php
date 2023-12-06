@@ -6,7 +6,7 @@ class Conexion
             $user = "root";
             $pass = "";
             $host = "localhost";
-            $db = "ttmdb";
+            $db = "b7_35523572_ttmdb";
 
             $conexion = new PDO("mysql:host=$host;dbname=$db;", $user, $pass);
             return $conexion;

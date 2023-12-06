@@ -2,9 +2,10 @@
 
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
-require_once("../../Models/seguridadClient.php");
-require_once("../../Controllers/mostrarInfoClient.php");
+require_once("../../Models/seguridadFundacion.php");
+require_once("../../Controllers/mostrarInfoFundacion.php");
 require_once("../../Controllers/mostrarInfoComun.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 
 	<!-- ** Basic Page Needs ** -->
 	<meta charset="utf-8">
-	<title>Mascota específica - TTM</title>
+	<title>Mascota Fundación Específica - TTM</title>
 
 	<!-- ** Mobile Specific Metas ** -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,7 +49,7 @@ require_once("../../Controllers/mostrarInfoComun.php");
 
 	<!-- header insertado con PHP -->
 	<?php
-	include("nav-cliente.php");
+		include("nav-fundacion.php");
 	?>
 
 	<!--=================================
@@ -62,10 +63,10 @@ require_once("../../Controllers/mostrarInfoComun.php");
 				?>
 				<div class="col-lg-8">
 					<article class="single-post">
-                    		<h2 class="text-center mb-4">Mascota</h2>
+                    		<h2 class="text-center mb-4">Evento</h2>
 						<div class="row d-flex align-items-center">
 							<?php
-							MostrarMascotaFundacionEspecificaCliete()
+							MostrarEventoFundacionEspecificaComun()
 							?>
 						</div>
 					</article>
