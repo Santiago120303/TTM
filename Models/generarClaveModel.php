@@ -115,7 +115,7 @@ require '../PHPMailer/SMTP.php';
                 
                 $mail->send();
                 echo '<script>alert("Mensaje enviado")</script>';
-                echo '<script> location.href="../Views/ClientSite/login.php"</script>';
+                echo '<script> location.href="../Views/clientSite/login.php"</script>';
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                 }
@@ -123,7 +123,7 @@ require '../PHPMailer/SMTP.php';
             }
             else{
                 echo '<script> alert("Los datos de usuario no se encuentran en el sistema")</script>';
-                echo '<script> location.href="../Views/ClientSite/reset_password.php"</script>';
+                echo '<script> location.href="../Views/clientSite/reset_password.php"</script>';
             }
         }
     }

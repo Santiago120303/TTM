@@ -1221,6 +1221,23 @@ class Consultas
         echo "<script> location.href='../Views/homeAdministrador/perfil.php' </script>";
     }
 
+    public function actualizarFotoCliente($id, $foto){
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE tbl_users SET foto=:foto WHERE id_user=:id ";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam(":id", $id);
+        $result->bindParam(":foto", $foto);
+
+
+        $result->execute();
+
+        echo '<script> alert("Foto de perfil actualizada") </script>';
+        echo "<script> location.href='../Views/homeClient/perfil.php' </script>";
+    }
+
     public function actualizarClaveAdmin($id, $claveMd){
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
@@ -1255,6 +1272,23 @@ class Consultas
         echo "<script> location.href='../Views/homeFundacion/perfil.php' </script>";
     }
 
+    public function actualizarClaveCliente($id, $claveMd){
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE tbl_users SET clave=:claveMd WHERE id_user=:id ";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam(":id", $id);
+        $result->bindParam(":claveMd", $claveMd);
+
+
+        $result->execute();
+
+        echo '<script> alert("Clave actualizada correctamente") </script>';
+        echo "<script> location.href='../Views/homeClient/perfil.php' </script>";
+    }
+
     //Dashboard Fundacion
 
     public function modificarCuentaFundacion($id, $tipo_doc, $nombre, $email, $telefono){
@@ -1275,6 +1309,28 @@ class Consultas
 
         echo '<script> alert("Información de fundación actualizada") </script>';
         echo "<script> location.href='../Views/homeFundacion/perfil.php' </script>";
+
+        
+    }
+
+    public function modificarCuentaCliente($id, $tipo_doc, $nombre, $email, $telefono){
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = "UPDATE tbl_users SET cod_tipo_doc_fk=:tipo_doc, nombre=:nombre, email=:email, telefono=:telefono WHERE id_user=:id";
+
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam(":id", $id);
+        $result->bindParam(":tipo_doc", $tipo_doc);
+        $result->bindParam(":nombre", $nombre);
+        $result->bindParam(":email", $email);
+        $result->bindParam(":telefono", $telefono);
+
+        $result->execute();
+
+        echo '<script> alert("Información de perfil actualizada") </script>';
+        echo "<script> location.href='../Views/homeClient/perfil.php' </script>";
 
         
     }

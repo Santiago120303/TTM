@@ -146,7 +146,7 @@ function perfilEditar()
         
                     <div class="p-5 tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         
-                        <form action="../../Controllers/modificarCuentaFundacion.php" method="POST" enctype="multipart/form-data">
+                        <form action="../../Controllers/modificarCuentaCliente.php" method="POST" enctype="multipart/form-data">
                             <div class="row">
         
                                 <div class="form-group col-lg-6">
@@ -156,10 +156,11 @@ function perfilEditar()
         
                                 <div class="form-group col-lg-6">
                                     <label>Tipo de Identificación:</label>
-                                    <select disabled required name="tipo_doc" id="" class="form-control">
+                                    <select required name="tipo_doc" id="" class="form-control">
                                         <option value="' . $f['cod_tipo_doc'] . '">' . $f['tipo_doc'] . '</option>
-                                        <option value="4">NIT</option>
                                         <option value="1">CC</option>
+                                        <option value="2">CE</option>
+                                        <option value="3">PASAPORTE</option>
                                     </select>
                                 </div>
         
@@ -187,7 +188,7 @@ function perfilEditar()
         
 
                     <div class="p-5 tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <form action="../../Controllers/modificarFotoAdmin.php" method="POST" enctype="multipart/form-data">
+                    <form action="../../Controllers/modificarFotoCliente.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group col-lg-6">
                                 <label class="mtop-4">Identificación:</label>
@@ -208,7 +209,7 @@ function perfilEditar()
         
         
                     <div class="p-5 tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                        <form action="../../Controllers/modificarClaveAdmin.php" method="POST" enctype="multipart/form-data">
+                        <form action="../../Controllers/modificarClaveCliente.php" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="form-group col-lg-12">
                                     <label class="mtop-4">Identificación:</label>
