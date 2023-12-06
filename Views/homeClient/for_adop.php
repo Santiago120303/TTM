@@ -62,7 +62,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="basic-elements">.
+                            <div class="basic-elements">
                                 <?php
                                     cargarFormulario();
                                 ?>

@@ -35,7 +35,7 @@
       }
       else{
             echo '<script> alert("Por favor complete todos los campos") </script>';
-            echo "<script> location.href='for_adop.php' </script>";
+            echo "<script> location.href='../Views/homeClient/mascotas.php' </script>";
       }
 
 ?>

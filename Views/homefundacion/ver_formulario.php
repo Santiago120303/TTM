@@ -50,47 +50,29 @@
     <!-- Container Start -->
     <div class="container-fluid">
       <!-- Row Start -->
-      <div class="row">
+        <div class="row">
         <?php
             include("menu-include.php")//col-lg-3
         ?>
-          <div class="col-lg-9">
+            <div class="col-lg-9">
             <!-- Recently Favorited -->
-            <div class="widget dashboard-container my-adslist">
-              <h3 class="widget-header">Adopciones</h3>
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
-                          <thead>
-                            <tr>
-                              <th>Foto</th>
-                              <th>Mascota</th>
-                              <th>Edad</th>
-                              <th>Raza</th>
-                              <th>Adoptante</th>
-                              <th>Teléfono</th>
-                              <th>Ver Formulario</th>
-                              <th>Eliminar</th>
-                            </tr>
-                          </thead>
-                          <tbody>
+                <div class="widget dashboard-container my-adslist">
+                  <h3 class="widget-header">Adopciones</h3>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="card">
+                        <div class="card-body">
                             <?php 
-                                cargarFormulario();
+                                cargarFormAdopcion();
                             ?>
-                          </tbody>
-                        </table>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
-          </div>
         <!-- Row End -->
-      </div>
+        </div>
       <!-- Container End -->
     </div>
   </section>

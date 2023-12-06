@@ -1424,7 +1424,9 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $consultar = "SELECT tbl_mascotas.masNombre, tbl_mascotas.masFoto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_users.nombre, tbl_users.telefono, tbl_adopciones.adopId
+        $consultar = "SELECT tbl_mascotas.masNombre, tbl_mascotas.masFoto, tbl_mascotas.masRaza, tbl_mascotas.masEdad, tbl_users.nombre, tbl_users.telefono, tbl_adopciones.adopId,
+        tbl_adopciones.adopEdad, tbl_adopciones.adopMasAnterior, tbl_adopciones.adopMasAnterior, tbl_adopciones.adopMasActual, tbl_adopciones.adopTrabajo, tbl_adopciones.adopMasHogar,
+        tbl_adopciones.adopMuda, tbl_adopciones.adopNinos, tbl_adopciones.adopAcceso, tbl_adopciones.adopRazon, tbl_adopciones.adopHorMascota, tbl_adopciones.adopSalida, tbl_adopciones.adopVisita
         FROM ((tbl_adopciones
         INNER JOIN tbl_mascotas ON tbl_mascotas.masId=tbl_adopciones.id_mas_for_fk)
         INNER JOIN tbl_users ON tbl_users.id_user=tbl_adopciones.id_usu_for_fk)

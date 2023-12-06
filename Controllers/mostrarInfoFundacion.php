@@ -317,6 +317,7 @@ function cargarFormulario()
                     <td>' . $f['masRaza'] . '</td>
                     <td>' . $f['nombre'] . '</td>
                     <td>' . $f['telefono'] . '</td>
+                    <td><a href="ver_formulario.php?id=' . $f['adopId'] . '" class="bg-main"><i class="fa fa-eye"></i> Formulario</a></td>
                     <td><a href="../../Controllers/eliminarFormFun.php?id=' . $f['adopId'] . '" class="bg-red"><i class="fa-solid fa-trash"></i> Eliminar</a></td>
                 </tr>
                 ';  
@@ -324,7 +325,87 @@ function cargarFormulario()
     }
 }
 
-// <td><a href="../../Controllers/descargarFormFun.php?id=' . $f['adopId'] . '" class="bg-main"><i class="fa fa-eye"></i> Formulario</a></td>
+function cargarFormAdopcion()
+{
+    // Aterrizamos la PK enviada desde la tabla 
+    $id_fundacion = $_SESSION['id'];
+
+    //Enviamos la PK a una función de la clase consultas
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarFormFun($id_fundacion);
+
+    if (!isset($result)) {
+        echo '<h2>NO SE ENCONTRÓ EL FORMULARIO, POR FAVOR CONTACTA CON EL ADMINISTRADOR</h2>';
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <a class="d-block w-100 text-right font-weight-bold" href="ver_adopciones.php"><i class="fa-solid fa-arrow-left mr-2"></i>Volver</a>
+         
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label>Nombre del Adoptante:</label>
+                    <input value="' . $f['nombre'] . '" class="form-control" readonly>
+                </div>
+                <div class="form-group col-lg-6 ">
+                    <label>Edad del Adoptante:</label>
+                    <input type="number" value="' . $f['adopEdad'] . '" class="form-control" readonly>
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>¿Has tenido mascotas anteriormente?</label><br>
+                    <input value="' . $f['adopMasAnterior'] . '" class="form-control" readonly>
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>¿Actualmente tienes mascotas? Si tiene mencione cuántas.</label>
+                    <input type="text" value="' . $f['adopMasActual'] . '" class="form-control" readonly>
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <label>¿Cuál es su situación laboral o fuentes de ingreso actualmente?</label>
+                    <input type="text" value="' . $f['adopTrabajo'] . '" class="form-control" readonly>
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <label>¿Cuenta con casa propia o renta?</label><br>
+                    <input value="' . $f['adopMasHogar'] . '" class="form-control" readonly>
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <label>Si se muda de casa, de ciudad o de país en el futuro, ¿qué sucedera con su mascota?</label>
+                    <input type="text" value="' . $f['adopMuda'] . '" class="form-control" readonly>
+                </div>
+                <div class="form-group col-lg-6">
+                    <label>¿Hay niños en casa? Por favor, describa sus edades.</label>
+                    <input type="text" value="' . $f['adopNinos'] . '" class="form-control" readonly>
+                </div>
+            
+                <div class="form-group col-lg-6">
+                   <label>¿La mascota tendrá acceso a cualquier lugar de la casa?</label><br>
+                   <input value="' . $f['adopAcceso'] . '" class="form-control" readonly>
+                </div>
+                <div class="form-group col-lg-12">
+                    <label>¿Cuál es la razón por la cual quiere adoptar a la mascota?</label>
+                    <input type="text" value="' . $f['adopRazon'] . '" class="form-control"readonly>
+                </div>
+                <div class="form-group col-lg-12">
+                    <label>¿Cuántas horas al día estará sola en casa la mascota?</label>
+                    <input type="text" value="' . $f['adopHorMascota'] . '" class="form-control" readonly>
+                </div>
+                <div class="form-group col-lg-12">
+                    <label>Si tiene que salir de emergencia de su ciudad, ¿con quién dejaría a su nuevo amigo?</label>
+                    <input type="text" value="' . $f['adopSalida'] . '" class="form-control" readonly>
+                </div>
+                <div class="form-group col-lg-12">
+                   <label>¿Está de acuerdo que se le haga una visita previa a la mascota en su dirección de residencia?</label><br>
+                   <input value="' . $f['adopVisita'] . '" class="form-control" readonly>
+                </div>
+
+            </div>
+                ';  
+        }                           
+    }
+}
 
 function perfil()
 {
